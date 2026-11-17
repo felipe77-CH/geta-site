@@ -69,9 +69,14 @@
   .dropdown a{display:block;padding:10px 14px;font-size:14px;color:var(--ink);border-radius:10px}
   .dropdown a:hover{background:var(--bg-soft);color:var(--blue)}
   .utility{display:flex;align-items:center;gap:14px}
-  .lang{font:700 12px var(--display);color:#fff;letter-spacing:.06em}
-  .lang a{opacity:.6}.lang a.on{opacity:1}
-  .header.scrolled .lang{color:var(--navy)}
+  /* Selector de idioma PT | EN | ES */
+  .lang{display:flex;align-items:center;gap:2px;padding:3px;border-radius:999px;background:#ffffff1f;border:1px solid #ffffff33}
+  .lang button{border:0;background:none;color:#fff;font:700 12px var(--display);letter-spacing:.06em;padding:6px 10px;border-radius:999px;cursor:pointer;opacity:.75;transition:.2s}
+  .lang button:hover{opacity:1}
+  .lang button.on{background:#fff;color:var(--navy);opacity:1}
+  .header.scrolled .lang,.header.menu-open .lang{background:var(--bg-soft);border-color:var(--line)}
+  .header.scrolled .lang button,.header.menu-open .lang button{color:var(--navy)}
+  .header.scrolled .lang button.on,.header.menu-open .lang button.on{background:var(--navy);color:#fff}
   .utility .btn{padding:11px 20px;font-size:13px}
   .burger{display:none;margin-left:auto;background:none;border:0;width:44px;height:44px;cursor:pointer}
   .burger i,.burger i::before,.burger i::after{display:block;width:24px;height:2px;background:#fff;position:relative;content:"";margin:auto;transition:.2s}
@@ -218,14 +223,14 @@
 
   /* ====== Responsivo ====== */
   @media (max-width:1100px){
-    .nav,.utility .btn,.brand-text{display:none}.burger{display:block}
+    .nav,.utility .btn,.brand-text{display:none}.burger{display:block;margin-left:0}
+    .utility{margin-left:auto}
     .header.menu-open{background:#fff}
     .header.menu-open .brand .logo-white{display:none}.header.menu-open .brand .logo-color{display:block}
     .header.menu-open .burger i,.header.menu-open .burger i::before,.header.menu-open .burger i::after{background:var(--navy)}
     .header.menu-open .nav{display:flex;flex-direction:column;position:absolute;top:82px;left:0;right:0;background:#fff;padding:8px 16px 20px;box-shadow:0 12px 24px #0b175e22;max-height:calc(100vh - 82px);overflow:auto}
     .header.menu-open .nav>li>a{color:var(--ink);padding:12px 0}
     .header.menu-open .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:0 0 0 8px}
-    .header.menu-open .lang{color:var(--navy)}
     .cards{grid-template-columns:repeat(2,1fr)}
     .model-grid,.tech-grid{grid-template-columns:1fr}
     .monitor .ph{aspect-ratio:21/8}
@@ -245,7 +250,7 @@
     .node{width:86px;margin:-24px 0 0 -43px}.node .dot{width:46px;height:46px;font-size:13px}.node span{font-size:10px}
     .row{grid-template-columns:1fr}
   }
-  @media (max-width:520px){.cards,.foot-grid{grid-template-columns:1fr}.brand img{height:44px}}
+  @media (max-width:520px){.cards,.foot-grid{grid-template-columns:1fr}.brand img{height:44px}.header .bar{gap:12px}.lang button{padding:6px 8px}}
 </style>
 </head>
 <body>
@@ -253,25 +258,29 @@
 <!-- HEADER -->
 <header class="header" id="header">
   <div class="wrap bar">
-    <a class="brand" href="#" aria-label="GETA – início">
+    <a class="brand" href="#" aria-label="GETA">
       <img class="logo-white" src="img/logo-geta-white.png" alt="GETA">
       <img class="logo-color" src="img/logo-geta.png" alt="GETA">
-      <span class="brand-text">Grupo de Especialistas em Tecnologias Ambientais</span>
+      <span class="brand-text" data-i18n="brand.text">Grupo de Especialistas em Tecnologias Ambientais</span>
     </a>
     <ul class="nav">
-      <li><a href="#sobre">A GETA</a>
-        <div class="dropdown"><a href="#sobre">Quem somos</a><a href="#sobre">Como trabalhamos</a><a href="#tecnologia">Diferencial tecnológico</a></div></li>
-      <li><a href="#areas">Áreas de atuação</a>
-        <div class="dropdown"><a href="#areas">Engenharia Ambiental</a><a href="#areas">Tratamento de Efluentes</a><a href="#areas">Análises Remotas</a><a href="#areas">Plantas de Saneamento</a><a href="#areas">Engenharia e Inovação</a></div></li>
-      <li><a href="#solucoes">Soluções</a></li>
-      <li><a href="#tecnologia">Tecnologia</a></li>
-      <li><a href="#contato">Contato</a></li>
+      <li><a href="#sobre" data-i18n="nav.about">A GETA</a>
+        <div class="dropdown"><a href="#sobre" data-i18n="nav.who">Quem somos</a><a href="#sobre" data-i18n="nav.how">Como trabalhamos</a><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
+      <li><a href="#areas" data-i18n="nav.areas">Áreas de atuação</a>
+        <div class="dropdown"><a href="#areas" data-i18n="area.1">Engenharia Ambiental</a><a href="#areas" data-i18n="area.2">Tratamento de Efluentes</a><a href="#areas" data-i18n="area.3">Análises Remotas</a><a href="#areas" data-i18n="area.4">Plantas de Saneamento</a><a href="#areas" data-i18n="area.5">Engenharia e Inovação</a></div></li>
+      <li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li>
+      <li><a href="#tecnologia" data-i18n="nav.tech">Tecnologia</a></li>
+      <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
     </ul>
     <div class="utility">
-      <div class="lang"><a class="on" href="#">PT</a> | <a href="#">EN</a></div>
-      <a class="btn" href="#contato">Fale com um especialista</a>
+      <div class="lang" role="group" aria-label="Idioma / Language / Idioma">
+        <button type="button" data-lang="pt" class="on" title="Português">PT</button>
+        <button type="button" data-lang="en" title="English">EN</button>
+        <button type="button" data-lang="es" title="Español">ES</button>
+      </div>
+      <a class="btn" href="#contato" data-i18n="cta.specialist">Fale com um especialista</a>
     </div>
-    <button class="burger" aria-label="Abrir menu" id="burger"><i></i></button>
+    <button class="burger" data-i18n-aria="aria.menu" aria-label="Abrir menu" id="burger"><i></i></button>
   </div>
 </header>
 
@@ -280,43 +289,43 @@
   <div class="slide active">
     <div class="bg" style="background-image:url(img/hero-rio-floresta.jpg)"></div>
     <div class="content">
-      <span class="eyebrow">Grupo de Especialistas em Tecnologias Ambientais</span>
-      <h1>Inovação a serviço da <mark>sustentabilidade</mark></h1>
-      <p>Soluções de engenharia, tratamento e monitoramento ambiental para empresas e órgãos públicos.</p>
-      <div class="ctas"><a class="btn" href="#areas">Conheça nossa atuação <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#contato">Fale conosco</a></div>
+      <span class="eyebrow" data-i18n="brand.text">Grupo de Especialistas em Tecnologias Ambientais</span>
+      <h1 data-i18n="hero1.title">Inovação a serviço da <mark>sustentabilidade</mark></h1>
+      <p data-i18n="hero1.text">Soluções de engenharia, tratamento e monitoramento ambiental para empresas e órgãos públicos.</p>
+      <div class="ctas"><a class="btn" href="#areas"><span data-i18n="hero1.cta">Conheça nossa atuação</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#contato" data-i18n="nav.talk">Fale conosco</a></div>
     </div>
   </div>
   <div class="slide">
     <div class="bg" style="background-image:url(img/hero-estacao-tratamento.jpg)"></div>
     <div class="content">
-      <span class="eyebrow">Tratamento de efluentes</span>
-      <h1>Efluentes complexos, <mark>resultados</mark> controlados</h1>
-      <p>Projeto e supervisão de sistemas com eficiência, controle operacional e redução de emissões.</p>
-      <div class="ctas"><a class="btn" href="#solucoes">Ver soluções</a></div>
+      <span class="eyebrow" data-i18n="area.2">Tratamento de Efluentes</span>
+      <h1 data-i18n="hero2.title">Efluentes complexos, <mark>resultados</mark> controlados</h1>
+      <p data-i18n="hero2.text">Projeto e supervisão de sistemas com eficiência, controle operacional e redução de emissões.</p>
+      <div class="ctas"><a class="btn" href="#solucoes" data-i18n="hero2.cta">Ver soluções</a></div>
     </div>
   </div>
   <div class="slide">
     <div class="bg" style="background-image:url(img/hero-laboratorio.jpg)"></div>
     <div class="content">
-      <span class="eyebrow">Inteligência Artificial</span>
-      <h1>Monitoramento contínuo e <mark>preditivo</mark></h1>
-      <p>Sensoriamento remoto e IA gerando modelos e dashboards para avaliar a qualidade ambiental em tempo real.</p>
-      <div class="ctas"><a class="btn" href="#tecnologia">Nosso diferencial</a></div>
+      <span class="eyebrow" data-i18n="hero3.eyebrow">Inteligência Artificial</span>
+      <h1 data-i18n="hero3.title">Monitoramento contínuo e <mark>preditivo</mark></h1>
+      <p data-i18n="hero3.text">Sensoriamento remoto e IA gerando modelos e dashboards para avaliar a qualidade ambiental em tempo real.</p>
+      <div class="ctas"><a class="btn" href="#tecnologia" data-i18n="hero3.cta">Nosso diferencial</a></div>
     </div>
   </div>
   <svg class="orbit" viewBox="0 0 200 200" aria-hidden="true"><ellipse cx="100" cy="100" rx="92" ry="48" transform="rotate(35 100 100)"/><ellipse cx="100" cy="100" rx="92" ry="48" transform="rotate(-35 100 100)"/><circle cx="100" cy="100" r="96" fill="none" stroke="#fff" stroke-width="1"/></svg>
-  <button class="arrow prev" aria-label="Slide anterior">‹</button>
-  <button class="arrow next" aria-label="Próximo slide">›</button>
+  <button class="arrow prev" data-i18n-aria="aria.prev" aria-label="Slide anterior">‹</button>
+  <button class="arrow next" data-i18n-aria="aria.next" aria-label="Próximo slide">›</button>
   <div class="dots"></div>
 </section>
 
 <!-- NÚMEROS / PILARES -->
 <section class="stats">
   <div class="wrap">
-    <div class="stat"><b>5</b><span>áreas de atuação integradas</span></div>
-    <div class="stat"><b>4</b><span>tecnologias exclusivas GETA</span></div>
-    <div class="stat"><b>IA</b><span>monitoramento contínuo e preditivo</span></div>
-    <div class="stat"><b>360°</b><span>do diagnóstico à supervisão</span></div>
+    <div class="stat"><b>5</b><span data-i18n="stat.1">áreas de atuação integradas</span></div>
+    <div class="stat"><b>4</b><span data-i18n="stat.2">tecnologias exclusivas GETA</span></div>
+    <div class="stat"><b data-i18n="stat.3b">IA</b><span data-i18n="stat.3">monitoramento contínuo e preditivo</span></div>
+    <div class="stat"><b>360°</b><span data-i18n="stat.4">do diagnóstico à supervisão</span></div>
   </div>
 </section>
 
@@ -324,16 +333,16 @@
 <section class="areas" id="areas">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow">Áreas de atuação</span>
-      <h2>Onde a GETA transforma desafios ambientais em soluções</h2>
-      <p>Expertise técnica, soluções customizadas e Inteligência Artificial em cada etapa.</p>
+      <span class="eyebrow" data-i18n="nav.areas">Áreas de atuação</span>
+      <h2 data-i18n="areas.title">Onde a GETA transforma desafios ambientais em soluções</h2>
+      <p data-i18n="areas.text">Expertise técnica, soluções customizadas e Inteligência Artificial em cada etapa.</p>
     </div>
     <div class="panels reveal">
-      <a href="#solucoes" class="panel open" style="background-image:url(img/area-engenharia-ambiental.jpg)"><span class="num">01</span><div class="inner"><h3>Engenharia Ambiental</h3><p>Diagnóstico, projeto e supervisão de soluções ambientais que garantem conformidade legal, eficiência operacional e proteção do meio ambiente e da saúde pública.</p><span class="more">Saiba mais →</span></div></a>
-      <a href="#solucoes" class="panel" style="background-image:url(img/area-tratamento-efluentes.jpg)"><span class="num">02</span><div class="inner"><h3>Tratamento de Efluentes</h3><p>Efluentes líquidos complexos e chorume: seleção de rota tecnológica físico-química, projeto executivo e supervisão operacional.</p><span class="more">Saiba mais →</span></div></a>
-      <a href="#tecnologia" class="panel" style="background-image:url(img/area-analises-remotas.jpg)"><span class="num">03</span><div class="inner"><h3>Análises Remotas</h3><p>Sensoriamento remoto on-line e IA para avaliar continuamente a qualidade do ar, das águas superficiais e de efluentes adjacentes.</p><span class="more">Saiba mais →</span></div></a>
-      <a href="#solucoes" class="panel" style="background-image:url(img/area-plantas-saneamento.jpg)"><span class="num">04</span><div class="inner"><h3>Plantas de Saneamento</h3><p>Concepção, otimização e supervisão de estações e plantas de saneamento, com foco em desempenho e redução de emissões.</p><span class="more">Saiba mais →</span></div></a>
-      <a href="#tecnologia" class="panel" style="background-image:url(img/area-engenharia-inovacao.jpg)"><span class="num">05</span><div class="inner"><h3>Engenharia e Inovação</h3><p>Engenharia química e bioquímica aplicada ao desenvolvimento de tecnologias próprias para desafios sem soluções convencionais.</p><span class="more">Saiba mais →</span></div></a>
+      <a href="#solucoes" class="panel open" style="background-image:url(img/area-engenharia-ambiental.jpg)"><span class="num">01</span><div class="inner"><h3 data-i18n="area.1">Engenharia Ambiental</h3><p data-i18n="area.1.text">Diagnóstico, projeto e supervisão de soluções ambientais que garantem conformidade legal, eficiência operacional e proteção do meio ambiente e da saúde pública.</p><span class="more" data-i18n="more">Saiba mais →</span></div></a>
+      <a href="#solucoes" class="panel" style="background-image:url(img/area-tratamento-efluentes.jpg)"><span class="num">02</span><div class="inner"><h3 data-i18n="area.2">Tratamento de Efluentes</h3><p data-i18n="area.2.text">Efluentes líquidos complexos e chorume: seleção de rota tecnológica físico-química, projeto executivo e supervisão operacional.</p><span class="more" data-i18n="more">Saiba mais →</span></div></a>
+      <a href="#tecnologia" class="panel" style="background-image:url(img/area-analises-remotas.jpg)"><span class="num">03</span><div class="inner"><h3 data-i18n="area.3">Análises Remotas</h3><p data-i18n="area.3.text">Sensoriamento remoto on-line e IA para avaliar continuamente a qualidade do ar, das águas superficiais e de efluentes adjacentes.</p><span class="more" data-i18n="more">Saiba mais →</span></div></a>
+      <a href="#solucoes" class="panel" style="background-image:url(img/area-plantas-saneamento.jpg)"><span class="num">04</span><div class="inner"><h3 data-i18n="area.4">Plantas de Saneamento</h3><p data-i18n="area.4.text">Concepção, otimização e supervisão de estações e plantas de saneamento, com foco em desempenho e redução de emissões.</p><span class="more" data-i18n="more">Saiba mais →</span></div></a>
+      <a href="#tecnologia" class="panel" style="background-image:url(img/area-engenharia-inovacao.jpg)"><span class="num">05</span><div class="inner"><h3 data-i18n="area.5">Engenharia e Inovação</h3><p data-i18n="area.5.text">Engenharia química e bioquímica aplicada ao desenvolvimento de tecnologias próprias para desafios sem soluções convencionais.</p><span class="more" data-i18n="more">Saiba mais →</span></div></a>
     </div>
   </div>
 </section>
@@ -346,11 +355,11 @@
       <div class="core"><img src="img/geta-mark.png" alt=""></div>
     </div>
     <div class="text reveal">
-      <span class="eyebrow">A GETA</span>
-      <h2>Parceiro estratégico em gestão ambiental</h2>
-      <p>A GETA se posiciona como um parceiro estratégico para empresas e órgãos públicos que buscam excelência na gestão ambiental.</p>
-      <p class="quote">Nossa combinação de expertise técnica, soluções customizadas e o uso de Inteligência Artificial nos permite entregar resultados que garantem a conformidade legal, a eficiência operacional e, acima de tudo, a proteção do meio ambiente e da saúde pública.</p>
-      <p class="tagline">GETA: <em>Inovação a Serviço da Sustentabilidade</em></p>
+      <span class="eyebrow" data-i18n="nav.about">A GETA</span>
+      <h2 data-i18n="about.title">Parceiro estratégico em gestão ambiental</h2>
+      <p data-i18n="about.p1">A GETA se posiciona como um parceiro estratégico para empresas e órgãos públicos que buscam excelência na gestão ambiental.</p>
+      <p class="quote" data-i18n="about.quote">Nossa combinação de expertise técnica, soluções customizadas e o uso de Inteligência Artificial nos permite entregar resultados que garantem a conformidade legal, a eficiência operacional e, acima de tudo, a proteção do meio ambiente e da saúde pública.</p>
+      <p class="tagline" data-i18n="about.tagline">GETA: <em>Inovação a Serviço da Sustentabilidade</em></p>
     </div>
   </div>
 </section>
@@ -359,25 +368,25 @@
 <section class="tech" id="tecnologia">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow" style="color:#9fe8ad">Diferencial tecnológico</span>
-      <h2>Engenharia Química/Bioquímica e IA</h2>
-      <p>Ferramentas exclusivas e rotas tecnológicas próprias para os desafios mais complexos.</p>
+      <span class="eyebrow" style="color:#9fe8ad" data-i18n="nav.diff">Diferencial tecnológico</span>
+      <h2 data-i18n="tech.title">Engenharia Química/Bioquímica e IA</h2>
+      <p data-i18n="tech.text">Ferramentas exclusivas e rotas tecnológicas próprias para os desafios mais complexos.</p>
     </div>
     <div class="tech-grid">
       <div class="monitor reveal">
-        <div class="ph" role="img" aria-label="Laboratório de engenharia"></div>
+        <div class="ph" role="img" data-i18n-aria="aria.lab" aria-label="Laboratório de engenharia"></div>
         <div class="body">
-          <h3>Monitoramento contínuo e preditivo</h3>
-          <p>Ferramentas exclusivas que utilizam IA e dados de sensoriamento remoto (on-line) para gerar modelos matemáticos e estatísticos (dashboard) para avaliação contínua da qualidade ambiental.</p>
-          <ul><li>Qualidade do ar e águas superficiais</li><li>Monitoramento de efluentes adjacentes</li><li>Poluentes aéreos em ambientes internos</li></ul>
+          <h3 data-i18n="mon.title">Monitoramento contínuo e preditivo</h3>
+          <p data-i18n="mon.text">Ferramentas exclusivas que utilizam IA e dados de sensoriamento remoto (on-line) para gerar modelos matemáticos e estatísticos (dashboard) para avaliação contínua da qualidade ambiental.</p>
+          <ul><li data-i18n="mon.li1">Qualidade do ar e águas superficiais</li><li data-i18n="mon.li2">Monitoramento de efluentes adjacentes</li><li data-i18n="mon.li3">Poluentes aéreos em ambientes internos</li></ul>
         </div>
       </div>
       <div class="excl reveal">
-        <h3>Tecnologias exclusivas GETA</h3>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><div><h4>Tratamento de Chorume</h4><p>Processos físico-químicos avançados sem dependência de sistemas biológicos.</p></div></div>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 7v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M9 11h6M9 15h6"/></svg></div><div><h4>Desaguamento e Inertização de Lodos</h4><p>Rota tecnológica baseada em reações de encapsulamento químico de metais.</p></div></div>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3L14 9V3"/></svg></div><div><h4>Pré-digestão de Vinhaça</h4><p>Aumento de biodegradabilidade para maior geração de biometano.</p></div></div>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></div><div><h4>CDR de Alta Performance</h4><p>Elevado poder calorífico e baixa umidade em combustível derivado de resíduos.</p></div></div>
+        <h3 data-i18n="excl.title">Tecnologias exclusivas GETA</h3>
+        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><div><h4 data-i18n="t1.title">Tratamento de Chorume</h4><p data-i18n="t1.text">Processos físico-químicos avançados sem dependência de sistemas biológicos.</p></div></div>
+        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 7v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M9 11h6M9 15h6"/></svg></div><div><h4 data-i18n="t2.title">Desaguamento e Inertização de Lodos</h4><p data-i18n="t2.text">Rota tecnológica baseada em reações de encapsulamento químico de metais.</p></div></div>
+        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3L14 9V3"/></svg></div><div><h4 data-i18n="t3.title">Pré-digestão de Vinhaça</h4><p data-i18n="t3.text">Aumento de biodegradabilidade para maior geração de biometano.</p></div></div>
+        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></div><div><h4 data-i18n="t4.title">CDR de Alta Performance</h4><p data-i18n="t4.text">Elevado poder calorífico e baixa umidade em combustível derivado de resíduos.</p></div></div>
       </div>
     </div>
   </div>
@@ -387,29 +396,29 @@
 <section class="solutions" id="solucoes">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow">Campos de atuação e soluções</span>
-      <h2>Soluções para cada desafio ambiental</h2>
+      <span class="eyebrow" data-i18n="sol.eyebrow">Campos de atuação e soluções</span>
+      <h2 data-i18n="sol.title">Soluções para cada desafio ambiental</h2>
     </div>
     <div class="sol-grid">
       <aside class="filters" id="filters">
-        <h5>Filtrar por área</h5>
-        <button class="on" data-f="all">Todas</button>
-        <button data-f="efl">Tratamento de Efluentes</button>
-        <button data-f="san">Plantas de Saneamento</button>
-        <button data-f="amb">Engenharia Ambiental</button>
-        <button data-f="rem">Análises Remotas</button>
-        <button data-f="ino">Engenharia e Inovação</button>
+        <h5 data-i18n="sol.filter">Filtrar por área</h5>
+        <button class="on" data-f="all" data-i18n="sol.all">Todas</button>
+        <button data-f="efl" data-i18n="area.2">Tratamento de Efluentes</button>
+        <button data-f="san" data-i18n="area.4">Plantas de Saneamento</button>
+        <button data-f="amb" data-i18n="area.1">Engenharia Ambiental</button>
+        <button data-f="rem" data-i18n="area.3">Análises Remotas</button>
+        <button data-f="ino" data-i18n="area.5">Engenharia e Inovação</button>
       </aside>
       <div class="cards" id="cards">
-        <article class="card" data-a="efl"><div class="thumb" style="background-image:url(img/sol-efluentes-complexos.jpg)"><span class="tag">Efluentes</span></div><div class="b"><h3>Efluentes Líquidos Complexos</h3><p>Projetos e supervisão de sistemas com eficiência, controle operacional e redução de emissões.</p></div></article>
-        <article class="card" data-a="efl san"><div class="thumb" style="background-image:url(img/sol-chorume.jpg)"><span class="tag">Efluentes</span></div><div class="b"><h3>Tratamento de Chorume (Lixiviados)</h3><p>Seleção de rota tecnológica físico-química, projeto executivo e supervisão operacional.</p></div></article>
-        <article class="card" data-a="amb rem"><div class="thumb" style="background-image:url(img/sol-gases.jpg)"><span class="tag">Ar</span></div><div class="b"><h3>Gases Odoríferos e Poluentes Atmosféricos</h3><p>Sistemas de recolhimento e tratamento de emissões gasosas industriais.</p></div></article>
-        <article class="card" data-a="san ino"><div class="thumb" style="background-image:url(img/sol-lodos.jpg)"><span class="tag">Lodos</span></div><div class="b"><h3>Desaguamento e Inertização de Lodos</h3><p>Soluções inovadoras para lodos e lamas industriais sem tecnologias convencionais.</p></div></article>
-        <article class="card" data-a="san amb"><div class="thumb" style="background-image:url(img/sol-residuos-cdr.jpg)"><span class="tag">Resíduos</span></div><div class="b"><h3>Valorização de Resíduos Sólidos Urbanos</h3><p>Transformação em Combustível Derivado de Resíduos (CDR) de alta performance.</p></div></article>
-        <article class="card" data-a="ino"><div class="thumb" style="background-image:url(img/sol-vinhaca.jpg)"><span class="tag">Bioenergia</span></div><div class="b"><h3>Aproveitamento de Subprodutos Industriais</h3><p>Pré-digestão de vinhaça para aumento de produção de biometano.</p></div></article>
-        <article class="card" data-a="rem amb"><div class="thumb" style="background-image:url(img/sol-monitoramento.jpg)"><span class="tag">IA</span></div><div class="b"><h3>Monitoramento Remoto com IA</h3><p>Sensoriamento on-line e dashboards preditivos de qualidade do ar, águas e efluentes.</p></div></article>
-        <article class="card" data-a="ino amb"><div class="thumb" style="background-image:url(img/sol-customizadas.jpg)"><span class="tag">Inovação</span></div><div class="b"><h3>Soluções Customizadas</h3><p>Desenvolvimento de tecnologias para emissões sem soluções convencionais.</p></div></article>
-        <article class="card" data-a="san efl"><div class="thumb" style="background-image:url(img/area-plantas-saneamento.jpg)"><span class="tag">Saneamento</span></div><div class="b"><h3>Estações de Tratamento</h3><p>Otimização e supervisão operacional de plantas de saneamento e ETEs.</p></div></article>
+        <article class="card" data-a="efl"><div class="thumb" style="background-image:url(img/sol-efluentes-complexos.jpg)"><span class="tag" data-i18n="tag.efl">Efluentes</span></div><div class="b"><h3 data-i18n="c1.title">Efluentes Líquidos Complexos</h3><p data-i18n="c1.text">Projetos e supervisão de sistemas com eficiência, controle operacional e redução de emissões.</p></div></article>
+        <article class="card" data-a="efl san"><div class="thumb" style="background-image:url(img/sol-chorume.jpg)"><span class="tag" data-i18n="tag.efl">Efluentes</span></div><div class="b"><h3 data-i18n="c2.title">Tratamento de Chorume (Lixiviados)</h3><p data-i18n="c2.text">Seleção de rota tecnológica físico-química, projeto executivo e supervisão operacional.</p></div></article>
+        <article class="card" data-a="amb rem"><div class="thumb" style="background-image:url(img/sol-gases.jpg)"><span class="tag" data-i18n="tag.air">Ar</span></div><div class="b"><h3 data-i18n="c3.title">Gases Odoríferos e Poluentes Atmosféricos</h3><p data-i18n="c3.text">Sistemas de recolhimento e tratamento de emissões gasosas industriais.</p></div></article>
+        <article class="card" data-a="san ino"><div class="thumb" style="background-image:url(img/sol-lodos.jpg)"><span class="tag" data-i18n="tag.sludge">Lodos</span></div><div class="b"><h3 data-i18n="t2.title">Desaguamento e Inertização de Lodos</h3><p data-i18n="c4.text">Soluções inovadoras para lodos e lamas industriais sem tecnologias convencionais.</p></div></article>
+        <article class="card" data-a="san amb"><div class="thumb" style="background-image:url(img/sol-residuos-cdr.jpg)"><span class="tag" data-i18n="tag.waste">Resíduos</span></div><div class="b"><h3 data-i18n="c5.title">Valorização de Resíduos Sólidos Urbanos</h3><p data-i18n="c5.text">Transformação em Combustível Derivado de Resíduos (CDR) de alta performance.</p></div></article>
+        <article class="card" data-a="ino"><div class="thumb" style="background-image:url(img/sol-vinhaca.jpg)"><span class="tag" data-i18n="tag.bio">Bioenergia</span></div><div class="b"><h3 data-i18n="c6.title">Aproveitamento de Subprodutos Industriais</h3><p data-i18n="c6.text">Pré-digestão de vinhaça para aumento de produção de biometano.</p></div></article>
+        <article class="card" data-a="rem amb"><div class="thumb" style="background-image:url(img/sol-monitoramento.jpg)"><span class="tag" data-i18n="stat.3b">IA</span></div><div class="b"><h3 data-i18n="c7.title">Monitoramento Remoto com IA</h3><p data-i18n="c7.text">Sensoriamento on-line e dashboards preditivos de qualidade do ar, águas e efluentes.</p></div></article>
+        <article class="card" data-a="ino amb"><div class="thumb" style="background-image:url(img/sol-customizadas.jpg)"><span class="tag" data-i18n="tag.inno">Inovação</span></div><div class="b"><h3 data-i18n="c8.title">Soluções Customizadas</h3><p data-i18n="c8.text">Desenvolvimento de tecnologias para emissões sem soluções convencionais.</p></div></article>
+        <article class="card" data-a="san efl"><div class="thumb" style="background-image:url(img/area-plantas-saneamento.jpg)"><span class="tag" data-i18n="tag.san">Saneamento</span></div><div class="b"><h3 data-i18n="c9.title">Estações de Tratamento</h3><p data-i18n="c9.text">Otimização e supervisão operacional de plantas de saneamento e ETEs.</p></div></article>
       </div>
     </div>
   </div>
@@ -420,22 +429,22 @@
   <img class="bgmark" src="img/geta-mark-white.png" alt="" aria-hidden="true">
   <div class="wrap contact-grid">
     <div class="reveal">
-      <span class="eyebrow">Fale conosco</span>
-      <h2>Quer saber mais? Fale com um especialista GETA</h2>
-      <p>Conte seu desafio ambiental e nossa equipe retorna com a melhor rota tecnológica para o seu caso.</p>
+      <span class="eyebrow" data-i18n="nav.talk">Fale conosco</span>
+      <h2 data-i18n="ct.title">Quer saber mais? Fale com um especialista GETA</h2>
+      <p data-i18n="ct.text">Conte seu desafio ambiental e nossa equipe retorna com a melhor rota tecnológica para o seu caso.</p>
       <ul>
-        <li>Atendimento a empresas e órgãos públicos</li>
-        <li>Diagnóstico técnico e seleção de rota tecnológica</li>
-        <li>Projeto executivo e supervisão operacional</li>
+        <li data-i18n="ct.li1">Atendimento a empresas e órgãos públicos</li>
+        <li data-i18n="ct.li2">Diagnóstico técnico e seleção de rota tecnológica</li>
+        <li data-i18n="ct.li3">Projeto executivo e supervisão operacional</li>
       </ul>
     </div>
-    <form class="reveal" onsubmit="event.preventDefault();this.querySelector('button').textContent='Mensagem enviada ✓'">
-      <h3>Envie sua mensagem</h3>
-      <div class="row"><input placeholder="Nome" required><input placeholder="Empresa / Órgão"></div>
-      <div class="row"><input type="email" placeholder="E-mail" required><input placeholder="Telefone"></div>
-      <select><option>Área de interesse</option><option>Engenharia Ambiental</option><option>Tratamento de Efluentes</option><option>Análises Remotas</option><option>Plantas de Saneamento</option><option>Engenharia e Inovação</option></select>
-      <textarea placeholder="Descreva seu desafio"></textarea>
-      <button class="btn" style="justify-self:start">Enviar mensagem</button>
+    <form class="reveal" id="contactForm">
+      <h3 data-i18n="form.title">Envie sua mensagem</h3>
+      <div class="row"><input data-i18n-ph="ph.name" placeholder="Nome" required><input data-i18n-ph="ph.company" placeholder="Empresa / Órgão"></div>
+      <div class="row"><input type="email" data-i18n-ph="ph.email" placeholder="E-mail" required><input data-i18n-ph="ph.phone" placeholder="Telefone"></div>
+      <select><option data-i18n="form.area">Área de interesse</option><option data-i18n="area.1">Engenharia Ambiental</option><option data-i18n="area.2">Tratamento de Efluentes</option><option data-i18n="area.3">Análises Remotas</option><option data-i18n="area.4">Plantas de Saneamento</option><option data-i18n="area.5">Engenharia e Inovação</option></select>
+      <textarea data-i18n-ph="ph.msg" placeholder="Descreva seu desafio"></textarea>
+      <button class="btn" style="justify-self:start" data-i18n="form.send">Enviar mensagem</button>
     </form>
   </div>
 </section>
@@ -444,17 +453,18 @@
 <footer class="footer">
   <div class="wrap">
     <div class="foot-grid">
-      <div><img class="flogo" src="img/logo-geta-white.png" alt="GETA"><p>Grupo de Especialistas em Tecnologias Ambientais.<br>Inovação a Serviço da Sustentabilidade.</p></div>
-      <div><h4>A GETA</h4><ul><li><a href="#sobre">Quem somos</a></li><li><a href="#tecnologia">Diferencial tecnológico</a></li><li><a href="#solucoes">Soluções</a></li></ul></div>
-      <div><h4>Áreas de atuação</h4><ul><li><a href="#areas">Engenharia Ambiental</a></li><li><a href="#areas">Tratamento de Efluentes</a></li><li><a href="#areas">Análises Remotas</a></li><li><a href="#areas">Plantas de Saneamento</a></li><li><a href="#areas">Engenharia e Inovação</a></li></ul></div>
-      <div><h4>Contato</h4><ul><li><a href="#contato">Fale com um especialista</a></li><li><a href="#">Política de privacidade</a></li><li><a href="#">Declaração de cookies</a></li></ul></div>
+      <div><img class="flogo" src="img/logo-geta-white.png" alt="GETA"><p data-i18n="ft.desc">Grupo de Especialistas em Tecnologias Ambientais.<br>Inovação a Serviço da Sustentabilidade.</p></div>
+      <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="#sobre" data-i18n="nav.who">Quem somos</a></li><li><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
+      <div><h4 data-i18n="nav.areas">Áreas de atuação</h4><ul><li><a href="#areas" data-i18n="area.1">Engenharia Ambiental</a></li><li><a href="#areas" data-i18n="area.2">Tratamento de Efluentes</a></li><li><a href="#areas" data-i18n="area.3">Análises Remotas</a></li><li><a href="#areas" data-i18n="area.4">Plantas de Saneamento</a></li><li><a href="#areas" data-i18n="area.5">Engenharia e Inovação</a></li></ul></div>
+      <div><h4 data-i18n="nav.contact">Contato</h4><ul><li><a href="#contato" data-i18n="cta.specialist">Fale com um especialista</a></li><li><a href="#" data-i18n="ft.privacy">Política de privacidade</a></li><li><a href="#" data-i18n="ft.cookies">Declaração de cookies</a></li></ul></div>
     </div>
-    <div class="legal"><span>© 2026 GETA – Grupo de Especialistas em Tecnologias Ambientais.</span><span>Fotos: Pexels</span></div>
+    <div class="legal"><span data-i18n="ft.copy">© 2026 GETA – Grupo de Especialistas em Tecnologias Ambientais.</span><span data-i18n="ft.photos">Fotos: Pexels</span></div>
   </div>
 </footer>
 
-<div class="cookie" id="cookie"><span>Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa Política de Privacidade.</span><button onclick="cookie.remove()">Aceitar</button><button class="alt" onclick="cookie.remove()">Recusar</button></div>
+<div class="cookie" id="cookie"><span data-i18n="cookie.text">Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa Política de Privacidade.</span><button data-i18n="cookie.ok" onclick="cookie.remove()">Aceitar</button><button class="alt" data-i18n="cookie.no" onclick="cookie.remove()">Recusar</button></div>
 
+<script src="i18n.js"></script>
 <script>
   // Header
   const header=document.getElementById('header');
@@ -473,19 +483,25 @@
   const panels=[...document.querySelectorAll('.panel')];
   panels.forEach(p=>p.addEventListener('mouseenter',()=>{panels.forEach(x=>x.classList.remove('open'));p.classList.add('open')}));
 
-  // Ciclo "Como trabalhamos"
-  const steps=['Diagnóstico','Rota tecnológica','Projeto executivo','Implantação','Supervisão operacional','Monitoramento com IA'];
+  // Ciclo "Como trabalhamos" (rótulos traduzíveis: cycle.1 … cycle.6)
+  const stepsPT=['Diagnóstico','Rota tecnológica','Projeto executivo','Implantação','Supervisão operacional','Monitoramento com IA'];
   const cycle=document.getElementById('cycle');
-  steps.forEach((s,i)=>{const a=i/steps.length*2*Math.PI-Math.PI/2;const n=document.createElement('div');n.className='node';n.style.left=(50+37*Math.cos(a))+'%';n.style.top=(50+37*Math.sin(a))+'%';n.innerHTML=`<div class="dot">${String(i+1).padStart(2,'0')}</div><span>${s}</span>`;cycle.append(n)});
+  stepsPT.forEach((s,i)=>{const a=i/stepsPT.length*2*Math.PI-Math.PI/2;const n=document.createElement('div');n.className='node';n.style.left=(50+37*Math.cos(a))+'%';n.style.top=(50+37*Math.sin(a))+'%';n.innerHTML=`<div class="dot">${String(i+1).padStart(2,'0')}</div><span data-i18n="cycle.${i+1}">${s}</span>`;cycle.append(n)});
   const nodes=[...cycle.querySelectorAll('.node')];let k=0;setInterval(()=>{nodes.forEach(n=>n.classList.remove('on'));nodes[k++%nodes.length].classList.add('on')},1600);
 
   // Filtro de soluções
   const fbtns=[...document.querySelectorAll('#filters button')],cards=[...document.querySelectorAll('.card')];
   fbtns.forEach(b=>b.onclick=()=>{fbtns.forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;cards.forEach(c=>c.classList.toggle('hide',f!=='all'&&!c.dataset.a.split(' ').includes(f)))});
 
+  // Formulário (demonstração)
+  document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent=I18N.t('form.sent');b.dataset.sent='1'});
+
   // Animação ao rolar
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Idiomas
+  I18N.init();
 </script>
 </body>
 </html>
