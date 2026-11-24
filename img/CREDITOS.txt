@@ -41,3 +41,8 @@ img/cases/estacao-meteorologica-api/pluma-emissao.jpg ... pexels.com/photo/30342
 img/cases/capa-interligacao-hidraulica-linhas.jpg e interligacao-hidraulica-linhas/rede-tubulacoes.jpg ... pexels.com/photo/17728787
 img/cases/interligacao-hidraulica-linhas/valvula-gaveta.jpg ... pexels.com/photo/12527113
 img/cases/interligacao-hidraulica-linhas/flanges.jpg ... pexels.com/photo/36325392
+img/cases/chorume-redes-neurais/previsao-lstm.jpg ... gráfico do notebook público github.com/felipe77-CH/Leachate-Flow-Analysis
+
+img/cases/capa-secagem-mineracao-cobre.jpg ... pexels.com/photo/38500487
+img/cases/secagem-mineracao-cobre/mina-ceu-aberto.jpg ... pexels.com/photo/31721779
+img/cases/secagem-mineracao-cobre/planta-deserto.jpg ... pexels.com/photo/27852910

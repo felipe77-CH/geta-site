@@ -277,22 +277,22 @@ window.GETA_CASES =
   },
   {
     "slug": "secagem-mineracao-cobre",
-    "eixos": ["proc", "mod"],
+    "eixos": ["proc", "mod", "dig"],
     "capa": "img/cases/capa-secagem-mineracao-cobre.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2023",
+    "status": "publicado",
     "titulo": {
-      "pt": "Eficiência energética na secagem – mineração de cobre",
-      "en": "Energy efficiency in drying – copper mining",
-      "es": "Eficiencia energética en el secado – minería del cobre"
+      "pt": "Otimização do consumo de combustível em secador rotativo – mineração de cobre no Chile",
+      "en": "Fuel consumption optimization in a rotary dryer – copper mining in Chile",
+      "es": "Optimización del consumo de combustible en secador rotatorio – minería del cobre en Chile"
     },
     "resumo": {
-      "pt": "Estudo de eficiência energética do processo de secagem na mineração de cobre, com balanços de energia e identificação de oportunidades de ganho.",
-      "en": "Energy efficiency study of the drying process in copper mining, with energy balances and identification of improvement opportunities.",
-      "es": "Estudio de eficiencia energética del proceso de secado en la minería del cobre, con balances de energía e identificación de oportunidades de mejora."
+      "pt": "Consultoria de análise de dados e eficiência energética para uma grande mineradora de cobre e molibdênio do norte do Chile: mineração de dados operacionais, curva de base energia × produção e identificação de regimes com consumo excessivo de diesel.",
+      "en": "Data analysis and energy efficiency consultancy for a major copper and molybdenum miner in northern Chile: operational data mining, energy × production baseline and identification of regimes with excess diesel use.",
+      "es": "Consultoría de análisis de datos y eficiencia energética para una gran minera de cobre y molibdeno del norte de Chile: minería de datos operacionales, curva base energía × producción e identificación de regímenes con consumo excesivo de diésel."
     },
-    "tags": ["Secagem", "Eficiência energética", "Balanço de energia", "Mineração de cobre"]
+    "tags": ["Eficiência energética", "Mineração de cobre", "Mineração de dados", "K-means", "Secador rotativo"]
   },
   {
     "slug": "areas-contaminadas-metais",
@@ -410,22 +410,22 @@ window.GETA_CASES =
   },
   {
     "slug": "chorume-redes-neurais",
-    "eixos": ["dig", "mod"],
+    "eixos": ["dig", "mod", "amb"],
     "capa": "img/cases/capa-chorume-redes-neurais.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2023",
+    "status": "publicado",
     "titulo": {
-      "pt": "Estimativa de geração de chorume com redes neurais",
-      "en": "Leachate generation forecasting with neural networks",
-      "es": "Estimación de generación de lixiviado con redes neuronales"
+      "pt": "Previsão da vazão de chorume com deep learning (redes LSTM)",
+      "en": "Leachate flow forecasting with deep learning (LSTM networks)",
+      "es": "Predicción del caudal de lixiviado con deep learning (redes LSTM)"
     },
     "resumo": {
-      "pt": "Modelos de redes neurais para estimar a geração de chorume a partir de dados climáticos e operacionais do aterro.",
-      "en": "Neural network models to estimate leachate generation from the landfill's climate and operational data.",
-      "es": "Modelos de redes neuronales para estimar la generación de lixiviado a partir de datos climáticos y operacionales del relleno."
+      "pt": "Análise de séries temporais de vazão de chorume e pluviometria de um aterro sanitário no sul do Brasil e modelo de deep learning (LSTM) para prever a vazão diária.",
+      "en": "Time series analysis of leachate flow and rainfall at a landfill in southern Brazil and a deep learning (LSTM) model to forecast daily flow.",
+      "es": "Análisis de series temporales de caudal de lixiviado y pluviometría de un relleno sanitario en el sur de Brasil y modelo de deep learning (LSTM) para predecir el caudal diario."
     },
-    "tags": ["Redes neurais", "Chorume", "Séries temporais", "Aterro sanitário"]
+    "tags": ["Deep learning", "LSTM", "Séries temporais", "Chorume", "Pluviometria", "Python / TensorFlow", "Decomposição sazonal"]
   },
   {
     "slug": "dashboards-kpi",

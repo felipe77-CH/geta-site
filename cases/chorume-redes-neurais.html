@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estimativa de geração de chorume com redes neurais | GETA</title>
-<meta name="description" content="Modelos de redes neurais para estimar a geração de chorume a partir de dados climáticos e operacionais do aterro.">
+<title>Previsão da vazão de chorume com deep learning (redes LSTM) | GETA</title>
+<meta name="description" content="Análise de séries temporais de vazão de chorume e pluviometria de um aterro sanitário no sul do Brasil e modelo de deep learning (LSTM) para prever a vazão diária.">
 <link rel="icon" href="../img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="../assets/mega.css?v=20261124c">
 </head>
 <!-- =====================================================================
-  CASE: Estimativa de geração de chorume com redes neurais
+  CASE: Previsão da vazão de chorume com deep learning (redes LSTM)
   ---------------------------------------------------------------------
   COMO PREENCHER
   1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
@@ -35,10 +35,10 @@
 
   <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
   <div class="cs-kpis">
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 1 (ex.: vazão, capacidade)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 2 (ex.: eficiência, remoção)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 3 (ex.: economia, redução de custo)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 4 (ex.: prazo, duração)</span></div>
+    <div class="kpi"><b>485</b><span>dias de dados diários de vazão e chuva</span></div>
+    <div class="kpi"><b>60 dias</b><span>de histórico usados em cada previsão</span></div>
+    <div class="kpi"><b>2 LSTM</b><span>camadas de deep learning (200 e 150 unidades)</span></div>
+    <div class="kpi"><b>9 épocas</b><span>de treinamento com parada antecipada</span></div>
   </div>
 
   <div class="cs-layout">
@@ -48,11 +48,11 @@
       <div class="cs-facts">
         <h4 data-i18n="cs.facts">Ficha técnica</h4>
         <dl>
-          <div><dt data-i18n="cs.f.loc">Local</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.period">Período</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>—</dd></div>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Sul do Brasil</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Janeiro de 2022 a abril de 2023</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Aterro sanitário (resíduos sólidos urbanos)</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>~5.000 t/dia de resíduos · 720 a 1.440 m³/dia de chorume</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Inteligência artificial e modelagem preditiva</dd></div>
         </dl>
       </div>
     </aside>
@@ -64,7 +64,8 @@
         <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Qual era o problema do cliente? Descreva a situação inicial, o que precisava ser resolvido e por que era crítico (exigência legal, custo, risco ambiental, desempenho).</p>
+            <p>A vazão de chorume que chega a uma estação de tratamento varia muito de um dia para o outro, em função das chuvas, da idade das células do aterro e da operação. Sem antecipar essa vazão, fica difícil <strong>dimensionar a capacidade de tratamento</strong>, planejar a operação e se preparar para picos.</p>
+            <p>O objetivo foi usar <strong>inteligência artificial</strong>, mais especificamente <strong>deep learning</strong>, para aprender o comportamento histórico da vazão e prever a geração diária de chorume a partir dos dados ambientais do aterro.</p>
           </div>
         </div>
       </section>
@@ -74,7 +75,12 @@
         <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Setor e localização, tipo de processo ou efluente, vazões e cargas, condições de operação, restrições do projeto e condicionantes legais.</p>
+            <ul>
+              <li>Aterro sanitário no <strong>sul do Brasil</strong>, que recebe cerca de <strong>5.000 toneladas de resíduos por dia</strong>, distribuídas em duas células principais.</li>
+              <li>Geração de chorume da ordem de <strong>30 m³/h na estação seca e 60 m³/h na estação chuvosa</strong> (720 a 1.440 m³/dia).</li>
+              <li>Chorume composto por uma mistura de "chorume velho", das células antigas, e "chorume novo", das células recentes, com sólidos suspensos, DBO, DQO recalcitrante, nitrogênio amoniacal e sais dissolvidos.</li>
+              <li>Base de dados com <strong>485 dias</strong> de registros diários de vazão e pluviometria, de janeiro de 2022 a abril de 2023.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -84,7 +90,11 @@
         <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Quais dados foram levantados e analisados (campanhas de amostragem, histórico operacional, ensaios de laboratório, visitas técnicas)? Quais foram os principais achados?</p>
+            <ul>
+              <li><strong>Vazão média</strong> de cerca de <strong>1.285 m³/dia</strong>, com desvio padrão de cerca de 508 m³/dia (coeficiente de variação próximo de 40%): uma série muito irregular, difícil de prever com regras simples.</li>
+              <li>A <strong>média móvel de 60 dias</strong> e a <strong>decomposição sazonal</strong> mostraram uma tendência de crescimento da vazão ao longo do período, informação importante para planejar a capacidade da estação.</li>
+              <li>As chuvas têm forte componente sazonal e picos que se refletem na vazão de chorume com algum atraso, o que favorece modelos capazes de "lembrar" o passado recente.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -94,7 +104,15 @@
         <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Etapas do trabalho, ensaios realizados, critérios de seleção de alternativas, normas e referências técnicas utilizadas.</p>
+            <ol>
+              <li><strong>Análise exploratória</strong>: estatística descritiva, média móvel de 60 dias e decomposição sazonal aditiva (tendência, sazonalidade e resíduo) da vazão e da chuva.</li>
+              <li><strong>Normalização</strong> da vazão entre 0 e 1 (Min-Max), para estabilizar o treinamento da rede.</li>
+              <li><strong>Janelas deslizantes</strong>: cada exemplo de treino usa os 60 dias anteriores como entrada e a vazão do dia seguinte como alvo.</li>
+              <li><strong>Divisão temporal</strong> dos dados: 90% iniciais para treino e 10% finais para teste, sem embaralhar, para simular uma previsão real do futuro.</li>
+              <li><strong>Treinamento da rede LSTM</strong> com otimizador Adam, perda por erro quadrático médio (MSE), 10% do treino reservado para validação e parada antecipada.</li>
+              <li><strong>Avaliação</strong> no período de teste, com os valores previstos convertidos de volta para m³/dia e cálculo do coeficiente de determinação (R²).</li>
+            </ol>
+            <figure><img src="../img/cases/chorume-redes-neurais/janelas-deslizantes.jpg" alt="Ilustração de janelas deslizantes de 60 dias usadas para prever o dia seguinte"><figcaption>Janelas deslizantes de 60 dias (ilustrativo).</figcaption></figure>
           </div>
         </div>
       </section>
@@ -104,7 +122,26 @@
         <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Rota tecnológica adotada, configuração do sistema, dimensionamento e principais decisões de projeto. Um fluxograma ajuda muito aqui.</p>
+            <p><strong>Por que uma rede LSTM?</strong> Redes neurais recorrentes processam os dados em sequência, mas as versões simples "esquecem" rapidamente o que aconteceu muitos passos atrás. A <strong>LSTM</strong> (<em>Long Short-Term Memory</em>) resolve isso com uma <strong>memória interna</strong> controlada por três portas:</p>
+            <ul>
+              <li><strong>Porta de esquecimento</strong>: decide que parte da memória deve ser descartada;</li>
+              <li><strong>Porta de entrada</strong>: decide que informação do dia atual deve ser incorporada;</li>
+              <li><strong>Porta de saída</strong>: decide o que a célula entrega como resultado para a próxima camada.</li>
+            </ul>
+            <p>Assim, a rede consegue relacionar a vazão de hoje com padrões de semanas anteriores, algo essencial em séries ambientais com sazonalidade e efeitos acumulados de chuva.</p>
+            <figure><img src="../img/cases/chorume-redes-neurais/celula-lstm.jpg" alt="Diagrama simplificado de uma célula LSTM com portas de esquecimento, entrada e saída"><figcaption>Funcionamento simplificado de uma célula LSTM.</figcaption></figure>
+            <p><strong>Arquitetura adotada:</strong> duas camadas LSTM empilhadas (200 e 150 unidades), cada uma seguida de <em>dropout</em> de 20% para reduzir o sobreajuste, e uma camada densa com uma saída, que é a vazão prevista do dia seguinte.</p>
+            <figure><img src="../img/cases/chorume-redes-neurais/arquitetura-lstm.jpg" alt="Diagrama da preparação dos dados e da arquitetura da rede LSTM"><figcaption>Preparação dos dados e arquitetura da rede.</figcaption></figure>
+            <table>
+              <tr><th>Hiperparâmetro</th><th>Valor</th></tr>
+              <tr><td>Janela de entrada</td><td>60 dias</td></tr>
+              <tr><td>Camadas LSTM</td><td>2 (200 e 150 unidades)</td></tr>
+              <tr><td>Dropout</td><td>20% após cada camada LSTM</td></tr>
+              <tr><td>Saída</td><td>1 neurônio (vazão do dia seguinte)</td></tr>
+              <tr><td>Otimizador e perda</td><td>Adam · erro quadrático médio (MSE)</td></tr>
+              <tr><td>Treinamento</td><td>até 100 épocas, com parada antecipada (paciência de 3 épocas)</td></tr>
+              <tr><td>Divisão dos dados</td><td>90% treino (10% dele para validação) · 10% teste</td></tr>
+            </table>
           </div>
         </div>
       </section>
@@ -114,7 +151,13 @@
         <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Descreva as tecnologias, operações unitárias e equipamentos envolvidos e o papel de cada um. As etiquetas abaixo são editadas em cases.js.</p>
+            <ul>
+              <li><strong>Deep learning</strong> com redes neurais recorrentes <strong>LSTM</strong> (TensorFlow/Keras).</li>
+              <li><strong>Python</strong> para ciência de dados: pandas, NumPy, scikit-learn (normalização e métricas) e statsmodels (decomposição sazonal).</li>
+              <li><strong>Análise de séries temporais</strong>: médias móveis, decomposição sazonal e validação temporal.</li>
+              <li>Notebook Jupyter com o fluxo completo, publicado no <a href="https://github.com/felipe77-CH/Leachate-Flow-Analysis" target="_blank" rel="noopener">GitHub</a>.</li>
+            </ul>
+            <p>A mesma abordagem pode ser aplicada a outras variáveis ambientais, como a qualidade do efluente, as emissões, o consumo de reagentes ou a demanda de energia de uma estação de tratamento.</p>
           </div>
         </div>
         <ul class="cs-tags" data-from="tags"></ul>
@@ -125,7 +168,10 @@
         <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Modelos, simulações e ferramentas usados (balanços, CFD, Python, MATLAB, redes neurais, DMD, dashboards…) e o que cada um permitiu avaliar ou decidir.</p>
+            <p><strong>Treinamento.</strong> O erro caiu rapidamente nas primeiras épocas e estabilizou. A parada antecipada interrompeu o treinamento na 9ª época, quando o erro de validação deixou de melhorar, evitando que a rede "decorasse" os dados de treino.</p>
+            <figure><img src="../img/cases/chorume-redes-neurais/curva-treinamento.jpg" alt="Curva de aprendizado com erro de treino e de validação por época"><figcaption>Curva de aprendizado da rede (valores registrados no treinamento).</figcaption></figure>
+            <p><strong>Previsão.</strong> No período de teste, a rede reproduziu o nível e a tendência da vazão, mas suavizou os picos de um dia para o outro.</p>
+            <figure><img src="../img/cases/chorume-redes-neurais/previsao-lstm.jpg" alt="Gráfico do modelo de previsão com dados de treino, valores reais e previsões"><figcaption>Treino, valores reais e previsões no período de teste.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -135,7 +181,19 @@
         <h2 data-i18n="cs.s8">Resultados obtidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Indicadores antes/depois, eficiências de remoção, ganhos de desempenho, atendimento a limites legais. Gráficos e tabelas são bem-vindos.</p>
+            <ul>
+              <li>A rede LSTM aprendeu o <strong>nível e a tendência</strong> da vazão de chorume e gerou previsões coerentes para o período de teste.</li>
+              <li>As oscilações bruscas de um dia para o outro não foram capturadas (R² de cerca de 0,11 no teste), o que é esperado para um modelo que usa <strong>apenas a vazão histórica</strong>: os picos diários dependem principalmente das chuvas.</li>
+              <li>O estudo funciona como <strong>prova de conceito</strong> e mostra o caminho para modelos mais precisos.</li>
+            </ul>
+            <p><strong>Próximos passos para aumentar a precisão:</strong></p>
+            <ul>
+              <li>modelo <strong>multivariado</strong>, incluindo a pluviometria (com defasagens) e variáveis operacionais como entradas;</li>
+              <li>prever <strong>médias semanais</strong>, mais estáveis e úteis para o planejamento;</li>
+              <li>comparar com outras arquiteturas (GRU, CNN-LSTM, modelos com mecanismo de atenção) e com modelos clássicos como SARIMA;</li>
+              <li>ajustar hiperparâmetros com validação cruzada temporal e usar métricas como MAE e RMSE;</li>
+              <li>estimar a incerteza das previsões, por exemplo com <em>ensembles</em> de redes.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -160,7 +218,13 @@
         <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Papel da GETA no projeto (diagnóstico, projeto, supervisão, P&amp;D, operação assistida…), limites do escopo e interface com o cliente e parceiros.</p>
+            <p>A GETA foi responsável por todo o estudo:</p>
+            <ul>
+              <li>organização e tratamento da base de dados de vazão e pluviometria;</li>
+              <li>análise estatística e de séries temporais;</li>
+              <li>desenvolvimento, treinamento e avaliação do modelo de deep learning;</li>
+              <li>interpretação dos resultados e definição dos próximos passos.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -170,7 +234,12 @@
         <h2 data-i18n="cs.s11">Principais entregáveis</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Relatórios técnicos, memoriais de cálculo, projeto básico/executivo, modelos, dashboards, protótipos, patentes, treinamentos.</p>
+            <ul>
+              <li>Notebook Jupyter com o fluxo completo de análise e previsão (<a href="https://github.com/felipe77-CH/Leachate-Flow-Analysis" target="_blank" rel="noopener">repositório público no GitHub</a>).</li>
+              <li>Análise de tendências de vazão e de chuvas, com médias móveis e decomposição sazonal.</li>
+              <li>Modelo LSTM de previsão diária da vazão de chorume, com curva de aprendizado e avaliação.</li>
+              <li>Recomendações para evoluir o modelo para uma versão multivariada.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -180,9 +249,9 @@
       <section class="cs-gallery">
         <h2 data-i18n="cs.gallery">Galeria</h2>
         <div class="gal">
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 1</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 2</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 3</div></figure>
+          <figure><img src="../img/cases/chorume-redes-neurais/celula-lstm.jpg" alt="Célula LSTM"><figcaption>Célula LSTM.</figcaption></figure>
+          <figure><img src="../img/cases/chorume-redes-neurais/curva-treinamento.jpg" alt="Curva de aprendizado"><figcaption>Curva de aprendizado.</figcaption></figure>
+          <figure><img src="../img/cases/chorume-redes-neurais/previsao-lstm.jpg" alt="Previsão com LSTM"><figcaption>Previsão no período de teste.</figcaption></figure>
         </div>
       </section>
 

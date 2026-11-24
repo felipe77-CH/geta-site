@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eficiência energética na secagem – mineração de cobre | GETA</title>
-<meta name="description" content="Estudo de eficiência energética do processo de secagem na mineração de cobre, com balanços de energia e identificação de oportunidades de ganho.">
+<title>Otimização do consumo de combustível em secador rotativo – mineração de cobre no Chile | GETA</title>
+<meta name="description" content="Consultoria de análise de dados e eficiência energética para uma grande mineradora de cobre e molibdênio do norte do Chile: mineração de dados operacionais, curva de base energia × produção e identificação de regimes com consumo excessivo de diesel.">
 <link rel="icon" href="../img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="../assets/mega.css?v=20261124c">
 </head>
 <!-- =====================================================================
-  CASE: Eficiência energética na secagem – mineração de cobre
+  CASE: Otimização do consumo de combustível em secador rotativo – mineração de cobre no Chile
   ---------------------------------------------------------------------
   COMO PREENCHER
   1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
@@ -35,10 +35,10 @@
 
   <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
   <div class="cs-kpis">
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 1 (ex.: vazão, capacidade)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 2 (ex.: eficiência, remoção)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 3 (ex.: economia, redução de custo)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 4 (ex.: prazo, duração)</span></div>
+    <div class="kpi"><b>13.174</b><span>registros horários de operação analisados</span></div>
+    <div class="kpi"><b>~8,6 l/t</b><span>de consumo específico médio de diesel</span></div>
+    <div class="kpi"><b>6</b><span>regimes de operação identificados por K-means</span></div>
+    <div class="kpi"><b>~17%</b><span>menos diesel possível nos dias de regime de alto consumo</span></div>
   </div>
 
   <div class="cs-layout">
@@ -48,11 +48,11 @@
       <div class="cs-facts">
         <h4 data-i18n="cs.facts">Ficha técnica</h4>
         <dl>
-          <div><dt data-i18n="cs.f.loc">Local</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.period">Período</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>—</dd></div>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Norte do Chile</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Dados de junho de 2021 a dezembro de 2022</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Mineração de cobre e molibdênio</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>~456 t/dia de concentrado seco · ~3.900 l/dia de diesel</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Consultoria em eficiência energética e análise de dados</dd></div>
         </dl>
       </div>
     </aside>
@@ -64,7 +64,8 @@
         <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Qual era o problema do cliente? Descreva a situação inicial, o que precisava ser resolvido e por que era crítico (exigência legal, custo, risco ambiental, desempenho).</p>
+            <p>O secador rotativo de concentrado é um dos maiores consumidores de combustível de uma planta de beneficiamento de cobre. O cliente tinha anos de dados de operação registrados, mas <strong>não sabia quanto diesel deveria consumir</strong> para cada tonelada produzida, nem em que condições o equipamento estava gastando mais do que o necessário.</p>
+            <p>A GETA foi contratada para uma <strong>consultoria de análise e otimização do consumo de combustível</strong>: transformar os dados históricos em uma linha de base energética e em oportunidades concretas de economia.</p>
           </div>
         </div>
       </section>
@@ -74,7 +75,13 @@
         <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Setor e localização, tipo de processo ou efluente, vazões e cargas, condições de operação, restrições do projeto e condicionantes legais.</p>
+            <ul>
+              <li>Cliente: <strong>uma das grandes mineradoras de cobre e molibdênio do norte do Chile</strong>.</li>
+              <li>No processo, o rejeito seco é misturado com água pressurizada e passa por várias etapas de flotação, que enriquecem o cobre e o molibdênio. O concentrado é <strong>secado em um secador rotativo a diesel</strong>, armazenado e exportado.</li>
+              <li>Base de dados de <strong>junho de 2021 a dezembro de 2022</strong>: vazão horária de diesel, produção diária de concentrado seco e três pontos de temperatura do secador (entrada dos gases, meio e saída).</li>
+              <li>Operação em regime contínuo, com produção média de cerca de <strong>456 t/dia</strong> e consumo médio de cerca de <strong>3.900 litros de diesel por dia</strong>.</li>
+            </ul>
+            <figure><img src="../img/cases/secagem-mineracao-cobre/fluxo-processo.jpg" alt="Fluxograma do processo com flotação, filtragem, secador rotativo a diesel e exportação"><figcaption>Posição do secador rotativo no processo e pontos de medição usados no estudo.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -84,7 +91,13 @@
         <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Quais dados foram levantados e analisados (campanhas de amostragem, histórico operacional, ensaios de laboratório, visitas técnicas)? Quais foram os principais achados?</p>
+            <ul>
+              <li>Os dados brutos tinham problemas típicos de sistemas industriais: <strong>665 leituras negativas</strong> de vazão de combustível e cerca de <strong>2.400 leituras quase nulas</strong> (paradas e falhas de medição), além de lacunas nos registros de temperatura.</li>
+              <li>O consumo de diesel e a produção <strong>variavam muito de um dia para o outro</strong>, sem uma referência clara do que era um consumo "normal".</li>
+              <li>A temperatura dos gases na entrada chegava a cerca de <strong>600 a 800 °C</strong>, com grandes oscilações, um sinal de que a queima nem sempre acompanhava a carga do secador.</li>
+              <li>A correlação entre consumo de diesel e produção diária era apenas moderada: parte do combustível <strong>não se convertia em produto seco</strong>.</li>
+            </ul>
+            <figure><img src="../img/cases/secagem-mineracao-cobre/correlacao.jpg" alt="Matriz de correlação entre diesel, produção e temperaturas do secador"><figcaption>Correlação entre as variáveis do secador (médias diárias, dados do estudo).</figcaption></figure>
           </div>
         </div>
       </section>
@@ -94,7 +107,17 @@
         <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Etapas do trabalho, ensaios realizados, critérios de seleção de alternativas, normas e referências técnicas utilizadas.</p>
+            <p>Aplicamos <strong>técnicas de mineração de dados (DMT)</strong> em etapas:</p>
+            <ol>
+              <li><strong>Limpeza</strong>: correção das leituras negativas, tratamento das leituras quase nulas e dos dados faltantes.</li>
+              <li><strong>Agregação diária</strong> das vazões horárias de diesel e cruzamento com a produção e as temperaturas (543 dias com dados completos).</li>
+              <li><strong>Análise exploratória</strong>: histogramas, séries temporais e matriz de correlação para selecionar as variáveis mais relevantes.</li>
+              <li><strong>Filtragem de outliers</strong>: produção entre 10 e 1.000 t/dia e consumo até 7.000 l/dia.</li>
+              <li><strong>Regressão linear</strong> de produção em função do consumo de diesel, como primeira curva de base.</li>
+              <li><strong>Agrupamento K-means</strong> para identificar os regimes típicos de operação e calcular o consumo específico (litros por tonelada) de cada um.</li>
+              <li><strong>Simulação da secagem</strong> em camada fina, para entender a cinética de remoção de umidade do concentrado.</li>
+            </ol>
+            <figure><img src="../img/cases/secagem-mineracao-cobre/fluxo-dados.jpg" alt="Fluxo de mineração de dados: limpeza, agregação, correlação, outliers, regressão, K-means e curva de base"><figcaption>Fluxo de mineração de dados aplicado.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -104,7 +127,13 @@
         <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Rota tecnológica adotada, configuração do sistema, dimensionamento e principais decisões de projeto. Um fluxograma ajuda muito aqui.</p>
+            <p>O resultado da consultoria foi uma <strong>linha de base energética</strong> do secador, que mostra quanto combustível ele deve consumir para cada nível de produção, e um mapa dos <strong>regimes de operação</strong>:</p>
+            <ul>
+              <li>a <strong>curva energia × produção</strong> serve como referência diária: dias acima da curva indicam desperdício e merecem investigação;</li>
+              <li>o agrupamento K-means separou <strong>6 regimes de operação</strong>, de baixa carga a alta carga, com consumo específico de 5,8 a 11,3 litros por tonelada;</li>
+              <li>o regime de maior consumo (R6) gasta cerca de <strong>20% mais diesel que o regime R5 para praticamente a mesma produção</strong>: é o principal alvo de economia.</li>
+            </ul>
+            <figure><img src="../img/cases/secagem-mineracao-cobre/regimes-kmeans.jpg" alt="Gráfico de produção versus consumo de diesel com seis regimes de operação e reta de regressão"><figcaption>Regimes de operação por K-means e reta de regressão (centróides e reta do estudo; pontos ilustrativos).</figcaption></figure>
           </div>
         </div>
       </section>
@@ -114,7 +143,13 @@
         <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Descreva as tecnologias, operações unitárias e equipamentos envolvidos e o papel de cada um. As etiquetas abaixo são editadas em cases.js.</p>
+            <ul>
+              <li><strong>Mineração de dados industriais</strong>: limpeza, agregação e seleção de variáveis.</li>
+              <li><strong>Python</strong>: pandas, NumPy, scikit-learn (regressão e K-means), seaborn e matplotlib.</li>
+              <li><strong>Aprendizado de máquina não supervisionado</strong> (K-means) para identificar regimes de operação.</li>
+              <li>Modelo de <strong>secagem em camada fina</strong> para a cinética de umidade do concentrado.</li>
+              <li>Notebooks Jupyter com todo o fluxo, disponíveis publicamente no GitHub.</li>
+            </ul>
           </div>
         </div>
         <ul class="cs-tags" data-from="tags"></ul>
@@ -125,7 +160,13 @@
         <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Modelos, simulações e ferramentas usados (balanços, CFD, Python, MATLAB, redes neurais, DMD, dashboards…) e o que cada um permitiu avaliar ou decidir.</p>
+            <p>A regressão linear entre produção e consumo diário de diesel resultou em:</p>
+            <p><strong>produção (t/dia) ≈ 0,079 × diesel (l/dia) + 99</strong>, com R² de cerca de 0,40.</p>
+            <p>O R² moderado confirma que o diesel não é a única variável que explica a produção: umidade do concentrado, temperatura dos gases e carga do secador também pesam. Por isso, o K-means foi usado para separar os regimes e comparar o <strong>consumo específico</strong> de cada um:</p>
+            <figure><img src="../img/cases/secagem-mineracao-cobre/consumo-especifico.jpg" alt="Gráfico de barras do consumo específico de diesel por regime de operação"><figcaption>Consumo específico de diesel (l/t) por regime de operação (dados do estudo).</figcaption></figure>
+            <p>Também foi simulada a cinética de secagem do concentrado, base para relacionar tempo de residência, temperatura dos gases e umidade final:</p>
+            <figure><img src="../img/cases/secagem-mineracao-cobre/cinetica-secagem.jpg" alt="Curva de umidade do concentrado em função do tempo de secagem"><figcaption>Simulação da cinética de secagem (modelo de camada fina).</figcaption></figure>
+            <p>O código completo está no repositório <a href="https://github.com/felipe77-CH/Energy-Savings-Rotary-Dryer-Data-Mining" target="_blank" rel="noopener">Energy-Savings-Rotary-Dryer-Data-Mining no GitHub</a>.</p>
           </div>
         </div>
       </section>
@@ -135,7 +176,13 @@
         <h2 data-i18n="cs.s8">Resultados obtidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Indicadores antes/depois, eficiências de remoção, ganhos de desempenho, atendimento a limites legais. Gráficos e tabelas são bem-vindos.</p>
+            <ul>
+              <li><strong>Linha de base energética</strong> do secador (energia × produção), para acompanhar o desempenho dia a dia e definir metas de redução.</li>
+              <li><strong>Consumo específico médio de cerca de 8,6 litros de diesel por tonelada</strong> no período analisado.</li>
+              <li>Identificação de <strong>6 regimes de operação</strong>. Nos dias de regime de alto consumo (R6), operar como no regime R5 representaria <strong>cerca de 17% menos diesel para a mesma produção</strong>.</li>
+              <li>Indícios de que as oscilações da temperatura dos gases e a carga variável do secador são as principais causas do consumo excessivo.</li>
+              <li><strong>Recomendações</strong>: controlar a temperatura de entrada dos gases em função da carga, evitar operar com o queimador em alta potência e baixa alimentação, melhorar a medição de vazão de combustível e acompanhar o consumo específico como indicador diário.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -160,7 +207,14 @@
         <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Papel da GETA no projeto (diagnóstico, projeto, supervisão, P&amp;D, operação assistida…), limites do escopo e interface com o cliente e parceiros.</p>
+            <p>A GETA foi responsável por toda a consultoria:</p>
+            <ul>
+              <li>levantamento e tratamento dos dados operacionais do secador;</li>
+              <li>análise exploratória e estatística;</li>
+              <li>modelos de regressão e de agrupamento (K-means);</li>
+              <li>simulação da cinética de secagem;</li>
+              <li>interpretação dos resultados e recomendações de otimização do consumo de combustível.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -170,7 +224,13 @@
         <h2 data-i18n="cs.s11">Principais entregáveis</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Relatórios técnicos, memoriais de cálculo, projeto básico/executivo, modelos, dashboards, protótipos, patentes, treinamentos.</p>
+            <ul>
+              <li>Base de dados tratada e consolidada (diesel, produção e temperaturas).</li>
+              <li>Curva de base energia × produção do secador.</li>
+              <li>Mapa de regimes de operação com consumo específico de cada um.</li>
+              <li>Relatório com diagnóstico, potencial de economia e recomendações.</li>
+              <li>Notebooks Jupyter com o fluxo completo (<a href="https://github.com/felipe77-CH/Energy-Savings-Rotary-Dryer-Data-Mining" target="_blank" rel="noopener">repositório público no GitHub</a>).</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -180,9 +240,9 @@
       <section class="cs-gallery">
         <h2 data-i18n="cs.gallery">Galeria</h2>
         <div class="gal">
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 1</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 2</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 3</div></figure>
+          <figure><img src="../img/cases/secagem-mineracao-cobre/mina-ceu-aberto.jpg" alt="Mina de cobre a céu aberto com caminhões"><figcaption>Mineração a céu aberto (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/secagem-mineracao-cobre/planta-deserto.jpg" alt="Planta industrial em região desértica"><figcaption>Planta industrial no deserto (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/secagem-mineracao-cobre/regimes-kmeans.jpg" alt="Regimes de operação por K-means"><figcaption>Regimes de operação.</figcaption></figure>
         </div>
       </section>
 
