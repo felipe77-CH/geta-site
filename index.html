@@ -146,26 +146,29 @@
   .model .tagline em{font-style:normal;color:var(--green)}
 
   /* ====== Diferencial tecnológico ====== */
-  .tech{padding:96px 0;background:var(--navy);color:#fff;position:relative;overflow:hidden}
-  .tech::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(#1d4fd866,#0b175e00 70%);top:-250px;right:-200px}
-  .tech .head h2{color:#fff}.tech .head p{color:#b9c6f5}
-  .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative}
-  .monitor{border-radius:var(--radius);overflow:hidden;background:#ffffff0d;border:1px solid #ffffff1a}
-  .monitor .ph{aspect-ratio:16/9;background:url(img/hero-laboratorio.jpg) center/cover}
+  /* Fundo azul-marinho com cartões brancos: texto escuro sobre branco e branco sobre o azul (alto contraste) */
+  .tech{padding:96px 0;background:linear-gradient(160deg,#06103f 0%,var(--navy) 55%,#13237f 100%);color:#fff;position:relative;overflow:hidden}
+  .tech::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(#1d4fd840,#0b175e00 70%);top:-250px;right:-200px;pointer-events:none}
+  .tech .head h2{color:#fff}.tech .head p{color:#e6ecff;font-size:17px}
+  .tech .head .eyebrow{color:#7ee08f!important}
+  .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;align-items:stretch}
+  .monitor{border-radius:var(--radius);overflow:hidden;background:#fff;color:var(--ink);box-shadow:0 24px 50px #0006;display:flex;flex-direction:column}
+  .monitor .ph{flex:1;min-height:220px;background:url(img/hero-laboratorio.jpg) center/cover}
   .monitor .body{padding:28px}
-  .monitor h3{font-size:22px;margin-bottom:10px}
-  .monitor p{color:#c9d4fb;font-size:15px}
+  .monitor h3{font-size:22px;margin-bottom:10px;color:var(--navy)}
+  .monitor p{color:#3d4468;font-size:15px}
   .monitor ul{list-style:none;margin-top:16px;display:grid;gap:10px}
-  .monitor li{display:flex;gap:10px;align-items:center;font-size:15px}
-  .monitor li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px #1fae3a33;flex-shrink:0}
-  .excl{display:grid;gap:14px;align-content:start}
-  .excl h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#9fe8ad;margin-bottom:4px}
-  .tile{display:flex;gap:18px;padding:22px;border-radius:18px;background:#ffffff0d;border:1px solid #ffffff1a;transition:.25s}
-  .tile:hover{background:#ffffff17;transform:translateX(4px);border-color:#1fae3a88}
+  .monitor li{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500;color:var(--navy)}
+  .monitor li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px #1fae3a2e;flex-shrink:0}
+  .excl{display:grid;gap:14px;grid-template-rows:auto repeat(4,1fr)}
+  .mon-col{display:grid;gap:14px;grid-template-rows:auto 1fr}
+  .mon-col>h3,.excl h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7ee08f;margin-bottom:4px}
+  .tile{display:flex;align-items:center;gap:18px;padding:22px;border-radius:18px;background:#fff;color:var(--ink);border:2px solid transparent;box-shadow:0 12px 30px #0000004d;transition:.25s}
+  .tile:hover{transform:translateX(4px);border-color:var(--green)}
   .tile .ic{width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .tile .ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8}
-  .tile h4{font-size:17px;margin-bottom:4px}
-  .tile p{font-size:14px;color:#c9d4fb}
+  .tile h4{font-size:17px;margin-bottom:4px;color:var(--navy)}
+  .tile p{font-size:14px;color:#3d4468}
 
   /* ====== Soluções (grid com filtro) ====== */
   .solutions{padding:96px 0}
@@ -362,13 +365,16 @@
       <p data-i18n="tech.text">Ferramentas exclusivas e rotas tecnológicas próprias para os desafios mais complexos.</p>
     </div>
     <div class="tech-grid">
-      <div class="monitor reveal">
+      <div class="mon-col reveal">
+        <h3 data-i18n="cycle.6">Monitoramento com IA</h3>
+      <div class="monitor">
         <div class="ph" role="img" data-i18n-aria="aria.lab" aria-label="Laboratório de engenharia"></div>
         <div class="body">
           <h3 data-i18n="mon.title">Monitoramento contínuo e preditivo</h3>
           <p data-i18n="mon.text">Ferramentas exclusivas que utilizam IA e dados de sensoriamento remoto (on-line) para gerar modelos matemáticos e estatísticos (dashboard) para avaliação contínua da qualidade ambiental.</p>
           <ul><li data-i18n="mon.li1">Qualidade do ar e águas superficiais</li><li data-i18n="mon.li2">Monitoramento de efluentes adjacentes</li><li data-i18n="mon.li3">Poluentes aéreos em ambientes internos</li></ul>
         </div>
+      </div>
       </div>
       <div class="excl reveal">
         <h3 data-i18n="excl.title">Tecnologias exclusivas GETA</h3>
