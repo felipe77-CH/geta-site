@@ -184,6 +184,14 @@
   .card h3{font-size:17px;color:var(--navy);margin-bottom:6px}
   .card p{font-size:14px;color:var(--muted)}
   .card.hide{display:none}
+  .sol-main{min-width:0}
+  .sol-more{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .sol-more p{width:100%;font:600 14px var(--display);color:var(--muted);margin-bottom:2px}
+  .sol-more .axl{--c:var(--blue);display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font:600 13px var(--display);color:var(--navy);transition:.2s}
+  .sol-more .axl::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+  .sol-more .axl:hover{border-color:var(--c);color:var(--c)}
+  .sol-more .axl.ax-amb{--c:var(--ax-amb)}.sol-more .axl.ax-proc{--c:var(--ax-proc)}.sol-more .axl.ax-res{--c:var(--ax-res)}
+  .sol-more .axl.ax-dig{--c:var(--ax-dig)}.sol-more .axl.ax-mod{--c:var(--ax-mod)}.sol-more .axl.ax-rd{--c:var(--ax-rd)}
 
   /* ====== Contato ====== */
   .contact{padding:96px 0;background:var(--grad);color:#fff;position:relative;overflow:hidden}
@@ -392,7 +400,11 @@
         <button data-f="rd" data-i18n="ax.rd">Estudos Técnico-Econômicos e P&amp;D</button>
       </aside>
       <!-- Os cards são gerados a partir de cases/cases.js; cada um abre sua página em cases/<slug>.html -->
-      <div class="cards" id="cards">
+      <div class="sol-main">
+        <div class="cards" id="cards">
+        </div>
+        <!-- "Ver mais": leva à página da área com todos os cases (no máximo 6 cards por filtro aqui) -->
+        <div class="sol-more" id="solMore"></div>
       </div>
     </div>
   </div>
@@ -472,9 +484,23 @@
   I18N.onChange(lang=>document.querySelectorAll('#cards .card').forEach((el,i)=>{const c=CASES[i];el.querySelector('h3').innerHTML=c.titulo[lang]||c.titulo.pt;el.querySelector('p').innerHTML=c.resumo[lang]||c.resumo.pt}));
 
   // Filtro de soluções
-  const fbtns=[...document.querySelectorAll('#filters button')],cards=[...document.querySelectorAll('.card')];
-  fbtns.forEach(b=>b.onclick=()=>{fbtns.forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;cards.forEach(c=>c.classList.toggle('hide',f!=='all'&&!c.dataset.a.split(' ').includes(f)))});
-  const eixo=new URL(location.href).searchParams.get('eixo');const fb=fbtns.find(x=>x.dataset.f===eixo);if(fb)fb.click();
+  // No máximo 6 cards por filtro. "Todas" mostra 1 case de cada área; o restante fica na página da área.
+  const MAX=6,AXES=['amb','proc','res','dig','mod','rd'];
+  const fbtns=[...document.querySelectorAll('#filters button')],cards=[...document.querySelectorAll('.card')],solMore=document.getElementById('solMore');
+  const axOf=c=>c.dataset.a.split(' ');
+  let solF='all';
+  function solFilter(f){
+    solF=f;fbtns.forEach(x=>x.classList.toggle('on',x.dataset.f===f));
+    const list=f==='all'?AXES.map(a=>cards.find(c=>axOf(c)[0]===a)).filter(Boolean):cards.filter(c=>axOf(c).includes(f));
+    const shown=list.slice(0,MAX);
+    cards.forEach(c=>c.classList.toggle('hide',!shown.includes(c)));
+    solMore.innerHTML=f==='all'
+      ?`<p>${I18N.t('sol.moreAll')}</p>`+AXES.map(a=>`<a class="axl ax-${a}" href="area.html?eixo=${a}">${I18N.t('ax.'+a)}</a>`).join('')
+      :`<a class="btn" href="area.html?eixo=${f}">${I18N.t('sol.more')} (${list.length}) →</a>`;
+  }
+  fbtns.forEach(b=>b.onclick=()=>solFilter(b.dataset.f));
+  I18N.onChange(()=>solFilter(solF));
+  const eixo=new URL(location.href).searchParams.get('eixo');solF=AXES.includes(eixo)?eixo:'all';  // aplicado quando o idioma carrega (I18N.init)
 
   // Formulário (demonstração)
   document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent=I18N.t('form.sent');b.dataset.sent='1'});

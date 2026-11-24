@@ -50,6 +50,8 @@
     'cs.related': 'Cases relacionados',
     'cs.back': '← Voltar às soluções',
     // Menu de áreas, páginas de área e Quem somos
+    'sol.more': 'Ver todos os cases desta área',
+    'sol.moreAll': 'Veja todos os cases de cada área:',
     'meta.qs.title': 'Quem somos | GETA',
     'meta.qs.desc': 'Conheça a GETA: origem, missão, visão, valores e a forma como transformamos desafios ambientais em soluções de engenharia.',
     'ar.eyebrow': 'Área de atuação',
@@ -230,6 +232,8 @@
       'cs.related': 'Related cases',
       'cs.back': '← Back to solutions',
       // Areas menu, area pages and About us
+      'sol.more': 'See all cases in this area',
+      'sol.moreAll': 'See all cases in each area:',
       'meta.qs.title': 'About us | GETA',
       'meta.qs.desc': 'Meet GETA: our origin, mission, vision, values and how we turn environmental challenges into engineering solutions.',
       'ar.eyebrow': 'Area of expertise',
@@ -466,6 +470,8 @@
       'cs.related': 'Casos relacionados',
       'cs.back': '← Volver a las soluciones',
       // Menú de áreas, páginas de área y Quiénes somos
+      'sol.more': 'Ver todos los casos de esta área',
+      'sol.moreAll': 'Vea todos los casos de cada área:',
       'meta.qs.title': 'Quiénes somos | GETA',
       'meta.qs.desc': 'Conozca la GETA: origen, misión, visión, valores y cómo transformamos desafíos ambientales en soluciones de ingeniería.',
       'ar.eyebrow': 'Área de actuación',
