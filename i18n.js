@@ -52,8 +52,6 @@
     // Menu de áreas, páginas de área e Quem somos
     'meta.qs.title': 'Quem somos | GETA',
     'meta.qs.desc': 'Conheça a GETA: origem, missão, visão, valores e a forma como transformamos desafios ambientais em soluções de engenharia.',
-    'mega.text': 'Selecione uma área para conhecer o que fazemos, por que fazemos e os principais estudos de caso.',
-    'mega.all': 'Ver todos os cases →',
     'ar.eyebrow': 'Área de atuação',
     'ar.what': 'O que fazemos',
     'ar.what.t': 'Nossa atuação',
@@ -234,8 +232,6 @@
       // Areas menu, area pages and About us
       'meta.qs.title': 'About us | GETA',
       'meta.qs.desc': 'Meet GETA: our origin, mission, vision, values and how we turn environmental challenges into engineering solutions.',
-      'mega.text': 'Select an area to see what we do, why we do it and our main case studies.',
-      'mega.all': 'See all cases →',
       'ar.eyebrow': 'Area of expertise',
       'ar.what': 'What we do',
       'ar.what.t': 'Our work',
@@ -472,8 +468,6 @@
       // Menú de áreas, páginas de área y Quiénes somos
       'meta.qs.title': 'Quiénes somos | GETA',
       'meta.qs.desc': 'Conozca la GETA: origen, misión, visión, valores y cómo transformamos desafíos ambientales en soluciones de ingeniería.',
-      'mega.text': 'Seleccione un área para conocer qué hacemos, por qué lo hacemos y los principales estudios de caso.',
-      'mega.all': 'Ver todos los casos →',
       'ar.eyebrow': 'Área de actuación',
       'ar.what': 'Qué hacemos',
       'ar.what.t': 'Nuestra actuación',

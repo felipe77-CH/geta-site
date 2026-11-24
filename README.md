@@ -22,7 +22,7 @@ Site estático (HTML + CSS + JS, sem build) da **GETA – Grupo de Especialistas
 - `cases/<slug>.html` – uma página por case, com as 11 seções (problema, contexto, diagnóstico, metodologia, solução, tecnologias, modelagem, resultados, CAPEX/OPEX, escopo, entregáveis), destaques, ficha técnica e galeria.
 - `assets/portfolio.css` e `assets/portfolio.js` – estilo e montagem das páginas de case (não precisam ser editados para preencher um case).
 
-- Menu **Áreas de atuação** (`assets/mega.js` + `assets/mega.css`): ao clicar, mostra as 6 categorias com os estudos de caso de cada uma (pelo eixo principal do case).
+- Menu **Áreas de atuação** (`assets/mega.js` + `assets/mega.css`): ao clicar, mostra as 6 áreas; cada uma abre sua página (area.html).
 - `area.html?eixo=<código>` – página de cada área: o que fazemos, por que fazemos, serviços e cases principais. Textos em `cases/areas.js`.
 - `quem-somos.html` – origem, missão, visão, propósito, valores, forma de trabalho, diferenciais e setores atendidos (traduções em `i18n.js`, chaves `qs.*`).
 
