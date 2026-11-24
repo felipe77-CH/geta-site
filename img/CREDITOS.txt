@@ -17,3 +17,5 @@ sol-customizadas.jpg ............. pexels.com/photo/34054482
 sol-monitoramento.jpg ............ pexels.com/photo/4173482   (pok-rie)
 Logo: GETA (arquivo fornecido pelo cliente).
 img/cases/capa-*.jpg ............. ilustrações geradas pela GETA (Python/matplotlib), sem restrição de uso.
+img/cases/capa-nevoa-fria-controle-odores.jpg e nevoa-fria-controle-odores/nebulizador-industrial.jpg ... pexels.com/photo/33551687
+img/cases/nevoa-fria-controle-odores/bico-nebulizador.jpg ... pexels.com/photo/6101250

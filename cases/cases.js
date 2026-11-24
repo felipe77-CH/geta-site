@@ -67,6 +67,25 @@ window.GETA_CASES =
     "tags": ["Ozonização (POA)", "Oxigênio PSA", "Injeção Venturi", "Carvão ativado granular", "Cinética de 2ª ordem", "Equalização", "Controle PID/VDF"]
   },
   {
+    "slug": "nevoa-fria-controle-odores",
+    "eixos": ["amb", "res", "rd"],
+    "capa": "img/cases/capa-nevoa-fria-controle-odores.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Névoa fria de alta pressão para controle de odores",
+      "en": "High-pressure cold fog for odor control",
+      "es": "Niebla fría de alta presión para control de olores"
+    },
+    "resumo": {
+      "pt": "Sistema de nebulização com água de reúso sobre um tanque aberto de chorume, para reduzir emissões fugitivas de NH₃ e H₂S sem uso de produtos químicos.",
+      "en": "Misting system using reclaimed water over an open leachate tank to reduce fugitive NH₃ and H₂S emissions without chemicals.",
+      "es": "Sistema de nebulización con agua de reúso sobre un tanque abierto de lixiviado, para reducir emisiones fugitivas de NH₃ y H₂S sin productos químicos."
+    },
+    "tags": ["Névoa fria", "Nebulização de alta pressão", "Água de reúso", "Controle de odores", "NH₃ e H₂S", "Estrutura metálica"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",
