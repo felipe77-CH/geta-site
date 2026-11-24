@@ -86,6 +86,25 @@ window.GETA_CASES =
     "tags": ["Névoa fria", "Nebulização de alta pressão", "Água de reúso", "Controle de odores", "NH₃ e H₂S", "Estrutura metálica"]
   },
   {
+    "slug": "quebra-acida-efluente-oleoso",
+    "eixos": ["res", "proc"],
+    "capa": "img/cases/capa-quebra-acida-efluente-oleoso.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Quebra ácida e otimização de DAF para efluentes oleosos",
+      "en": "Acid cracking and DAF optimization for oily effluents",
+      "es": "Quiebra ácida y optimización de DAF para efluentes aceitosos"
+    },
+    "resumo": {
+      "pt": "Diagnóstico de uma linha de efluentes oleosos, ensaios de quebra ácida de emulsões e proposta de sistema automatizado com controle de pH e nova rota química para o DAF.",
+      "en": "Diagnosis of an oily effluent line, acid-cracking tests for emulsions and a proposal for an automated pH-controlled system and a new chemical route for the DAF.",
+      "es": "Diagnóstico de una línea de efluentes aceitosos, ensayos de quiebra ácida de emulsiones y propuesta de un sistema automatizado con control de pH y nueva ruta química para el DAF."
+    },
+    "tags": ["Quebra ácida", "Emulsões óleo-água", "Flotação por ar dissolvido (DAF)", "Coagulação/floculação", "Controle de pH", "Misturador estático", "Skimmers"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",

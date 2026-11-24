@@ -19,3 +19,7 @@ Logo: GETA (arquivo fornecido pelo cliente).
 img/cases/capa-*.jpg ............. ilustrações geradas pela GETA (Python/matplotlib), sem restrição de uso.
 img/cases/capa-nevoa-fria-controle-odores.jpg e nevoa-fria-controle-odores/nebulizador-industrial.jpg ... pexels.com/photo/33551687
 img/cases/nevoa-fria-controle-odores/bico-nebulizador.jpg ... pexels.com/photo/6101250
+img/cases/capa-quebra-acida-efluente-oleoso.jpg e quebra-acida-efluente-oleoso/planta-industrial.jpg ... pexels.com/photo/5131196 (Tom Fisk)
+img/cases/quebra-acida-efluente-oleoso/clarificadores.jpg ... pexels.com/photo/4741970
+img/cases/quebra-acida-efluente-oleoso/amostra-efluente.jpg ... pexels.com/photo/8851083
+img/cases/quebra-acida-efluente-oleoso/dosagem-laboratorio.jpg ... pexels.com/photo/9629679

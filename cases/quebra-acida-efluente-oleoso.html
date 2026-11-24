@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quebra ácida e otimização de DAF para efluentes oleosos | GETA</title>
+<meta name="description" content="Diagnóstico de uma linha de efluentes oleosos, ensaios de quebra ácida de emulsões e proposta de sistema automatizado com controle de pH e nova rota química para o DAF.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261124b">
+<link rel="stylesheet" href="../assets/mega.css?v=20261124b">
+</head>
+<!-- Conteúdo anonimizado: sem nome do cliente e sem valores originais do projeto.
+     =====================================================================
+  CASE: Quebra ácida e otimização de DAF para efluentes oleosos
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "quebra-acida-efluente-oleoso").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/quebra-acida-efluente-oleoso/ e use
+     <img src="../img/cases/quebra-acida-efluente-oleoso/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="quebra-acida-efluente-oleoso" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>&gt;95%</b><span>de remoção de óleos e graxas nos ensaios de quebra ácida</span></div>
+    <div class="kpi"><b>3</b><span>agentes acidificantes comparados, incluindo um resíduo da própria planta</span></div>
+    <div class="kpi"><b>2</b><span>rotas tecnológicas de melhoria propostas</span></div>
+    <div class="kpi"><b>pH ≈ 3</b><span>com controle automático em malha fechada</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Estado de São Paulo</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Em andamento</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Tratamento de efluentes industriais oleosos</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Linha de efluentes oleosos com flotação (DAF)</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Diagnóstico, ensaios de bancada e plano de ação</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Em uma central de tratamento de efluentes no estado de São Paulo, uma das linhas recebe <strong>efluentes industriais oleosos</strong>, como lubrificantes e emulsões óleo-água. A quebra das emulsões era feita de forma <strong>manual</strong>: o ácido era dosado diretamente na caixa de gradeamento, com um operador observando se havia separação.</p>
+            <p>Essa prática afetava a integridade dos equipamentos, dificultava o controle de qualidade do processo, consumia muitas horas de trabalho e deixava óleos, graxas e compostos fenólicos passarem para as etapas seguintes. O cliente precisava de alternativas para <strong>melhorar a separação óleo-água</strong> e a eficiência do sistema de flotação.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A linha opera com a seguinte sequência: gradeamento com dosagem manual de ácido, tanque de equalização, coagulação, floculação com polímero e soda e <strong>flotação por ar dissolvido (DAF)</strong>. O clarificado segue para a etapa seguinte da planta e o lodo flotado é desaguado em filtro prensa.</p>
+            <figure><img src="../img/cases/quebra-acida-efluente-oleoso/processo-existente.jpg" alt="Fluxograma simplificado do processo existente"><figcaption>Processo existente, simplificado (ilustrativo).</figcaption></figure>
+            <ul>
+              <li><strong>Vazão diária muito variável</strong>, com grande dispersão de um dia para o outro, enquanto o volume mensal se mantém relativamente estável.</li>
+              <li><strong>Consumo específico de produtos químicos</strong> (coagulante, soda, ácido e polímero) com forte oscilação ao longo do ano, sinal de um controle de dosagem pouco estável.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A partir da análise da série histórica de vazão e de consumo de reagentes e de reuniões técnicas com a operação, foram definidos quatro pontos de melhoria:</p>
+            <ol>
+              <li><strong>Etapa dedicada de quebra ácida</strong>, eliminando a descarga manual de efluentes ácidos e a dosagem direta no gradeamento.</li>
+              <li><strong>Melhoria química do DAF</strong>, avaliando rotas físico-químicas diferentes e o sistema de injeção de ar.</li>
+              <li><strong>Melhoria estrutural do DAF</strong>, para aumentar a eficiência da separação de sólidos e frações oleosas.</li>
+              <li><strong>Avaliação de um processo oxidativo avançado (POA)</strong> no clarificado, para remover compostos recalcitrantes como fenóis.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li>Análise estatística da vazão (distribuição diária, boxplot e tendência mensal) e do consumo específico de reagentes por m³ tratado.</li>
+              <li>Revisão técnica da quebra ácida: redução do pH para a faixa de 2 a 4, que neutraliza agentes emulsificantes, reduz o potencial zeta das gotículas e rompe a camada interfacial, favorecendo a coalescência do óleo.</li>
+              <li><strong>Ensaios de bancada de quebra ácida</strong> com dois efluentes oleosos reais e três agentes acidificantes (ácido sulfúrico, ácido clorídrico e um efluente ácido disponível na própria planta), ajustados ao mesmo pH, seguidos de decantação e medição de óleos e graxas, lodo oleoso gerado e dosagem necessária.</li>
+              <li>Avaliação das operações unitárias de separação: separador água-óleo tipo API/skimmer, tanques com skimmers internos e centrífugas.</li>
+              <li>Planejamento de <em>jar tests</em> para o DAF: coagulantes, polímeros, pH ótimo, dosagens e remoção de turbidez, óleos e graxas e DQO em diferentes saturações de ar.</li>
+            </ol>
+            <figure><img src="../img/cases/quebra-acida-efluente-oleoso/dosagem-laboratorio.jpg" alt="Ensaio de dosagem em laboratório com agitador magnético"><figcaption>Ensaios de bancada de dosagem (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Foram desenvolvidas duas alternativas complementares:</p>
+            <p><strong>Alternativa A – sistema dedicado de quebra ácida.</strong> O efluente do gradeamento é misturado, a vazão constante, ao efluente ácido de um tanque de acumulação (aproveitando um resíduo da própria planta) e a um ácido de complemento. As correntes passam por um <strong>misturador estático</strong> e seguem para uma caixa de quebra ácida com <strong>skimmers</strong>, operando em pH próximo de 3. O controle de pH usa <strong>malha fechada com dupla medição</strong> (entrada e saída da caixa) e inversor de frequência na bomba dosadora, evitando a sobredosagem de ácido e permitindo receber mais efluentes básicos.</p>
+            <figure><img src="../img/cases/quebra-acida-efluente-oleoso/proposta-quebra-acida.jpg" alt="Esquema do sistema proposto de quebra ácida com controle de pH"><figcaption>Sistema proposto de quebra ácida com controle de pH (ilustrativo).</figcaption></figure>
+            <p><strong>Alternativa B – nova rota química no DAF.</strong> Elimina a quebra ácida no gradeamento e concentra a separação no DAF: coagulante em combinação com polímeros de alto peso molecular, ácido apenas para ajustar o pH ao ponto ótimo de coagulação, floculação tubular para incorporar todo o sólido ao DAF e soda somente para a correção final de pH. Assim, aproveita-se toda a capacidade hidráulica e a área superficial do flotador.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A <strong>quebra ácida</strong> (<em>acid cracking</em>) desestabiliza emulsões do tipo óleo em água pela redução controlada do pH, permitindo que as gotículas de óleo coalesçam e sejam separadas por flotação, decantação ou escumação. É amplamente usada no tratamento de efluentes oleosos e como pré-tratamento de separadores API, CPI e DAF.</p>
+            <p>A <strong>flotação por ar dissolvido (DAF)</strong> separa sólidos e óleos por meio de microbolhas de ar, após coagulação e floculação. A eficiência depende do pH, do tipo de coagulante e polímero e da saturação de ar.</p>
+            <figure><img src="../img/cases/quebra-acida-efluente-oleoso/clarificadores.jpg" alt="Vista aérea de unidades de tratamento de efluentes industriais"><figcaption>Unidades de tratamento de efluentes industriais (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Análise de dados em Python</strong>: séries históricas de vazão, boxplots, tendência mensal e consumo específico de reagentes.</li>
+              <li><strong>Balanço de reagentes</strong> por m³ tratado, para comparar a rota atual com as alternativas propostas.</li>
+              <li><strong>Comparação estatística dos ensaios</strong> por agente acidificante: remoção de óleos e graxas, lodo oleoso gerado e dosagem.</li>
+              <li><strong>Concepção da malha de controle de pH</strong> com dupla medição e atuação por inversor de frequência.</li>
+            </ul>
+            <figure><img src="../img/cases/quebra-acida-efluente-oleoso/remocao-og.jpg" alt="Gráfico ilustrativo da remoção de óleos e graxas por agente acidificante"><figcaption>Eficiência da quebra ácida por agente acidificante (valores ilustrativos).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Os ensaios de quebra ácida alcançaram <strong>mais de 95% de remoção de óleos e graxas</strong> em todas as condições avaliadas, confirmando a robustez do processo para efluentes com alta carga de hidrocarbonetos.</li>
+              <li>O <strong>ácido clorídrico</strong> mostrou alta eficiência com menor dosagem, uma vantagem operacional e econômica.</li>
+              <li>O <strong>efluente ácido da própria planta</strong> exige volumes maiores, mas aproveita um resíduo existente, favorece a diluição e gera um lodo oleoso mais fácil de manejar.</li>
+              <li>A automação proposta elimina a dosagem manual, reduz o risco de sobredosagem e melhora a integridade dos equipamentos.</li>
+              <li>Próximas etapas: <em>jar tests</em> do DAF e avaliação técnico-econômica das duas alternativas.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <table>
+              <tr><th>Critério</th><th>Alternativa A – quebra ácida dedicada</th><th>Alternativa B – nova rota no DAF</th></tr>
+              <tr><td>Investimento</td><td>Maior (tanques, misturador, instrumentação)</td><td>Menor (ajustes de dosagem e floculação)</td></tr>
+              <tr><td>Consumo de ácido</td><td>Otimizado pela malha de pH</td><td>Reduzido (apenas ajuste de pH)</td></tr>
+              <tr><td>Geração de lodo</td><td>Lodo oleoso separado na etapa ácida</td><td>Todo o sólido incorporado ao DAF</td></tr>
+              <tr><td>Mão de obra</td><td>Operação automatizada</td><td>Operação simplificada</td></tr>
+            </table>
+            <p>A comparação de CAPEX e OPEX considera o consumo de ácido, a demanda de neutralização posterior, a geração de lodos, os requisitos estruturais e a recuperação da capacidade hidráulica em relação ao processo atual. A análise econômica detalhada faz parte da próxima etapa do plano de ação.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA atuou na <strong>supervisão técnica</strong> da linha, sendo responsável por:</p>
+            <ul>
+              <li>diagnóstico da linha de base e análise dos dados de vazão e consumo de reagentes;</li>
+              <li>identificação dos desafios operacionais junto à equipe do cliente;</li>
+              <li>planejamento, execução e análise dos ensaios de bancada de quebra ácida;</li>
+              <li>concepção das alternativas de melhoria, do esquema de processo e da malha de controle de pH;</li>
+              <li>elaboração do plano de ação e do protocolo dos próximos ensaios.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Plano de ação para melhoria da linha de efluentes oleosos.</li>
+              <li>Análise da linha de base: vazão diária e mensal e consumo específico de reagentes.</li>
+              <li>Relatório dos ensaios de quebra ácida com diferentes agentes acidificantes.</li>
+              <li>Fluxogramas do processo atual e das alternativas propostas.</li>
+              <li>Conceito do sistema de quebra ácida com controle de pH em malha fechada.</li>
+              <li>Protocolo de <em>jar tests</em> para otimização química do DAF e critérios de avaliação de CAPEX e OPEX.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/quebra-acida-efluente-oleoso/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/quebra-acida-efluente-oleoso/planta-industrial.jpg" alt="Vista aérea de planta de tratamento de efluentes industriais"><figcaption>Planta de tratamento de efluentes industriais (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/quebra-acida-efluente-oleoso/amostra-efluente.jpg" alt="Amostra de efluente em béquer de laboratório"><figcaption>Amostra de efluente em ensaio de bancada (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/quebra-acida-efluente-oleoso/proposta-quebra-acida.jpg" alt="Esquema do sistema de quebra ácida"><figcaption>Sistema proposto de quebra ácida (esquema).</figcaption></figure>
+        </div>
+        <p class="ptonly" style="margin-top:14px">Fotos ilustrativas de banco de imagens (Pexels) e esquemas simplificados, preservando a confidencialidade do cliente.</p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261124b"></script>
+<script src="cases.js?v=20261124b"></script>
+<script src="../assets/mega.js?v=20261124b"></script>
+<script src="../assets/portfolio.js?v=20261124b"></script>
+</body>
+</html>
