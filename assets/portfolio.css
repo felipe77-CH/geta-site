@@ -69,8 +69,8 @@ h1,h2,h3,h4,h5{font-family:var(--display);line-height:1.15;letter-spacing:-.01em
 .header .brand .logo-color{display:block}
 .header.scrolled .brand .logo-white{display:block}
 .header.scrolled .brand .logo-color{display:none}
-.header .brand-text{color:var(--muted)}
-.header.scrolled .brand-text{color:#ffffffd0}
+.header .brand-text{color:var(--navy);font-weight:700;font-size:12.5px;max-width:170px}
+.header.scrolled .brand-text{color:#fff}
 .header .nav>li>a{color:var(--ink)}
 .header.scrolled .nav>li>a{color:#fff}
 .header .lang{background:var(--bg-soft);border-color:var(--line)}
@@ -84,6 +84,22 @@ h1,h2,h3,h4,h5{font-family:var(--display);line-height:1.15;letter-spacing:-.01em
 .header.menu-open .lang button.on{background:var(--navy);color:#fff}
 .header .burger i,.header .burger i::before,.header .burger i::after{background:var(--navy)}
 .header.scrolled .burger i,.header.scrolled .burger i::before,.header.scrolled .burger i::after{background:#fff}
+
+/* Itens do menu com aparência de botão (pílulas) */
+.header .nav{gap:8px;align-items:center}
+.header .nav>li{padding:20px 0}
+.header .nav>li>a{padding:9px 16px;border-radius:999px;font-size:13.5px;line-height:1.4;background:var(--bg-soft);border:1px solid #d9e1f2;color:var(--navy);transition:background .2s,color .2s,border-color .2s}
+.header .nav>li>a:hover{background:var(--green);border-color:var(--green);color:#fff!important}
+.header .nav>li>a.cur,.header .has-mega.open>.mega-toggle{background:var(--navy);border-color:var(--navy);color:#fff!important}
+.header.scrolled .nav>li>a{background:#ffffff14;border-color:#ffffff40;color:#fff}
+.header.scrolled .nav>li>a:hover{background:var(--green);border-color:var(--green)}
+.header.scrolled .nav>li>a.cur,.header.scrolled .has-mega.open>.mega-toggle{background:#fff;border-color:#fff;color:var(--navy)!important}
+@media (max-width:1100px){
+  .header.menu-open .nav{align-items:stretch;gap:0}
+  .header.menu-open .nav>li{padding:0}
+  .header.menu-open .nav>li>a{background:none;border:0;border-radius:0;padding:12px 0;color:var(--ink)}
+  .header.menu-open .nav>li>a:hover,.header.menu-open .nav>li>a.cur,.header.menu-open .has-mega.open>.mega-toggle{background:none;color:var(--green)!important}
+}
 
 /* ===== Rodapé ===== */
 .footer{background:#06103f;color:#aab6e6;padding:64px 0 26px;font-size:14px}
