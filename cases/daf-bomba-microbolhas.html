@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alternativas de melhoria em sistema DAF: pressurização vs. nanobolhas | GETA</title>
+<meta name="description" content="Comparação entre a pressurização tradicional (bombas centrífugas, compressor e vaso de pressão) e o bombeamento de nanobolhas para melhorar a separação físico-química em um flotador DAF existente.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261124c">
+<link rel="stylesheet" href="../assets/mega.css?v=20261124c">
+</head>
+<!-- Conteúdo anonimizado: sem nome do cliente, do fornecedor e sem dados dos equipamentos.
+     =====================================================================
+  CASE: Alternativas de melhoria em sistema DAF: pressurização vs. nanobolhas
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "daf-bomba-microbolhas").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/daf-bomba-microbolhas/ e use
+     <img src="../img/cases/daf-bomba-microbolhas/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="daf-bomba-microbolhas" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>3 → 1</b><span>equipamentos para gerar as bolhas</span></div>
+    <div class="kpi"><b>0</b><span>compressores e vasos de pressão na nova configuração</span></div>
+    <div class="kpi"><b>&lt;100 µm</b><span>faixa típica das microbolhas usadas em flotação</span></div>
+    <div class="kpi"><b>Retrofit</b><span>mantendo o flotador existente</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Estado de São Paulo</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Engenharia básica concluída</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Tratamento de efluentes industriais oleosos</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Flotador DAF cônico existente</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Diagnóstico e engenharia básica</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Em uma central de tratamento de efluentes no estado de São Paulo, uma linha dedicada a <strong>efluentes oleosos</strong> (emulsões e borras de indústrias químicas, petroquímicas e de acabamento de metais) opera com um flotador por ar dissolvido (DAF) cônico.</p>
+            <p>A separação óleo-água não era eficiente: havia <strong>arraste de sólidos suspensos</strong> para o clarificado e baixo rendimento do tratamento físico-químico. O objetivo era aumentar a remoção de sólidos, óleos e fenóis <strong>sem substituir o flotador existente</strong>, atuando na forma de injeção de ar.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O sistema de geração de bolhas era do tipo tradicional, com <strong>recirculação pressurizada</strong>:</p>
+            <ul>
+              <li>o clarificado do DAF é acumulado em um tanque aberto;</li>
+              <li><strong>bombas centrífugas de alta pressão</strong> recirculam esse líquido;</li>
+              <li>um <strong>vaso de pressurização alimentado por compressor de ar</strong> dissolve o ar na água;</li>
+              <li>ao ser despressurizada na entrada do flotador, a água libera as bolhas que arrastam os sólidos para a superfície.</li>
+            </ul>
+            <p>A linha opera com vazão diária moderada e relativamente estável, e os equipamentos já tinham vários anos de operação.</p>
+            <figure><img src="../img/cases/daf-bomba-microbolhas/compressor-vasos-pressao.jpg" alt="Compressor de ar e vasos de pressão em sala industrial"><figcaption>Compressor e vasos de pressão, típicos da pressurização tradicional (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA fez o <strong>levantamento de engenharia básica</strong> do sistema, com inspeção de campo e análise das folhas de dados do flotador, do tanque de clarificado, das bombas e do vaso de pressurização. Os principais gargalos identificados foram:</p>
+            <ul>
+              <li><strong>Baixa saturação de ar</strong> na corrente de recirculação, que limita a quantidade de bolhas disponíveis para a flotação.</li>
+              <li><strong>Bolhas grandes e heterogêneas</strong>: sobem rápido, têm menos área de contato e capturam menos partículas finas e gotículas de óleo.</li>
+              <li><strong>Muitos equipamentos para uma única função</strong> (bombas, compressor e vaso de pressão), com mais consumo de energia, manutenção e pontos de falha.</li>
+              <li>Tanque de clarificado exposto ao ar, o que interfere na operação da recirculação.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li>Levantamento de campo e registro fotográfico do flotador, tanques, bombas e vaso de pressurização.</li>
+              <li>Análise das condições de operação das bombas atuais: vazão, altura manométrica, NPSH, rendimento e potência.</li>
+              <li>Levantamento dos dados de projeto do vaso de pressurização (pressões de projeto e de operação e código construtivo).</li>
+              <li>Análise da vazão diária da linha para definir a capacidade de recirculação.</li>
+              <li>Avaliação técnica da substituição por bombas de nanobolhas, em conjunto com um fornecedor especializado.</li>
+              <li>Definição dos requisitos técnicos e da base para o projeto executivo.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Foram comparadas duas alternativas: manter e otimizar a <strong>pressurização tradicional</strong> ou <strong>substituir o conjunto bombas centrífugas + compressor + vaso de pressurização</strong> por <strong>bombas de nanobolhas</strong> (bombas multifásicas gás-líquido). A alternativa proposta é a de nanobolhas:</p>
+            <ul>
+              <li>a bomba <strong>aspira o ar diretamente</strong> e o dissolve sob pressão no próprio corpo do equipamento;</li>
+              <li>na despressurização, gera <strong>micro e nanobolhas finas e uniformes</strong>, com muito mais área de contato com as partículas e gotículas de óleo;</li>
+              <li>a recirculação vai direto ao flotador, <strong>sem compressor nem vaso de pressão</strong>;</li>
+              <li>o flotador existente é mantido: trata-se de um <strong>retrofit</strong> do sistema de geração de bolhas.</li>
+            </ul>
+            <figure><img src="../img/cases/daf-bomba-microbolhas/antes-depois.jpg" alt="Esquema do sistema de pressurização tradicional e do sistema com bomba de nanobolhas"><figcaption>Pressurização tradicional vs. bombeamento de nanobolhas (esquema ilustrativo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Na <strong>flotação por ar dissolvido (DAF)</strong>, microbolhas aderem a sólidos, flocos e gotículas de óleo e os levam até a superfície, onde formam um lodo flotado que é removido. O desempenho depende diretamente do <strong>tamanho e da quantidade de bolhas</strong>: quanto menores, maior a área de contato por volume de ar e mais lenta a ascensão, o que aumenta o tempo de contato com as partículas.</p>
+            <p>As <strong>bombas de nanobolhas</strong> integram em um único equipamento a aspiração do ar, a dissolução sob pressão e a geração das bolhas, simplificando o sistema de saturação.</p>
+            <figure><img src="../img/cases/daf-bomba-microbolhas/microbolhas-azul.jpg" alt="Microbolhas de ar em água"><figcaption>Microbolhas de ar em água (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Avaliação hidráulica</strong> das bombas atuais (curva, ponto de operação, NPSH e potência) para compatibilizar a nova bomba com a recirculação existente.</li>
+              <li><strong>Balanço de ar e saturação</strong> da corrente de recirculação, com base na relação ar/sólidos usada no projeto de flotadores.</li>
+              <li><strong>Análise da vazão diária</strong> da linha (distribuição e valores de referência).</li>
+              <li><strong>Fundamentos de tamanho de bolhas</strong>: velocidade de ascensão e área específica em função do diâmetro.</li>
+            </ul>
+            <figure><img src="../img/cases/daf-bomba-microbolhas/tamanho-bolhas.jpg" alt="Gráfico de velocidade de ascensão e área específica em função do diâmetro da bolha"><figcaption>Por que bolhas menores: mais área de contato e ascensão mais lenta (curvas teóricas).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A engenharia básica foi concluída e encaminhada à engenharia do cliente e ao fornecedor, para o desenvolvimento conjunto do <strong>projeto executivo</strong>. Os resultados esperados com a substituição são:</p>
+            <ul>
+              <li><strong>Maior saturação de ar</strong> e bolhas menores e mais uniformes, melhorando a remoção de sólidos suspensos, óleos e graxas e fenóis.</li>
+              <li><strong>Sistema mais simples</strong>: de três equipamentos para gerar bolhas (bombas, compressor e vaso de pressão) para um único tipo de equipamento.</li>
+              <li><strong>Menos manutenção</strong> e eliminação de um vaso de pressão e de um compressor na operação.</li>
+              <li>Aproveitamento do <strong>flotador existente</strong>, sem obras de grande porte.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <table>
+              <tr><th>Critério</th><th>Pressurização tradicional</th><th>Bomba de nanobolhas</th></tr>
+              <tr><td>Equipamentos para gerar bolhas</td><td>Bombas + compressor + vaso de pressão</td><td>Bomba de nanobolhas</td></tr>
+              <tr><td>Tamanho das bolhas</td><td>Maiores e heterogêneas</td><td>Micro e nanobolhas, finas e uniformes</td></tr>
+              <tr><td>Manutenção</td><td>Mais pontos de falha</td><td>Mais simples</td></tr>
+              <tr><td>Vaso de pressão</td><td>Necessário (inspeção periódica)</td><td>Dispensado</td></tr>
+              <tr><td>Investimento</td><td>Existente</td><td>Troca de equipamentos, mantendo o flotador</td></tr>
+            </table>
+            <p>A análise econômica detalhada (investimento, consumo de energia e manutenção) faz parte do projeto executivo desenvolvido com o fornecedor.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA atuou na <strong>supervisão técnica</strong> do projeto, sendo responsável por:</p>
+            <ul>
+              <li>diagnóstico do desempenho do DAF e do sistema de saturação;</li>
+              <li>levantamento de campo e de engenharia básica dos equipamentos existentes;</li>
+              <li>avaliação técnica da tecnologia de nanobolhas e definição dos requisitos do projeto;</li>
+              <li>articulação técnica entre a engenharia do cliente e o fornecedor para o projeto executivo.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Relatório técnico de melhoria da injeção de ar no sistema DAF.</li>
+              <li>Fluxograma do sistema atual e descrição de cada unidade.</li>
+              <li>Levantamento das condições de operação das bombas e dos dados de projeto do vaso de pressurização.</li>
+              <li>Requisitos técnicos para a substituição por bombas de nanobolhas.</li>
+              <li>Base para o projeto executivo desenvolvido com o fornecedor.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/daf-bomba-microbolhas/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/daf-bomba-microbolhas/microbolhas-ascensao.jpg" alt="Bolhas finas subindo na água"><figcaption>Bolhas finas em ascensão (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/daf-bomba-microbolhas/bombas-industriais.jpg" alt="Bombas industriais com motores elétricos"><figcaption>Bombas industriais (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/daf-bomba-microbolhas/antes-depois.jpg" alt="Esquema antes e depois"><figcaption>Pressurização vs. nanobolhas (esquema).</figcaption></figure>
+        </div>
+        <p class="ptonly" style="margin-top:14px">Fotos ilustrativas de banco de imagens (Pexels) e esquemas simplificados, preservando a confidencialidade do cliente.</p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261124c"></script>
+<script src="cases.js?v=20261124c"></script>
+<script src="../assets/mega.js?v=20261124c"></script>
+<script src="../assets/portfolio.js?v=20261124c"></script>
+</body>
+</html>

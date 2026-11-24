@@ -124,6 +124,25 @@ window.GETA_CASES =
     "tags": ["Sedimentação", "Sedimentador lamelar", "Ensaios em coluna", "Velocidade de sedimentação", "Taxa de aplicação superficial", "Floculação"]
   },
   {
+    "slug": "daf-bomba-microbolhas",
+    "eixos": ["res", "proc"],
+    "capa": "img/cases/capa-daf-bomba-microbolhas.jpg",
+    "cliente": "",
+    "ano": "2025",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Alternativas de melhoria em sistema DAF: pressurização vs. nanobolhas",
+      "en": "DAF improvement alternatives: pressurization vs. nanobubbles",
+      "es": "Alternativas de mejora en sistema DAF: presurización vs. nanoburbujas"
+    },
+    "resumo": {
+      "pt": "Comparação entre a pressurização tradicional (bombas centrífugas, compressor e vaso de pressão) e o bombeamento de nanobolhas para melhorar a separação físico-química em um flotador DAF existente.",
+      "en": "Comparison between traditional pressurization (centrifugal pumps, compressor and pressure vessel) and nanobubble pumping to improve physicochemical separation in an existing DAF unit.",
+      "es": "Comparación entre la presurización tradicional (bombas centrífugas, compresor y tanque a presión) y el bombeo de nanoburbujas para mejorar la separación fisicoquímica en un flotador DAF existente."
+    },
+    "tags": ["Flotação por ar dissolvido (DAF)", "Nanobolhas", "Microbolhas", "Bomba multifásica", "Saturação de ar", "Separação óleo-água", "Retrofit"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",
