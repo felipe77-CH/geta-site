@@ -16,3 +16,4 @@ sol-vinhaca.jpg .................. pexels.com/photo/9259940   (Jess Vide)
 sol-customizadas.jpg ............. pexels.com/photo/34054482
 sol-monitoramento.jpg ............ pexels.com/photo/4173482   (pok-rie)
 Logo: GETA (arquivo fornecido pelo cliente).
+img/cases/capa-*.jpg ............. ilustrações geradas pela GETA (Python/matplotlib), sem restrição de uso.

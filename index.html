@@ -8,6 +8,7 @@
 <link rel="icon" href="img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/mega.css">
 <style>
   /* ====== Paleta extraída do logo GETA ====== */
   :root{
@@ -265,10 +266,10 @@
     </a>
     <ul class="nav">
       <li><a href="#sobre" data-i18n="nav.about">A GETA</a>
-        <div class="dropdown"><a href="#sobre" data-i18n="nav.who">Quem somos</a><a href="#sobre" data-i18n="nav.how">Como trabalhamos</a><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
-      <li><a href="#areas" data-i18n="nav.areas">Áreas de atuação</a>
-        <div class="dropdown"><a href="#areas" data-i18n="area.1">Engenharia Ambiental</a><a href="#areas" data-i18n="area.2">Tratamento de Efluentes</a><a href="#areas" data-i18n="area.3">Análises Remotas</a><a href="#areas" data-i18n="area.4">Plantas de Saneamento</a><a href="#areas" data-i18n="area.5">Engenharia e Inovação</a></div></li>
-      <li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li>
+        <div class="dropdown"><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a><a href="#sobre" data-i18n="nav.how">Como trabalhamos</a><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
+      <li class="has-mega"><a href="#areas" class="mega-toggle" aria-expanded="false" data-i18n="nav.areas">Áreas de atuação</a>
+        <div class="mega" data-mega></div></li>
+      <li><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a></li>
       <li><a href="#tecnologia" data-i18n="nav.tech">Tecnologia</a></li>
       <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
     </ul>
@@ -403,22 +404,15 @@
       <aside class="filters" id="filters">
         <h5 data-i18n="sol.filter">Filtrar por área</h5>
         <button class="on" data-f="all" data-i18n="sol.all">Todas</button>
-        <button data-f="efl" data-i18n="area.2">Tratamento de Efluentes</button>
-        <button data-f="san" data-i18n="area.4">Plantas de Saneamento</button>
-        <button data-f="amb" data-i18n="area.1">Engenharia Ambiental</button>
-        <button data-f="rem" data-i18n="area.3">Análises Remotas</button>
-        <button data-f="ino" data-i18n="area.5">Engenharia e Inovação</button>
+        <button data-f="amb" data-i18n="ax.amb">Engenharia Ambiental</button>
+        <button data-f="proc" data-i18n="ax.proc">Engenharia de Processos</button>
+        <button data-f="res" data-i18n="ax.res">Tratamento de Resíduos e Efluentes</button>
+        <button data-f="dig" data-i18n="ax.dig">Engenharia Digital e IA</button>
+        <button data-f="mod" data-i18n="ax.mod">Modelagem e Otimização</button>
+        <button data-f="rd" data-i18n="ax.rd">Estudos Técnico-Econômicos e P&amp;D</button>
       </aside>
+      <!-- Os cards são gerados a partir de cases/cases.js; cada um abre sua página em cases/<slug>.html -->
       <div class="cards" id="cards">
-        <article class="card" data-a="efl"><div class="thumb" style="background-image:url(img/sol-efluentes-complexos.jpg)"><span class="tag" data-i18n="tag.efl">Efluentes</span></div><div class="b"><h3 data-i18n="c1.title">Efluentes Líquidos Complexos</h3><p data-i18n="c1.text">Projetos e supervisão de sistemas com eficiência, controle operacional e redução de emissões.</p></div></article>
-        <article class="card" data-a="efl san"><div class="thumb" style="background-image:url(img/sol-chorume.jpg)"><span class="tag" data-i18n="tag.efl">Efluentes</span></div><div class="b"><h3 data-i18n="c2.title">Tratamento de Chorume (Lixiviados)</h3><p data-i18n="c2.text">Seleção de rota tecnológica físico-química, projeto executivo e supervisão operacional.</p></div></article>
-        <article class="card" data-a="amb rem"><div class="thumb" style="background-image:url(img/sol-gases.jpg)"><span class="tag" data-i18n="tag.air">Ar</span></div><div class="b"><h3 data-i18n="c3.title">Gases Odoríferos e Poluentes Atmosféricos</h3><p data-i18n="c3.text">Sistemas de recolhimento e tratamento de emissões gasosas industriais.</p></div></article>
-        <article class="card" data-a="san ino"><div class="thumb" style="background-image:url(img/sol-lodos.jpg)"><span class="tag" data-i18n="tag.sludge">Lodos</span></div><div class="b"><h3 data-i18n="t2.title">Desaguamento e Inertização de Lodos</h3><p data-i18n="c4.text">Soluções inovadoras para lodos e lamas industriais sem tecnologias convencionais.</p></div></article>
-        <article class="card" data-a="san amb"><div class="thumb" style="background-image:url(img/sol-residuos-cdr.jpg)"><span class="tag" data-i18n="tag.waste">Resíduos</span></div><div class="b"><h3 data-i18n="c5.title">Valorização de Resíduos Sólidos Urbanos</h3><p data-i18n="c5.text">Transformação em Combustível Derivado de Resíduos (CDR) de alta performance.</p></div></article>
-        <article class="card" data-a="ino"><div class="thumb" style="background-image:url(img/sol-vinhaca.jpg)"><span class="tag" data-i18n="tag.bio">Bioenergia</span></div><div class="b"><h3 data-i18n="c6.title">Aproveitamento de Subprodutos Industriais</h3><p data-i18n="c6.text">Pré-digestão de vinhaça para aumento de produção de biometano.</p></div></article>
-        <article class="card" data-a="rem amb"><div class="thumb" style="background-image:url(img/sol-monitoramento.jpg)"><span class="tag" data-i18n="stat.3b">IA</span></div><div class="b"><h3 data-i18n="c7.title">Monitoramento Remoto com IA</h3><p data-i18n="c7.text">Sensoriamento on-line e dashboards preditivos de qualidade do ar, águas e efluentes.</p></div></article>
-        <article class="card" data-a="ino amb"><div class="thumb" style="background-image:url(img/sol-customizadas.jpg)"><span class="tag" data-i18n="tag.inno">Inovação</span></div><div class="b"><h3 data-i18n="c8.title">Soluções Customizadas</h3><p data-i18n="c8.text">Desenvolvimento de tecnologias para emissões sem soluções convencionais.</p></div></article>
-        <article class="card" data-a="san efl"><div class="thumb" style="background-image:url(img/area-plantas-saneamento.jpg)"><span class="tag" data-i18n="tag.san">Saneamento</span></div><div class="b"><h3 data-i18n="c9.title">Estações de Tratamento</h3><p data-i18n="c9.text">Otimização e supervisão operacional de plantas de saneamento e ETEs.</p></div></article>
       </div>
     </div>
   </div>
@@ -454,7 +448,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div><img class="flogo" src="img/logo-geta-white.png" alt="GETA"><p data-i18n="ft.desc">Grupo de Especialistas em Tecnologias Ambientais.<br>Inovação a Serviço da Sustentabilidade.</p></div>
-      <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="#sobre" data-i18n="nav.who">Quem somos</a></li><li><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
+      <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a></li><li><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
       <div><h4 data-i18n="nav.areas">Áreas de atuação</h4><ul><li><a href="#areas" data-i18n="area.1">Engenharia Ambiental</a></li><li><a href="#areas" data-i18n="area.2">Tratamento de Efluentes</a></li><li><a href="#areas" data-i18n="area.3">Análises Remotas</a></li><li><a href="#areas" data-i18n="area.4">Plantas de Saneamento</a></li><li><a href="#areas" data-i18n="area.5">Engenharia e Inovação</a></li></ul></div>
       <div><h4 data-i18n="nav.contact">Contato</h4><ul><li><a href="#contato" data-i18n="cta.specialist">Fale com um especialista</a></li><li><a href="#" data-i18n="ft.privacy">Política de privacidade</a></li><li><a href="#" data-i18n="ft.cookies">Declaração de cookies</a></li></ul></div>
     </div>
@@ -465,13 +459,16 @@
 <div class="cookie" id="cookie"><span data-i18n="cookie.text">Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa Política de Privacidade.</span><button data-i18n="cookie.ok" onclick="cookie.remove()">Aceitar</button><button class="alt" data-i18n="cookie.no" onclick="cookie.remove()">Recusar</button></div>
 
 <script src="i18n.js"></script>
+<script src="cases/cases.js"></script>
+<script src="assets/mega.js"></script>
 <script>
   // Header
   const header=document.getElementById('header');
   const onScroll=()=>header.classList.toggle('scrolled',scrollY>40);
   addEventListener('scroll',onScroll);onScroll();
   document.getElementById('burger').onclick=()=>header.classList.toggle('menu-open');
-  document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>header.classList.remove('menu-open')));
+  document.querySelectorAll('.nav a:not(.mega-toggle)').forEach(a=>a.addEventListener('click',()=>header.classList.remove('menu-open')));
+  GETAMenu.init('');
 
   // Hero slider
   const slides=[...document.querySelectorAll('.slide')],dots=document.querySelector('.dots');let cur=0,timer;
@@ -489,9 +486,15 @@
   stepsPT.forEach((s,i)=>{const a=i/stepsPT.length*2*Math.PI-Math.PI/2;const n=document.createElement('div');n.className='node';n.style.left=(50+37*Math.cos(a))+'%';n.style.top=(50+37*Math.sin(a))+'%';n.innerHTML=`<div class="dot">${String(i+1).padStart(2,'0')}</div><span data-i18n="cycle.${i+1}">${s}</span>`;cycle.append(n)});
   const nodes=[...cycle.querySelectorAll('.node')];let k=0;setInterval(()=>{nodes.forEach(n=>n.classList.remove('on'));nodes[k++%nodes.length].classList.add('on')},1600);
 
+  // Cases (cases/cases.js): monta os cards; títulos e resumos mudam com o idioma
+  const CASES=window.GETA_CASES||[];
+  document.getElementById('cards').innerHTML=CASES.map(c=>`<a class="card" href="cases/${c.slug}.html" data-a="${c.eixos.join(' ')}"><div class="thumb" style="background-image:url('${c.capa}')"><span class="tag" data-i18n="ax.${c.eixos[0]}"></span></div><div class="b"><h3></h3><p></p></div></a>`).join('');
+  I18N.onChange(lang=>document.querySelectorAll('#cards .card').forEach((el,i)=>{const c=CASES[i];el.querySelector('h3').innerHTML=c.titulo[lang]||c.titulo.pt;el.querySelector('p').innerHTML=c.resumo[lang]||c.resumo.pt}));
+
   // Filtro de soluções
   const fbtns=[...document.querySelectorAll('#filters button')],cards=[...document.querySelectorAll('.card')];
   fbtns.forEach(b=>b.onclick=()=>{fbtns.forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;cards.forEach(c=>c.classList.toggle('hide',f!=='all'&&!c.dataset.a.split(' ').includes(f)))});
+  const eixo=new URL(location.href).searchParams.get('eixo');const fb=fbtns.find(x=>x.dataset.f===eixo);if(fb)fb.click();
 
   // Formulário (demonstração)
   document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent=I18N.t('form.sent');b.dataset.sent='1'});

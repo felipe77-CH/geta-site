@@ -6,7 +6,64 @@
   const extraPT = {
     'meta.title': 'GETA | Tecnologias Ambientais',
     'meta.desc': 'GETA – Grupo de Especialistas em Tecnologias Ambientais. Inovação a serviço da sustentabilidade.',
-    'form.sent': 'Mensagem enviada ✓'
+    'form.sent': 'Mensagem enviada ✓',
+    // Cases (filtro de Soluções e páginas cases/*.html)
+
+    'ax.amb': 'Engenharia Ambiental',
+    'ax.proc': 'Engenharia de Processos',
+    'ax.res': 'Tratamento de Resíduos e Efluentes',
+    'ax.dig': 'Engenharia Digital e IA',
+    'ax.mod': 'Modelagem e Otimização',
+    'ax.rd': 'Estudos Técnico-Econômicos e P&amp;D',
+
+    'pf.read': 'Ver case →',
+    'pf.draft': 'Em elaboração',
+    'pf.cta.t': 'Tem um desafio parecido?',
+    'pf.cta.p': 'Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.',
+
+    'cs.client': 'Cliente',
+    'cs.year': 'Ano',
+    'cs.banner': '<b>Case em elaboração.</b> A estrutura está pronta e o conteúdo será publicado em breve.',
+    'cs.toc': 'Neste case',
+    'cs.facts': 'Ficha técnica',
+    'cs.f.loc': 'Local',
+    'cs.f.period': 'Período',
+    'cs.f.sector': 'Setor',
+    'cs.f.scale': 'Escala / capacidade',
+    'cs.f.type': 'Tipo de trabalho',
+    'cs.s1': 'Problema / desafio do cliente',
+    'cs.s2': 'Contexto e características do processo',
+    'cs.s3': 'Diagnóstico e dados analisados',
+    'cs.s4': 'Metodologia utilizada',
+    'cs.s5': 'Solução de engenharia desenvolvida',
+    'cs.s6': 'Tecnologias e processos envolvidos',
+    'cs.s7': 'Modelagem, simulação e ferramentas computacionais',
+    'cs.s8': 'Resultados obtidos',
+    'cs.s9': 'CAPEX/OPEX e análise técnico-econômica',
+    'cs.s10': 'Escopo e responsabilidades da GETA',
+    'cs.s11': 'Principais entregáveis',
+    'cs.gallery': 'Galeria',
+    'cs.tbd': 'A preencher',
+    'cs.ptonly': 'Conteúdo disponível em português',
+    'cs.prev': 'Case anterior',
+    'cs.next': 'Próximo case',
+    'cs.related': 'Cases relacionados',
+    'cs.back': '← Voltar às soluções',
+    // Menu de áreas, páginas de área e Quem somos
+    'meta.qs.title': 'Quem somos | GETA',
+    'meta.qs.desc': 'Conheça a GETA: origem, missão, visão, valores e a forma como transformamos desafios ambientais em soluções de engenharia.',
+    'mega.text': 'Selecione uma área para conhecer o que fazemos, por que fazemos e os principais estudos de caso.',
+    'mega.all': 'Ver todos os cases →',
+    'ar.eyebrow': 'Área de atuação',
+    'ar.what': 'O que fazemos',
+    'ar.what.t': 'Nossa atuação',
+    'ar.why': 'Por que fazemos',
+    'ar.why.t': 'O valor para o cliente',
+    'ar.cases': 'Cases principais',
+    'ar.cases.t': 'Estudos de caso desta área',
+    'ar.others': 'Outras áreas de atuação',
+    'ar.seecases': 'Ver os cases',
+    'ar.count': 'estudos de caso'
   };
 
   const dict = {
@@ -131,7 +188,121 @@
       'ft.photos': 'Photos: Pexels',
       'cookie.text': 'We use cookies to improve your experience. By continuing, you agree to our Privacy Policy.',
       'cookie.ok': 'Accept',
-      'cookie.no': 'Decline'
+      'cookie.no': 'Decline',
+      // Portfolio
+
+      'ax.amb': 'Environmental Engineering',
+      'ax.proc': 'Process Engineering',
+      'ax.res': 'Waste &amp; Effluent Treatment',
+      'ax.dig': 'Digital Engineering &amp; AI',
+      'ax.mod': 'Modeling &amp; Optimization',
+      'ax.rd': 'Technical-Economic Studies &amp; R&amp;D',
+
+      'pf.read': 'View case →',
+      'pf.draft': 'In preparation',
+      'pf.cta.t': 'Facing a similar challenge?',
+      'pf.cta.p': 'Tell our team about it and we will assess the best technical route for your case.',
+
+      'cs.client': 'Client',
+      'cs.year': 'Year',
+      'cs.banner': '<b>Case in preparation.</b> The structure is ready and the content will be published soon.',
+      'cs.toc': 'In this case',
+      'cs.facts': 'Fact sheet',
+      'cs.f.loc': 'Location',
+      'cs.f.period': 'Period',
+      'cs.f.sector': 'Sector',
+      'cs.f.scale': 'Scale / capacity',
+      'cs.f.type': 'Type of work',
+      'cs.s1': 'Client problem / challenge',
+      'cs.s2': 'Context and process characteristics',
+      'cs.s3': 'Diagnosis and data analyzed',
+      'cs.s4': 'Methodology',
+      'cs.s5': 'Engineering solution developed',
+      'cs.s6': 'Technologies and processes involved',
+      'cs.s7': 'Modeling, simulation and computational tools',
+      'cs.s8': 'Results achieved',
+      'cs.s9': 'CAPEX/OPEX and technical-economic analysis',
+      'cs.s10': 'GETA scope and responsibilities',
+      'cs.s11': 'Main deliverables',
+      'cs.gallery': 'Gallery',
+      'cs.tbd': 'To be completed',
+      'cs.ptonly': 'Content available in Portuguese',
+      'cs.prev': 'Previous case',
+      'cs.next': 'Next case',
+      'cs.related': 'Related cases',
+      'cs.back': '← Back to solutions',
+      // Areas menu, area pages and About us
+      'meta.qs.title': 'About us | GETA',
+      'meta.qs.desc': 'Meet GETA: our origin, mission, vision, values and how we turn environmental challenges into engineering solutions.',
+      'mega.text': 'Select an area to see what we do, why we do it and our main case studies.',
+      'mega.all': 'See all cases →',
+      'ar.eyebrow': 'Area of expertise',
+      'ar.what': 'What we do',
+      'ar.what.t': 'Our work',
+      'ar.why': 'Why we do it',
+      'ar.why.t': 'The value for the client',
+      'ar.cases': 'Main cases',
+      'ar.cases.t': 'Case studies in this area',
+      'ar.others': 'Other areas of expertise',
+      'ar.seecases': 'See the cases',
+      'ar.count': 'case studies',
+      'qs.title': 'Science and engineering at the service of the <mark>environment</mark>',
+      'qs.lead': 'We are a group of specialists in chemical, biochemical and environmental engineering who turn complex environmental challenges into technical, measurable and sustainable solutions.',
+      'qs.o.eye': 'Our origin',
+      'qs.o.title': 'Specialists brought together to solve what is complex',
+      'qs.o1': 'GETA – Group of Specialists in Environmental Technologies was born from the union of chemical, biochemical and environmental engineering professionals with a common goal: to tackle environmental challenges with scientific rigor, data and tailored solutions.',
+      'qs.o2': 'From the start, we have focused on problems that conventional technologies do not solve well — landfill leachate, recalcitrant industrial effluents, metal-bearing sludge and odorous emissions — combining applied research, proprietary technology routes and field experience.',
+      'qs.o3': 'Today, GETA integrates process engineering, computational modeling and Artificial Intelligence to support companies and public agencies at every stage: from diagnosis to design, from implementation to operational supervision and continuous monitoring.',
+      'qs.st1': 'engineering cases',
+      'qs.st2': 'integrated technical fronts',
+      'qs.mvv.eye': 'Mission, vision and purpose',
+      'qs.mvv.title': 'What drives us',
+      'qs.m.t': 'Mission',
+      'qs.m': 'To develop and implement technically robust and economically viable environmental engineering solutions that ensure legal compliance, operational efficiency and the protection of the environment and public health.',
+      'qs.v.t': 'Vision',
+      'qs.v': 'To be a reference in environmental engineering based on science, data and innovation, recognized for turning challenges without conventional solutions into measurable results.',
+      'qs.p.t': 'Purpose',
+      'qs.p': 'Innovation at the service of sustainability: putting technical knowledge to work for a development that preserves natural resources for future generations.',
+      'qs.val.eye': 'Our values',
+      'qs.val.title': 'Principles that guide every project',
+      'qs.val1.t': 'Technical and scientific rigor',
+      'qs.val1': 'Decisions grounded in data, tests and models, not assumptions.',
+      'qs.val2.t': 'Ethics and transparency',
+      'qs.val2': 'Clear and honest relationships with clients, partners and regulators.',
+      'qs.val3.t': 'Purpose-driven innovation',
+      'qs.val3': 'We develop technology when it creates real value for the client and the environment.',
+      'qs.val4.t': 'Commitment to results',
+      'qs.val4': 'We follow each project until the agreed indicators are met.',
+      'qs.val5.t': 'Social and environmental responsibility',
+      'qs.val5': 'Protecting the environment and public health guides every solution we propose.',
+      'qs.val6.t': 'Collaboration',
+      'qs.val6': 'We work side by side with the client’s teams, sharing knowledge.',
+      'qs.how.title': 'A complete cycle, from diagnosis to monitoring',
+      'qs.c1': 'Data collection, sampling and characterization.',
+      'qs.c2': 'Treatability studies and selection of the best alternative.',
+      'qs.c3': 'Sizing, balances and specifications.',
+      'qs.c4': 'Construction support, commissioning and start-up.',
+      'qs.c5': 'Indicator tracking and process adjustments.',
+      'qs.c6': 'Dashboards and predictive models for continuous operation.',
+      'qs.dif.title': 'What makes GETA different',
+      'qs.d1.t': 'Chemical and biochemical engineering',
+      'qs.d1': 'Command of the physicochemical and biological phenomena that govern each process.',
+      'qs.d2.t': 'Proprietary technologies',
+      'qs.d2': 'Routes developed by GETA, including patented ones, for challenges without conventional solutions.',
+      'qs.d3.t': 'Data, modeling and AI',
+      'qs.d3': 'Simulation, CFD, Scientific Machine Learning and dashboards for precise decisions.',
+      'qs.d4.t': 'From diagnosis to operation',
+      'qs.d4': 'End-to-end support, from treatability studies to operational supervision.',
+      'qs.sec.eye': 'Who we serve',
+      'qs.sec.title': 'Companies and public agencies across different sectors',
+      'qs.s1': 'Industry',
+      'qs.s2': 'Sanitation',
+      'qs.s3': 'Landfills',
+      'qs.s4': 'Mining',
+      'qs.s5': 'Agribusiness and bioenergy',
+      'qs.s6': 'Public agencies',
+      'qs.cta.t': 'Shall we build the solution to your challenge?',
+      'qs.cta.p': 'Talk to our specialists and find the most suitable technical route for your case.'
     },
 
     es: {
@@ -255,13 +426,128 @@
       'ft.photos': 'Fotos: Pexels',
       'cookie.text': 'Usamos cookies para mejorar su experiencia. Al continuar, acepta nuestra Política de Privacidad.',
       'cookie.ok': 'Aceptar',
-      'cookie.no': 'Rechazar'
+      'cookie.no': 'Rechazar',
+      // Portafolio
+
+      'ax.amb': 'Ingeniería Ambiental',
+      'ax.proc': 'Ingeniería de Procesos',
+      'ax.res': 'Tratamiento de Residuos y Efluentes',
+      'ax.dig': 'Ingeniería Digital e IA',
+      'ax.mod': 'Modelado y Optimización',
+      'ax.rd': 'Estudios Técnico-Económicos e I+D',
+
+      'pf.read': 'Ver caso →',
+      'pf.draft': 'En elaboración',
+      'pf.cta.t': '¿Tiene un desafío similar?',
+      'pf.cta.p': 'Cuénteselo a nuestro equipo y evaluamos la mejor ruta técnica para su caso.',
+
+      'cs.client': 'Cliente',
+      'cs.year': 'Año',
+      'cs.banner': '<b>Caso en elaboración.</b> La estructura está lista y el contenido se publicará pronto.',
+      'cs.toc': 'En este caso',
+      'cs.facts': 'Ficha técnica',
+      'cs.f.loc': 'Ubicación',
+      'cs.f.period': 'Período',
+      'cs.f.sector': 'Sector',
+      'cs.f.scale': 'Escala / capacidad',
+      'cs.f.type': 'Tipo de trabajo',
+      'cs.s1': 'Problema / desafío del cliente',
+      'cs.s2': 'Contexto y características del proceso',
+      'cs.s3': 'Diagnóstico y datos analizados',
+      'cs.s4': 'Metodología utilizada',
+      'cs.s5': 'Solución de ingeniería desarrollada',
+      'cs.s6': 'Tecnologías y procesos involucrados',
+      'cs.s7': 'Modelado, simulación y herramientas computacionales',
+      'cs.s8': 'Resultados obtenidos',
+      'cs.s9': 'CAPEX/OPEX y análisis técnico-económico',
+      'cs.s10': 'Alcance y responsabilidades de la GETA',
+      'cs.s11': 'Principales entregables',
+      'cs.gallery': 'Galería',
+      'cs.tbd': 'Por completar',
+      'cs.ptonly': 'Contenido disponible en portugués',
+      'cs.prev': 'Caso anterior',
+      'cs.next': 'Caso siguiente',
+      'cs.related': 'Casos relacionados',
+      'cs.back': '← Volver a las soluciones',
+      // Menú de áreas, páginas de área y Quiénes somos
+      'meta.qs.title': 'Quiénes somos | GETA',
+      'meta.qs.desc': 'Conozca la GETA: origen, misión, visión, valores y cómo transformamos desafíos ambientales en soluciones de ingeniería.',
+      'mega.text': 'Seleccione un área para conocer qué hacemos, por qué lo hacemos y los principales estudios de caso.',
+      'mega.all': 'Ver todos los casos →',
+      'ar.eyebrow': 'Área de actuación',
+      'ar.what': 'Qué hacemos',
+      'ar.what.t': 'Nuestra actuación',
+      'ar.why': 'Por qué lo hacemos',
+      'ar.why.t': 'El valor para el cliente',
+      'ar.cases': 'Casos principales',
+      'ar.cases.t': 'Estudios de caso de esta área',
+      'ar.others': 'Otras áreas de actuación',
+      'ar.seecases': 'Ver los casos',
+      'ar.count': 'estudios de caso',
+      'qs.title': 'Ciencia e ingeniería al servicio del <mark>medio ambiente</mark>',
+      'qs.lead': 'Somos un grupo de especialistas en ingeniería química, bioquímica y ambiental que transforma desafíos ambientales complejos en soluciones técnicas, medibles y sostenibles.',
+      'qs.o.eye': 'Nuestro origen',
+      'qs.o.title': 'Especialistas reunidos para resolver lo complejo',
+      'qs.o1': 'La GETA – Grupo de Especialistas en Tecnologías Ambientales nació de la unión de profesionales de la ingeniería química, bioquímica y ambiental con un objetivo común: enfrentar los desafíos ambientales con rigor científico, base en datos y soluciones a medida.',
+      'qs.o2': 'Desde el inicio nos dedicamos a los problemas que las tecnologías convencionales no resuelven bien — lixiviados de relleno, efluentes industriales recalcitrantes, lodos con metales y emisiones odoríferas — uniendo investigación aplicada, rutas tecnológicas propias y experiencia de campo.',
+      'qs.o3': 'Hoy, la GETA integra ingeniería de procesos, modelado computacional e Inteligencia Artificial para apoyar a empresas y organismos públicos en todas las etapas: del diagnóstico al proyecto, de la implantación a la supervisión operacional y al monitoreo continuo.',
+      'qs.st1': 'casos de ingeniería',
+      'qs.st2': 'ejes técnicos integrados',
+      'qs.mvv.eye': 'Misión, visión y propósito',
+      'qs.mvv.title': 'Lo que nos mueve',
+      'qs.m.t': 'Misión',
+      'qs.m': 'Desarrollar e implementar soluciones de ingeniería ambiental técnicamente robustas y económicamente viables, que aseguren el cumplimiento legal, la eficiencia operacional y la protección del medio ambiente y de la salud pública.',
+      'qs.v.t': 'Visión',
+      'qs.v': 'Ser referente en ingeniería ambiental basada en ciencia, datos e innovación, reconocida por transformar desafíos sin solución convencional en resultados medibles.',
+      'qs.p.t': 'Propósito',
+      'qs.p': 'Innovación al servicio de la sostenibilidad: poner el conocimiento técnico a favor de un desarrollo que preserve los recursos naturales para las próximas generaciones.',
+      'qs.val.eye': 'Nuestros valores',
+      'qs.val.title': 'Principios que guían cada proyecto',
+      'qs.val1.t': 'Rigor técnico-científico',
+      'qs.val1': 'Decisiones fundamentadas en datos, ensayos y modelos, no en suposiciones.',
+      'qs.val2.t': 'Ética y transparencia',
+      'qs.val2': 'Relaciones claras y honestas con clientes, socios y organismos reguladores.',
+      'qs.val3.t': 'Innovación con propósito',
+      'qs.val3': 'Desarrollamos tecnología cuando genera valor real para el cliente y para el medio ambiente.',
+      'qs.val4.t': 'Compromiso con los resultados',
+      'qs.val4': 'Acompañamos cada proyecto hasta alcanzar los indicadores definidos.',
+      'qs.val5.t': 'Responsabilidad socioambiental',
+      'qs.val5': 'La protección del medio ambiente y de la salud pública orienta cada solución que proponemos.',
+      'qs.val6.t': 'Colaboración',
+      'qs.val6': 'Trabajamos codo a codo con los equipos del cliente, compartiendo conocimiento.',
+      'qs.how.title': 'Un ciclo completo, del diagnóstico al monitoreo',
+      'qs.c1': 'Levantamiento de datos, muestreo y caracterización.',
+      'qs.c2': 'Estudios de tratabilidad y selección de la mejor alternativa.',
+      'qs.c3': 'Dimensionamiento, balances y especificaciones.',
+      'qs.c4': 'Apoyo a la obra, puesta en marcha y arranque.',
+      'qs.c5': 'Seguimiento de indicadores y ajustes de proceso.',
+      'qs.c6': 'Dashboards y modelos predictivos para la operación continua.',
+      'qs.dif.title': 'Lo que hace diferente a la GETA',
+      'qs.d1.t': 'Ingeniería química y bioquímica',
+      'qs.d1': 'Dominio de los fenómenos fisicoquímicos y biológicos que gobiernan cada proceso.',
+      'qs.d2.t': 'Tecnologías propias',
+      'qs.d2': 'Rutas desarrolladas por la GETA, incluso patentadas, para desafíos sin solución convencional.',
+      'qs.d3.t': 'Datos, modelado e IA',
+      'qs.d3': 'Simulación, CFD, Scientific Machine Learning y dashboards para decidir con precisión.',
+      'qs.d4.t': 'Del diagnóstico a la operación',
+      'qs.d4': 'Acompañamiento integral, del estudio de tratabilidad a la supervisión operacional.',
+      'qs.sec.eye': 'A quién atendemos',
+      'qs.sec.title': 'Empresas y organismos públicos de distintos sectores',
+      'qs.s1': 'Industria',
+      'qs.s2': 'Saneamiento',
+      'qs.s3': 'Rellenos sanitarios',
+      'qs.s4': 'Minería',
+      'qs.s5': 'Agroindustria y bioenergía',
+      'qs.s6': 'Organismos públicos',
+      'qs.cta.t': '¿Construimos la solución para su desafío?',
+      'qs.cta.p': 'Hable con nuestros especialistas y conozca la ruta técnica más adecuada para su caso.'
     }
   };
 
   const htmlLang = { pt: 'pt-BR', en: 'en', es: 'es' };
   let pt = null;
   let current = 'pt';
+  const listeners = [];
 
   // Lê os textos em português do próprio HTML (uma única vez).
   function capturePT() {
@@ -288,9 +574,11 @@
     document.querySelectorAll('[data-i18n-ph]').forEach(el => el.setAttribute('placeholder', t(el.dataset.i18nPh)));
     document.querySelectorAll('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
     document.documentElement.lang = htmlLang[lang];
-    document.title = t('meta.title');
+    // Cada página pode indicar suas chaves: <body data-title-key="…" data-desc-key="…">
+    const b = document.body.dataset;
+    document.title = t(b.titleKey || 'meta.title');
     const md = document.querySelector('meta[name="description"]');
-    if (md) md.setAttribute('content', t('meta.desc'));
+    if (md) md.setAttribute('content', t(b.descKey || 'meta.desc'));
     document.querySelectorAll('.lang [data-lang]').forEach(b => {
       b.classList.toggle('on', b.dataset.lang === lang);
       b.setAttribute('aria-pressed', b.dataset.lang === lang);
@@ -299,6 +587,7 @@
     const url = new URL(location.href);
     if (lang === 'pt') url.searchParams.delete('lang'); else url.searchParams.set('lang', lang);
     history.replaceState(null, '', url);
+    listeners.forEach(fn => fn(lang));
   }
 
   function init() {
@@ -317,5 +606,8 @@
     return out;
   }
 
-  window.I18N = { init, apply, t, missing, get lang() { return current; } };
+  // Páginas que montam conteúdo por JS se inscrevem aqui: I18N.onChange(lang => …)
+  function onChange(fn) { listeners.push(fn); }
+
+  window.I18N = { init, apply, t, missing, onChange, get lang() { return current; } };
 })();

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quem somos | GETA</title>
+<meta name="description" content="Conheça a GETA: origem, missão, visão, valores e a forma como transformamos desafios ambientais em soluções de engenharia.">
+<link rel="icon" href="img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/portfolio.css">
+<link rel="stylesheet" href="assets/mega.css">
+<style>
+  .qs-hero h1 mark{background:none;color:var(--green)}
+  .qs-sec{padding:96px 0}
+  .qs-soft{background:var(--bg-soft)}
+  .qs-h2{font-size:clamp(28px,3.2vw,42px);color:var(--navy);margin:10px 0 18px}
+
+  /* Origem */
+  .qs-origin{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+  .qs-origin p{color:#2c3157;font-size:16.5px}
+  .qs-origin p+p{margin-top:16px}
+  .qs-photo{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:center/cover url(img/hero-laboratorio.jpg)}
+  .qs-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0b175e00 35%,#06103fe0)}
+  .qs-stats{position:absolute;left:22px;right:22px;bottom:22px;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .qs-stats div{background:#ffffff1f;backdrop-filter:blur(8px);border:1px solid #ffffff2e;border-radius:16px;padding:14px 12px;color:#fff}
+  .qs-stats b{display:block;font:800 28px var(--display);line-height:1.1}
+  .qs-stats span{font-size:12px;color:#d6defa;line-height:1.3;display:block;margin-top:4px}
+
+  /* Missão, visão, propósito */
+  .qs-mvv{background:var(--grad);color:#fff;position:relative;overflow:hidden}
+  .qs-mvv .bgmark{position:absolute;right:-140px;top:-120px;width:520px;opacity:.06}
+  .qs-mvv .head h2{color:#fff}.qs-mvv .eyebrow{color:#9fe8ad}
+  .mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+  .mvv article{background:#ffffff14;border:1px solid #ffffff26;border-radius:var(--radius);padding:32px 28px}
+  .mvv .ic{width:52px;height:52px;border-radius:14px;background:#ffffff1f;display:flex;align-items:center;justify-content:center;color:#9fe8ad;margin-bottom:18px}
+  .mvv .ic svg{width:26px;height:26px}
+  .mvv h3{font-size:21px;margin-bottom:10px}
+  .mvv p{color:#dbe3ff;font-size:15.5px}
+
+  /* Valores */
+  .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .val{background:#fff;border-radius:20px;padding:28px 26px;box-shadow:0 6px 24px #0b175e10;border-top:4px solid var(--green);transition:.25s}
+  .val:hover{transform:translateY(-5px);box-shadow:0 16px 34px #0b175e1c}
+  .val i{font:800 13px var(--display);color:var(--sky);font-style:normal;letter-spacing:.08em}
+  .val h3{font-size:18px;color:var(--navy);margin:8px 0 8px}
+  .val p{font-size:14.5px;color:var(--muted)}
+  .vals .val:nth-child(3n+2){border-top-color:var(--blue)}
+  .vals .val:nth-child(3n){border-top-color:var(--sky)}
+
+  /* Como trabalhamos */
+  .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;position:relative;counter-reset:st}
+  .steps::before{content:"";position:absolute;left:8%;right:8%;top:27px;height:2px;background:linear-gradient(90deg,var(--green),var(--blue),var(--sky))}
+  .step{text-align:center;position:relative;counter-increment:st}
+  .step .n{width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:#fff;border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font:800 16px var(--display);color:var(--navy);position:relative;box-shadow:0 0 0 6px var(--bg-soft)}
+  .step .n::before{content:counter(st,decimal-leading-zero)}
+  .step h3{font-size:15px;color:var(--navy);margin-bottom:6px}
+  .step p{font-size:13.5px;color:var(--muted);line-height:1.5}
+
+  /* Diferenciais */
+  .difs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .dif{border-radius:20px;padding:30px 24px;background:var(--bg-soft);transition:.25s}
+  .dif:hover{background:#fff;box-shadow:0 16px 34px #0b175e1c;transform:translateY(-4px)}
+  .dif .ic{width:50px;height:50px;border-radius:14px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .dif .ic svg{width:25px;height:25px}
+  .dif h3{font-size:17px;color:var(--navy);margin-bottom:8px}
+  .dif p{font-size:14.5px;color:var(--muted)}
+
+  /* Setores */
+  .sectors{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:900px;margin:0 auto}
+  .sectors li{list-style:none;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:12px 22px;font:600 14.5px var(--display);color:var(--navy)}
+
+  @media (max-width:1100px){
+    .qs-origin{grid-template-columns:1fr;gap:40px}.qs-photo{aspect-ratio:16/10}
+    .mvv,.vals{grid-template-columns:1fr 1fr}.difs{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:repeat(3,1fr);row-gap:34px}.steps::before{display:none}
+  }
+  @media (max-width:720px){
+    .qs-sec{padding:72px 0}
+    .mvv,.vals,.difs{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .qs-stats b{font-size:22px}
+  }
+</style>
+</head>
+<body data-page="about" data-root="" data-title-key="meta.qs.title" data-desc-key="meta.qs.desc">
+
+<!-- HERO -->
+<section class="cs-hero on-dark qs-hero">
+  <div class="bg" style="background-image:url(img/hero-rio-floresta.jpg)"></div>
+  <div class="wrap">
+    <nav class="crumb" aria-label="breadcrumb"><a href="index.html">GETA</a><span>/</span><span data-i18n="nav.who">Quem somos</span></nav>
+    <span class="eyebrow" data-i18n="nav.who">Quem somos</span>
+    <h1 data-i18n="qs.title">Ciência e engenharia a serviço do <mark>meio ambiente</mark></h1>
+    <p data-i18n="qs.lead">Somos um grupo de especialistas em engenharia química, bioquímica e ambiental que transforma desafios ambientais complexos em soluções técnicas, mensuráveis e sustentáveis.</p>
+  </div>
+</section>
+
+<!-- ORIGEM
+     Dica: se quiser, acrescente aqui o ano de fundação, os fundadores e a cidade de origem
+     (edite as chaves qs.o1, qs.o2 e qs.o3 também em i18n.js para EN/ES). -->
+<section class="qs-sec">
+  <div class="wrap qs-origin">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="qs.o.eye">Nossa origem</span>
+      <h2 class="qs-h2" data-i18n="qs.o.title">Especialistas reunidos para resolver o que é complexo</h2>
+      <p data-i18n="qs.o1">A GETA – Grupo de Especialistas em Tecnologias Ambientais nasceu da união de profissionais de engenharia química, bioquímica e ambiental com um objetivo em comum: enfrentar desafios ambientais com rigor científico, base em dados e soluções sob medida.</p>
+      <p data-i18n="qs.o2">Desde o início, nos dedicamos aos problemas que as tecnologias convencionais não resolvem bem — lixiviados de aterro, efluentes industriais recalcitrantes, lodos com metais e emissões odoríferas — unindo pesquisa aplicada, desenvolvimento de rotas tecnológicas próprias e experiência de campo.</p>
+      <p data-i18n="qs.o3">Hoje, a GETA integra engenharia de processos, modelagem computacional e Inteligência Artificial para apoiar empresas e órgãos públicos em todas as etapas: do diagnóstico ao projeto, da implantação à supervisão operacional e ao monitoramento contínuo.</p>
+    </div>
+    <div class="qs-photo reveal" role="img" data-i18n-aria="aria.lab" aria-label="Laboratório de engenharia">
+      <div class="qs-stats">
+        <div><b data-cases-count>20</b><span data-i18n="qs.st1">cases de engenharia</span></div>
+        <div><b>6</b><span data-i18n="qs.st2">eixos técnicos integrados</span></div>
+        <div><b>4</b><span data-i18n="stat.2">tecnologias exclusivas GETA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO, VISÃO E PROPÓSITO -->
+<section class="qs-sec qs-mvv">
+  <img class="bgmark" src="img/geta-mark-white.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="qs.mvv.eye">Missão, visão e propósito</span>
+      <h2 data-i18n="qs.mvv.title">O que nos move</h2>
+    </div>
+    <div class="mvv">
+      <article class="reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+        <h3 data-i18n="qs.m.t">Missão</h3>
+        <p data-i18n="qs.m">Desenvolver e implementar soluções de engenharia ambiental tecnicamente robustas e economicamente viáveis, que assegurem a conformidade legal, a eficiência operacional e a proteção do meio ambiente e da saúde pública.</p>
+      </article>
+      <article class="reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3 data-i18n="qs.v.t">Visão</h3>
+        <p data-i18n="qs.v">Ser referência em engenharia ambiental baseada em ciência, dados e inovação, reconhecida por transformar desafios sem solução convencional em resultados mensuráveis.</p>
+      </article>
+      <article class="reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-13 14-14-1 8-6 14-14 14z"/><path d="M5 19l7-7"/></svg></div>
+        <h3 data-i18n="qs.p.t">Propósito</h3>
+        <p data-i18n="qs.p">Inovação a serviço da sustentabilidade: colocar o conhecimento técnico a favor de um desenvolvimento que preserve os recursos naturais para as próximas gerações.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="qs-sec qs-soft">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="qs.val.eye">Nossos valores</span>
+      <h2 data-i18n="qs.val.title">Princípios que orientam cada projeto</h2>
+    </div>
+    <div class="vals">
+      <div class="val reveal"><i>01</i><h3 data-i18n="qs.val1.t">Rigor técnico-científico</h3><p data-i18n="qs.val1">Decisões fundamentadas em dados, ensaios e modelos, não em suposições.</p></div>
+      <div class="val reveal"><i>02</i><h3 data-i18n="qs.val2.t">Ética e transparência</h3><p data-i18n="qs.val2">Relações claras e honestas com clientes, parceiros e órgãos reguladores.</p></div>
+      <div class="val reveal"><i>03</i><h3 data-i18n="qs.val3.t">Inovação com propósito</h3><p data-i18n="qs.val3">Desenvolvemos tecnologia quando ela gera valor real para o cliente e para o meio ambiente.</p></div>
+      <div class="val reveal"><i>04</i><h3 data-i18n="qs.val4.t">Compromisso com resultados</h3><p data-i18n="qs.val4">Acompanhamos cada projeto até que os indicadores definidos sejam atingidos.</p></div>
+      <div class="val reveal"><i>05</i><h3 data-i18n="qs.val5.t">Responsabilidade socioambiental</h3><p data-i18n="qs.val5">A proteção do meio ambiente e da saúde pública orienta cada solução que propomos.</p></div>
+      <div class="val reveal"><i>06</i><h3 data-i18n="qs.val6.t">Colaboração</h3><p data-i18n="qs.val6">Trabalhamos lado a lado com as equipes do cliente, compartilhando conhecimento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO TRABALHAMOS -->
+<section class="qs-sec qs-soft" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="nav.how">Como trabalhamos</span>
+      <h2 data-i18n="qs.how.title">Um ciclo completo, do diagnóstico ao monitoramento</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="n"></div><h3 data-i18n="cycle.1">Diagnóstico</h3><p data-i18n="qs.c1">Levantamento de dados, amostragem e caracterização.</p></div>
+      <div class="step"><div class="n"></div><h3 data-i18n="cycle.2">Rota tecnológica</h3><p data-i18n="qs.c2">Estudos de tratabilidade e seleção da melhor alternativa.</p></div>
+      <div class="step"><div class="n"></div><h3 data-i18n="cycle.3">Projeto executivo</h3><p data-i18n="qs.c3">Dimensionamento, balanços e especificações.</p></div>
+      <div class="step"><div class="n"></div><h3 data-i18n="cycle.4">Implantação</h3><p data-i18n="qs.c4">Apoio à obra, comissionamento e partida.</p></div>
+      <div class="step"><div class="n"></div><h3 data-i18n="cycle.5">Supervisão operacional</h3><p data-i18n="qs.c5">Acompanhamento de indicadores e ajustes de processo.</p></div>
+      <div class="step"><div class="n"></div><h3 data-i18n="cycle.6">Monitoramento com IA</h3><p data-i18n="qs.c6">Dashboards e modelos preditivos para a operação contínua.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="qs-sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="nav.diff">Diferencial tecnológico</span>
+      <h2 data-i18n="qs.dif.title">O que torna a GETA diferente</h2>
+    </div>
+    <div class="difs">
+      <div class="dif reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg></div><h3 data-i18n="qs.d1.t">Engenharia química e bioquímica</h3><p data-i18n="qs.d1">Domínio dos fenômenos físico-químicos e biológicos que governam cada processo.</p></div>
+      <div class="dif reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 15.6 6.6 18.5l1.2-6L3.3 8.3l6.1-.7z"/></svg></div><h3 data-i18n="qs.d2.t">Tecnologias próprias</h3><p data-i18n="qs.d2">Rotas desenvolvidas pela GETA, inclusive patenteadas, para desafios sem solução convencional.</p></div>
+      <div class="dif reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M4 16l5-6 4 3 7-9"/></svg></div><h3 data-i18n="qs.d3.t">Dados, modelagem e IA</h3><p data-i18n="qs.d3">Simulação, CFD, Scientific Machine Learning e dashboards para decidir com precisão.</p></div>
+      <div class="dif reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3 data-i18n="qs.d4.t">Do diagnóstico à operação</h3><p data-i18n="qs.d4">Acompanhamento integral, do estudo de tratabilidade à supervisão operacional.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM ATENDEMOS -->
+<section class="qs-sec qs-soft">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="qs.sec.eye">Quem atendemos</span>
+      <h2 data-i18n="qs.sec.title">Empresas e órgãos públicos de diferentes setores</h2>
+    </div>
+    <ul class="sectors reveal">
+      <li data-i18n="qs.s1">Indústria</li>
+      <li data-i18n="qs.s2">Saneamento</li>
+      <li data-i18n="qs.s3">Aterros sanitários</li>
+      <li data-i18n="qs.s4">Mineração</li>
+      <li data-i18n="qs.s5">Agroindústria e bioenergia</li>
+      <li data-i18n="qs.s6">Órgãos públicos</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="qs.cta.t">Vamos construir a solução para o seu desafio?</h2>
+    <p data-i18n="qs.cta.p">Fale com nossos especialistas e conheça a rota técnica mais adequada para o seu caso.</p>
+    <a class="btn" href="index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="i18n.js"></script>
+<script src="cases/cases.js"></script>
+<script src="assets/mega.js"></script>
+<script src="assets/portfolio.js"></script>
+</body>
+</html>
