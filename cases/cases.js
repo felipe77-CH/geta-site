@@ -105,6 +105,25 @@ window.GETA_CASES =
     "tags": ["Quebra ácida", "Emulsões óleo-água", "Flotação por ar dissolvido (DAF)", "Coagulação/floculação", "Controle de pH", "Misturador estático", "Skimmers"]
   },
   {
+    "slug": "sedimentador-lamelar",
+    "eixos": ["amb", "res", "mod"],
+    "capa": "img/cases/capa-sedimentador-lamelar.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Sedimentador lamelar e estudo de velocidades de sedimentação",
+      "en": "Lamella settler design and settling velocity study",
+      "es": "Sedimentador lamelar y estudio de velocidades de sedimentación"
+    },
+    "resumo": {
+      "pt": "Ensaios de sedimentação em coluna e bases de cálculo de um sistema de sedimentação para efluentes com alta carga de sólidos, comparando sedimentador lamelar e decantador convencional.",
+      "en": "Column settling tests and design basis of a sedimentation system for high-solids effluents, comparing a lamella settler and a conventional clarifier.",
+      "es": "Ensayos de sedimentación en columna y bases de cálculo de un sistema de sedimentación para efluentes con alta carga de sólidos, comparando sedimentador lamelar y decantador convencional."
+    },
+    "tags": ["Sedimentação", "Sedimentador lamelar", "Ensaios em coluna", "Velocidade de sedimentação", "Taxa de aplicação superficial", "Floculação"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",

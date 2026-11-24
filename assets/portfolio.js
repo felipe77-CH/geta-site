@@ -18,12 +18,11 @@
   const isDraft = c => (c.status || 'rascunho') !== 'publicado';
   const AXES = ['amb', 'proc', 'res', 'dig', 'mod', 'rd'];
 
-  const axTags = c => `<div class="axtags">${c.eixos.map(a => `<span class="ax ax-${a}">${t('ax.' + a)}</span>`).join('')}</div>`;
 
   function card(c) {
     return `<a class="pcard" href="${caseURL(c)}" data-ax="${c.eixos.join(' ')}">
       <div class="thumb" style="background-image:url('${ROOT + c.capa}')">${isDraft(c) ? `<span class="badge">${t('pf.draft')}</span>` : ''}${c.cliente ? `<span class="client">${c.cliente}</span>` : ''}</div>
-      <div class="b">${axTags(c)}<h3>${pick(c.titulo)}</h3><p>${pick(c.resumo)}</p><span class="more">${t('pf.read')}</span></div></a>`;
+      <div class="b"><h3>${pick(c.titulo)}</h3><p>${pick(c.resumo)}</p><span class="more">${t('pf.read')}</span></div></a>`;
   }
 
   /* ---------- Header e rodapé (iguais aos da home) ---------- */
@@ -103,8 +102,7 @@
     const ax0 = c.eixos[0];
     $('#cs-hero').innerHTML = `
 <section class="cs-hero on-dark"><div class="bg" style="background-image:url('${ROOT + c.capa}')"></div><div class="wrap">
-  <nav class="crumb" aria-label="breadcrumb"><a href="${ROOT}index.html">GETA</a><span>/</span><a href="${ROOT}index.html#solucoes">${t('nav.solutions')}</a><span>/</span><a href="${ROOT}area.html?eixo=${ax0}">${t('ax.' + ax0)}</a></nav>
-  ${axTags(c)}
+  <nav class="crumb" aria-label="breadcrumb"><a href="${ROOT}index.html">GETA</a><span>/</span><a href="${ROOT}index.html#solucoes">${t('nav.solutions')}</a></nav>
   <h1>${pick(c.titulo)}</h1>
   <p>${pick(c.resumo)}</p>
   <div class="cs-meta">${c.cliente ? `<span>${t('cs.client')}: <b>${c.cliente}</b></span>` : ''}${c.ano ? `<span>${t('cs.year')}: <b>${c.ano}</b></span>` : ''}${isDraft(c) ? `<span class="badge">${t('pf.draft')}</span>` : ''}</div>

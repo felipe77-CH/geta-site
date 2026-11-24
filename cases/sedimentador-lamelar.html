@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sedimentador lamelar e estudo de velocidades de sedimentação | GETA</title>
+<meta name="description" content="Ensaios de sedimentação em coluna e bases de cálculo de um sistema de sedimentação para efluentes com alta carga de sólidos, comparando sedimentador lamelar e decantador convencional.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261124c">
+<link rel="stylesheet" href="../assets/mega.css?v=20261124c">
+</head>
+<!-- Conteúdo anonimizado: sem nome do cliente e sem valores originais do projeto.
+     =====================================================================
+  CASE: Sedimentador lamelar e estudo de velocidades de sedimentação
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "sedimentador-lamelar").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/sedimentador-lamelar/ e use
+     <img src="../img/cases/sedimentador-lamelar/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="sedimentador-lamelar" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>3–5×</b><span>menos área ocupada que um decantador convencional</span></div>
+    <div class="kpi"><b>4–8×</b><span>mais área efetiva de sedimentação com placas inclinadas</span></div>
+    <div class="kpi"><b>10+</b><span>campanhas de ensaios de sedimentação em coluna</span></div>
+    <div class="kpi"><b>2</b><span>alternativas dimensionadas e comparadas</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Estado de São Paulo</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Ensaios ao longo de algumas semanas</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Tratamento de efluentes com alta carga de sólidos</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Linha de recebimento de efluentes</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Ensaios de sedimentação e bases de cálculo</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Em uma central de tratamento de efluentes no estado de São Paulo, uma das linhas recebe efluentes de <strong>alta carga orgânica e elevado teor de sólidos</strong>, vindos de fossas sépticas, caixas de gordura, banheiros químicos e outras fontes não perigosas.</p>
+            <p>O pré-tratamento existente (gradeamento e uma unidade compacta de remoção de sólidos) não retinha os sólidos finos, que sobrecarregavam as etapas seguintes do processo. Era necessário <strong>projetar um sistema de sedimentação</strong> eficiente, compatível com a vazão da linha e com o espaço disponível na planta.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Efluente muito heterogêneo, com composição que muda conforme a origem de cada carga recebida.</li>
+              <li><strong>Vazão de recebimento elevada e variável</strong> de um dia para o outro, caracterizada a partir da série histórica de operação.</li>
+              <li>Área disponível limitada para novas unidades dentro da planta.</li>
+              <li>Necessidade de proteger as etapas seguintes do tratamento contra picos de sólidos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Foram realizadas <strong>várias campanhas de ensaios de sedimentação em coluna</strong> ao longo de algumas semanas, medindo a altura da interface sólido-líquido ao longo do tempo e calculando a velocidade de sedimentação.</p>
+            <ul>
+              <li>Na maior parte das campanhas, o efluente sedimentou <strong>rapidamente nos primeiros minutos</strong>, com interface bem definida e lodo compacto.</li>
+              <li>Em algumas campanhas, a sedimentação foi lenta, com sólidos mais dispersos, o que indica a necessidade de <strong>floculação prévia</strong> para garantir o desempenho em todas as condições.</li>
+              <li>A velocidade de sedimentação é máxima no início do ensaio e cai rapidamente, um comportamento típico de sedimentação em zona.</li>
+            </ul>
+            <figure><img src="../img/cases/sedimentador-lamelar/curvas-sedimentacao.jpg" alt="Curvas ilustrativas de altura de interface e velocidade de sedimentação"><figcaption>Curvas de sedimentação e de velocidade (campanhas ilustrativas, valores normalizados).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li>Análise estatística da vazão diária de recebimento (distribuição, boxplot e valores de referência para projeto).</li>
+              <li>Ensaios de sedimentação em coluna em diferentes campanhas, com registro da altura da interface ao longo do tempo.</li>
+              <li>Cálculo das velocidades de sedimentação e identificação das condições mais desfavoráveis.</li>
+              <li>Definição da vazão de projeto e do tempo de retenção hidráulica com base nos ensaios.</li>
+              <li>Dimensionamento de duas alternativas, <strong>sedimentador lamelar</strong> e <strong>decantador convencional</strong>, por volume, área e taxa de aplicação superficial (TAS).</li>
+              <li>Recomendações construtivas e operacionais e apoio à elaboração da proposta técnica de implantação.</li>
+            </ol>
+            <figure><img src="../img/cases/sedimentador-lamelar/proveta-ensaio.jpg" alt="Proveta graduada de laboratório"><figcaption>Ensaios de bancada em proveta graduada (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA recomendou um <strong>sedimentador lamelar</strong>, em que placas inclinadas multiplicam a área efetiva de sedimentação dentro de um volume compacto:</p>
+            <ul>
+              <li><strong>Placas paralelas inclinadas</strong>, com espaçamento e inclinação dentro das faixas usuais de projeto, que aumentam a área efetiva de sedimentação em 4 a 8 vezes.</li>
+              <li><strong>Floculação prévia</strong> para agregar os sólidos finos e garantir o desempenho nas campanhas de sedimentação lenta.</li>
+              <li><strong>Câmara de entrada com difusores e defletores</strong>, para distribuir o fluxo e evitar curtos-circuitos.</li>
+              <li><strong>Funil de lodo</strong> com inclinação adequada e sistema de drenagem.</li>
+              <li><strong>Grade ou caixa de areia a montante</strong>, materiais resistentes à corrosão (aço inox ou revestimento epóxi) e acesso para limpeza das lamelas.</li>
+              <li><strong>Instrumentação</strong> de nível, vazão e ponto de amostragem.</li>
+            </ul>
+            <figure><img src="../img/cases/sedimentador-lamelar/esquema-lamelar.jpg" alt="Corte esquemático do sedimentador lamelar e comparação de área ocupada"><figcaption>Corte esquemático do sedimentador lamelar e área ocupada em relação ao decantador convencional (ilustrativo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A <strong>sedimentação gravitacional</strong> separa os sólidos em suspensão pela diferença de densidade. Seu dimensionamento depende da <strong>taxa de aplicação superficial (TAS)</strong>: quanto maior a área de sedimentação para a mesma vazão, mais partículas finas são retidas.</p>
+            <p>No <strong>sedimentador lamelar</strong>, as placas inclinadas criam várias superfícies de sedimentação sobrepostas: os sólidos deslizam pelas placas até o funil de lodo e o clarificado sai pela parte superior. Assim, obtém-se a mesma eficiência de um decantador convencional ocupando uma área muito menor.</p>
+            <figure><img src="../img/cases/sedimentador-lamelar/decantador-circular.jpg" alt="Decantador circular convencional visto do alto"><figcaption>Decantador convencional, que ocupa uma área bem maior para a mesma vazão (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Análise de dados em Python</strong>: séries históricas de vazão, boxplots e curvas de sedimentação de todas as campanhas.</li>
+              <li><strong>Cálculo das velocidades de sedimentação</strong> a partir da variação da altura da interface ao longo do tempo.</li>
+              <li><strong>Dimensionamento hidráulico</strong>: volume pelo tempo de retenção, área pela profundidade útil e verificação da taxa de aplicação superficial com o fator lamelar.</li>
+              <li><strong>Comparação de alternativas</strong> por área ocupada, TAS e adequação a partículas finas.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>O <strong>sedimentador lamelar</strong> foi a alternativa recomendada, com área ocupada <strong>3 a 5 vezes menor</strong> que a de um decantador convencional para a mesma vazão.</li>
+              <li>Taxa de aplicação superficial efetiva adequada para a retenção de <strong>partículas finas</strong>.</li>
+              <li>Os ensaios mostraram que a floculação prévia é essencial para manter o desempenho nos dias de efluente mais disperso.</li>
+              <li>As bases de cálculo foram encaminhadas à engenharia do cliente e serviram de base para uma <strong>proposta técnica de implantação</strong> elaborada com um fornecedor especializado.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <table>
+              <tr><th>Critério</th><th>Sedimentador lamelar</th><th>Decantador convencional</th></tr>
+              <tr><td>Área ocupada</td><td>3 a 5 vezes menor</td><td>Referência</td></tr>
+              <tr><td>Obras civis</td><td>Menores (unidade compacta)</td><td>Maiores</td></tr>
+              <tr><td>Equipamentos</td><td>Inclui o módulo de placas</td><td>Mais simples</td></tr>
+              <tr><td>Manutenção</td><td>Limpeza periódica das lamelas</td><td>Remoção de lodo convencional</td></tr>
+              <tr><td>Eficiência com partículas finas</td><td>Maior</td><td>Menor</td></tr>
+            </table>
+            <p>Com espaço limitado e efluente com sólidos finos, a solução lamelar oferece o melhor equilíbrio entre investimento em obras civis, área ocupada e eficiência de remoção.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA atuou na <strong>supervisão técnica</strong> do projeto, sendo responsável por:</p>
+            <ul>
+              <li>análise da vazão de recebimento e definição dos parâmetros de projeto;</li>
+              <li>planejamento, execução e interpretação dos ensaios de sedimentação;</li>
+              <li>bases de cálculo e dimensionamento das alternativas lamelar e convencional;</li>
+              <li>recomendações construtivas e operacionais;</li>
+              <li>apoio técnico à engenharia do cliente e ao fornecedor na proposta de implantação.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Relatório de bases de cálculo do sistema de sedimentação.</li>
+              <li>Análise da vazão de recebimento e valores de referência para projeto.</li>
+              <li>Curvas de sedimentação e de velocidade de todas as campanhas de ensaio.</li>
+              <li>Dimensionamento do sedimentador lamelar e do decantador convencional.</li>
+              <li>Recomendações construtivas, operacionais e de instrumentação.</li>
+              <li>Apoio técnico à proposta de implantação com fornecedor especializado.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/sedimentador-lamelar/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/sedimentador-lamelar/clarificador-industrial.jpg" alt="Clarificador industrial visto do alto"><figcaption>Clarificador em planta industrial (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/sedimentador-lamelar/proveta-ensaio.jpg" alt="Proveta graduada de laboratório"><figcaption>Ensaio de bancada em proveta (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/sedimentador-lamelar/esquema-lamelar.jpg" alt="Esquema do sedimentador lamelar"><figcaption>Sedimentador lamelar (esquema).</figcaption></figure>
+        </div>
+        <p class="ptonly" style="margin-top:14px">Fotos ilustrativas de banco de imagens (Pexels) e esquemas simplificados, preservando a confidencialidade do cliente.</p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261124c"></script>
+<script src="cases.js?v=20261124c"></script>
+<script src="../assets/mega.js?v=20261124c"></script>
+<script src="../assets/portfolio.js?v=20261124c"></script>
+</body>
+</html>
