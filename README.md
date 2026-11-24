@@ -46,6 +46,12 @@ python tools/novo_case.py
 
 O script cria apenas as páginas que ainda não existem, a partir de `cases/_modelo.html`. Páginas já preenchidas nunca são sobrescritas.
 
+## Versão dos arquivos (cache)
+
+Os arquivos CSS/JS são chamados com `?v=AAAAMMDDx` (ex.: `assets/mega.js?v=20261124b`) para o navegador
+baixar sempre a versão nova. Ao alterar CSS ou JS, troque o número em todas as páginas
+(busca e troca de `?v=20261124b` pelo novo valor).
+
 ## Rodar localmente
 
 ```bash
