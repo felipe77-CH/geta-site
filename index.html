@@ -237,9 +237,10 @@
     .header.menu-open .nav>li>a{color:var(--ink);padding:12px 0}
     .header.menu-open .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:0 0 0 8px}
     .cards{grid-template-columns:repeat(2,1fr)}
-    .model-grid,.tech-grid{grid-template-columns:1fr}
-    .monitor .ph{aspect-ratio:21/8}
+    .model-grid{grid-template-columns:1fr}
   }
+  /* Tecnologia: duas colunas alinhadas até 860px; abaixo disso, uma embaixo da outra */
+  @media (max-width:860px){.tech-grid{grid-template-columns:1fr}.monitor .ph{flex:none;aspect-ratio:16/9}.excl{grid-template-rows:auto}}
   @media (max-width:800px){
     .panels{flex-direction:column;height:auto}
     .panel{min-height:150px}.panel:hover,.panel.open{min-height:340px}
