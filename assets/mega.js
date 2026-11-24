@@ -18,7 +18,7 @@
       function render() {
         const t = k => I18N.t(k);
         box.innerHTML = `<div class="mega-in">${AXES.map(a =>
-          `<a class="mega-cat ax-${a}" href="${root}area.html?eixo=${a}"><span class="dot"></span><span>${t('ax.' + a)}</span></a>`).join('')}</div>`;
+          `<a class="mega-cat" href="${root}area.html?eixo=${a}">${t('ax.' + a)}</a>`).join('')}</div>`;
       }
       I18N.onChange(render);
 

@@ -62,6 +62,29 @@ h1,h2,h3,h4,h5{font-family:var(--display);line-height:1.15;letter-spacing:-.01em
 .burger i::before{position:absolute;top:-7px}.burger i::after{position:absolute;top:7px}
 .header.scrolled .burger i,.header.scrolled .burger i::before,.header.scrolled .burger i::after{background:var(--navy)}
 
+/* Cabeçalho: branco no início e azul-marinho ao rolar a página (contraste com o conteúdo) */
+.header{background:#fff;box-shadow:0 2px 20px #0b175e14}
+.header.scrolled{background:#0b175ef2;backdrop-filter:blur(10px);box-shadow:0 4px 24px #06103f59}
+.header .brand .logo-white{display:none}
+.header .brand .logo-color{display:block}
+.header.scrolled .brand .logo-white{display:block}
+.header.scrolled .brand .logo-color{display:none}
+.header .brand-text{color:var(--muted)}
+.header.scrolled .brand-text{color:#ffffffd0}
+.header .nav>li>a{color:var(--ink)}
+.header.scrolled .nav>li>a{color:#fff}
+.header .lang{background:var(--bg-soft);border-color:var(--line)}
+.header .lang button{color:var(--navy)}
+.header .lang button.on{background:var(--navy);color:#fff}
+.header.scrolled .lang{background:#ffffff1f;border-color:#ffffff33}
+.header.scrolled .lang button{color:#fff}
+.header.scrolled .lang button.on{background:#fff;color:var(--navy)}
+.header.menu-open .lang{background:var(--bg-soft);border-color:var(--line)}
+.header.menu-open .lang button{color:var(--navy)}
+.header.menu-open .lang button.on{background:var(--navy);color:#fff}
+.header .burger i,.header .burger i::before,.header .burger i::after{background:var(--navy)}
+.header.scrolled .burger i,.header.scrolled .burger i::before,.header.scrolled .burger i::after{background:#fff}
+
 /* ===== Rodapé ===== */
 .footer{background:#06103f;color:#aab6e6;padding:64px 0 26px;font-size:14px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}

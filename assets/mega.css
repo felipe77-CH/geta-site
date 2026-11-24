@@ -1,17 +1,16 @@
 /* GETA – Menu "Áreas de atuação" (lista das 6 áreas; cada uma abre area.html) */
-:root{--ax-amb:#1fae3a;--ax-proc:#1d4fd8;--ax-res:#0f8fc2;--ax-dig:#6a4bd6;--ax-mod:#0b9488;--ax-rd:#d9822b}
+:root{--ax-amb:#1fae3a;--ax-proc:#1d4fd8;--ax-res:#0f8fc2;--ax-dig:#6a4bd6;--ax-mod:#0b9488;--ax-rd:#d9822b}  /* cores dos eixos (usadas em Soluções) */
 .mega-toggle::after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 0 3px 8px;transition:transform .2s}
 .has-mega.open .mega-toggle::after{transform:rotate(-135deg);margin-bottom:-1px}
 .has-mega.open>.mega-toggle{color:var(--green)!important}
-.mega{position:absolute;top:calc(100% - 10px);left:0;min-width:310px;background:#fff;border-radius:16px;box-shadow:0 18px 40px #0b175e26;padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;z-index:60}
+.mega{position:absolute;top:calc(100% - 10px);left:0;min-width:270px;background:#fff;border-radius:16px;box-shadow:0 18px 40px #0b175e26;padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;z-index:60}
 .has-mega.open .mega{opacity:1;visibility:visible;transform:none}
 .mega-in{display:grid;gap:2px}
-.mega-cat{--c:var(--blue);display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:14px;color:var(--ink);border-radius:10px;transition:.15s}
-.mega-cat:hover{background:var(--bg-soft);color:var(--c)}
-.mega-cat .dot{width:8px;height:8px;border-radius:50%;background:var(--c);flex-shrink:0}
-.mega-cat.ax-amb{--c:var(--ax-amb)}.mega-cat.ax-proc{--c:var(--ax-proc)}.mega-cat.ax-res{--c:var(--ax-res)}
-.mega-cat.ax-dig{--c:var(--ax-dig)}.mega-cat.ax-mod{--c:var(--ax-mod)}.mega-cat.ax-rd{--c:var(--ax-rd)}
+/* Mesmo estilo dos outros submenus: sem cores, todos os itens do mesmo tamanho */
+.mega-cat{display:block;padding:10px 14px;font-size:14px;line-height:1.4;color:var(--ink);border-radius:10px;white-space:nowrap;transition:.15s}
+.mega-cat:hover{background:var(--bg-soft);color:var(--blue)}
 @media (max-width:1100px){
   .header.menu-open .mega{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;display:none;padding:0 0 0 8px;min-width:0}
   .header.menu-open .has-mega.open .mega{display:block}
+  .header.menu-open .mega-cat{white-space:normal}
 }
