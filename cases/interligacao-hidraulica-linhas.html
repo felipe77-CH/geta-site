@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interligação hidráulica entre linhas de tratamento: alternativas, bombeamento e validação | GETA</title>
+<meta name="description" content="Estudo de alternativas para interligar duas linhas de uma estação de tratamento, com teste operacional, dimensionamento de bombeamento com controle de nível, verificação de NPSH, cálculo estrutural do tanque e CAPEX.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261124c">
+<link rel="stylesheet" href="../assets/mega.css?v=20261124c">
+</head>
+<!-- Conteúdo anonimizado: sem cliente, fornecedores, links nem valores originais do projeto.
+     =====================================================================
+  CASE: Interligação hidráulica entre linhas de tratamento: alternativas, bombeamento e validação
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "interligacao-hidraulica-linhas").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/interligacao-hidraulica-linhas/ e use
+     <img src="../img/cases/interligacao-hidraulica-linhas/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="interligacao-hidraulica-linhas" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>~15–20%</b><span>menos sólidos no efluente final no teste de interligação</span></div>
+    <div class="kpi"><b>3</b><span>alternativas avaliadas</span></div>
+    <div class="kpi"><b>2</b><span>bombas em paralelo com controle de nível</span></div>
+    <div class="kpi"><b>~3–4 meses</b><span>de prazo para as etapas restantes</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Estado de São Paulo</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Engenharia concluída e validação operacional</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Tratamento de efluentes</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Interligação entre duas linhas de tratamento</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Engenharia hidráulica, estrutural e CAPEX</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Em uma central de tratamento de efluentes no estado de São Paulo, uma linha que recebe efluentes com <strong>alta carga orgânica e muitos sólidos</strong> (fossas sépticas, caixas de gordura, banheiros químicos) descarregava sem uma etapa de sedimentação adequada, elevando os sólidos no efluente final.</p>
+            <p>A proposta era <strong>interligar essa linha à caixa de sedimentação de outra linha</strong> da planta. A condição indispensável era que a interligação não afetasse nem trouxesse riscos à unidade de remoção de sólidos existente, respeitando a segurança operacional e as condicionantes do licenciamento ambiental.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>O fluido tem <strong>densidade variável</strong>, muitos sólidos em suspensão e partículas de maior granulometria, o que aumenta o risco de depósito e entupimento da tubulação.</li>
+              <li>A unidade de compactação de sólidos da linha foi substituída durante o projeto; na transição, as duas linhas foram interligadas provisoriamente para manter o tratamento.</li>
+              <li>Relatórios anteriores da GETA e dados operacionais apontavam a remoção de sólidos como prioridade.</li>
+            </ul>
+            <figure><img src="../img/cases/interligacao-hidraulica-linhas/rede-tubulacoes.jpg" alt="Rede de tubulações industriais com válvulas"><figcaption>Tubulações e válvulas industriais (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Foram avaliadas três alternativas, sob critérios hidráulicos, operacionais, ambientais e econômicos:</p>
+            <ul>
+              <li><strong>Conexão por gravidade</strong>: aproveita o desnível existente e tem o menor custo. Porém, as perdas de carga em acessórios e as variações de operação exigem uma carga hidráulica que o sistema não oferece com folga, e a velocidade pode não ser suficiente para manter os sólidos em arraste, com risco de depósitos e obstrução.</li>
+              <li><strong>Linha com bombeamento dedicado</strong>: garante a vazão e velocidades compatíveis com o transporte de sólidos, com maior controle e confiabilidade.</li>
+              <li><strong>Decantador lamelar complementar</strong>: aumentaria a remoção de sólidos, mas o equipamento orçado não atendia à vazão e à alta carga de sólidos previstas, e por isso ficou fora do investimento desta etapa.</li>
+            </ul>
+            <figure><img src="../img/cases/interligacao-hidraulica-linhas/alternativas.jpg" alt="Esquema das três alternativas de interligação avaliadas"><figcaption>Alternativas avaliadas (esquema ilustrativo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li>Análise dos relatórios anteriores e dos dados operacionais de sólidos e fenóis no efluente final.</li>
+              <li>Avaliação hidráulica da conexão por gravidade: cotas, perfil do coletor, perdas de carga e velocidade de arraste.</li>
+              <li>Concepção do sistema de bombeamento dedicado com controle de nível e diagrama de integração.</li>
+              <li>Seleção da bomba e <strong>verificação de NPSH</strong> para evitar cavitação, com definição dos níveis de controle.</li>
+              <li><strong>Cálculo estrutural</strong> preliminar do tanque de bombeamento em fibra de vidro e desenho técnico para fabricação.</li>
+              <li>Estimativa de CAPEX por fatores sobre o custo dos equipamentos e cronograma executivo.</li>
+              <li><strong>Validação operacional</strong> com as linhas interligadas provisoriamente.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A alternativa de referência é uma <strong>linha com bombeamento dedicado</strong>, da saída da unidade de sólidos até a caixa de sedimentação da outra linha:</p>
+            <ul>
+              <li><strong>Tanque de bombeamento</strong> em fibra de vidro, com flanges de entrada e saída.</li>
+              <li><strong>Duas bombas centrífugas em paralelo</strong> (operação e reserva), com rotor do tipo vortex, mais tolerante a sólidos e com menor risco de obstrução.</li>
+              <li><strong>Controle de nível</strong> por transmissor de pressão diferencial e controlador atuando diretamente nas bombas, com níveis de partida, parada, alarme e proteção contra transbordamento.</li>
+              <li>Válvulas de isolamento das bombas e de descarga na linha receptora.</li>
+            </ul>
+            <figure><img src="../img/cases/interligacao-hidraulica-linhas/esquema-bombeamento.jpg" alt="Esquema do bombeamento dedicado com tanque, controle de nível e duas bombas em paralelo"><figcaption>Bombeamento dedicado com controle de nível (esquema ilustrativo).</figcaption></figure>
+            <p><strong>Estratégia de implantação em etapas:</strong> começar pela solução de menor investimento e menor complexidade; caso surjam obstruções ou acúmulo de sólidos, migrar para o tanque de bombeamento, com cerca de dois meses de validação; se ainda assim a carga de sólidos não ficar dentro dos limites, avaliar o decantador lamelar como etapa seguinte, também com período de testes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Hidráulica de escoamentos com sólidos</strong>: perdas de carga, velocidade mínima de arraste e risco de sedimentação em tubulações.</li>
+              <li><strong>Bombas centrífugas com rotor vortex</strong>, adequadas a fluidos com alta concentração de sólidos.</li>
+              <li><strong>Instrumentação e controle de nível</strong> com transmissor de pressão diferencial e lógica de partida e parada automáticas.</li>
+              <li><strong>Tanques em fibra de vidro (PRFV)</strong>, resistentes à corrosão.</li>
+            </ul>
+            <figure><img src="../img/cases/interligacao-hidraulica-linhas/valvula-gaveta.jpg" alt="Válvula de gaveta flangeada em tubulação industrial"><figcaption>Válvula de isolamento flangeada (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Ponto de operação da bomba</strong> a partir da curva de desempenho (vazão, altura manométrica e potência).</li>
+              <li><strong>NPSH disponível x requerido</strong> para diferentes níveis do tanque: a margem contra cavitação é ampla, e os níveis de controle foram definidos para proteger o equipamento e evitar o funcionamento a seco.</li>
+              <li><strong>Cálculo estrutural</strong> do tanque: pressão hidrostática, espessura equivalente de parede cilíndrica e correção para paredes planas, resultando em espessuras práticas de fabricação com fator de segurança.</li>
+              <li><strong>Análise dos dados de validação</strong> antes e durante a interligação provisória.</li>
+            </ul>
+            <figure><img src="../img/cases/interligacao-hidraulica-linhas/npsh-conceitual.jpg" alt="Gráfico conceitual de NPSH disponível e requerido em função do nível do tanque"><figcaption>Verificação de cavitação (gráfico conceitual).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>No teste com as linhas interligadas, a concentração de sólidos no efluente final caiu <strong>cerca de 15 a 20%</strong> em relação à operação normal, mesmo sem otimizar o bombeamento.</li>
+              <li>O efeito está associado às características hidráulicas da caixa de sedimentação e ao chorume da linha receptora, que atua como agente coagulante e favorece a agregação das partículas.</li>
+              <li>A interligação se mostrou uma <strong>medida de baixo investimento</strong> com ganho imediato na qualidade do efluente; com o bombeamento definitivo, espera-se uma remoção ainda maior.</li>
+              <li>Engenharia, especificações e cotações concluídas, com cronograma de cerca de <strong>3 a 4 meses</strong> para as etapas restantes.</li>
+            </ul>
+            <figure><img src="../img/cases/interligacao-hidraulica-linhas/validacao-solidos.jpg" alt="Gráfico de índice de sólidos antes e durante a interligação, com dados sintéticos"><figcaption>Validação operacional (índice com dados sintéticos).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O investimento do bombeamento dedicado foi estimado a partir do custo dos equipamentos principais, com fatores percentuais usuais para projetos industriais:</p>
+            <table>
+              <tr><th>Componente</th><th>Participação aproximada no CAPEX</th></tr>
+              <tr><td>Equipamentos principais (tanque, bombas, instrumentos, válvulas e flanges)</td><td>cerca de 65%</td></tr>
+              <tr><td>Instalação mecânica</td><td>cerca de 10%</td></tr>
+              <tr><td>Infraestrutura elétrica</td><td>cerca de 8%</td></tr>
+              <tr><td>Automação e instrumentação</td><td>cerca de 6%</td></tr>
+              <tr><td>Tubulação hidráulica</td><td>cerca de 9%</td></tr>
+            </table>
+            <p>As bombas representam a maior parte do custo dos equipamentos. O investimento pode ser reduzido com o uso da equipe interna do cliente na montagem e de equipamentos disponíveis em estoque. A conexão por gravidade tem o menor CAPEX, e o OPEX do bombeamento envolve energia elétrica, manutenção das bombas e instrumentos e mão de obra operacional.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA atuou na <strong>supervisão técnica</strong> do projeto, sendo responsável por:</p>
+            <ul>
+              <li>análise técnica das alternativas de interligação;</li>
+              <li>concepção do sistema de bombeamento e do controle de nível;</li>
+              <li>cálculos hidráulicos (NPSH e ponto de operação) e estruturais do tanque;</li>
+              <li>estimativa de investimento e cronograma executivo;</li>
+              <li>acompanhamento e análise da validação operacional;</li>
+              <li>avaliação técnica do decantador lamelar com o fornecedor.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Relatório de interligação entre linhas: opções, custos e cronograma.</li>
+              <li>Diagrama de integração do sistema de bombeamento.</li>
+              <li>Memorial de cálculo hidráulico (ponto de operação, NPSH e níveis de controle).</li>
+              <li>Cálculo estrutural e desenho técnico do tanque para fabricação.</li>
+              <li>Lista de equipamentos com estimativa de custos e CAPEX.</li>
+              <li>Cronograma executivo e estratégia de implantação em etapas.</li>
+              <li>Análise da validação operacional da interligação.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/interligacao-hidraulica-linhas/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/interligacao-hidraulica-linhas/flanges.jpg" alt="Flanges de tubulação industrial"><figcaption>Flanges de tubulação (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/interligacao-hidraulica-linhas/esquema-bombeamento.jpg" alt="Esquema do bombeamento dedicado"><figcaption>Bombeamento dedicado (esquema).</figcaption></figure>
+          <figure><img src="../img/cases/interligacao-hidraulica-linhas/alternativas.jpg" alt="Alternativas avaliadas"><figcaption>Alternativas de interligação (esquema).</figcaption></figure>
+        </div>
+        <p class="ptonly" style="margin-top:14px">Fotos ilustrativas de banco de imagens (Pexels), esquemas simplificados e dados sintéticos, preservando a confidencialidade do cliente.</p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261124c"></script>
+<script src="cases.js?v=20261124c"></script>
+<script src="../assets/mega.js?v=20261124c"></script>
+<script src="../assets/portfolio.js?v=20261124c"></script>
+</body>
+</html>

@@ -38,3 +38,6 @@ img/cases/banco-dados-sql-estacao/visualizacao-dados.jpg ... pexels.com/photo/57
 img/cases/capa-estacao-meteorologica-api.jpg e estacao-meteorologica-api/estacao-meteorologica.jpg ... pexels.com/photo/15523101
 img/cases/estacao-meteorologica-api/sensores-estacao.jpg ... pexels.com/photo/15784822
 img/cases/estacao-meteorologica-api/pluma-emissao.jpg ... pexels.com/photo/30342791
+img/cases/capa-interligacao-hidraulica-linhas.jpg e interligacao-hidraulica-linhas/rede-tubulacoes.jpg ... pexels.com/photo/17728787
+img/cases/interligacao-hidraulica-linhas/valvula-gaveta.jpg ... pexels.com/photo/12527113
+img/cases/interligacao-hidraulica-linhas/flanges.jpg ... pexels.com/photo/36325392

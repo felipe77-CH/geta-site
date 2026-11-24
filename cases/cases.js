@@ -181,6 +181,25 @@ window.GETA_CASES =
     "tags": ["API REST", "Python", "Estação meteorológica", "Dispersão atmosférica", "Rosa dos ventos", "Banco de dados", "Controle de odores"]
   },
   {
+    "slug": "interligacao-hidraulica-linhas",
+    "eixos": ["proc", "res", "rd"],
+    "capa": "img/cases/capa-interligacao-hidraulica-linhas.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Interligação hidráulica entre linhas de tratamento: alternativas, bombeamento e validação",
+      "en": "Hydraulic interconnection between treatment lines: alternatives, pumping and validation",
+      "es": "Interconexión hidráulica entre líneas de tratamiento: alternativas, bombeo y validación"
+    },
+    "resumo": {
+      "pt": "Estudo de alternativas para interligar duas linhas de uma estação de tratamento, com teste operacional, dimensionamento de bombeamento com controle de nível, verificação de NPSH, cálculo estrutural do tanque e CAPEX.",
+      "en": "Study of alternatives to interconnect two lines of a treatment plant, with an operational test, pumping design with level control, NPSH check, tank structural design and CAPEX.",
+      "es": "Estudio de alternativas para interconectar dos líneas de una estación de tratamiento, con prueba operacional, dimensionamiento del bombeo con control de nivel, verificación de NPSH, cálculo estructural del tanque y CAPEX."
+    },
+    "tags": ["Hidráulica", "Bombeamento", "Controle de nível", "NPSH", "Cálculo estrutural", "CAPEX", "Remoção de sólidos"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",
