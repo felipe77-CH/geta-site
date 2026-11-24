@@ -109,13 +109,6 @@
   .orbit{position:absolute;right:-160px;top:50%;width:620px;height:620px;transform:translateY(-50%);z-index:1;opacity:.18;pointer-events:none}
   .orbit ellipse{fill:none;stroke:#fff;stroke-width:1.2}
 
-  /* ====== Faixa de números ====== */
-  .stats{background:var(--grad);color:#fff}
-  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-  .stat{padding:30px 20px;border-left:1px solid #ffffff22}
-  .stat:first-child{border-left:0}
-  .stat b{display:block;font:800 30px var(--display);color:#fff}
-  .stat span{font-size:14px;color:#cfdaff}
 
   /* ====== Áreas de atuação: painéis que expandem ====== */
   .areas{padding:96px 0}
@@ -244,8 +237,6 @@
     .filters h5{display:none}
     .filters button{width:auto;white-space:nowrap;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px}
     .filters button.on::after{content:none}.filters button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
-    .stats .wrap{grid-template-columns:repeat(2,1fr)}
-    .stat:nth-child(3){border-left:0}
     .foot-grid{grid-template-columns:1fr 1fr}
     .hero .arrow,.orbit{display:none}
     .node{width:86px;margin:-24px 0 0 -43px}.node .dot{width:46px;height:46px;font-size:13px}.node span{font-size:10px}
@@ -269,7 +260,6 @@
         <div class="dropdown"><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a><a href="#sobre" data-i18n="nav.how">Como trabalhamos</a><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
       <li class="has-mega"><a href="#areas" class="mega-toggle" aria-expanded="false" data-i18n="nav.areas">Áreas de atuação</a>
         <div class="mega" data-mega></div></li>
-      <li><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a></li>
       <li><a href="#tecnologia" data-i18n="nav.tech">Tecnologia</a></li>
       <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
     </ul>
@@ -318,16 +308,6 @@
   <button class="arrow prev" data-i18n-aria="aria.prev" aria-label="Slide anterior">‹</button>
   <button class="arrow next" data-i18n-aria="aria.next" aria-label="Próximo slide">›</button>
   <div class="dots"></div>
-</section>
-
-<!-- NÚMEROS / PILARES -->
-<section class="stats">
-  <div class="wrap">
-    <div class="stat"><b>5</b><span data-i18n="stat.1">áreas de atuação integradas</span></div>
-    <div class="stat"><b>4</b><span data-i18n="stat.2">tecnologias exclusivas GETA</span></div>
-    <div class="stat"><b data-i18n="stat.3b">IA</b><span data-i18n="stat.3">monitoramento contínuo e preditivo</span></div>
-    <div class="stat"><b>360°</b><span data-i18n="stat.4">do diagnóstico à supervisão</span></div>
-  </div>
 </section>
 
 <!-- ÁREAS DE ATUAÇÃO -->
