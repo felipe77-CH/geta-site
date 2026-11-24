@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tratamento e redução de fenol por ozonização | GETA</title>
+<meta name="description" content="Avaliação de carvão ativado e ozonização, ensaios cinéticos e bases de projeto de um sistema de ozônio para um efluente com alta carga de fenol no estado de São Paulo.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261124b">
+<link rel="stylesheet" href="../assets/mega.css?v=20261124b">
+</head>
+<!-- Conteúdo anonimizado: sem nome do cliente e sem valores originais do estudo.
+     =====================================================================
+  CASE: Tratamento e redução de fenol por ozonização
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "tratamento-fenol-ozonio").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/tratamento-fenol-ozonio/ e use
+     <img src="../img/cases/tratamento-fenol-ozonio/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="tratamento-fenol-ozonio" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>&gt;70%</b><span>de remoção de fenol em ~15 min nos ensaios de ozonização</span></div>
+    <div class="kpi"><b>~3×</b><span>menor custo por m³ que o carvão ativado sem regeneração</span></div>
+    <div class="kpi"><b>~1/3</b><span>menos fenóis com a estratégia de equalização e diluição</span></div>
+    <div class="kpi"><b>2ª ordem</b><span>modelo cinético que melhor descreveu a degradação</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Estado de São Paulo</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Cerca de 3 meses</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Tratamento de efluentes e chorume</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Corrente industrial de pequeno porte</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Estudo técnico-econômico e bases de projeto</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Uma central de tratamento de efluentes e chorume no estado de São Paulo gerava uma corrente secundária (filtrado de desaguamento de lodo) com <strong>alta concentração de fenol</strong>, várias vezes acima dos limites de lançamento da CETESB e de recebimento em rede da SABESP.</p>
+            <p>Ao ser misturada às demais linhas da planta, essa corrente elevava a concentração de fenóis no efluente final. O desafio era definir uma rota de remoção <strong>tecnicamente eficaz e economicamente viável</strong>, compatível com a operação existente e com a grande variabilidade de vazão da planta.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A planta opera diversas linhas de tratamento. A principal delas recebe chorume transportado por caminhões, sem medição direta de vazão e com <strong>forte variação horária</strong>: a vazão nos horários de pico chega a ser cerca de duas vezes maior que a da madrugada.</p>
+            <p>As correntes de retorno internas, entre elas o filtrado fenólico, têm carga praticamente constante. Assim, nos períodos de pouco chorume, essas correntes dominam a mistura e a concentração de fenóis sobe. A planta já contava com um sistema de <strong>carvão ativado granular (CAG)</strong>, cujo desempenho e custo também precisavam ser avaliados.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Carga de fenol:</strong> estimada a partir da vazão e da concentração média da corrente, para dimensionar as alternativas de tratamento.</li>
+              <li><strong>Carvão ativado existente:</strong> com base em revisão da literatura e em balanço de massa, o leito saturava em poucas semanas de operação. Sem regeneração, a reposição e a disposição do carvão resultavam em um custo por m³ tratado elevado, que cresce proporcionalmente com a concentração de fenol.</li>
+              <li><strong>Ensaios de ozonização:</strong> ozônio gerado com oxigênio PSA foi aplicado em amostras do efluente real, em diferentes vazões de gás. A ozonização removeu <strong>mais de 70% do fenol em cerca de 15 minutos</strong> de contato.</li>
+              <li><strong>Regime de vazão:</strong> a curva horária de recebimento de chorume permitiu identificar zonas de baixa, média e alta demanda e quantificar o efeito da diluição sobre a concentração de fenóis.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li>Revisão bibliográfica de adsorção em carvão ativado e de ozonização de compostos fenólicos.</li>
+              <li>Balanço de massa e estimativa de custos do sistema de carvão ativado existente (capacidade, tempo de saturação e OPEX).</li>
+              <li>Ensaios de bancada de ozonização com oxigênio PSA, variando a vazão de gás.</li>
+              <li>Ajuste de modelos cinéticos de ordem zero, primeira e segunda ordem, com seleção por R² e critério de Akaike (AIC).</li>
+              <li>Análise estatística da curva horária de vazão e definição de zonas operacionais.</li>
+              <li>Dimensionamento estequiométrico do sistema de ozonização e elaboração de PFD, P&amp;ID e lista de equipamentos.</li>
+              <li>Definição da filosofia de controle e comparação técnico-econômica de duas alternativas de implantação.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Em vez de buscar a mineralização completa do fenol, que exige muito ozônio, a GETA propôs um sistema de ozonização voltado à <strong>oxidação primária</strong>: o fenol é convertido em intermediários mais biodegradáveis (ácidos carboxílicos e quinonas), reduzindo drasticamente o consumo de oxidante e o custo operacional.</p>
+            <ul>
+              <li><strong>Geração de ozônio a partir de oxigênio concentrado (PSA)</strong>, dimensionada pela estequiometria de oxidação primária, como etapa de pré-tratamento.</li>
+              <li><strong>Reator de contato com circuito de recirculação</strong> e injeção de ozônio por Venturi, que melhora a transferência gás–líquido sem controle direto do fluxo de gás.</li>
+              <li><strong>Tanque de acumulação e homogeneização</strong>, com envio controlado do efluente tratado para as linhas de diluição e tratamento.</li>
+              <li><strong>Estratégia de equalização e diluição</strong>: mais retornos nos períodos de alta disponibilidade de chorume e armazenamento nos de baixa, reduzindo os fenóis em <strong>cerca de um terço</strong> nas condições médias.</li>
+              <li><strong>Controle semiautomático</strong>: PID na recirculação via inversor de frequência, válvulas ON/OFF, bombas redundantes e intertravamentos de pressão no sistema de gás e no reator.</li>
+            </ul>
+            <figure><img src="../img/cases/tratamento-fenol-ozonio/esquema-processo.jpg" alt="Esquema simplificado da solução de ozonização"><figcaption>Esquema simplificado da solução (ilustrativo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Foram comparadas duas tecnologias consagradas para remoção de fenol: a <strong>adsorção em carvão ativado granular</strong>, já instalada na planta, e a <strong>oxidação química por ozônio</strong>, um processo oxidativo avançado (POA) em que o O₃ e os radicais hidroxila (•OH) atacam o anel aromático do fenol (fenol → catecol → quinonas → ácidos orgânicos).</p>
+            <p>Para a implantação, avaliaram-se duas configurações: um <strong>sistema de engenharia próprio</strong> (gerador por plasma, concentrador PSA e instrumentação industrial completa) e um <strong>sistema comercial modular</strong>, com skids de ozônio operando em paralelo.</p>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p><strong>Modelagem cinética.</strong> Os dados dos ensaios foram ajustados a modelos de ordem zero, primeira e segunda ordem. O <strong>modelo de segunda ordem</strong> representou melhor a degradação em todas as condições (R² próximo ou acima de 0,9), indicando que a velocidade de reação depende fortemente da concentração de fenol e das condições de transferência de ozônio.</p>
+            <figure><img src="../img/cases/tratamento-fenol-ozonio/cinetica-ozonizacao.jpg" alt="Curvas ilustrativas de degradação de fenol por ozonização"><figcaption>Comportamento de 2ª ordem da degradação de fenol (curvas normalizadas e ilustrativas).</figcaption></figure>
+            <p><strong>Outras ferramentas:</strong> balanços de massa e estequiometria de oxidação, análise estatística da vazão horária (média, desvio padrão e zoneamento) e modelos financeiros de valor presente líquido, taxa interna de retorno e custo nivelado. Ajustes e gráficos foram feitos em Python.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Ozonização com <strong>mais de 70% de remoção de fenol em cerca de 15 minutos</strong> nos ensaios de bancada, com cinética de segunda ordem bem ajustada.</li>
+              <li>Sistema dimensionado como pré-tratamento, priorizando a <strong>redução do fenol e o aumento da biodegradabilidade</strong> em vez da mineralização completa.</li>
+              <li>Estratégia de equalização e diluição capaz de reduzir os fenóis em <strong>cerca de um terço</strong> nas condições médias de operação.</li>
+              <li>Custo por m³ tratado com ozonização <strong>cerca de 3 vezes menor</strong> que o do carvão ativado sem regeneração.</li>
+              <li>Recomendação de implantação da alternativa modular, com cronograma estimado de <strong>cerca de 4 a 5 meses</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <figure><img src="../img/cases/tratamento-fenol-ozonio/indice-custo.jpg" alt="Índice de custo por m³ tratado das alternativas"><figcaption>Custo relativo por m³ tratado (carvão ativado = 100; valores aproximados).</figcaption></figure>
+            <table>
+              <tr><th>Critério</th><th>Projeto próprio</th><th>Sistema modular</th></tr>
+              <tr><td>Investimento (CAPEX)</td><td>Maior</td><td>Cerca de 35–40% menor</td></tr>
+              <tr><td>Custo nivelado por m³</td><td>Baixo</td><td>O mais baixo</td></tr>
+              <tr><td>Robustez e vida útil</td><td>Maior</td><td>Moderada</td></tr>
+              <tr><td>Expansão</td><td>Sob projeto</td><td>Por adição de módulos</td></tr>
+            </table>
+            <p>A análise considerou CAPEX com montagem e contingência, cenários de financiamento bancário de 2 e 5 anos, valor presente líquido, taxa interna de retorno e custo nivelado de tratamento. Como é típico em infraestrutura ambiental, o retorno do projeto está principalmente na conformidade legal e na mitigação de custos e passivos.</p>
+            <p>A <strong>alternativa modular</strong> foi recomendada por menor investimento, menor custo nivelado e menor risco de execução. O projeto próprio permanece como opção de maior robustez construtiva, indicada quando durabilidade e customização forem prioritárias.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA atuou na <strong>supervisão técnica</strong> do projeto, sendo responsável por:</p>
+            <ul>
+              <li>diagnóstico do problema, balanços de massa e avaliação do sistema de carvão ativado existente;</li>
+              <li>planejamento e análise dos ensaios de ozonização e modelagem cinética;</li>
+              <li>bases de projeto, PFD, P&amp;ID, lista de equipamentos e filosofia de controle;</li>
+              <li>estratégia de equalização e diluição a partir dos dados de vazão da planta;</li>
+              <li>análise técnico-econômica comparativa, recomendação final e cronograma de implantação.</li>
+            </ul>
+            <p>Os dados operacionais e a localização das unidades foram definidos em conjunto com a equipe do cliente; os custos de equipamentos foram baseados em orçamentos de fornecedores.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Relatório técnico de tecnologias e bases de projeto para tratamento de fenol.</li>
+              <li>Avaliação do carvão ativado: capacidade de adsorção, tempo de saturação e OPEX.</li>
+              <li>Resultados dos ensaios de ozonização e modelos cinéticos ajustados.</li>
+              <li>Curva representativa de vazão diária e estratégia de equalização e diluição.</li>
+              <li>PFD, P&amp;ID e lista de equipamentos com custos estimados.</li>
+              <li>Filosofia de controle com laços de vazão, recirculação, injeção de ozônio, pressão e segurança.</li>
+              <li>Comparativo técnico entre as alternativas e análise financeira (CAPEX, financiamento, VPL, TIR e custo nivelado).</li>
+              <li>Cronograma de implantação e proposta preliminar de layout.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/tratamento-fenol-ozonio/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/tratamento-fenol-ozonio/esquema-processo.jpg" alt="Esquema simplificado da solução"><figcaption>Esquema simplificado da solução.</figcaption></figure>
+          <figure><img src="../img/cases/tratamento-fenol-ozonio/cinetica-ozonizacao.jpg" alt="Cinética de degradação de fenol"><figcaption>Comportamento cinético de 2ª ordem (ilustrativo).</figcaption></figure>
+          <figure><img src="../img/cases/tratamento-fenol-ozonio/indice-custo.jpg" alt="Índice de custo por m³"><figcaption>Custo relativo por m³ tratado.</figcaption></figure>
+        </div>
+        <p class="ptonly" style="margin-top:14px">Dados e gráficos apresentados de forma ilustrativa para preservar a confidencialidade do cliente.</p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261124b"></script>
+<script src="cases.js?v=20261124b"></script>
+<script src="../assets/mega.js?v=20261124b"></script>
+<script src="../assets/portfolio.js?v=20261124b"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
    Aqui ficam os dados usados nos cards da seção Soluções e no topo da página:
 
      slug     nome do arquivo (cases/<slug>.html) – sem acentos nem espaços
-     eixos    1 a 3 eixos; o primeiro é o principal
+     eixos    1 a 4 eixos; o primeiro é o principal
               amb  = Engenharia Ambiental
               proc = Engenharia de Processos
               res  = Tratamento de Resíduos e Efluentes
@@ -46,6 +46,25 @@ window.GETA_CASES =
       "es": "Concepción, proyecto y seguimiento operacional de una planta de tratamiento de lixiviado de relleno sanitario con caudal del orden de 1.000 m³/d."
     },
     "tags": ["Lixiviado de aterro", "Flotação", "Nitrificação", "Oxidação química", "Carvão ativado"]
+  },
+  {
+    "slug": "tratamento-fenol-ozonio",
+    "eixos": ["res", "amb", "mod", "rd"],
+    "capa": "img/cases/capa-tratamento-fenol-ozonio.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Tratamento e redução de fenol por ozonização",
+      "en": "Phenol treatment and reduction by ozonation",
+      "es": "Tratamiento y reducción de fenol por ozonización"
+    },
+    "resumo": {
+      "pt": "Avaliação de carvão ativado e ozonização, ensaios cinéticos e bases de projeto de um sistema de ozônio para um efluente com alta carga de fenol no estado de São Paulo.",
+      "en": "Assessment of activated carbon and ozonation, kinetic tests and design basis of an ozone system for an effluent with a high phenol load in the state of São Paulo.",
+      "es": "Evaluación de carbón activado y ozonización, ensayos cinéticos y bases de proyecto de un sistema de ozono para un efluente con alta carga de fenol en el estado de São Paulo."
+    },
+    "tags": ["Ozonização (POA)", "Oxigênio PSA", "Injeção Venturi", "Carvão ativado granular", "Cinética de 2ª ordem", "Equalização", "Controle PID/VDF"]
   },
   {
     "slug": "tecnologia-lixiviado-patente",
