@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estruturação dos dados de uma estação de tratamento em banco de dados SQL | GETA</title>
+<meta name="description" content="Mapeamento do processo, definição de pontos de coleta e modelagem de um banco de dados relacional para organizar a informação de qualidade da estação e gerar KPIs de operação e conformidade.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261124c">
+<link rel="stylesheet" href="../assets/mega.css?v=20261124c">
+</head>
+<!-- Conteúdo anonimizado: sem nome do cliente, da concessionária e sem dados do projeto.
+     =====================================================================
+  CASE: Estruturação dos dados de uma estação de tratamento em banco de dados SQL
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "banco-dados-sql-estacao").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/banco-dados-sql-estacao/ e use
+     <img src="../img/cases/banco-dados-sql-estacao/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="banco-dados-sql-estacao" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>~10</b><span>pontos de medição na estação</span></div>
+    <div class="kpi"><b>5</b><span>tabelas relacionadas no banco de dados</span></div>
+    <div class="kpi"><b>7</b><span>parâmetros de qualidade monitorados</span></div>
+    <div class="kpi"><b>Semanal</b><span>relatório automático de KPIs</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Estado de São Paulo</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Integração automática implantada</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Tratamento de efluentes</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Linha global e quatro sublinhas de tratamento</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Engenharia de dados e monitoramento</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Uma central de tratamento de efluentes no estado de São Paulo precisava <strong>acompanhar de forma contínua a qualidade do seu descarte</strong>. Até então, os relatórios periódicos tratavam basicamente da quantidade de caminhões recebidos, e os resultados de qualidade ficavam dispersos, sem ligação clara com o ponto do processo onde foram medidos.</p>
+            <p>O objetivo era passar a emitir <strong>relatórios semanais</strong> de parâmetros críticos, como sólidos sedimentáveis, fenóis e pH, que permitissem verificar a conformidade com a norma de lançamento na rede de esgoto e agir rapidamente frente a desvios.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>A estação possui uma <strong>linha global</strong>, que representa o efluente final, e <strong>quatro sublinhas</strong> de tratamento, cada uma dedicada a um tipo de efluente e com entrada e saída próprias.</li>
+              <li>Na saída global são coletados dois tipos de amostra: <strong>composta</strong> (várias coletas ao longo do dia) e <strong>pontual</strong> (uma coleta em um instante específico).</li>
+              <li>As análises são feitas parte pelo laboratório e parte pela operação, com coletas nos horários de maior vazão ou a cada batelada.</li>
+              <li>Os resultados levavam alguns dias para ficar disponíveis e eram registrados em uma plataforma separada.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O primeiro passo foi o <strong>mapeamento completo do processo</strong> e a definição de uma matriz de monitoramento:</p>
+            <ul>
+              <li><strong>Cerca de 10 pontos de coleta</strong>, nas entradas e saídas de cada sublinha, na saída global e no retorno do filtrado do desaguamento de lodo.</li>
+              <li><strong>Parâmetros de qualidade</strong> por ponto: temperatura, pH, óleos e graxas (visual e analítico), sólidos sedimentáveis, sulfato e fenóis.</li>
+              <li><strong>Frequência de coleta</strong> e <strong>responsável</strong> (laboratório ou operação) definidos para cada ponto.</li>
+            </ul>
+            <figure><img src="../img/cases/banco-dados-sql-estacao/hierarquia-processos.jpg" alt="Hierarquia de processos e pontos de medição da estação"><figcaption>Hierarquia de processos e pontos de medição (ilustrativo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li>Mapeamento do processo e das sublinhas de tratamento.</li>
+              <li>Definição dos pontos de medição, parâmetros, frequência e responsáveis.</li>
+              <li>Modelagem de um <strong>banco de dados relacional</strong> que liga cada medição ao processo, ao ponto, ao parâmetro, ao tipo de amostra e ao momento da coleta.</li>
+              <li>Desenvolvimento de um <strong>script de integração automática</strong> que envia os dados da plataforma de registro para o banco de dados.</li>
+              <li>Definição dos <strong>indicadores-chave de processo (KPIs)</strong> e do formato do relatório semanal.</li>
+            </ol>
+            <figure><img src="../img/cases/banco-dados-sql-estacao/fluxo-informacao.jpg" alt="Fluxo da informação do ponto de coleta ao relatório de KPIs"><figcaption>Fluxo da informação, da coleta ao relatório (ilustrativo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A informação foi organizada em <strong>cinco tabelas relacionadas</strong>:</p>
+            <ul>
+              <li><strong>Processos</strong>: a hierarquia da planta. Cada sublinha aponta para o seu processo pai (a linha global), permitindo analisar cada sublinha separadamente e também o fluxo total.</li>
+              <li><strong>Pontos de medição</strong>: as entradas e saídas de cada processo, para identificar onde ocorre cada mudança nos parâmetros.</li>
+              <li><strong>Parâmetros</strong>: o que é medido, com nome e unidade, garantindo medições consistentes e comparáveis.</li>
+              <li><strong>Amostras</strong>: os tipos de amostra especiais (composta ou pontual) associados a cada ponto.</li>
+              <li><strong>Medições</strong>: os valores reais, ligados ao ponto, ao parâmetro, à amostra (quando aplicável) e à data, turno e lote.</li>
+            </ul>
+            <figure><img src="../img/cases/banco-dados-sql-estacao/modelo-relacional.jpg" alt="Modelo relacional com as tabelas processos, pontos de medição, parâmetros, amostras e medições"><figcaption>Modelo relacional dos dados de qualidade da estação.</figcaption></figure>
+            <p>Com essa estrutura, qualquer medição pode ser <strong>rastreada até a sua origem</strong>: qual processo, qual ponto e qual tipo de amostra gerou o dado.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O <strong>banco de dados relacional (SQL)</strong> organiza os dados em tabelas ligadas por chaves primárias e estrangeiras, evitando duplicidade e garantindo consistência. Uma relação de auto-referência (processo pai) representa a hierarquia da planta.</p>
+            <p>Sobre essa base, ferramentas de <strong>business intelligence</strong>, como o Power BI, constroem dashboards hierárquicos, e um <strong>script de integração</strong> elimina a digitação manual dos resultados.</p>
+            <figure><img src="../img/cases/banco-dados-sql-estacao/servidor.jpg" alt="Servidor em data center"><figcaption>Infraestrutura de dados (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Modelo entidade-relacionamento</strong> com cinco tabelas e relações 1:N.</li>
+              <li><strong>Consultas SQL</strong> para calcular os indicadores por sublinha e para a linha global.</li>
+              <li><strong>Script de integração automática</strong> entre a plataforma de registro e o banco de dados.</li>
+              <li><strong>Dashboards de KPIs</strong> de recebimento e de conformidade.</li>
+            </ul>
+            <p><strong>KPIs de recebimento:</strong> volume diário recebido, tempo de funcionamento versus parada, vazão de caminhões por hora, média semanal e distribuição semanal de caminhões por dia, para a linha global e para cada sublinha.</p>
+            <p><strong>KPIs de conformidade:</strong> histogramas diários de cada parâmetro na saída global e em cada sublinha, comparando entrada e saída, com média semanal, desvio padrão e contador de dias em conformidade ou não com a norma de lançamento.</p>
+            <figure><img src="../img/cases/banco-dados-sql-estacao/dashboard-ilustrativo.jpg" alt="Exemplo ilustrativo de dashboard de KPIs com dados sintéticos"><figcaption>Exemplo de dashboard de KPIs (dados sintéticos).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Pontos de medição, parâmetros, responsáveis e periodicidade <strong>definidos e documentados</strong>.</li>
+              <li><strong>Envio automático</strong> dos resultados da plataforma para o banco de dados, sem retrabalho manual.</li>
+              <li><strong>Relatórios semanais de KPIs</strong> para a linha global e para cada sublinha.</li>
+              <li><strong>Rastreabilidade completa</strong> de cada medição e estrutura <strong>escalável</strong>: novas sublinhas, parâmetros ou tipos de amostra entram sem mudar o modelo.</li>
+              <li><strong>Monitoramento contínuo</strong> e protocolos claros para agir frente a não conformidades.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p class="tbd">Quando aplicável: estimativas de CAPEX e OPEX, comparação entre alternativas, custo por m³ ou por tonelada, payback.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA atuou na <strong>supervisão técnica</strong> e na engenharia de dados do projeto, sendo responsável por:</p>
+            <ul>
+              <li>mapeamento do processo e definição da matriz de monitoramento;</li>
+              <li>modelagem do banco de dados relacional;</li>
+              <li>desenvolvimento, junto com a equipe de meio ambiente do cliente, do script de integração automática;</li>
+              <li>definição dos KPIs e do relatório semanal.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Relatório de controle e estratégias de decisão para a operação da estação.</li>
+              <li>Mapa do processo com os pontos de coleta.</li>
+              <li>Matriz de pontos, parâmetros, frequência de coleta e responsáveis.</li>
+              <li>Modelo do banco de dados relacional (cinco tabelas e suas relações).</li>
+              <li>Script de integração automática dos dados.</li>
+              <li>Definição dos KPIs de recebimento e de conformidade e modelo de relatório semanal.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/banco-dados-sql-estacao/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/banco-dados-sql-estacao/amostras-laboratorio.jpg" alt="Frascos de amostras etiquetados em laboratório"><figcaption>Amostras identificadas para análise (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/banco-dados-sql-estacao/visualizacao-dados.jpg" alt="Notebook com visualizações de dados"><figcaption>Visualização dos dados em dashboards (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/banco-dados-sql-estacao/modelo-relacional.jpg" alt="Modelo relacional"><figcaption>Modelo relacional (esquema).</figcaption></figure>
+        </div>
+        <p class="ptonly" style="margin-top:14px">Fotos ilustrativas de banco de imagens (Pexels) e esquemas simplificados, preservando a confidencialidade do cliente.</p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261124c"></script>
+<script src="cases.js?v=20261124c"></script>
+<script src="../assets/mega.js?v=20261124c"></script>
+<script src="../assets/portfolio.js?v=20261124c"></script>
+</body>
+</html>

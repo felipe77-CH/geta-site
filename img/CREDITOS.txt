@@ -31,3 +31,7 @@ img/cases/capa-daf-bomba-microbolhas.jpg e daf-bomba-microbolhas/microbolhas-asc
 img/cases/daf-bomba-microbolhas/compressor-vasos-pressao.jpg ... pexels.com/photo/31257317
 img/cases/daf-bomba-microbolhas/bombas-industriais.jpg ... pexels.com/photo/35645884
 img/cases/daf-bomba-microbolhas/microbolhas-azul.jpg ... pexels.com/photo/7233185
+img/cases/capa-banco-dados-sql-estacao.jpg ... pexels.com/photo/12969403
+img/cases/banco-dados-sql-estacao/servidor.jpg ... pexels.com/photo/37730211
+img/cases/banco-dados-sql-estacao/amostras-laboratorio.jpg ... pexels.com/photo/3735723 (Polina Tankilevitch)
+img/cases/banco-dados-sql-estacao/visualizacao-dados.jpg ... pexels.com/photo/577195

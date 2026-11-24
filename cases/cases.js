@@ -143,6 +143,25 @@ window.GETA_CASES =
     "tags": ["Flotação por ar dissolvido (DAF)", "Nanobolhas", "Microbolhas", "Bomba multifásica", "Saturação de ar", "Separação óleo-água", "Retrofit"]
   },
   {
+    "slug": "banco-dados-sql-estacao",
+    "eixos": ["dig", "amb", "proc"],
+    "capa": "img/cases/capa-banco-dados-sql-estacao.jpg",
+    "cliente": "",
+    "ano": "2025",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Estruturação dos dados de uma estação de tratamento em banco de dados SQL",
+      "en": "Structuring a treatment plant's data in a relational SQL database",
+      "es": "Estructuración de la información de una estación de tratamiento en base de datos SQL"
+    },
+    "resumo": {
+      "pt": "Mapeamento do processo, definição de pontos de coleta e modelagem de um banco de dados relacional para organizar a informação de qualidade da estação e gerar KPIs de operação e conformidade.",
+      "en": "Process mapping, definition of sampling points and design of a relational database to organize the plant's quality data and generate operational and compliance KPIs.",
+      "es": "Mapeo del proceso, definición de puntos de muestreo y modelado de una base de datos relacional para organizar la información de calidad de la estación y generar KPIs de operación y cumplimiento."
+    },
+    "tags": ["Banco de dados relacional", "SQL", "Modelagem de dados", "Integração automática", "KPIs", "Power BI", "Conformidade ambiental"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",
