@@ -162,6 +162,25 @@ window.GETA_CASES =
     "tags": ["Banco de dados relacional", "SQL", "Modelagem de dados", "Integração automática", "KPIs", "Power BI", "Conformidade ambiental"]
   },
   {
+    "slug": "estacao-meteorologica-api",
+    "eixos": ["dig", "amb", "mod"],
+    "capa": "img/cases/capa-estacao-meteorologica-api.jpg",
+    "cliente": "",
+    "ano": "2025",
+    "status": "publicado",
+    "titulo": {
+      "pt": "API e análise de dados de estação meteorológica para dispersão de poluentes",
+      "en": "Weather station API and data analysis for pollutant dispersion",
+      "es": "API y análisis de datos de estación meteorológica para dispersión de contaminantes"
+    },
+    "resumo": {
+      "pt": "Configuração da integração por API de uma estação meteorológica e análise das variáveis ambientais para interpretar a dispersão de poluentes e apoiar a operação de uma estação de tratamento.",
+      "en": "API integration of a weather station and analysis of environmental variables to interpret pollutant dispersion and support the operation of a treatment plant.",
+      "es": "Configuración de la integración por API de una estación meteorológica y análisis de las variables ambientales para interpretar la dispersión de contaminantes y apoyar la operación de una estación de tratamiento."
+    },
+    "tags": ["API REST", "Python", "Estação meteorológica", "Dispersão atmosférica", "Rosa dos ventos", "Banco de dados", "Controle de odores"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",

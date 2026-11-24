@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API e análise de dados de estação meteorológica para dispersão de poluentes | GETA</title>
+<meta name="description" content="Configuração da integração por API de uma estação meteorológica e análise das variáveis ambientais para interpretar a dispersão de poluentes e apoiar a operação de uma estação de tratamento.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261124c">
+<link rel="stylesheet" href="../assets/mega.css?v=20261124c">
+</head>
+<!-- Conteúdo anonimizado: sem cliente, credenciais, identificadores de equipamento nem dados reais.
+     =====================================================================
+  CASE: API e análise de dados de estação meteorológica para dispersão de poluentes
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "estacao-meteorologica-api").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/estacao-meteorologica-api/ e use
+     <img src="../img/cases/estacao-meteorologica-api/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="estacao-meteorologica-api" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>5 min</b><span>de resolução dos dados meteorológicos</span></div>
+    <div class="kpi"><b>8</b><span>variáveis registradas em cada leitura</span></div>
+    <div class="kpi"><b>API REST</b><span>integração automática com a base de dados</span></div>
+    <div class="kpi"><b>0</b><span>downloads manuais na plataforma</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Estado de São Paulo</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Integração configurada e em uso</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Tratamento de efluentes e resíduos</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Estação meteorológica automática no site</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Integração de dados e interpretação ambiental</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Uma central de tratamento de efluentes e resíduos no estado de São Paulo possui uma <strong>estação meteorológica automática</strong> no próprio site, mas os dados só podiam ser consultados manualmente na plataforma do fabricante, sem integração com as bases de dados da operação.</p>
+            <p>A empresa precisava usar essas informações para <strong>entender como as condições do tempo influenciam a dispersão de odores e emissões gasosas</strong> em direção à vizinhança e, a partir disso, apoiar decisões de operação.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Estação com datalogger e sensores de <strong>temperatura do ar, umidade relativa, ponto de orvalho, velocidade e direção do vento, rajadas e precipitação</strong>, além do nível de bateria do equipamento.</li>
+              <li>Leituras a cada <strong>5 minutos</strong>, enviadas por um gateway de comunicação para uma <strong>plataforma em nuvem</strong> com API REST.</li>
+              <li>Planta com fontes potenciais de odor, como tanques abertos e manejo de lodo, próxima a áreas habitadas.</li>
+            </ul>
+            <figure><img src="../img/cases/estacao-meteorologica-api/sensores-estacao.jpg" alt="Sensores de uma estação meteorológica automática"><figcaption>Sensores de uma estação meteorológica automática (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Cada variável foi analisada pelo seu <strong>significado físico</strong> e pela sua relevância para a dispersão de poluentes:</p>
+            <ul>
+              <li><strong>Direção do vento</strong>: define para onde a pluma de odor ou de gases é transportada.</li>
+              <li><strong>Velocidade do vento</strong>: quanto maior, maior a diluição. Em <strong>calmaria</strong>, os gases se acumulam perto da fonte.</li>
+              <li><strong>Rajadas</strong>: indicam turbulência e servem para alertas operacionais.</li>
+              <li><strong>Temperatura e ciclo diário</strong>: ajudam a identificar a estabilidade da atmosfera. Noites e madrugadas frias e sem vento costumam ser as condições mais desfavoráveis.</li>
+              <li><strong>Umidade relativa e ponto de orvalho</strong>: indicam saturação do ar, condensação e formação de neblina, que favorecem a percepção de odores.</li>
+              <li><strong>Precipitação</strong>: promove a lavagem de poluentes da atmosfera e é usada também no balanço hídrico.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li>Levantamento da estação, dos sensores e das variáveis registradas.</li>
+              <li><strong>Configuração do acesso à API</strong> da plataforma: requisições HTTPS do tipo GET, com autenticação por token e parâmetros de estação e período.</li>
+              <li>Desenvolvimento de um <strong>script em Python</strong> que recebe os dados em JSON, converte-os em tabela e gera uma versão original e uma versão pivotada (uma coluna por variável, com o horário como índice).</li>
+              <li>Definição do <strong>tipo de dado, unidade e precisão</strong> de cada variável para o armazenamento em banco de dados.</li>
+              <li>Validação dos dados: faixas esperadas, dados faltantes e sincronização de horário em UTC.</li>
+              <li>Análises: rosa dos ventos, séries temporais e estatísticas, com interpretação para a dispersão de poluentes.</li>
+            </ol>
+            <figure><img src="../img/cases/estacao-meteorologica-api/fluxo-api.jpg" alt="Fluxo de integração dos dados da estação meteorológica por API"><figcaption>Integração dos dados da estação por API (esquema).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA estruturou um <strong>fluxo automático de dados</strong> da estação até a análise:</p>
+            <ul>
+              <li><strong>Coleta automática por API</strong>, sem downloads manuais na plataforma.</li>
+              <li><strong>Tabela padronizada</strong>, com horário em UTC e uma coluna para cada variável, pronta para planilhas ou banco de dados SQL.</li>
+              <li><strong>Modelo de armazenamento</strong> com tipo de dado e precisão definidos para cada variável:</li>
+            </ul>
+            <table>
+              <tr><th>Variável</th><th>Unidade</th><th>Tipo de dado</th></tr>
+              <tr><td>Data e hora (UTC)</td><td>ISO 8601</td><td>TIMESTAMP</td></tr>
+              <tr><td>Temperatura do ar e ponto de orvalho</td><td>°C</td><td>FLOAT</td></tr>
+              <tr><td>Umidade relativa</td><td>%</td><td>FLOAT</td></tr>
+              <tr><td>Velocidade do vento e rajada</td><td>m/s</td><td>FLOAT</td></tr>
+              <tr><td>Direção do vento</td><td>° (0 = norte)</td><td>SMALLINT</td></tr>
+              <tr><td>Precipitação</td><td>mm</td><td>FLOAT</td></tr>
+              <tr><td>Bateria do datalogger</td><td>V</td><td>FLOAT</td></tr>
+            </table>
+            <p><strong>Interpretação para a operação:</strong> com os dados meteorológicos, é possível programar atividades com maior potencial de odor para os períodos de vento moderado e direção contrária à vizinhança, gerar alertas em condições de calmaria e atmosfera estável e cruzar eventuais reclamações de odor com a direção do vento no momento da ocorrência.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A integração usa uma <strong>API REST</strong> com respostas em JSON, consumida por um script em <strong>Python</strong> (bibliotecas de requisição HTTP e de tratamento de dados tabulares). Os dados são organizados para carga em <strong>banco de dados SQL</strong> e para uso em ferramentas de análise e visualização.</p>
+            <p>A interpretação se apoia em conceitos de <strong>meteorologia aplicada à dispersão atmosférica</strong>: transporte pelo vento, diluição, estabilidade da atmosfera e o modelo de pluma gaussiana.</p>
+            <figure><img src="../img/cases/estacao-meteorologica-api/pluma-emissao.jpg" alt="Chaminé industrial com pluma de emissão dispersando no ar"><figcaption>Pluma de emissão sendo transportada e diluída pelo vento (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Rosa dos ventos</strong> para identificar as direções predominantes e a frequência de calmarias.</li>
+              <li><strong>Séries temporais</strong> de alta resolução para analisar o ciclo diário das variáveis.</li>
+              <li><strong>Estatísticas descritivas</strong> e verificação de faixas e dados faltantes.</li>
+              <li><strong>Esquemas de dispersão</strong> com o conceito de pluma gaussiana, mostrando o efeito do vento e da estabilidade atmosférica.</li>
+              <li>Base pronta para <strong>simulações físicas</strong> de dispersão e modelos de <strong>aprendizado de máquina</strong>.</li>
+            </ul>
+            <figure><img src="../img/cases/estacao-meteorologica-api/rosa-ventos.jpg" alt="Rosa dos ventos com dados sintéticos"><figcaption>Rosa dos ventos (dados sintéticos).</figcaption></figure>
+            <figure><img src="../img/cases/estacao-meteorologica-api/series-meteorologicas.jpg" alt="Séries de temperatura, umidade e vento ao longo de um dia com dados sintéticos"><figcaption>Variáveis meteorológicas ao longo de um dia (dados sintéticos).</figcaption></figure>
+            <figure><img src="../img/cases/estacao-meteorologica-api/dispersao-ilustrativa.jpg" alt="Esquema de dispersão de uma emissão com vento moderado e com vento fraco"><figcaption>Efeito da meteorologia na dispersão de uma emissão (esquema ilustrativo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Integração automática</strong> da estação com as bases de dados da operação, eliminando a consulta manual na plataforma.</li>
+              <li>Dados a cada <strong>5 minutos</strong>, padronizados em UTC, com tipos e unidades definidos.</li>
+              <li>Ferramentas de interpretação (rosa dos ventos, séries e estatísticas) para entender as condições de dispersão.</li>
+              <li>Diretrizes para usar a meteorologia nas decisões de operação e no <strong>controle de odores</strong>.</li>
+              <li>Base estruturada para análises estatísticas, simulações físicas e modelos de aprendizado de máquina.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p class="tbd">Quando aplicável: estimativas de CAPEX e OPEX, comparação entre alternativas, custo por m³ ou por tonelada, payback.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA atuou na <strong>supervisão técnica</strong> e na engenharia de dados, sendo responsável por:</p>
+            <ul>
+              <li>levantamento da estação e das variáveis medidas;</li>
+              <li>configuração do acesso à API e desenvolvimento do script de integração;</li>
+              <li>definição do modelo de armazenamento e das regras de validação;</li>
+              <li>análise dos dados e interpretação dos parâmetros ambientais para a dispersão de poluentes.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Relatório de gestão de dados do sistema de monitoramento meteorológico.</li>
+              <li>Script em Python de integração com a API, com exportação em tabela original e pivotada.</li>
+              <li>Dicionário de variáveis com significado físico, unidade, tipo de dado e precisão.</li>
+              <li>Recomendações de validação, sincronização em UTC e carga em banco de dados.</li>
+              <li>Análises e guia de interpretação meteorológica para a dispersão de poluentes.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/estacao-meteorologica-api/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/estacao-meteorologica-api/estacao-meteorologica.jpg" alt="Estação meteorológica automática com anemômetro, cata-vento e painel solar"><figcaption>Estação meteorológica automática (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/estacao-meteorologica-api/rosa-ventos.jpg" alt="Rosa dos ventos"><figcaption>Rosa dos ventos (dados sintéticos).</figcaption></figure>
+          <figure><img src="../img/cases/estacao-meteorologica-api/dispersao-ilustrativa.jpg" alt="Esquema de dispersão"><figcaption>Dispersão e condições meteorológicas (esquema).</figcaption></figure>
+        </div>
+        <p class="ptonly" style="margin-top:14px">Fotos ilustrativas de banco de imagens (Pexels) e gráficos com dados sintéticos, preservando a confidencialidade do cliente.</p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261124c"></script>
+<script src="cases.js?v=20261124c"></script>
+<script src="../assets/mega.js?v=20261124c"></script>
+<script src="../assets/portfolio.js?v=20261124c"></script>
+</body>
+</html>
