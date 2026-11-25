@@ -17,7 +17,7 @@ Site estático (HTML + CSS + JS, sem build) da **GETA – Grupo de Especialistas
 
 ## Cases (seção Soluções)
 
-- Na home, a seção **Soluções** lista os cases com filtro pelos 6 eixos (link direto: `index.html?eixo=mod#solucoes`). Cada card abre a página do case.
+- Na home, a seção **Soluções** lista os cases com filtro pelas 5 áreas (cada case pertence a uma única área) (link direto: `index.html?eixo=mod#solucoes`). Cada card abre a página do case.
 - `cases/cases.js` – **registro** dos cases: título, resumo (PT/EN/ES), eixos, capa, cliente, ano, status e etiquetas.
 - `cases/<slug>.html` – uma página por case, com as 11 seções (problema, contexto, diagnóstico, metodologia, solução, tecnologias, modelagem, resultados, CAPEX/OPEX, escopo, entregáveis), destaques, ficha técnica e galeria.
 - `assets/portfolio.css` e `assets/portfolio.js` – estilo e montagem das páginas de case (não precisam ser editados para preencher um case).
@@ -48,9 +48,9 @@ O script cria apenas as páginas que ainda não existem, a partir de `cases/_mod
 
 ## Versão dos arquivos (cache)
 
-Os arquivos CSS/JS são chamados com `?v=AAAAMMDDx` (ex.: `assets/mega.js?v=20261125b`) para o navegador
+Os arquivos CSS/JS são chamados com `?v=AAAAMMDDx` (ex.: `assets/mega.js?v=20261125c`) para o navegador
 baixar sempre a versão nova. Ao alterar CSS ou JS, troque o número em todas as páginas
-(busca e troca de `?v=20261125b` pelo novo valor).
+(busca e troca de `?v=20261125c` pelo novo valor).
 
 ## Rodar localmente
 

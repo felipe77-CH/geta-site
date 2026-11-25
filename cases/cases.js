@@ -5,7 +5,7 @@
    Aqui ficam os dados usados nos cards da seção Soluções e no topo da página:
 
      slug     nome do arquivo (cases/<slug>.html) – sem acentos nem espaços
-     eixos    1 a 3 eixos; o primeiro é o principal
+     eixos    uma única área (categoria) por case
               amb  = Engenharia Ambiental
               proc = Engenharia de Processos
               res  = Tratamento de Resíduos e Efluentes
@@ -29,7 +29,7 @@ window.GETA_CASES =
 [
   {
     "slug": "ete-lixiviado-1000",
-    "eixos": ["res", "proc"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-ete-lixiviado-1000.jpg",
     "cliente": "",
     "ano": "2023–2026",
@@ -48,7 +48,7 @@ window.GETA_CASES =
   },
   {
     "slug": "tratamento-fenol-ozonio",
-    "eixos": ["res", "amb", "mod"],
+    "eixos": ["amb"],
     "capa": "img/cases/capa-tratamento-fenol-ozonio.jpg",
     "cliente": "",
     "ano": "2026",
@@ -67,7 +67,7 @@ window.GETA_CASES =
   },
   {
     "slug": "nevoa-fria-controle-odores",
-    "eixos": ["amb", "res"],
+    "eixos": ["amb"],
     "capa": "img/cases/capa-nevoa-fria-controle-odores.jpg",
     "cliente": "",
     "ano": "2026",
@@ -86,7 +86,7 @@ window.GETA_CASES =
   },
   {
     "slug": "quebra-acida-efluente-oleoso",
-    "eixos": ["res", "proc"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-quebra-acida-efluente-oleoso.jpg",
     "cliente": "",
     "ano": "2026",
@@ -105,7 +105,7 @@ window.GETA_CASES =
   },
   {
     "slug": "sedimentador-lamelar",
-    "eixos": ["amb", "res", "mod"],
+    "eixos": ["amb"],
     "capa": "img/cases/capa-sedimentador-lamelar.jpg",
     "cliente": "",
     "ano": "2026",
@@ -124,7 +124,7 @@ window.GETA_CASES =
   },
   {
     "slug": "daf-bomba-microbolhas",
-    "eixos": ["res", "proc"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-daf-bomba-microbolhas.jpg",
     "cliente": "",
     "ano": "2025",
@@ -143,7 +143,7 @@ window.GETA_CASES =
   },
   {
     "slug": "banco-dados-sql-estacao",
-    "eixos": ["dig", "amb", "proc"],
+    "eixos": ["dig"],
     "capa": "img/cases/capa-banco-dados-sql-estacao.jpg",
     "cliente": "",
     "ano": "2025",
@@ -162,7 +162,7 @@ window.GETA_CASES =
   },
   {
     "slug": "estacao-meteorologica-api",
-    "eixos": ["dig", "amb", "mod"],
+    "eixos": ["dig"],
     "capa": "img/cases/capa-estacao-meteorologica-api.jpg",
     "cliente": "",
     "ano": "2025",
@@ -181,7 +181,7 @@ window.GETA_CASES =
   },
   {
     "slug": "interligacao-hidraulica-linhas",
-    "eixos": ["proc", "res"],
+    "eixos": ["proc"],
     "capa": "img/cases/capa-interligacao-hidraulica-linhas.jpg",
     "cliente": "",
     "ano": "2026",
@@ -200,7 +200,7 @@ window.GETA_CASES =
   },
   {
     "slug": "projeto-membranas-uf-ro",
-    "eixos": ["res", "dig", "proc"],
+    "eixos": ["proc"],
     "capa": "img/cases/capa-projeto-membranas-uf-ro.jpg",
     "cliente": "",
     "ano": "2025",
@@ -219,7 +219,7 @@ window.GETA_CASES =
   },
   {
     "slug": "dispersao-pm25-risco-ambiental",
-    "eixos": ["amb", "mod", "dig"],
+    "eixos": ["mod"],
     "capa": "img/cases/capa-dispersao-pm25-risco-ambiental.jpg",
     "cliente": "",
     "ano": "2026",
@@ -238,7 +238,7 @@ window.GETA_CASES =
   },
   {
     "slug": "cdr-biosecagem-rsu",
-    "eixos": ["res", "proc"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-cdr-biosecagem-rsu.jpg",
     "cliente": "",
     "ano": "2026",
@@ -257,7 +257,7 @@ window.GETA_CASES =
   },
   {
     "slug": "planta-efluentes-complexos-lodos",
-    "eixos": ["res", "amb"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-planta-efluentes-complexos-lodos.jpg",
     "cliente": "",
     "ano": "2025",
@@ -276,7 +276,7 @@ window.GETA_CASES =
   },
   {
     "slug": "terras-raras-ensaios-metalurgicos",
-    "eixos": ["proc", "mod"],
+    "eixos": ["proc"],
     "capa": "img/cases/capa-terras-raras-ensaios-metalurgicos.jpg",
     "cliente": "",
     "ano": "2026",
@@ -295,7 +295,7 @@ window.GETA_CASES =
   },
   {
     "slug": "vinhaca-radical-carbonato-biometano",
-    "eixos": ["proc", "res", "mod"],
+    "eixos": ["proc"],
     "capa": "img/cases/capa-vinhaca-radical-carbonato-biometano.jpg",
     "cliente": "",
     "ano": "2026",
@@ -314,7 +314,7 @@ window.GETA_CASES =
   },
   {
     "slug": "biofertilizante-map-dap-chorume",
-    "eixos": ["res", "proc"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-biofertilizante-map-dap-chorume.jpg",
     "cliente": "",
     "ano": "2025",
@@ -333,7 +333,7 @@ window.GETA_CASES =
   },
   {
     "slug": "tecnologia-lixiviado-patente",
-    "eixos": ["res", "proc"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-tecnologia-lixiviado-patente.jpg",
     "cliente": "",
     "ano": "2026",
@@ -352,7 +352,7 @@ window.GETA_CASES =
   },
   {
     "slug": "otimizacao-ete-attend",
-    "eixos": ["proc", "res"],
+    "eixos": ["proc"],
     "capa": "img/area-plantas-saneamento.jpg",
     "cliente": "Attend",
     "ano": "",
@@ -390,7 +390,7 @@ window.GETA_CASES =
   },
   {
     "slug": "indice-tratabilidade-efluentes",
-    "eixos": ["res", "proc"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-indice-tratabilidade-efluentes.jpg",
     "cliente": "",
     "ano": "2025",
@@ -409,7 +409,7 @@ window.GETA_CASES =
   },
   {
     "slug": "secagem-mineracao-cobre",
-    "eixos": ["proc", "mod", "dig"],
+    "eixos": ["mod"],
     "capa": "img/cases/capa-secagem-mineracao-cobre.jpg",
     "cliente": "",
     "ano": "2023",
@@ -466,7 +466,7 @@ window.GETA_CASES =
   },
   {
     "slug": "capacidade-ete-efluentes-nao-domesticos",
-    "eixos": ["res", "dig"],
+    "eixos": ["res"],
     "capa": "img/cases/capa-capacidade-ete-efluentes-nao-domesticos.jpg",
     "cliente": "",
     "ano": "2024",
@@ -485,7 +485,7 @@ window.GETA_CASES =
   },
   {
     "slug": "programa-monitoramento-odores",
-    "eixos": ["amb", "dig", "res"],
+    "eixos": ["amb"],
     "capa": "img/cases/capa-programa-monitoramento-odores.jpg",
     "cliente": "",
     "ano": "2026",
@@ -504,7 +504,7 @@ window.GETA_CASES =
   },
   {
     "slug": "sensores-odores",
-    "eixos": ["dig", "amb"],
+    "eixos": ["dig"],
     "capa": "img/cases/capa-sensores-odores.jpg",
     "cliente": "",
     "ano": "2026",
@@ -523,7 +523,7 @@ window.GETA_CASES =
   },
   {
     "slug": "comunicacao-rf-monitoramento",
-    "eixos": ["dig", "res", "amb"],
+    "eixos": ["dig"],
     "capa": "img/cases/capa-comunicacao-rf-monitoramento.jpg",
     "cliente": "",
     "ano": "2025",
@@ -542,7 +542,7 @@ window.GETA_CASES =
   },
   {
     "slug": "chorume-redes-neurais",
-    "eixos": ["dig", "mod", "amb"],
+    "eixos": ["dig"],
     "capa": "img/cases/capa-chorume-redes-neurais.jpg",
     "cliente": "",
     "ano": "2023",
@@ -580,7 +580,7 @@ window.GETA_CASES =
   },
   {
     "slug": "automacao-monitoramento",
-    "eixos": ["dig", "proc"],
+    "eixos": ["dig"],
     "capa": "img/area-engenharia-inovacao.jpg",
     "cliente": "",
     "ano": "",
@@ -599,7 +599,7 @@ window.GETA_CASES =
   },
   {
     "slug": "modelagem-simulacao-processos",
-    "eixos": ["mod", "proc"],
+    "eixos": ["mod"],
     "capa": "img/cases/capa-modelagem-simulacao-processos.jpg",
     "cliente": "",
     "ano": "",
@@ -618,7 +618,7 @@ window.GETA_CASES =
   },
   {
     "slug": "balancos-massa-energia",
-    "eixos": ["mod", "proc"],
+    "eixos": ["mod"],
     "capa": "img/cases/capa-balancos-massa-energia.jpg",
     "cliente": "",
     "ano": "",
@@ -656,7 +656,7 @@ window.GETA_CASES =
   },
   {
     "slug": "reducao-ordem-dmd",
-    "eixos": ["mod", "dig"],
+    "eixos": ["mod"],
     "capa": "img/cases/capa-reducao-ordem-dmd.jpg",
     "cliente": "",
     "ano": "",
@@ -675,7 +675,7 @@ window.GETA_CASES =
   },
   {
     "slug": "ia-sciml-engenharia",
-    "eixos": ["dig", "mod"],
+    "eixos": ["dig"],
     "capa": "img/cases/capa-ia-sciml-engenharia.jpg",
     "cliente": "",
     "ano": "",
