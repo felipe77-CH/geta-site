@@ -46,3 +46,38 @@ img/cases/chorume-redes-neurais/previsao-lstm.jpg ... gráfico do notebook públ
 img/cases/capa-secagem-mineracao-cobre.jpg ... pexels.com/photo/38500487
 img/cases/secagem-mineracao-cobre/mina-ceu-aberto.jpg ... pexels.com/photo/31721779
 img/cases/secagem-mineracao-cobre/planta-deserto.jpg ... pexels.com/photo/27852910
+img/cases/capa-projeto-membranas-uf-ro.jpg e projeto-membranas-uf-ro/vasos-filtracao.jpg ... pexels.com/photo/12726229
+img/cases/projeto-membranas-uf-ro/tubulacao-inox.jpg ... pexels.com/photo/8940464
+img/cases/capa-dispersao-pm25-risco-ambiental.jpg ... pexels.com/photo/37309391
+img/cases/dispersao-pm25-risco-ambiental/inversao-termica.jpg ... pexels.com/photo/19287246
+img/cases/dispersao-pm25-risco-ambiental/bacia-andes.jpg ... pexels.com/photo/37136626
+img/cases/capa-comunicacao-rf-monitoramento.jpg e comunicacao-rf-monitoramento/antena-rf.jpg ... pexels.com/photo/16189542
+img/cases/comunicacao-rf-monitoramento/bombeamento-campo.jpg ... pexels.com/photo/41165485
+img/cases/comunicacao-rf-monitoramento/torre-radio.jpg ... pexels.com/photo/27090768
+img/cases/capa-sensores-odores.jpg e sensores-odores/prototipo-eletronica.jpg ... pexels.com/photo/19895788
+img/cases/sensores-odores/sensor-campo.jpg ... pexels.com/photo/36072090
+img/cases/capa-cdr-biosecagem-rsu.jpg e cdr-biosecagem-rsu/rsu-recebimento.jpg ... pexels.com/photo/5424856 (Tom Fisk)
+img/cases/cdr-biosecagem-rsu/combustao-cdr.jpg ... pexels.com/photo/37512426
+img/cases/cdr-biosecagem-rsu/planta-industrial.jpg ... pexels.com/photo/36794532
+img/cases/capa-capacidade-ete-efluentes-nao-domesticos.jpg e capacidade-ete-efluentes-nao-domesticos/ete-aerea.jpg ... pexels.com/photo/35425762
+img/cases/capacidade-ete-efluentes-nao-domesticos/tanques-tratamento.jpg ... pexels.com/photo/35425759
+img/cases/capacidade-ete-efluentes-nao-domesticos/decantadores.jpg ... pexels.com/photo/5712211
+img/cases/capa-planta-efluentes-complexos-lodos.jpg e planta-efluentes-complexos-lodos/porto-conteineres.jpg ... pexels.com/photo/7519262
+img/cases/planta-efluentes-complexos-lodos/polo-industrial.jpg ... pexels.com/photo/38602129
+img/cases/planta-efluentes-complexos-lodos/planta-tratamento.jpg ... pexels.com/photo/4742023
+img/cases/capa-indice-tratabilidade-efluentes.jpg e indice-tratabilidade-efluentes/tubos-dqo.jpg ... pexels.com/photo/8442376
+img/cases/indice-tratabilidade-efluentes/amostra-laboratorio.jpg ... pexels.com/photo/7298559
+img/cases/indice-tratabilidade-efluentes/planta-tratamento.jpg ... pexels.com/photo/4741959
+img/cases/capa-terras-raras-ensaios-metalurgicos.jpg e terras-raras-ensaios-metalurgicos/amostra-minerio.jpg ... pexels.com/photo/38241230
+img/cases/terras-raras-ensaios-metalurgicos/mineral-campo.jpg ... pexels.com/photo/17146230
+img/cases/terras-raras-ensaios-metalurgicos/vidraria-laboratorio.jpg ... pexels.com/photo/8325708
+img/cases/capa-programa-monitoramento-odores.jpg e programa-monitoramento-odores/tanques-aeracao.jpg ... pexels.com/photo/5131195 (Tom Fisk)
+img/cases/programa-monitoramento-odores/instrumentos-meteorologicos.jpg ... pexels.com/photo/32358153
+img/cases/programa-monitoramento-odores/area-tancagem.jpg ... pexels.com/photo/36926327
+img/cases/capa-vinhaca-radical-carbonato-biometano.jpg e vinhaca-radical-carbonato-biometano/canavial.jpg ... pexels.com/photo/36976806
+img/cases/vinhaca-radical-carbonato-biometano/gasometro.jpg ... pexels.com/photo/20177021
+img/cases/vinhaca-radical-carbonato-biometano/usina-industrial.jpg ... pexels.com/photo/5311146
+img/cases/capa-biofertilizante-map-dap-chorume.jpg e biofertilizante-map-dap-chorume/fertilizante-granulado.jpg ... pexels.com/photo/31673795
+img/cases/biofertilizante-map-dap-chorume/lavoura.jpg ... pexels.com/photo/39300580
+img/cases/biofertilizante-map-dap-chorume/aterro.jpg ... pexels.com/photo/3181032
+img/cases/vinhaca-radical-carbonato-biometano/mecanismo-radical-carbonato.jpg e sistema-dbd-controle.jpg ... diagramas gerados pela GETA

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capacidade de uma ETE para efluentes não domésticos: análise de dados e georreferenciamento de grandes geradores | GETA</title>
+<meta name="description" content="Análise dos 100 maiores geradores de efluentes não domésticos de uma região metropolitana para definir a capacidade nominal de uma estação de tratamento, com curvas de demanda, mapas por município e estimativa de distâncias e tempos de transporte.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261125a">
+<link rel="stylesheet" href="../assets/mega.css?v=20261125a">
+</head>
+<!-- =====================================================================
+  CASE: Capacidade de uma ETE para efluentes não domésticos: análise de dados e georreferenciamento de grandes geradores
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "capacidade-ete-efluentes-nao-domesticos").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/capacidade-ete-efluentes-nao-domesticos/ e use
+     <img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="capacidade-ete-efluentes-nao-domesticos" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>100</b><span>maiores geradores de efluentes não domésticos analisados</span></div>
+    <div class="kpi"><b>~11.760 m³/d</b><span>de vazão total a ser absorvida</span></div>
+    <div class="kpi"><b>7</b><span>municípios da região metropolitana mapeados</span></div>
+    <div class="kpi"><b>~10 km</b><span>de distância mediana dos geradores até a estação</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Região Metropolitana de Belo Horizonte (MG)</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>2024</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Saneamento: efluentes comerciais e industriais</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>100 geradores · ~11.760 m³/dia · 7 municípios</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Análise de dados, geoprocessamento e dimensionamento</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O crescimento econômico de uma grande região metropolitana aumentou a geração de <strong>efluentes não domésticos</strong> (comerciais e industriais), que precisam de tratamento adequado para cumprir a legislação ambiental. Para planejar uma estação de tratamento que receba esses efluentes, a pergunta central era: <strong>qual deve ser a capacidade nominal da planta, e quais geradores ela consegue atender?</strong></p>
+            <p>Também era preciso saber <strong>onde estão os geradores</strong> e quanto custa e demora levar os efluentes até a estação, para avaliar a viabilidade logística e econômica do serviço.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Cliente: <strong>companhia de saneamento</strong> que atende a <strong>Região Metropolitana de Belo Horizonte (MG)</strong>.</li>
+              <li>Base de dados com os <strong>100 maiores geradores de efluentes não domésticos</strong>, distribuídos em <strong>7 municípios</strong>.</li>
+              <li>Geração somada de cerca de <strong>11.760 m³/dia</strong>, com perfis muito diferentes: <strong>72 geradores comerciais</strong> (shoppings, centrais de abastecimento, serviços) e <strong>21 industriais</strong> (montadoras, siderurgia, metalurgia, alimentos, frigoríficos, têxtil, papel, entre outros).</li>
+            </ul>
+            <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/perfil-geradores.jpg" alt="Gráficos da vazão por gerador comercial e industrial e do tipo de atividade dos 100 maiores geradores"><figcaption>Perfil dos 100 maiores geradores (dados do estudo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>A distribuição da vazão é <strong>muito assimétrica</strong>: a mediana é de cerca de 72 m³/dia por gerador, mas a média sobe para 118 m³/dia por causa de poucos grandes geradores, e o maior chega a cerca de 1.320 m³/dia.</li>
+              <li>Os geradores <strong>industriais</strong> são menos numerosos, mas maiores: média de cerca de 203 m³/dia, contra 96 m³/dia dos comerciais.</li>
+              <li><strong>Belo Horizonte</strong> concentra a maior parte da vazão, sobretudo comercial; <strong>Betim</strong> e <strong>Contagem</strong> concentram a vazão industrial.</li>
+              <li>A capacidade da planta depende de <strong>quais geradores</strong> se quer atender: poucos grandes geradores esgotam rapidamente uma planta pequena.</li>
+            </ul>
+            <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/vazao-municipio.jpg" alt="Gráfico de barras da vazão de efluentes por município, separando atividade comercial e industrial"><figcaption>Vazão de efluentes não domésticos por município e por tipo de atividade (dados do estudo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li><strong>Organização do cadastro</strong> dos 100 maiores geradores (vazão em m³/dia, município e tipo de atividade).</li>
+              <li><strong>Análise exploratória de dados</strong>: estatística descritiva, histogramas, assimetria e curtose.</li>
+              <li><strong>Segregação</strong> por tipo de atividade (comercial e industrial) e por município.</li>
+              <li><strong>Curvas de vazão acumulada</strong>, do maior para o menor gerador e vice-versa, para simular diferentes capacidades de tratamento.</li>
+              <li><strong>Mapas temáticos</strong> da vazão por município e por atividade.</li>
+              <li><strong>Georreferenciamento</strong> automático dos geradores e cálculo de <strong>distâncias e tempos de viagem</strong> até a estação por API de mapas.</li>
+            </ol>
+            <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/fluxo-metodo.jpg" alt="Fluxograma do estudo, do cadastro dos geradores até a capacidade da planta e o custo logístico"><figcaption>Fluxo metodológico do estudo.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O estudo entregou uma <strong>ferramenta de decisão</strong> para dimensionar a estação: em vez de um único número, a capacidade nominal passa a ser escolhida a partir das curvas de vazão acumulada, sabendo exatamente <strong>quantos e quais geradores</strong> cada capacidade atende.</p>
+            <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/curva-acumulada.jpg" alt="Curva de vazão acumulada dos 100 maiores geradores com linhas de capacidade de 1.000, 2.000 e 5.000 m³/dia"><figcaption>Capacidade nominal × número de geradores atendidos (curva aproximada a partir das estatísticas do cadastro).</figcaption></figure>
+            <p>Por exemplo, uma planta de <strong>1.000 m³/dia</strong> seria ocupada por apenas dois dos maiores geradores (sem contar os dois excepcionais), ou por cerca de <strong>20 dos menores</strong>. Isso orienta tanto a capacidade quanto a estratégia comercial do serviço.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Python</strong>: pandas, NumPy, SciPy, seaborn e matplotlib para a análise de dados.</li>
+              <li><strong>Geoprocessamento</strong>: GeoPandas e malha municipal oficial para os mapas temáticos.</li>
+              <li><strong>Georreferenciamento e roteirização</strong> com API de mapas (geocodificação e matriz de distâncias e tempos).</li>
+              <li>Mapas interativos com agrupamento de pontos e mapa de calor (Folium).</li>
+              <li>Notebooks Jupyter com todo o fluxo, disponíveis publicamente no GitHub.</li>
+            </ul>
+            <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/ete-aerea.jpg" alt="Vista aérea de uma estação de tratamento de efluentes"><figcaption>Estação de tratamento de efluentes (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O georreferenciamento de 98 geradores permitiu calcular a distância rodoviária e o tempo de viagem de cada um até a estação de tratamento:</p>
+            <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/logistica-transporte.jpg" alt="Distribuição das distâncias e dos tempos de viagem dos geradores até a estação de tratamento"><figcaption>Distâncias e tempos de transporte até a estação (dados do estudo).</figcaption></figure>
+            <p>Metade dos geradores está a menos de <strong>10 km</strong> e a menos de <strong>25 minutos</strong> da estação; os mais distantes chegam a 56 km e cerca de 1 hora de viagem. Esses valores são a base para estimar o <strong>custo médio de transporte</strong> por m³, otimizar rotas e reduzir riscos e emissões no transporte de efluentes.</p>
+            <p>O código está no repositório <a href="https://github.com/felipe77-CH/Capacity-estimation-treatment-plant-brazil" target="_blank" rel="noopener">Capacity-estimation-treatment-plant-brazil no GitHub</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Quantificação da demanda: cerca de <strong>11.760 m³/dia</strong> nos 100 maiores geradores, com perfil comercial e industrial bem caracterizado.</li>
+              <li><strong>Curvas de capacidade</strong> que mostram quantos geradores cada porte de estação consegue atender.</li>
+              <li><strong>Mapas</strong> da vazão por município e por atividade, que mostram onde está a demanda comercial (capital) e a industrial (eixo Betim–Contagem).</li>
+              <li><strong>Logística</strong>: distância mediana de cerca de 10 km e tempo mediano de cerca de 23 minutos até a estação, base para o custo de transporte e a otimização de rotas.</li>
+              <li>Base técnica para a <strong>viabilidade econômica</strong> do serviço de recebimento e tratamento de efluentes não domésticos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p class="tbd">Quando aplicável: estimativas de CAPEX e OPEX, comparação entre alternativas, custo por m³ ou por tonelada, payback.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA foi responsável por:</p>
+            <ul>
+              <li>organização e tratamento da base de dados dos geradores;</li>
+              <li>análise estatística e segregação por atividade e município;</li>
+              <li>simulação de capacidades e curvas de demanda;</li>
+              <li>georreferenciamento, mapas e cálculo de distâncias e tempos de transporte;</li>
+              <li>interpretação dos resultados para o dimensionamento da estação.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Base de dados tratada dos 100 maiores geradores.</li>
+              <li>Relatório de análise exploratória e curvas de capacidade.</li>
+              <li>Mapas temáticos por município e por atividade, e mapas interativos dos geradores.</li>
+              <li>Matriz de distâncias e tempos de transporte até a estação.</li>
+              <li>Notebooks Jupyter (<a href="https://github.com/felipe77-CH/Capacity-estimation-treatment-plant-brazil" target="_blank" rel="noopener">repositório público no GitHub</a>).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/tanques-tratamento.jpg" alt="Tanques de tratamento de efluentes vistos de cima"><figcaption>Tanques de tratamento (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/decantadores.jpg" alt="Decantadores circulares de uma estação de tratamento"><figcaption>Decantadores (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/capacidade-ete-efluentes-nao-domesticos/vazao-municipio.jpg" alt="Vazão por município"><figcaption>Vazão por município.</figcaption></figure>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261125a"></script>
+<script src="cases.js?v=20261125a"></script>
+<script src="../assets/mega.js?v=20261125a"></script>
+<script src="../assets/portfolio.js?v=20261125a"></script>
+</body>
+</html>

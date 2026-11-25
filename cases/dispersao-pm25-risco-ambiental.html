@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispersão atmosférica de PM2.5 e risco ambiental na bacia de Santiago do Chile | GETA</title>
+<meta name="description" content="Reconstrução hora a hora do PM2.5 em 18 anos de dados da rede oficial de monitoramento, com krigagem validada e decomposição em modos dinâmicos (DMD), para mapear onde e quando a norma é superada e o que controla os episódios críticos.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261125a">
+<link rel="stylesheet" href="../assets/mega.css?v=20261125a">
+</head>
+<!-- =====================================================================
+  CASE: Dispersão atmosférica de PM2.5 e risco ambiental na bacia de Santiago do Chile
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "dispersao-pm25-risco-ambiental").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/dispersao-pm25-risco-ambiental/ e use
+     <img src="../img/cases/dispersao-pm25-risco-ambiental/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="dispersao-pm25-risco-ambiental" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>18 anos</b><span>de dados horários de PM2.5 (mais de 160 mil horas)</span></div>
+    <div class="kpi"><b>3.391</b><span>pontos de cálculo cobrindo 37 comunas da bacia</span></div>
+    <div class="kpi"><b>209</b><span>episódios críticos acima da norma diária identificados</span></div>
+    <div class="kpi"><b>até 40%</b><span>dos dias de inverno acima da norma nas zonas mais expostas</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Bacia de Santiago, Região Metropolitana (Chile)</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>Dados de junho de 2008 a setembro de 2026</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Qualidade do ar e saúde ambiental</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>14 estações · 37 comunas · 3.391 nós de cálculo</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Estudo de dispersão atmosférica e risco ambiental</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O material particulado fino (PM2.5) é o poluente atmosférico com maior impacto na saúde: penetra profundamente nos pulmões e está associado a doenças respiratórias e cardiovasculares. Santiago do Chile tem alguns dos maiores níveis de PM2.5 de inverno da América Latina.</p>
+            <p>A rede oficial de monitoramento é longa, mas esparsa: entre 8 e 11 estações medindo ao mesmo tempo em uma bacia de mais de 30 comunas. A pergunta era: <strong>como estimar a exposição em toda a bacia, hora a hora, e identificar onde, quando e por que a norma é superada?</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Bacia de Santiago (Região Metropolitana, Chile), cercada pela Cordilheira dos Andes e pela Cordilheira da Costa.</li>
+              <li>No inverno, a <strong>subsidência atmosférica, as inversões térmicas e os ventos fracos</strong> limitam a dispersão e acumulam os poluentes perto do solo.</li>
+              <li>Base de dados: <strong>PM2.5 horário de 14 estações da rede oficial</strong> (8 com medição em todo o período), de junho de 2008 a setembro de 2026: mais de <strong>160.000 horas</strong>, além de temperatura, umidade e vento medidos localmente.</li>
+              <li>Referências de risco: norma diária chilena de 50 µg/m³, norma anual de 20 µg/m³ e diretriz anual da OMS de 5 µg/m³.</li>
+            </ul>
+            <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/inversao-termica.jpg" alt="Santiago coberta por uma camada de névoa com a Cordilheira dos Andes ao fundo"><figcaption>Camada de poluição presa sob a inversão térmica, com os Andes ao fundo (imagem ilustrativa).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>A concentração média anual na bacia variou de <strong>21 a 30 µg/m³</strong>, sempre acima da norma anual chilena (20 µg/m³) e de 4 a 6 vezes a diretriz da OMS.</li>
+              <li>Nos meses frios (abril a setembro) a média sobe para <strong>29 a 42 µg/m³</strong>; nos meses quentes fica entre 12 e 20 µg/m³.</li>
+              <li>Foram identificados <strong>209 episódios críticos</strong> (dias seguidos com média da bacia acima de 50 µg/m³). A maioria dura 1 a 3 dias, mas o pior, em 2015, durou <strong>22 dias consecutivos</strong>.</li>
+              <li><strong>95% dos dias acima da norma</strong> ocorrem entre maio e agosto.</li>
+            </ul>
+            <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/dias-excedencia.jpg" alt="Gráfico de barras com os dias por ano acima da norma diária de PM2.5, no ponto mais crítico e na média da bacia"><figcaption>Dias por ano acima da norma diária de 50 µg/m³ (dados do estudo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li><strong>Dados rastreáveis</strong>: download da rede oficial com verificação de integridade, controle de qualidade e eixo horário comum (nenhum dado apagado, apenas sinalizado).</li>
+              <li><strong>Domínio e malha</strong>: 37 comunas da bacia e malha adaptativa de <strong>3.391 nós</strong>, com as estações como nós.</li>
+              <li><strong>Interpolação espacial</strong> por krigagem ordinária (e comparação com IDW e krigagem logarítmica) para reconstruir o campo de PM2.5 de cada hora.</li>
+              <li><strong>Validação</strong> retirando uma estação por vez, hora a hora: mais de <strong>1,6 milhão de previsões</strong> comparadas com medições reais.</li>
+              <li><strong>Decomposição em modos dinâmicos (DMD)</strong>, padrão e com atrasos temporais (Hankel-DMD), para separar os ciclos anual, semanal e diário e os padrões espaciais.</li>
+              <li><strong>Testes de robustez</strong> independentes do método (espectros, autocorrelação e propagação do erro da krigagem) para separar sinais físicos de artefatos.</li>
+              <li><strong>Meteorologia, episódios e tendências</strong>: correlações com vento, temperatura e umidade, composição de episódios e tendência de Theil–Sen.</li>
+            </ol>
+            <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/fluxo-metodo.jpg" alt="Fluxograma do estudo, da rede de monitoramento ao mapa de risco"><figcaption>Fluxo metodológico do estudo.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O resultado é um <strong>modelo espaço-temporal do PM2.5</strong> para toda a bacia, com mapas horários validados, que permite:</p>
+            <ul>
+              <li><strong>mapear a exposição</strong> em qualquer ponto da bacia, inclusive onde não há estação;</li>
+              <li>identificar as <strong>zonas de maior risco</strong>: no oeste e no centro-norte da bacia a norma diária é superada em até <strong>40% dos dias de inverno</strong>, contra cerca de 6% no setor leste, mais alto e ventilado;</li>
+              <li>separar o que é causado pela <strong>meteorologia</strong> do que é causado pelos <strong>ritmos de emissão</strong> (tráfego, calefação residencial);</li>
+              <li>dar base técnica a planos de gestão de episódios e de descontaminação.</li>
+            </ul>
+            <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/mapa-excedencia.jpg" alt="Mapa da bacia de Santiago com a porcentagem de dias de inverno acima da norma diária de PM2.5"><figcaption>Porcentagem dos dias de maio a agosto com média diária acima de 50 µg/m³ em cada ponto da bacia.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Geoestatística</strong>: variograma, krigagem ordinária e logarítmica, IDW e validação cruzada.</li>
+              <li><strong>Decomposição em modos dinâmicos</strong> (DMD e Hankel-DMD) e análise espectral (Lomb–Scargle).</li>
+              <li>Malha adaptativa com <strong>gmsh</strong> e dados geográficos oficiais das comunas.</li>
+              <li><strong>Python</strong>: NumPy, pandas, SciPy, GeoPandas e matplotlib, com pipeline numerado, testes automáticos e resultados reproduzíveis.</li>
+              <li>Estatística de tendências (Theil–Sen, Mann–Kendall) e regressão robusta com dados meteorológicos.</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A validação mostrou que a krigagem reduz em <strong>26% o erro quadrático</strong> em relação à média simples da rede (erro médio de cerca de 12 µg/m³ por hora). O estudo também demonstrou que, com uma rede fixa de estações, a malha acrescenta representação espacial, mas não informação dinâmica nova: a dinâmica está nas estações.</p>
+            <p>A decomposição DMD mostrou que o PM2.5 se organiza em <strong>ciclos anual, semanal e diário</strong> (modos persistentes de 24 h e 12 h), sobre os quais se somam os episódios de vários dias. No inverno, o ciclo diário tem dois picos: um pela manhã, ligado ao tráfego, e um muito mais forte à noite, quando as emissões residenciais coincidem com a inversão térmica e o vento fraco.</p>
+            <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/ciclo-diario-inverno.jpg" alt="Ciclo diário do PM2.5 no inverno comparando sábado, segunda-feira e a média da semana"><figcaption>Ciclo diário de inverno: as noites de sábado chegam a 173% da média (dados do estudo).</figcaption></figure>
+            <p>O ciclo semanal <strong>não tem contrapartida meteorológica</strong>: temperatura, umidade e vento variam menos de 2% entre os dias da semana, mas os sábados de inverno ficam 23% acima das segundas-feiras mesmo depois de descontar a meteorologia. É um sinal claro de <strong>emissões humanas</strong>, sobre as quais é possível agir.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Mapas horários validados</strong> de PM2.5 para toda a bacia, em 18 anos.</li>
+              <li>Identificação das <strong>zonas e horários de maior risco</strong>: oeste e centro-norte da bacia, noites de inverno, especialmente aos sábados.</li>
+              <li>A meteorologia local explica cerca de <strong>um terço</strong> da variação diária no inverno, mas não as diferenças entre um inverno e outro.</li>
+              <li><strong>Tendência de queda</strong> de cerca de 0,3 µg/m³ por ano (≈ 1% ao ano), concentrada no verão; no inverno, quando o risco é maior, não há tendência significativa.</li>
+              <li>Critérios técnicos para aplicar decomposições espaço-temporais a redes de monitoramento esparsas, evitando interpretar artefatos numéricos como sinais físicos.</li>
+            </ul>
+            <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/medias-anuais.jpg" alt="Gráfico das médias anuais, de inverno e de verão do PM2.5 com as normas chilena e da OMS"><figcaption>Médias anuais e sazonais de PM2.5 na bacia e tendência de longo prazo (dados do estudo).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p class="tbd">Quando aplicável: estimativas de CAPEX e OPEX, comparação entre alternativas, custo por m³ ou por tonelada, payback.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA foi responsável por todo o estudo:</p>
+            <ul>
+              <li>obtenção, controle de qualidade e rastreabilidade dos dados da rede oficial;</li>
+              <li>domínio geográfico, malha e interpolação espacial validada;</li>
+              <li>decomposição em modos dinâmicos e testes de robustez;</li>
+              <li>análise de meteorologia, episódios críticos e tendências;</li>
+              <li>interpretação dos resultados em termos de exposição e risco ambiental.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Base de dados horária de PM2.5 tratada e rastreável (2008–2026).</li>
+              <li>Mapas horários e diários de concentração em toda a bacia, com o erro de estimativa.</li>
+              <li>Mapas de excedência da norma e indicadores de risco por zona e por horário.</li>
+              <li>Análise de episódios críticos, ciclos semanal e diário e tendências de longo prazo.</li>
+              <li>Pipeline em Python reproduzível, com testes automáticos, e relatório técnico.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/bacia-andes.jpg" alt="Santiago ao entardecer com a Cordilheira dos Andes"><figcaption>A bacia de Santiago e a Cordilheira dos Andes (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/inversao-termica.jpg" alt="Camada de névoa sobre Santiago"><figcaption>Inversão térmica sobre a cidade (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/dispersao-pm25-risco-ambiental/mapa-excedencia.jpg" alt="Mapa de excedência da norma"><figcaption>Mapa de excedência da norma diária.</figcaption></figure>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261125a"></script>
+<script src="cases.js?v=20261125a"></script>
+<script src="../assets/mega.js?v=20261125a"></script>
+<script src="../assets/portfolio.js?v=20261125a"></script>
+</body>
+</html>

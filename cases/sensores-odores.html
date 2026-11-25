@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Desenvolvimento de sensores para monitoramento de odores | GETA</title>
-<meta name="description" content="Concepção e desenvolvimento de sensores para a medição contínua de compostos odoríferos.">
+<title>Sensores próprios e plataforma com IA para monitoramento de odores | GETA</title>
+<meta name="description" content="Desenvolvimento de nós de medição autônomos para gases odoríferos (H₂S, NH₃, CO₂) e meteorologia, e de uma plataforma completa em nuvem com banco de séries temporais, modelos de IA, alertas, painel e agente conversacional com respostas verificadas.">
 <link rel="icon" href="../img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/portfolio.css?v=20261124c">
-<link rel="stylesheet" href="../assets/mega.css?v=20261124c">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261125a">
+<link rel="stylesheet" href="../assets/mega.css?v=20261125a">
 </head>
 <!-- =====================================================================
-  CASE: Desenvolvimento de sensores para monitoramento de odores
+  CASE: Sensores próprios e plataforma com IA para monitoramento de odores
   ---------------------------------------------------------------------
   COMO PREENCHER
   1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
@@ -35,10 +35,10 @@
 
   <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
   <div class="cs-kpis">
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 1 (ex.: vazão, capacidade)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 2 (ex.: eficiência, remoção)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 3 (ex.: economia, redução de custo)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 4 (ex.: prazo, duração)</span></div>
+    <div class="kpi"><b>3 gases</b><span>odoríferos medidos: H₂S, NH₃ e CO₂</span></div>
+    <div class="kpi"><b>15 min</b><span>entre leituras de gases (5 min para meteorologia)</span></div>
+    <div class="kpi"><b>30 dias</b><span>de dados guardados no nó se a comunicação cair</span></div>
+    <div class="kpi"><b>7 camadas</b><span>do sensor ao painel, com IA e respostas verificadas</span></div>
   </div>
 
   <div class="cs-layout">
@@ -48,11 +48,11 @@
       <div class="cs-facts">
         <h4 data-i18n="cs.facts">Ficha técnica</h4>
         <dl>
-          <div><dt data-i18n="cs.f.loc">Local</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.period">Período</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>—</dd></div>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Brasil</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>2026</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Aterros, ETEs, compostagem e indústria</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Redes de nós de medição em campo</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Desenvolvimento tecnológico (hardware + software)</dd></div>
         </dl>
       </div>
     </aside>
@@ -64,7 +64,8 @@
         <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Qual era o problema do cliente? Descreva a situação inicial, o que precisava ser resolvido e por que era crítico (exigência legal, custo, risco ambiental, desempenho).</p>
+            <p>Odores de aterros, estações de tratamento de efluentes, compostagem e indústrias são uma das principais causas de reclamações da vizinhança e de conflitos com órgãos ambientais. O problema é que o odor <strong>varia hora a hora</strong> e depende tanto da emissão quanto do vento: uma medição pontual ou uma campanha de poucos dias não mostra quando, onde e por que o incômodo acontece.</p>
+            <p>Os equipamentos comerciais de monitoramento contínuo são caros, fechados e entregam dados brutos que poucos conseguem interpretar. O objetivo foi desenvolver <strong>sensores próprios, de baixo custo</strong>, e uma <strong>plataforma completa</strong> que transforma as medições em alertas, previsões e decisões claras.</p>
           </div>
         </div>
       </section>
@@ -74,7 +75,11 @@
         <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Setor e localização, tipo de processo ou efluente, vazões e cargas, condições de operação, restrições do projeto e condicionantes legais.</p>
+            <ul>
+              <li>Projeto de <strong>desenvolvimento tecnológico (P&amp;D)</strong> da GETA, em duas partes: o hardware de medição e o ecossistema digital de dados e IA.</li>
+              <li>Aplicações em <strong>aterros sanitários, ETEs, pátios de compostagem e indústrias</strong> com emissão de gases odoríferos, inclusive em áreas remotas, sem rede elétrica ou de dados.</li>
+              <li>Foco nos principais compostos odoríferos e indicadores de atividade biológica: <strong>sulfeto de hidrogênio (H₂S), amônia (NH₃) e dióxido de carbono (CO₂)</strong>, medidos junto com as variáveis meteorológicas que controlam a dispersão.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -84,7 +89,12 @@
         <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Quais dados foram levantados e analisados (campanhas de amostragem, histórico operacional, ensaios de laboratório, visitas técnicas)? Quais foram os principais achados?</p>
+            <ul>
+              <li>Os picos de odor costumam ocorrer <strong>à noite e no início da manhã</strong>, quando o vento é fraco e a atmosfera está estável, justamente quando não há ninguém medindo.</li>
+              <li>Sem a <strong>direção e a velocidade do vento</strong> junto com a concentração, não é possível saber se uma reclamação veio de uma fonte específica.</li>
+              <li>Os modelos de linguagem (IA generativa) usados de forma genérica podem <strong>"inventar" números</strong> quando perguntados sobre valores de sensores, o que é inaceitável em decisões ambientais.</li>
+              <li>Em campo, cortes de energia e falhas de comunicação causam <strong>perda de dados</strong> se o sistema não for projetado para isso.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -94,7 +104,14 @@
         <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Etapas do trabalho, ensaios realizados, critérios de seleção de alternativas, normas e referências técnicas utilizadas.</p>
+            <ol>
+              <li><strong>Projeto do nó de medição</strong>: escolha dos sensores de gases e meteorológicos, microcontrolador, comunicação e alimentação autônoma.</li>
+              <li><strong>Prototipagem e testes</strong> do nó em bancada e em campo, com armazenamento local e transmissão sem fio.</li>
+              <li><strong>Arquitetura da plataforma</strong> em 7 camadas, do sensor ao painel.</li>
+              <li><strong>Modelos de análise</strong>: índices derivados (por exemplo, atividade microbiana em compostagem), detecção de anomalias e previsão com IA.</li>
+              <li><strong>Camada de IA confiável</strong>: motor determinístico que garante que valores críticos venham sempre do banco de dados verificado.</li>
+              <li><strong>Análise de riscos operacionais</strong> e plano de implantação em fases.</li>
+            </ol>
           </div>
         </div>
       </section>
@@ -104,7 +121,10 @@
         <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Rota tecnológica adotada, configuração do sistema, dimensionamento e principais decisões de projeto. Um fluxograma ajuda muito aqui.</p>
+            <p><strong>1. Nós de medição próprios.</strong> Cada nó mede H₂S, NH₃ e CO₂, além de vento, temperatura, umidade, pressão e radiação UV. Funciona com <strong>painel solar e bateria</strong>, transmite por <strong>LoRa, GSM ou WiFi</strong> e guarda até <strong>30 dias de dados</strong> na memória local se a comunicação cair. Os gases são lidos a cada 15 minutos e a meteorologia a cada 5 minutos.</p>
+            <figure><img src="../img/cases/sensores-odores/no-sensor.jpg" alt="Diagrama do nó de medição com sensores de H2S, NH3 e CO2, sensores meteorológicos, microcontrolador, memória, rádio e alimentação solar"><figcaption>Nó de medição desenvolvido: gases odoríferos + meteorologia em uma unidade autônoma.</figcaption></figure>
+            <p><strong>2. Plataforma completa com IA.</strong> Os dados chegam por gateway e MQTT, são armazenados em banco de séries temporais, limpos e verificados automaticamente e alimentam modelos de análise e de previsão. O usuário acessa tudo por um <strong>painel com alertas</strong> ou conversando em linguagem natural com um <strong>agente inteligente</strong>.</p>
+            <figure><img src="../img/cases/sensores-odores/arquitetura-plataforma.jpg" alt="Arquitetura da plataforma em sete camadas: aquisição, ingestão, armazenamento, processamento, análise e IA, motor determinístico e visualização"><figcaption>Arquitetura da plataforma em 7 camadas.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -114,7 +134,15 @@
         <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Descreva as tecnologias, operações unitárias e equipamentos envolvidos e o papel de cada um. As etiquetas abaixo são editadas em cases.js.</p>
+            <ul>
+              <li><strong>Hardware</strong>: microcontrolador com rádio LoRa, módulos GSM e WiFi, sensores eletroquímicos e de estado sólido para gases, estação meteorológica e alimentação solar.</li>
+              <li><strong>Ingestão</strong>: gateway LoRaWAN, broker MQTT e API REST.</li>
+              <li><strong>Banco de dados</strong>: PostgreSQL com extensão para séries temporais.</li>
+              <li><strong>Processamento</strong>: limpeza, agregações e detecção de anomalias (Isolation Forest, z-score).</li>
+              <li><strong>IA e previsão</strong>: ARIMA, Prophet, Random Forest, XGBoost e redes LSTM.</li>
+              <li><strong>Visualização</strong>: painel interativo em R Shiny e Grafana, com agente conversacional.</li>
+            </ul>
+            <figure><img src="../img/cases/sensores-odores/prototipo-eletronica.jpg" alt="Placa eletrônica com sensores em bancada de prototipagem"><figcaption>Prototipagem eletrônica (imagem ilustrativa).</figcaption></figure>
           </div>
         </div>
         <ul class="cs-tags" data-from="tags"></ul>
@@ -125,7 +153,10 @@
         <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Modelos, simulações e ferramentas usados (balanços, CFD, Python, MATLAB, redes neurais, DMD, dashboards…) e o que cada um permitiu avaliar ou decidir.</p>
+            <p>A plataforma cruza concentração e meteorologia para mostrar <strong>quando</strong> o odor aparece e <strong>por quê</strong>, e usa modelos de IA para prever os próximos picos e antecipar ações (cobertura de frentes de descarga, ajuste de aeração, comunicação com a vizinhança).</p>
+            <figure><img src="../img/cases/sensores-odores/painel-odores.jpg" alt="Gráfico ilustrativo de H2S ao longo de 72 horas com limite de alerta, previsão e velocidade do vento"><figcaption>Painel de odores: concentração de H₂S, alertas, previsão e vento (dados ilustrativos).</figcaption></figure>
+            <p>Para que a IA seja confiável, foi criado um <strong>motor determinístico</strong>: quando a pergunta envolve um valor crítico (concentração, limite, alerta), a resposta vem diretamente do banco de dados verificado, e não de um modelo de linguagem que poderia "alucinar" números.</p>
+            <figure><img src="../img/cases/sensores-odores/motor-deterministico.jpg" alt="Fluxograma do motor determinístico que desvia perguntas sobre valores críticos para o banco de dados verificado"><figcaption>Motor determinístico: números críticos sempre vêm do dado verificado.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -135,7 +166,13 @@
         <h2 data-i18n="cs.s8">Resultados obtidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Indicadores antes/depois, eficiências de remoção, ganhos de desempenho, atendimento a limites legais. Gráficos e tabelas são bem-vindos.</p>
+            <ul>
+              <li><strong>Protótipo funcional</strong> de nó de medição autônomo, com sensores de gases odoríferos, meteorologia, armazenamento local e transmissão sem fio.</li>
+              <li><strong>Arquitetura completa</strong> da plataforma, do sensor ao painel, modular, escalável e baseada em ferramentas de código aberto.</li>
+              <li><strong>IA com respostas verificadas</strong> para valores críticos, eliminando o risco de números inventados.</li>
+              <li><strong>Robustez em campo</strong>: bateria e painel solar contra cortes de energia, buffer de 30 dias contra falhas de comunicação, backups diários e validação automática dos dados.</li>
+              <li>Alertas automáticos e painel pensados para <strong>usuários não técnicos</strong>, que recebem decisões claras e não apenas números.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -150,7 +187,13 @@
         <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Quando aplicável: estimativas de CAPEX e OPEX, comparação entre alternativas, custo por m³ ou por tonelada, payback.</p>
+            <p>A plataforma foi estruturada em <strong>três níveis de implantação</strong>, para caber desde um projeto piloto até uma rede industrial:</p>
+            <ul>
+              <li><strong>Piloto local</strong>: computador de baixo custo e banco de dados local, a partir de cerca de US$ 50–100 no primeiro ano de infraestrutura.</li>
+              <li><strong>Semiprofissional</strong>: servidor em nuvem padrão e APIs de IA básicas, cerca de US$ 300–500 no primeiro ano.</li>
+              <li><strong>Industrial</strong>: nuvem dedicada, bancos redundantes e agentes de IA, a partir de cerca de US$ 2.500–5.000 no primeiro ano.</li>
+            </ul>
+            <p>Como os valores críticos vêm do banco de dados verificado, não é preciso retreinar modelos nem usar hardware de alto custo, o que reduz o custo operacional da camada de IA.</p>
           </div>
         </div>
       </section>
@@ -160,7 +203,15 @@
         <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Papel da GETA no projeto (diagnóstico, projeto, supervisão, P&amp;D, operação assistida…), limites do escopo e interface com o cliente e parceiros.</p>
+            <p>A GETA foi responsável por todo o desenvolvimento:</p>
+            <ul>
+              <li>projeto e prototipagem do hardware de medição;</li>
+              <li>arquitetura da plataforma de dados em nuvem;</li>
+              <li>modelos de análise, detecção de anomalias e previsão com IA;</li>
+              <li>motor determinístico e agente conversacional;</li>
+              <li>painel de visualização e alertas;</li>
+              <li>análise de riscos operacionais e plano de implantação em fases.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -170,7 +221,13 @@
         <h2 data-i18n="cs.s11">Principais entregáveis</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Relatórios técnicos, memoriais de cálculo, projeto básico/executivo, modelos, dashboards, protótipos, patentes, treinamentos.</p>
+            <ul>
+              <li>Protótipo de nó de medição autônomo (gases odoríferos + meteorologia).</li>
+              <li>Arquitetura e esquema de banco de dados da plataforma.</li>
+              <li>Painel interativo com módulos de monitoramento, previsão e alertas.</li>
+              <li>Motor determinístico e integração com agente conversacional.</li>
+              <li>Plano de implantação em quatro fases trimestrais.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -180,9 +237,9 @@
       <section class="cs-gallery">
         <h2 data-i18n="cs.gallery">Galeria</h2>
         <div class="gal">
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 1</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 2</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 3</div></figure>
+          <figure><img src="../img/cases/sensores-odores/sensor-campo.jpg" alt="Abrigo de sensor instalado em campo entre a vegetação"><figcaption>Sensor instalado em campo (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/sensores-odores/prototipo-eletronica.jpg" alt="Prototipagem eletrônica"><figcaption>Prototipagem eletrônica (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/sensores-odores/painel-odores.jpg" alt="Painel de odores"><figcaption>Painel de odores (ilustrativo).</figcaption></figure>
         </div>
       </section>
 
@@ -200,9 +257,9 @@
   </div>
 </section>
 
-<script src="../i18n.js?v=20261124c"></script>
-<script src="cases.js?v=20261124c"></script>
-<script src="../assets/mega.js?v=20261124c"></script>
-<script src="../assets/portfolio.js?v=20261124c"></script>
+<script src="../i18n.js?v=20261125a"></script>
+<script src="cases.js?v=20261125a"></script>
+<script src="../assets/mega.js?v=20261125a"></script>
+<script src="../assets/portfolio.js?v=20261125a"></script>
 </body>
 </html>

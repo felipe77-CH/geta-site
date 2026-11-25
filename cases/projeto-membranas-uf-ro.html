@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projeto inteligente de membranas: ultrafiltração como pré-tratamento de osmose reversa | GETA</title>
+<meta name="description" content="Sistema em Python que automatiza a comparação de simulações de membranas: extrai os resultados de cada cenário, organiza tudo em banco de dados SQL e aponta a configuração de UF com menor custo por m³ para proteger a osmose reversa.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261125a">
+<link rel="stylesheet" href="../assets/mega.css?v=20261125a">
+</head>
+<!-- =====================================================================
+  CASE: Projeto inteligente de membranas: ultrafiltração como pré-tratamento de osmose reversa
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "projeto-membranas-uf-ro").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/projeto-membranas-uf-ro/ e use
+     <img src="../img/cases/projeto-membranas-uf-ro/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="projeto-membranas-uf-ro" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>9</b><span>cenários de ultrafiltração comparados automaticamente</span></div>
+    <div class="kpi"><b>97%</b><span>de recuperação de água no melhor cenário</span></div>
+    <div class="kpi"><b>10×</b><span>de diferença no custo de operação por m³ entre os cenários</span></div>
+    <div class="kpi"><b>≤ 0,1 NTU</b><span>de turbidez na água enviada à osmose reversa</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Brasil</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>2024–2025</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Reúso de efluente industrial</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>5 m³/h de efluente (UF antes da RO)</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Projeto de processo e automação de dados</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Projetar um sistema de membranas exige testar muitas combinações de módulo, fluxo, ciclos de limpeza e número de unidades. Cada simulação gera um relatório longo, e comparar os cenários à mão é <strong>lento, repetitivo e sujeito a erros de digitação</strong>. Na prática, poucas alternativas acabam sendo avaliadas.</p>
+            <p>O objetivo foi criar um <strong>sistema de projeto inteligente</strong> que automatiza a comparação dos cenários e aponta, com dados, a melhor configuração de ultrafiltração (UF) para proteger uma osmose reversa (RO) no reúso de efluente.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Projeto de um sistema de <strong>ultrafiltração como pré-tratamento de osmose reversa</strong> para o reúso de um efluente industrial derivado de resíduos.</li>
+              <li>A UF remove partículas, sólidos suspensos e parte da matéria orgânica, reduzindo a carga e a <strong>incrustação (fouling) das membranas de RO</strong>, que são mais caras e sensíveis.</li>
+              <li>Vazão de projeto de <strong>5 m³/h</strong> de efluente, com turbidez de 10 NTU, sólidos suspensos de 18 mg/L, COT de 15 mg/L, SDI de 5 e sais dissolvidos de cerca de 7.700 mg/L.</li>
+              <li>Meta de qualidade na saída da UF compatível com a RO: <strong>turbidez ≤ 0,1 NTU e SDI ≤ 2,5</strong>.</li>
+            </ul>
+            <figure><img src="../img/cases/projeto-membranas-uf-ro/esquema-uf-ro.jpg" alt="Esquema do sistema com peneira, ultrafiltração, tanque de filtrado e osmose reversa, com a qualidade da água na entrada e na saída da UF"><figcaption>Ultrafiltração como barreira de proteção da osmose reversa.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Foram simulados <strong>9 cenários de UF</strong> com diferentes tipos de módulo (pressurizados, racks integrados e módulos de alto fluxo), áreas de membrana e ciclos de operação.</li>
+              <li>Cada cenário gerava um relatório de 11 páginas, com os indicadores espalhados em várias tabelas.</li>
+              <li>Os resultados variavam muito: a recuperação de água ia de <strong>72% a 97%</strong>, a área de membrana de <strong>66 a 616 m²</strong> e o custo de operação de <strong>US$ 0,035 a US$ 0,35 por m³</strong>, uma diferença de 10 vezes.</li>
+              <li>Escolher sem uma comparação sistemática poderia levar a um sistema superdimensionado ou com custo de operação muito maior que o necessário.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li><strong>Caracterização do efluente</strong> e definição das metas de qualidade para a RO.</li>
+              <li><strong>Modelagem do problema</strong>: limites de projeto e parâmetros de operação (fluxo, retrolavagem, limpezas químicas e CIP).</li>
+              <li><strong>Simulação computacional</strong> de cada cenário em software de projeto de membranas.</li>
+              <li><strong>Extração automática</strong> dos resultados de cada relatório com Python.</li>
+              <li><strong>Armazenamento</strong> de todos os cenários em banco de dados SQL.</li>
+              <li><strong>Comparação e otimização</strong> por recuperação, pressão transmembrana, área e custo por m³.</li>
+              <li>Definição da configuração para o <strong>projeto do sistema real</strong>.</li>
+            </ol>
+            <figure><img src="../img/cases/projeto-membranas-uf-ro/fluxo-projeto.jpg" alt="Fluxograma do sistema de projeto inteligente de membranas em oito etapas"><figcaption>Fluxo de trabalho do sistema de projeto inteligente de membranas.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Desenvolvemos uma ferramenta em Python que transforma os relatórios de simulação em uma <strong>base de dados comparável</strong>:</p>
+            <ul>
+              <li>lê automaticamente as tabelas de cada relatório e extrai <strong>10 indicadores por cenário</strong>: recuperação, pressão transmembrana, tempo de filtração, fluxo médio, retrolavagem, intervalo de lavagem, área total de membrana, custo diário de utilidades e químicos e custo específico da água;</li>
+              <li>consolida tudo em uma tabela única e grava em um <strong>banco de dados MySQL</strong>, criando um histórico de projetos que pode ser consultado e ampliado;</li>
+              <li>gera os gráficos de comparação e o <strong>ranking dos cenários</strong> em segundos.</li>
+            </ul>
+            <figure><img src="../img/cases/projeto-membranas-uf-ro/pipeline-automacao.jpg" alt="Fluxo da automação: relatórios PDF, leitura com Python, tabela única, banco MySQL e ranking"><figcaption>Da simulação ao ranking, sem digitação manual.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Ultrafiltração</strong> como pré-tratamento de <strong>osmose reversa</strong> (retrolavagem, limpezas químicas CEB e CIP).</li>
+              <li>Software de simulação e projeto de membranas.</li>
+              <li><strong>Python</strong>: PyMuPDF (leitura de PDFs), pandas, SQLAlchemy e matplotlib.</li>
+              <li>Banco de dados relacional <strong>MySQL</strong>.</li>
+              <li>Código disponível publicamente no GitHub.</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A comparação automática dos 9 cenários mostrou dois grupos bem distintos:</p>
+            <figure><img src="../img/cases/projeto-membranas-uf-ro/comparacao-cenarios.jpg" alt="Gráficos de barras de recuperação de água e custo específico da água nos nove cenários"><figcaption>Recuperação e custo específico de operação de cada cenário (dados das simulações).</figcaption></figure>
+            <p>Os módulos pressurizados e de alto fluxo trabalham com fluxos de 60 a 147 L/m²·h, menos área de membrana e recuperação acima de 92%. Os racks testados operam com fluxo de 12 a 20 L/m²·h, o que exige muito mais área e consome mais água de lavagem e químicos.</p>
+            <figure><img src="../img/cases/projeto-membranas-uf-ro/tradeoff-area-custo.jpg" alt="Gráfico de dispersão de área total de membrana versus custo específico da água"><figcaption>Área de membrana × custo de operação: o tamanho do círculo indica a pressão transmembrana.</figcaption></figure>
+            <p>O código completo está no repositório <a href="https://github.com/felipe77-CH/Smart-Membrane-Design-UF-RO" target="_blank" rel="noopener">Smart-Membrane-Design-UF-RO no GitHub</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>9 cenários comparados automaticamente</strong>, sem digitação manual dos resultados.</li>
+              <li>O melhor cenário teve <strong>97% de recuperação, 66 m² de membrana e custo de operação de cerca de US$ 0,035/m³</strong>, contra até US$ 0,35/m³ nas piores alternativas.</li>
+              <li>Como esse cenário opera com pressão transmembrana mais alta (1,4 bar), os cenários pressurizados de 51 m² (95% de recuperação, 0,7 bar, US$ 0,05/m³) ficaram como <strong>alternativa mais conservadora</strong> para efluentes com alto potencial de incrustação.</li>
+              <li>Qualidade de saída da UF compatível com a RO em todos os cenários: turbidez ≤ 0,1 NTU e SDI ≤ 2,5.</li>
+              <li>A base SQL permite reaproveitar os resultados em novos projetos e é o ponto de partida para <strong>otimização multivariável e modelos de aprendizado de máquina</strong> que sugerem a configuração ideal a partir da qualidade do efluente.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O custo de operação (utilidades e químicos) variou de <strong>US$ 4 a US$ 30 por dia</strong> para a mesma vazão de 5 m³/h. Em um ano, a diferença entre o melhor e o pior cenário passa de <strong>US$ 9.000</strong> só em operação, sem contar o custo de compra da área extra de membrana (até 9 vezes maior).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA foi responsável por todo o desenvolvimento:</p>
+            <ul>
+              <li>definição das bases de projeto a partir da caracterização do efluente;</li>
+              <li>simulação dos cenários de ultrafiltração;</li>
+              <li>desenvolvimento da ferramenta de extração e do banco de dados;</li>
+              <li>análise comparativa e recomendação da configuração.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Ferramenta em Python para extração automática dos relatórios de simulação.</li>
+              <li>Banco de dados SQL com todos os cenários simulados.</li>
+              <li>Gráficos comparativos e ranking das configurações.</li>
+              <li>Recomendação da configuração de UF como pré-tratamento da osmose reversa.</li>
+              <li>Código e notebooks (<a href="https://github.com/felipe77-CH/Smart-Membrane-Design-UF-RO" target="_blank" rel="noopener">repositório público no GitHub</a>).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/projeto-membranas-uf-ro/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/projeto-membranas-uf-ro/vasos-filtracao.jpg" alt="Vasos de filtração em uma unidade de tratamento de água"><figcaption>Unidade de filtração (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/projeto-membranas-uf-ro/tubulacao-inox.jpg" alt="Tubulação de aço inox com manômetro"><figcaption>Tubulação e instrumentação de um sistema de membranas (imagem ilustrativa).</figcaption></figure>
+          <figure><img src="../img/cases/projeto-membranas-uf-ro/comparacao-cenarios.jpg" alt="Comparação dos cenários"><figcaption>Comparação dos cenários.</figcaption></figure>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261125a"></script>
+<script src="cases.js?v=20261125a"></script>
+<script src="../assets/mega.js?v=20261125a"></script>
+<script src="../assets/portfolio.js?v=20261125a"></script>
+</body>
+</html>

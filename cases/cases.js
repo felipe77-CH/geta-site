@@ -200,6 +200,139 @@ window.GETA_CASES =
     "tags": ["Hidráulica", "Bombeamento", "Controle de nível", "NPSH", "Cálculo estrutural", "CAPEX", "Remoção de sólidos"]
   },
   {
+    "slug": "projeto-membranas-uf-ro",
+    "eixos": ["res", "dig", "proc"],
+    "capa": "img/cases/capa-projeto-membranas-uf-ro.jpg",
+    "cliente": "",
+    "ano": "2025",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Projeto inteligente de membranas: ultrafiltração como pré-tratamento de osmose reversa",
+      "en": "Smart membrane design: ultrafiltration as pretreatment for reverse osmosis",
+      "es": "Diseño inteligente de membranas: ultrafiltración como pretratamiento de ósmosis inversa"
+    },
+    "resumo": {
+      "pt": "Sistema em Python que automatiza a comparação de simulações de membranas: extrai os resultados de cada cenário, organiza tudo em banco de dados SQL e aponta a configuração de UF com menor custo por m³ para proteger a osmose reversa.",
+      "en": "Python system that automates the comparison of membrane simulations: it extracts each scenario’s results, stores them in an SQL database and identifies the UF configuration with the lowest cost per m³ to protect the reverse osmosis.",
+      "es": "Sistema en Python que automatiza la comparación de simulaciones de membranas: extrae los resultados de cada escenario, los organiza en una base de datos SQL e indica la configuración de UF con menor costo por m³ para proteger la ósmosis inversa."
+    },
+    "tags": ["Ultrafiltração", "Osmose reversa", "Membranas", "Automação", "Python", "SQL"]
+  },
+  {
+    "slug": "dispersao-pm25-risco-ambiental",
+    "eixos": ["amb", "mod", "dig"],
+    "capa": "img/cases/capa-dispersao-pm25-risco-ambiental.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Dispersão atmosférica de PM2.5 e risco ambiental na bacia de Santiago do Chile",
+      "en": "Atmospheric dispersion of PM2.5 and environmental risk in the Santiago (Chile) basin",
+      "es": "Dispersión atmosférica de PM2.5 y riesgo ambiental en la cuenca de Santiago de Chile"
+    },
+    "resumo": {
+      "pt": "Reconstrução hora a hora do PM2.5 em 18 anos de dados da rede oficial de monitoramento, com krigagem validada e decomposição em modos dinâmicos (DMD), para mapear onde e quando a norma é superada e o que controla os episódios críticos.",
+      "en": "Hour-by-hour reconstruction of PM2.5 over 18 years of official monitoring data, with validated kriging and dynamic mode decomposition (DMD), to map where and when the standard is exceeded and what drives critical episodes.",
+      "es": "Reconstrucción hora a hora del PM2.5 en 18 años de datos de la red oficial de monitoreo, con kriging validado y descomposición en modos dinámicos (DMD), para mapear dónde y cuándo se supera la norma y qué controla los episodios críticos."
+    },
+    "tags": ["Qualidade do ar", "PM2.5", "Dispersão atmosférica", "Risco ambiental", "Krigagem", "DMD"]
+  },
+  {
+    "slug": "cdr-biosecagem-rsu",
+    "eixos": ["res", "rd", "proc"],
+    "capa": "img/cases/capa-cdr-biosecagem-rsu.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Combustível derivado de resíduos (CDR) a partir de RSU por biosecagem: estudo de viabilidade técnico-econômica",
+      "en": "Refuse-derived fuel (RDF) from MSW by biodrying: technical and economic feasibility study",
+      "es": "Combustible derivado de residuos (CDR) a partir de RSU por biosecado: estudio de viabilidad técnico-económica"
+    },
+    "resumo": {
+      "pt": "Estudo em três fases para transformar resíduos sólidos urbanos em CDR por biosecagem e usá-lo como combustível em uma unidade industrial: caracterização dos resíduos, unidade-piloto e viabilidade técnico-econômica.",
+      "en": "Three-phase study to turn municipal solid waste into RDF by biodrying and use it as fuel in an industrial plant: waste characterization, pilot unit and technical and economic feasibility.",
+      "es": "Estudio en tres fases para transformar residuos sólidos urbanos en CDR por biosecado y usarlo como combustible en una unidad industrial: caracterización de los residuos, unidad piloto y viabilidad técnico-económica."
+    },
+    "tags": ["CDR", "Biosecagem", "RSU", "Recuperação energética", "Viabilidade técnico-econômica"]
+  },
+  {
+    "slug": "planta-efluentes-complexos-lodos",
+    "eixos": ["res", "rd", "amb"],
+    "capa": "img/cases/capa-planta-efluentes-complexos-lodos.jpg",
+    "cliente": "",
+    "ano": "2025",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Planta de tratamento de efluentes líquidos complexos e lodos na Baixada Santista: mercado e conceito tecnológico",
+      "en": "Treatment plant for complex liquid effluents and sludge in the Santos region: market and technology concept",
+      "es": "Planta de tratamiento de efluentes líquidos complejos y lodos en la Baixada Santista: mercado y concepto tecnológico"
+    },
+    "resumo": {
+      "pt": "Estudo de mercado e concepção tecnológica de uma planta regional para efluentes industriais complexos, lodos de fossa séptica e lamas, em uma região portuária e industrial que hoje envia seus efluentes para tratamento a cerca de 150 km.",
+      "en": "Market study and technology concept for a regional plant for complex industrial effluents, septic tank sludge and slurries, in a port and industrial region that currently sends its effluents about 150 km away for treatment.",
+      "es": "Estudio de mercado y concepción tecnológica de una planta regional para efluentes industriales complejos, lodos de fosa séptica y barros, en una región portuaria e industrial que hoy envía sus efluentes a tratar a unos 150 km."
+    },
+    "tags": ["Efluentes complexos", "Lodos e lamas", "Fossa séptica", "Estudo de mercado", "Tratamento físico-químico", "Oxidação avançada"]
+  },
+  {
+    "slug": "terras-raras-ensaios-metalurgicos",
+    "eixos": ["proc", "rd", "mod"],
+    "capa": "img/cases/capa-terras-raras-ensaios-metalurgicos.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Programa de ensaios metalúrgicos para avaliação de terras raras",
+      "en": "Metallurgical testing program for rare earth evaluation",
+      "es": "Programa de ensayos metalúrgicos para la evaluación de tierras raras"
+    },
+    "resumo": {
+      "pt": "Planejamento técnico de caracterização mineralógica, lixiviação cinética e extração por solvente para avaliar um depósito de terras raras no norte do Brasil e chegar ao projeto conceitual de uma planta piloto de 100 a 500 kg/dia.",
+      "en": "Technical planning of mineralogical characterization, kinetic leaching and solvent extraction to evaluate a rare earth deposit in northern Brazil and reach the conceptual design of a 100–500 kg/day pilot plant.",
+      "es": "Planificación técnica de caracterización mineralógica, lixiviación cinética y extracción por solvente para evaluar un depósito de tierras raras en el norte de Brasil y llegar al diseño conceptual de una planta piloto de 100 a 500 kg/día."
+    },
+    "tags": ["Terras raras", "Hidrometalurgia", "Lixiviação", "Extração por solvente", "Mineralogia", "Planta piloto"]
+  },
+  {
+    "slug": "vinhaca-radical-carbonato-biometano",
+    "eixos": ["rd", "proc", "res"],
+    "capa": "img/cases/capa-vinhaca-radical-carbonato-biometano.jpg",
+    "cliente": "",
+    "ano": "2026",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Pré-tratamento da vinhaça via radical carbonato para aumentar a produção de biometano (patente de invenção)",
+      "en": "Vinasse pretreatment via carbonate radical to increase biomethane production (patent)",
+      "es": "Pretratamiento de la vinaza vía radical carbonato para aumentar la producción de biometano (patente de invención)"
+    },
+    "resumo": {
+      "pt": "Tecnologia própria que usa o CO₂ como insumo reativo para gerar radicais carbonato e oxidar seletivamente as melanoidinas e estruturas lignocelulósicas da vinhaça, aumentando sua biodegradabilidade e a produção de metano na biodigestão.",
+      "en": "In-house technology that uses CO₂ as a reactive input to generate carbonate radicals and selectively oxidize the melanoidins and lignocellulosic structures in vinasse, increasing its biodegradability and methane production in anaerobic digestion.",
+      "es": "Tecnología propia que usa el CO₂ como insumo reactivo para generar radicales carbonato y oxidar selectivamente las melanoidinas y estructuras lignocelulósicas de la vinaza, aumentando su biodegradabilidad y la producción de metano en la biodigestión."
+    },
+    "tags": ["Patente", "Vinhaça", "Biometano", "Biodigestão", "Oxidação seletiva", "CO₂"]
+  },
+  {
+    "slug": "biofertilizante-map-dap-chorume",
+    "eixos": ["res", "proc", "rd"],
+    "capa": "img/cases/capa-biofertilizante-map-dap-chorume.jpg",
+    "cliente": "",
+    "ano": "2025",
+    "status": "publicado",
+    "titulo": {
+      "pt": "Biofertilizante a partir de chorume concentrado: estudo e piloto de produção de MAP/DAP húmico",
+      "en": "Biofertilizer from concentrated landfill leachate: study and pilot production of humic MAP/DAP",
+      "es": "Biofertilizante a partir de lixiviado concentrado: estudio y piloto de producción de MAP/DAP húmico"
+    },
+    "resumo": {
+      "pt": "Recuperação do nitrogênio amoniacal e das substâncias húmicas do chorume concentrado de aterro sanitário como fertilizante fosfatado organomineral, por precipitação controlada com ácido fosfórico: processo, balanço de massa, produto e análise econômica.",
+      "en": "Recovery of ammonia nitrogen and humic substances from concentrated landfill leachate as an organomineral phosphate fertilizer, by controlled precipitation with phosphoric acid: process, mass balance, product and economic analysis.",
+      "es": "Recuperación del nitrógeno amoniacal y de las sustancias húmicas del lixiviado concentrado de relleno sanitario como fertilizante fosfatado organomineral, por precipitación controlada con ácido fosfórico: proceso, balance de masa, producto y análisis económico."
+    },
+    "tags": ["Chorume", "Biofertilizante", "Recuperação de nutrientes", "MAP/DAP", "Economia circular", "Substâncias húmicas"]
+  },
+  {
     "slug": "tecnologia-lixiviado-patente",
     "eixos": ["rd", "res"],
     "capa": "img/hero-laboratorio.jpg",
@@ -257,23 +390,23 @@ window.GETA_CASES =
     "tags": ["POA/AOP", "Efluente lignocelulósico", "Compostos recalcitrantes", "Ensaios de bancada"]
   },
   {
-    "slug": "tratabilidade-jar-test",
-    "eixos": ["res", "proc"],
-    "capa": "img/area-tratamento-efluentes.jpg",
+    "slug": "indice-tratabilidade-efluentes",
+    "eixos": ["res", "rd", "proc"],
+    "capa": "img/cases/capa-indice-tratabilidade-efluentes.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2025",
+    "status": "publicado",
     "titulo": {
-      "pt": "Estudos de tratabilidade e jar tests",
-      "en": "Treatability studies and jar tests",
-      "es": "Estudios de tratabilidad y jar tests"
+      "pt": "Índice de Tratabilidade de Efluentes (ITE): avaliação rápida de efluentes industriais complexos",
+      "en": "Effluent Treatability Index (ETI): rapid assessment of complex industrial effluents",
+      "es": "Índice de Tratabilidad de Efluentes (ITE): evaluación rápida de efluentes industriales complejos"
     },
     "resumo": {
-      "pt": "Ensaios de bancada para definir rotas de tratamento, reagentes e dosagens ótimas para diferentes efluentes.",
-      "en": "Bench-scale tests to define treatment routes, reagents and optimal dosages for different effluents.",
-      "es": "Ensayos de laboratorio para definir rutas de tratamiento, reactivos y dosis óptimas para distintos efluentes."
+      "pt": "Metodologia própria que combina toxicidade aguda, carga orgânica e sólidos sedimentáveis em um único índice para classificar a complexidade de um efluente, indicar o tratamento e estimar custos em minutos, e não em dias.",
+      "en": "In-house methodology that combines acute toxicity, organic load and settleable solids into a single index to classify effluent complexity, recommend treatment and estimate costs in minutes instead of days.",
+      "es": "Metodología propia que combina toxicidad aguda, carga orgánica y sólidos sedimentables en un único índice para clasificar la complejidad de un efluente, indicar el tratamiento y estimar costos en minutos, y no en días."
     },
-    "tags": ["Jar test", "Coagulação/floculação", "Ensaios de bancada", "Seleção de reagentes"]
+    "tags": ["Tratabilidade", "Toxicidade", "DQO", "Efluentes industriais", "Metodologia própria"]
   },
   {
     "slug": "secagem-mineracao-cobre",
@@ -333,80 +466,80 @@ window.GETA_CASES =
     "tags": ["Inertização", "Encapsulamento químico", "Lodos", "Resíduos"]
   },
   {
-    "slug": "viabilidade-etes-copasa",
-    "eixos": ["rd", "res"],
-    "capa": "img/hero-estacao-tratamento.jpg",
-    "cliente": "COPASA/MG",
-    "ano": "",
-    "status": "rascunho",
+    "slug": "capacidade-ete-efluentes-nao-domesticos",
+    "eixos": ["res", "dig", "rd"],
+    "capa": "img/cases/capa-capacidade-ete-efluentes-nao-domesticos.jpg",
+    "cliente": "",
+    "ano": "2024",
+    "status": "publicado",
     "titulo": {
-      "pt": "Viabilidade técnico-econômica de ETEs – COPASA/MG",
-      "en": "Technical-economic feasibility of WWTPs – COPASA/MG",
-      "es": "Viabilidad técnico-económica de PTAR – COPASA/MG"
+      "pt": "Capacidade de uma ETE para efluentes não domésticos: análise de dados e georreferenciamento de grandes geradores",
+      "en": "Capacity of a treatment plant for non-domestic effluents: data analysis and georeferencing of large generators",
+      "es": "Capacidad de una planta de tratamiento para efluentes no domésticos: análisis de datos y georreferenciación de grandes generadores"
     },
     "resumo": {
-      "pt": "Estudo de alternativas tecnológicas, CAPEX e OPEX para a implantação de estações de tratamento de esgoto.",
-      "en": "Study of technology alternatives, CAPEX and OPEX for the implementation of wastewater treatment plants.",
-      "es": "Estudio de alternativas tecnológicas, CAPEX y OPEX para la implantación de plantas de tratamiento de aguas residuales."
+      "pt": "Análise dos 100 maiores geradores de efluentes não domésticos de uma região metropolitana para definir a capacidade nominal de uma estação de tratamento, com curvas de demanda, mapas por município e estimativa de distâncias e tempos de transporte.",
+      "en": "Analysis of the 100 largest non-domestic effluent generators in a metropolitan region to define the design capacity of a treatment plant, with demand curves, maps by municipality and estimated transport distances and times.",
+      "es": "Análisis de los 100 mayores generadores de efluentes no domésticos de una región metropolitana para definir la capacidad nominal de una planta de tratamiento, con curvas de demanda, mapas por municipio y estimación de distancias y tiempos de transporte."
     },
-    "tags": ["ETE", "Estudo de viabilidade", "CAPEX/OPEX", "Alternativas tecnológicas"]
+    "tags": ["Capacidade de ETE", "Efluentes não domésticos", "Análise de dados", "Georreferenciamento", "Logística"]
   },
   {
-    "slug": "sensoriamento-remoto-odores",
-    "eixos": ["amb", "dig"],
-    "capa": "img/area-analises-remotas.jpg",
+    "slug": "programa-monitoramento-odores",
+    "eixos": ["amb", "dig", "res"],
+    "capa": "img/cases/capa-programa-monitoramento-odores.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2026",
+    "status": "publicado",
     "titulo": {
-      "pt": "Sensoriamento remoto aplicado à análise de odores",
-      "en": "Remote sensing applied to odor analysis",
-      "es": "Teledetección aplicada al análisis de olores"
+      "pt": "Programa de monitoramento e controle de emissões de gases odoríferos em central de tratamento de efluentes",
+      "en": "Odorous gas emission monitoring and control program at an effluent treatment facility",
+      "es": "Programa de monitoreo y control de emisiones de gases odoríferos en una central de tratamiento de efluentes"
     },
     "resumo": {
-      "pt": "Uso de dados de sensoriamento remoto para mapear, analisar e acompanhar fontes e dispersão de odores.",
-      "en": "Use of remote sensing data to map, analyze and track odor sources and dispersion.",
-      "es": "Uso de datos de teledetección para mapear, analizar y seguir fuentes y dispersión de olores."
+      "pt": "Rede de sensores de COVs, NH₃ e H₂S, estação meteorológica, olfatometria de campo, sistema de dados com pluma de dispersão e procedimento operacional para controlar odores e responder rapidamente à comunidade.",
+      "en": "Network of VOC, NH₃ and H₂S sensors, weather station, field olfactometry, a data system with dispersion plume and an operating procedure to control odors and respond quickly to the community.",
+      "es": "Red de sensores de COV, NH₃ y H₂S, estación meteorológica, olfatometría de campo, sistema de datos con pluma de dispersión y procedimiento operativo para controlar olores y responder rápidamente a la comunidad."
     },
-    "tags": ["Sensoriamento remoto", "Odores", "Geoprocessamento", "Dispersão atmosférica"]
+    "tags": ["Odores", "Monitoramento ambiental", "Dispersão atmosférica", "Olfatometria", "Dashboard", "POP"]
   },
   {
     "slug": "sensores-odores",
-    "eixos": ["dig", "rd"],
-    "capa": "img/sol-gases.jpg",
+    "eixos": ["dig", "amb", "rd"],
+    "capa": "img/cases/capa-sensores-odores.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2026",
+    "status": "publicado",
     "titulo": {
-      "pt": "Desenvolvimento de sensores para monitoramento de odores",
-      "en": "Development of sensors for odor monitoring",
-      "es": "Desarrollo de sensores para monitoreo de olores"
+      "pt": "Sensores próprios e plataforma com IA para monitoramento de odores",
+      "en": "In-house sensors and an AI platform for odor monitoring",
+      "es": "Sensores propios y plataforma con IA para monitoreo de olores"
     },
     "resumo": {
-      "pt": "Concepção e desenvolvimento de sensores para a medição contínua de compostos odoríferos.",
-      "en": "Design and development of sensors for continuous measurement of odorous compounds.",
-      "es": "Concepción y desarrollo de sensores para la medición continua de compuestos odoríferos."
+      "pt": "Desenvolvimento de nós de medição autônomos para gases odoríferos (H₂S, NH₃, CO₂) e meteorologia, e de uma plataforma completa em nuvem com banco de séries temporais, modelos de IA, alertas, painel e agente conversacional com respostas verificadas.",
+      "en": "Development of autonomous measurement nodes for odorous gases (H₂S, NH₃, CO₂) and weather, and of a complete cloud platform with a time-series database, AI models, alerts, dashboard and a conversational agent with verified answers.",
+      "es": "Desarrollo de nodos de medición autónomos para gases odoríferos (H₂S, NH₃, CO₂) y meteorología, y de una plataforma completa en la nube con base de series temporales, modelos de IA, alertas, panel y agente conversacional con respuestas verificadas."
     },
-    "tags": ["Sensores", "Odores", "Eletrônica", "Calibração"]
+    "tags": ["Sensores", "Odores", "IoT", "Inteligência artificial", "Plataforma de dados", "Telemetria"]
   },
   {
     "slug": "comunicacao-rf-monitoramento",
-    "eixos": ["dig"],
+    "eixos": ["dig", "res", "amb"],
     "capa": "img/cases/capa-comunicacao-rf-monitoramento.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2025",
+    "status": "publicado",
     "titulo": {
-      "pt": "Comunicação por radiofrequência para monitoramento ambiental",
-      "en": "Radio-frequency communication for environmental monitoring",
-      "es": "Comunicación por radiofrecuencia para monitoreo ambiental"
+      "pt": "Telemetria por radiofrequência: medição e controle a distância da vazão de chorume em aterro sanitário",
+      "en": "Radio-frequency telemetry: remote measurement and control of leachate flow at a sanitary landfill",
+      "es": "Telemetría por radiofrecuencia: medición y control a distancia del caudal de lixiviado en un relleno sanitario"
     },
     "resumo": {
-      "pt": "Sistemas de telemetria por radiofrequência para transmitir dados de sensores instalados em campo.",
-      "en": "Radio-frequency telemetry systems to transmit data from sensors installed in the field.",
-      "es": "Sistemas de telemetría por radiofrecuencia para transmitir datos de sensores instalados en campo."
+      "pt": "Sistema de comunicação por radiofrequência que leva, em tempo real, os dados de nível e vazão das estações de bombeamento de chorume até a ETE e permite controlar as bombas a distância, sem rede cabeada de dados ou de energia.",
+      "en": "Radio-frequency communication system that sends level and flow data from the leachate pumping stations to the treatment plant in real time and allows remote pump control, with no wired data or power network.",
+      "es": "Sistema de comunicación por radiofrecuencia que lleva en tiempo real los datos de nivel y caudal de las estaciones de bombeo de lixiviado hasta la planta de tratamiento y permite controlar las bombas a distancia, sin red cableada de datos ni de energía."
     },
-    "tags": ["Radiofrequência", "Telemetria", "IoT", "Redes de sensores"]
+    "tags": ["Radiofrequência", "Telemetria", "Controle remoto", "Aterro sanitário", "Chorume"]
   },
   {
     "slug": "chorume-redes-neurais",
