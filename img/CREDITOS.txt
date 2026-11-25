@@ -81,3 +81,4 @@ img/cases/capa-biofertilizante-map-dap-chorume.jpg e biofertilizante-map-dap-cho
 img/cases/biofertilizante-map-dap-chorume/lavoura.jpg ... pexels.com/photo/39300580
 img/cases/biofertilizante-map-dap-chorume/aterro.jpg ... pexels.com/photo/3181032
 img/cases/vinhaca-radical-carbonato-biometano/mecanismo-radical-carbonato.jpg e sistema-dbd-controle.jpg ... diagramas gerados pela GETA
+img/cases/ete-lixiviado-1000/* e tecnologia-lixiviado-patente/* (fotos) ... fotos da operação, da apresentação técnico-comercial da GETA

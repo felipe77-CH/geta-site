@@ -43,8 +43,8 @@ window.GETA_AREAS = {
       "es": "Analizamos la operación de plantas y unidades industriales, identificamos cuellos de botella e implementamos mejoras de desempeño, consumo de energía y reactivos y control de proceso."
     },
     "servicos": {
-      "pt": ["Otimização operacional de ETEs e plantas", "Eficiência energética", "Diagnóstico de gargalos e controle de processo", "Balanços de massa e energia"],
-      "en": ["Operational optimization of WWTPs and plants", "Energy efficiency", "Bottleneck diagnosis and process control", "Mass and energy balances"],
+      "pt": ["Otimização operacional de ETEs e plantas", "Eficiência energética", "Diagnóstico de gargalos e controle de processo", "Balanços de massa e energia", "Estudos de viabilidade técnico-econômica (CAPEX/OPEX)"],
+      "en": ["Operational optimization of WWTPs and plants", "Energy efficiency", "Bottleneck diagnosis and process control", "Mass and energy balances", "Technical and economic feasibility studies (CAPEX/OPEX)"],
       "es": ["Optimización operacional de PTAR y plantas", "Eficiencia energética", "Diagnóstico de cuellos de botella y control de proceso", "Balances de masa y energía"]
     },
     "porque": {
@@ -66,9 +66,9 @@ window.GETA_AREAS = {
       "es": "Seleccionamos y desarrollamos la ruta tecnológica más adecuada para cada efluente o residuo, con estudios de tratabilidad, proyecto y supervisión de la operación."
     },
     "servicos": {
-      "pt": ["Tratamento de lixiviado de aterro", "Efluentes industriais e processos oxidativos avançados", "Estudos de tratabilidade e jar tests", "Inertização de lodos e resíduos"],
-      "en": ["Landfill leachate treatment", "Industrial effluents and advanced oxidation processes", "Treatability studies and jar tests", "Sludge and waste inertization"],
-      "es": ["Tratamiento de lixiviado de relleno", "Efluentes industriales y procesos de oxidación avanzada", "Estudios de tratabilidad y jar tests", "Inertización de lodos y residuos"]
+      "pt": ["Tratamento de lixiviado de aterro", "Efluentes industriais e processos oxidativos avançados", "Estudos de tratabilidade e jar tests", "Inertização de lodos e resíduos", "Tecnologias próprias e patentes"],
+      "en": ["Landfill leachate treatment", "Industrial effluents and advanced oxidation processes", "Treatability studies and jar tests", "Sludge and waste inertization", "Proprietary technologies and patents"],
+      "es": ["Tratamiento de lixiviado de relleno", "Efluentes industriales y procesos de oxidación avanzada", "Estudios de tratabilidad y jar tests", "Inertización de lodos y residuos", "Tecnologías propias y patentes"]
     },
     "porque": {
       "pt": "Efluentes e resíduos complexos não se resolvem com soluções padrão. Uma rota bem definida garante o atendimento aos limites legais com o menor custo de implantação e de operação.",
@@ -120,29 +120,6 @@ window.GETA_AREAS = {
       "pt": "Testar no modelo é mais rápido e barato do que testar na planta. A simulação reduz incertezas de projeto, evita superdimensionamento e acelera a otimização.",
       "en": "Testing in a model is faster and cheaper than testing in the plant. Simulation reduces design uncertainty, avoids oversizing and speeds up optimization.",
       "es": "Probar en el modelo es más rápido y barato que probar en la planta. La simulación reduce incertidumbres de proyecto, evita el sobredimensionamiento y acelera la optimización."
-    }
-  },
-  "rd": {
-    "capa": "img/hero-laboratorio.jpg",
-    "lead": {
-      "pt": "Viabilidade, CAPEX/OPEX e novas tecnologias para decisões de investimento.",
-      "en": "Feasibility, CAPEX/OPEX and new technologies for investment decisions.",
-      "es": "Viabilidad, CAPEX/OPEX y nuevas tecnologías para decisiones de inversión."
-    },
-    "oque": {
-      "pt": "Avaliamos alternativas técnicas e econômicas para novos empreendimentos e desenvolvemos tecnologias próprias quando as soluções do mercado não atendem.",
-      "en": "We evaluate technical and economic alternatives for new projects and develop proprietary technologies when market solutions fall short.",
-      "es": "Evaluamos alternativas técnicas y económicas para nuevos emprendimientos y desarrollamos tecnologías propias cuando las soluciones del mercado no alcanzan."
-    },
-    "servicos": {
-      "pt": ["Estudos de viabilidade técnico-econômica", "Estimativas de CAPEX e OPEX", "Desenvolvimento de tecnologias e patentes", "Ensaios em bancada e em escala piloto"],
-      "en": ["Technical-economic feasibility studies", "CAPEX and OPEX estimates", "Technology development and patents", "Bench and pilot-scale testing"],
-      "es": ["Estudios de viabilidad técnico-económica", "Estimaciones de CAPEX y OPEX", "Desarrollo de tecnologías y patentes", "Ensayos de laboratorio y a escala piloto"]
-    },
-    "porque": {
-      "pt": "Decisões de investimento exigem números confiáveis, e alguns problemas ambientais só se resolvem com inovação. Por isso unimos análise econômica e pesquisa aplicada.",
-      "en": "Investment decisions require reliable numbers, and some environmental problems can only be solved through innovation. That is why we combine economic analysis and applied research.",
-      "es": "Las decisiones de inversión exigen números confiables, y algunos problemas ambientales solo se resuelven con innovación. Por eso unimos análisis económico e investigación aplicada."
     }
   }
 };

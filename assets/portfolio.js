@@ -16,7 +16,7 @@
   const pick = o => (!o ? '' : (o[I18N.lang] || o.pt || ''));
   const caseURL = c => ROOT + 'cases/' + c.slug + '.html';
   const isDraft = c => (c.status || 'rascunho') !== 'publicado';
-  const AXES = ['amb', 'proc', 'res', 'dig', 'mod', 'rd'];
+  const AXES = ['amb', 'proc', 'res', 'dig', 'mod'];
 
 
   function card(c) {

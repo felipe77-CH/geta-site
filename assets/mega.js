@@ -6,7 +6,7 @@
    ===================================================================== */
 (function () {
   'use strict';
-  const AXES = ['amb', 'proc', 'res', 'dig', 'mod', 'rd'];
+  const AXES = ['amb', 'proc', 'res', 'dig', 'mod'];
 
   function init(root) {
     root = root || '';

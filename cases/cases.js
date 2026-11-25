@@ -5,13 +5,12 @@
    Aqui ficam os dados usados nos cards da seção Soluções e no topo da página:
 
      slug     nome do arquivo (cases/<slug>.html) – sem acentos nem espaços
-     eixos    1 a 4 eixos; o primeiro é o principal
+     eixos    1 a 3 eixos; o primeiro é o principal
               amb  = Engenharia Ambiental
               proc = Engenharia de Processos
               res  = Tratamento de Resíduos e Efluentes
               dig  = Engenharia Digital e IA
               mod  = Modelagem e Otimização
-              rd   = Estudos Técnico-Econômicos e P&D
      capa     imagem de capa (caminho a partir da raiz do site)
      cliente  nome do cliente ("" = não exibir / confidencial)
      ano      ano ou período ("" = não exibir)
@@ -31,25 +30,25 @@ window.GETA_CASES =
   {
     "slug": "ete-lixiviado-1000",
     "eixos": ["res", "proc"],
-    "capa": "img/sol-chorume.jpg",
+    "capa": "img/cases/capa-ete-lixiviado-1000.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2023–2026",
+    "status": "publicado",
     "titulo": {
-      "pt": "ETE para lixiviado de aterro (~1.000 m³/d)",
-      "en": "Landfill leachate treatment plant (~1,000 m³/d)",
-      "es": "Planta de tratamiento de lixiviado de relleno (~1.000 m³/d)"
+      "pt": "Planta de tratamento de chorume de 1.000 m³/dia em operação",
+      "en": "1,000 m³/day leachate treatment plant in operation",
+      "es": "Planta de tratamiento de lixiviado de 1.000 m³/día en operación"
     },
     "resumo": {
-      "pt": "Concepção, projeto e acompanhamento operacional de uma estação de tratamento de lixiviado de aterro sanitário com vazão da ordem de 1.000 m³/d.",
-      "en": "Concept, design and operational follow-up of a landfill leachate treatment plant with a flow rate of around 1,000 m³/d.",
-      "es": "Concepción, proyecto y seguimiento operacional de una planta de tratamiento de lixiviado de relleno sanitario con caudal del orden de 1.000 m³/d."
+      "pt": "Estação de tratamento de chorume em escala industrial na Região Metropolitana de Curitiba (PR), com flotação, filtração e linha de lodo integradas, que produz filtrado dentro da CONAMA 430/2011 e lodo inerte.",
+      "en": "Industrial-scale leachate treatment plant in the Curitiba metropolitan region (Paraná, Brazil), with integrated flotation, filtration and sludge line, producing effluent that meets CONAMA 430/2011 and inert sludge.",
+      "es": "Planta de tratamiento de lixiviado a escala industrial en la región metropolitana de Curitiba (Paraná, Brasil), con flotación, filtración y línea de lodo integradas, que produce efluente dentro de la CONAMA 430/2011 y lodo inerte."
     },
-    "tags": ["Lixiviado de aterro", "Flotação", "Nitrificação", "Oxidação química", "Carvão ativado"]
+    "tags": ["Chorume", "ETE", "Flotação (DAF)", "Filtração", "Lodo inerte", "Operação"]
   },
   {
     "slug": "tratamento-fenol-ozonio",
-    "eixos": ["res", "amb", "mod", "rd"],
+    "eixos": ["res", "amb", "mod"],
     "capa": "img/cases/capa-tratamento-fenol-ozonio.jpg",
     "cliente": "",
     "ano": "2026",
@@ -68,7 +67,7 @@ window.GETA_CASES =
   },
   {
     "slug": "nevoa-fria-controle-odores",
-    "eixos": ["amb", "res", "rd"],
+    "eixos": ["amb", "res"],
     "capa": "img/cases/capa-nevoa-fria-controle-odores.jpg",
     "cliente": "",
     "ano": "2026",
@@ -182,7 +181,7 @@ window.GETA_CASES =
   },
   {
     "slug": "interligacao-hidraulica-linhas",
-    "eixos": ["proc", "res", "rd"],
+    "eixos": ["proc", "res"],
     "capa": "img/cases/capa-interligacao-hidraulica-linhas.jpg",
     "cliente": "",
     "ano": "2026",
@@ -239,7 +238,7 @@ window.GETA_CASES =
   },
   {
     "slug": "cdr-biosecagem-rsu",
-    "eixos": ["res", "rd", "proc"],
+    "eixos": ["res", "proc"],
     "capa": "img/cases/capa-cdr-biosecagem-rsu.jpg",
     "cliente": "",
     "ano": "2026",
@@ -258,7 +257,7 @@ window.GETA_CASES =
   },
   {
     "slug": "planta-efluentes-complexos-lodos",
-    "eixos": ["res", "rd", "amb"],
+    "eixos": ["res", "amb"],
     "capa": "img/cases/capa-planta-efluentes-complexos-lodos.jpg",
     "cliente": "",
     "ano": "2025",
@@ -277,7 +276,7 @@ window.GETA_CASES =
   },
   {
     "slug": "terras-raras-ensaios-metalurgicos",
-    "eixos": ["proc", "rd", "mod"],
+    "eixos": ["proc", "mod"],
     "capa": "img/cases/capa-terras-raras-ensaios-metalurgicos.jpg",
     "cliente": "",
     "ano": "2026",
@@ -296,7 +295,7 @@ window.GETA_CASES =
   },
   {
     "slug": "vinhaca-radical-carbonato-biometano",
-    "eixos": ["rd", "proc", "res"],
+    "eixos": ["proc", "res", "mod"],
     "capa": "img/cases/capa-vinhaca-radical-carbonato-biometano.jpg",
     "cliente": "",
     "ano": "2026",
@@ -315,7 +314,7 @@ window.GETA_CASES =
   },
   {
     "slug": "biofertilizante-map-dap-chorume",
-    "eixos": ["res", "proc", "rd"],
+    "eixos": ["res", "proc"],
     "capa": "img/cases/capa-biofertilizante-map-dap-chorume.jpg",
     "cliente": "",
     "ano": "2025",
@@ -334,22 +333,22 @@ window.GETA_CASES =
   },
   {
     "slug": "tecnologia-lixiviado-patente",
-    "eixos": ["rd", "res"],
-    "capa": "img/hero-laboratorio.jpg",
+    "eixos": ["res", "proc"],
+    "capa": "img/cases/capa-tecnologia-lixiviado-patente.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2026",
+    "status": "publicado",
     "titulo": {
-      "pt": "Tecnologia própria para tratamento de lixiviado (patente)",
-      "en": "Proprietary leachate treatment technology (patent)",
-      "es": "Tecnología propia para el tratamiento de lixiviado (patente)"
+      "pt": "Tecnologia própria para tratamento de chorume: três rotas para tratar, reduzir e valorizar (patente depositada)",
+      "en": "Proprietary leachate treatment technology: three routes to treat, reduce and add value (patent filed)",
+      "es": "Tecnología propia para tratamiento de lixiviado: tres rutas para tratar, reducir y valorizar (patente depositada)"
     },
     "resumo": {
-      "pt": "Desenvolvimento de uma rota físico-química avançada para lixiviado, sem dependência de sistemas biológicos, protegida por patente.",
-      "en": "Development of an advanced physicochemical route for leachate, with no reliance on biological systems, protected by a patent.",
-      "es": "Desarrollo de una ruta fisicoquímica avanzada para lixiviado, sin dependencia de sistemas biológicos, protegida por patente."
+      "pt": "Rotas físico-químicas definidas pelo perfil do chorume, que produzem água tratada, nitrogênio como insumo agrícola e lodo inerte, protegidas por pedido de patente de invenção no INPI.",
+      "en": "Physicochemical routes defined by the leachate profile, producing treated water, nitrogen as an agricultural input and inert sludge, protected by a patent application filed with INPI.",
+      "es": "Rutas fisicoquímicas definidas por el perfil del lixiviado, que producen agua tratada, nitrógeno como insumo agrícola y lodo inerte, protegidas por solicitud de patente de invención en el INPI."
     },
-    "tags": ["Processos físico-químicos", "Lixiviado", "P&D", "Propriedade intelectual"]
+    "tags": ["Chorume", "Patente", "Flotação (DAF)", "Osmose reversa", "Lodo inerte", "Recuperação de nitrogênio"]
   },
   {
     "slug": "otimizacao-ete-attend",
@@ -372,7 +371,7 @@ window.GETA_CASES =
   },
   {
     "slug": "efluente-lignocelulosico-poa",
-    "eixos": ["res", "rd"],
+    "eixos": ["res"],
     "capa": "img/sol-efluentes-complexos.jpg",
     "cliente": "",
     "ano": "",
@@ -391,7 +390,7 @@ window.GETA_CASES =
   },
   {
     "slug": "indice-tratabilidade-efluentes",
-    "eixos": ["res", "rd", "proc"],
+    "eixos": ["res", "proc"],
     "capa": "img/cases/capa-indice-tratabilidade-efluentes.jpg",
     "cliente": "",
     "ano": "2025",
@@ -448,7 +447,7 @@ window.GETA_CASES =
   },
   {
     "slug": "inertizacao-residuos-sabesp",
-    "eixos": ["res", "rd"],
+    "eixos": ["res"],
     "capa": "img/sol-lodos.jpg",
     "cliente": "SABESP",
     "ano": "",
@@ -467,7 +466,7 @@ window.GETA_CASES =
   },
   {
     "slug": "capacidade-ete-efluentes-nao-domesticos",
-    "eixos": ["res", "dig", "rd"],
+    "eixos": ["res", "dig"],
     "capa": "img/cases/capa-capacidade-ete-efluentes-nao-domesticos.jpg",
     "cliente": "",
     "ano": "2024",
@@ -505,7 +504,7 @@ window.GETA_CASES =
   },
   {
     "slug": "sensores-odores",
-    "eixos": ["dig", "amb", "rd"],
+    "eixos": ["dig", "amb"],
     "capa": "img/cases/capa-sensores-odores.jpg",
     "cliente": "",
     "ano": "2026",

@@ -26,7 +26,7 @@ Site estático (HTML + CSS + JS, sem build) da **GETA – Grupo de Especialistas
 - `area.html?eixo=<código>` – página de cada área: o que fazemos, por que fazemos, serviços e cases principais. Textos em `cases/areas.js`.
 - `quem-somos.html` – origem, missão, visão, propósito, valores, forma de trabalho, diferenciais e setores atendidos (traduções em `i18n.js`, chaves `qs.*`).
 
-Eixos: `amb` Engenharia Ambiental · `proc` Engenharia de Processos · `res` Tratamento de Resíduos e Efluentes · `dig` Engenharia Digital e IA · `mod` Modelagem e Otimização · `rd` Estudos Técnico-Econômicos e P&D.
+Eixos: `amb` Engenharia Ambiental · `proc` Engenharia de Processos · `res` Tratamento de Resíduos e Efluentes · `dig` Engenharia Digital e IA · `mod` Modelagem e Otimização.
 
 ### Preencher um case (um de cada vez)
 
@@ -48,9 +48,9 @@ O script cria apenas as páginas que ainda não existem, a partir de `cases/_mod
 
 ## Versão dos arquivos (cache)
 
-Os arquivos CSS/JS são chamados com `?v=AAAAMMDDx` (ex.: `assets/mega.js?v=20261125a`) para o navegador
+Os arquivos CSS/JS são chamados com `?v=AAAAMMDDx` (ex.: `assets/mega.js?v=20261125b`) para o navegador
 baixar sempre a versão nova. Ao alterar CSS ou JS, troque o número em todas as páginas
-(busca e troca de `?v=20261125a` pelo novo valor).
+(busca e troca de `?v=20261125b` pelo novo valor).
 
 ## Rodar localmente
 

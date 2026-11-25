@@ -8,7 +8,7 @@
 <link rel="icon" href="img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/mega.css?v=20261125a">
+<link rel="stylesheet" href="assets/mega.css?v=20261125b">
 <style>
   /* ====== Paleta extraída do logo GETA ====== */
   :root{
@@ -443,7 +443,6 @@
         <button data-f="res" data-i18n="ax.res">Tratamento de Resíduos e Efluentes</button>
         <button data-f="dig" data-i18n="ax.dig">Engenharia Digital e IA</button>
         <button data-f="mod" data-i18n="ax.mod">Modelagem e Otimização</button>
-        <button data-f="rd" data-i18n="ax.rd">Estudos Técnico-Econômicos e P&amp;D</button>
       </aside>
       <!-- Os cards são gerados a partir de cases/cases.js; cada um abre sua página em cases/<slug>.html -->
       <div class="sol-main">
@@ -496,9 +495,9 @@
 
 <div class="cookie" id="cookie"><span data-i18n="cookie.text">Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa Política de Privacidade.</span><button data-i18n="cookie.ok" onclick="cookie.remove()">Aceitar</button><button class="alt" data-i18n="cookie.no" onclick="cookie.remove()">Recusar</button></div>
 
-<script src="i18n.js?v=20261125a"></script>
-<script src="cases/cases.js?v=20261125a"></script>
-<script src="assets/mega.js?v=20261125a"></script>
+<script src="i18n.js?v=20261125b"></script>
+<script src="cases/cases.js?v=20261125b"></script>
+<script src="assets/mega.js?v=20261125b"></script>
 <script>
   // Header
   const header=document.getElementById('header');
@@ -531,7 +530,7 @@
 
   // Filtro de soluções
   // No máximo 6 cards por filtro. "Todas" mostra 1 case de cada área; o restante fica na página da área.
-  const MAX=6,AXES=['amb','proc','res','dig','mod','rd'];
+  const MAX=6,AXES=['amb','proc','res','dig','mod'];
   const fbtns=[...document.querySelectorAll('#filters button')],cards=[...document.querySelectorAll('.card')],solMore=document.getElementById('solMore');
   const axOf=c=>c.dataset.a.split(' ');
   let solF='all';
