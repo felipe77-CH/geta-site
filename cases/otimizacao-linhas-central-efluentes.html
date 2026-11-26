@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mais capacidade sem obras: otimização com algoritmos genéticos em uma central de efluentes industriais | GETA</title>
+<meta name="description" content="Para uma empresa ambiental de São Paulo que trata efluentes da indústria química em quatro linhas, analisamos a série histórica de cada linha e usamos algoritmos genéticos para encontrar a vazão e a concentração de sólidos de entrada ideais de cada uma, maximizando a vazão de saída e reduzindo os sólidos da mistura final para tirar a planta do overflow.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261126c">
+<link rel="stylesheet" href="../assets/mega.css?v=20261126c">
+</head>
+<!-- =====================================================================
+  CASE: Mais capacidade sem obras: otimização com algoritmos genéticos em uma central de efluentes industriais
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "otimizacao-linhas-central-efluentes").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/otimizacao-linhas-central-efluentes/ e use
+     <img src="../img/cases/otimizacao-linhas-central-efluentes/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="otimizacao-linhas-central-efluentes" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>4</b><span>linhas de efluentes da indústria química otimizadas em conjunto</span></div>
+    <div class="kpi"><b>8</b><span>variáveis de decisão: vazão e sólidos de entrada de cada linha</span></div>
+    <div class="kpi"><b>2</b><span>objetivos simultâneos: mais vazão na saída e menos sólidos na mistura</span></div>
+    <div class="kpi"><b>AG</b><span>algoritmos genéticos sobre modelos ajustados às séries históricas</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>São Paulo (SP)</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>—</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Central de tratamento de efluentes da indústria química</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>4 linhas de tratamento com descarga em uma saída comum</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Análise de dados e otimização de processo</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Uma empresa da área ambiental em São Paulo opera uma <strong>central de tratamento que recebe efluentes de diferentes indústrias químicas</strong>. A planta estava <strong>em overflow</strong>: recebia mais carga do que conseguia tratar, e a saída combinada ficava no limite de vazão e com sólidos acima do desejado.</p>
+            <p>Cada linha era operada de forma isolada, sem saber <strong>quanto cada uma podia receber</strong> e com qual concentração de sólidos sem prejudicar o resultado final. A pergunta do cliente era direta: <strong>qual a combinação de vazão e concentração de entrada em cada linha que trata o maior volume possível com a menor concentração de sólidos na saída?</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Cliente: <strong>empresa de serviços ambientais com central de tratamento de efluentes industriais em São Paulo</strong>.</li>
+              <li><strong>Quatro linhas independentes</strong>, cada uma com efluentes de origem e composição diferentes, sua própria vazão e concentração de sólidos de entrada e seu próprio tratamento.</li>
+              <li>Cada linha gera uma <strong>vazão e uma concentração de sólidos de saída</strong>. As quatro correntes tratadas se juntam em uma <strong>saída comum</strong>, onde são medidas a vazão total e a concentração de sólidos da mistura.</li>
+              <li>O que acontece em uma linha afeta o resultado de todas: uma linha mais carregada pode “consumir” a margem de sólidos das outras na mistura final.</li>
+            </ul>
+            <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/esquema-central.jpg" alt="Esquema da central com quatro linhas de entrada, tratamento individual de cada linha e mistura das correntes tratadas em uma saída comum"><figcaption>Esquema da central: quatro linhas com tratamento próprio e uma saída comum, onde se mede o resultado da mistura.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Foram analisadas as <strong>séries históricas de operação de cada linha</strong>: vazão e concentração de sólidos de entrada e de saída, além da vazão e dos sólidos medidos na saída comum.</li>
+              <li>A análise foi feita <strong>linha a linha e por parâmetro de interesse</strong>, para entender a faixa real de operação de cada linha e como a saída responde a mudanças na entrada.</li>
+              <li>O diagnóstico mostrou que o problema não era só de capacidade total: era de <strong>distribuição da carga entre as linhas</strong>. Algumas operavam longe do seu melhor ponto enquanto a planta como um todo estava sobrecarregada.</li>
+              <li>Ajustar uma variável por vez não resolve: o efeito de cada linha depende do que as outras estão fazendo. Era preciso <strong>otimizar as quatro linhas ao mesmo tempo</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li><strong>Levantamento e tratamento dos dados</strong>: organização das séries históricas, remoção de falhas de medição e valores fora do padrão.</li>
+              <li><strong>Análise exploratória por linha</strong>: faixas de operação, variabilidade e relação entre as variáveis de entrada e de saída.</li>
+              <li><strong>Modelo de resposta de cada linha</strong>: relação, ajustada aos dados, entre a vazão e a concentração de sólidos de entrada e a vazão e a concentração de saída.</li>
+              <li><strong>Modelo da mistura</strong>: balanço de massa na saída comum, que soma as vazões das quatro linhas e calcula a concentração de sólidos resultante.</li>
+              <li><strong>Formulação do problema de otimização</strong>: maximizar a vazão de saída e minimizar a concentração de sólidos da mistura, respeitando a faixa operacional de cada linha.</li>
+              <li><strong>Otimização por algoritmos genéticos</strong> para encontrar a combinação ótima de vazão e concentração de entrada em cada linha.</li>
+              <li><strong>Verificação</strong> dos pontos ótimos frente ao histórico e tradução em faixas de operação para a equipe da planta.</li>
+            </ol>
+            <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/fluxo-otimizacao.jpg" alt="Fluxo do estudo: séries históricas, limpeza, análise por linha, modelo de cada linha, modelo de mistura, algoritmo genético, pontos ótimos e faixas de operação"><figcaption>Fluxo do estudo, dos dados históricos aos pontos ótimos de operação.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Em vez de testar mudanças diretamente na planta, que já estava sobrecarregada, a GETA montou um <strong>“gêmeo” de dados da central</strong>: os modelos de cada linha ligados pelo balanço de massa da mistura. Sobre esse modelo, o algoritmo genético testou milhares de combinações de operação e encontrou as que entregam o melhor resultado na saída.</p>
+            <ul>
+              <li>Cada solução candidata é um conjunto de <strong>8 valores</strong>: vazão e concentração de sólidos de entrada de cada uma das quatro linhas.</li>
+              <li>Cada candidata é avaliada pelo resultado da <strong>mistura final</strong> (vazão total e sólidos na saída), e não pelo desempenho isolado de cada linha.</li>
+              <li>As soluções só valem dentro das <strong>faixas reais de operação</strong> observadas no histórico, o que evita recomendações impossíveis de aplicar.</li>
+            </ul>
+            <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/ciclo-ag.jpg" alt="Ciclo do algoritmo genético: população de soluções com oito variáveis, avaliação no modelo das linhas e da mistura, seleção, cruzamento e mutação"><figcaption>Como o algoritmo genético busca a melhor operação das quatro linhas.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Análise de séries históricas</strong> de dados operacionais.</li>
+              <li><strong>Modelagem orientada por dados</strong> da resposta de cada linha de tratamento.</li>
+              <li><strong>Balanço de massa</strong> de sólidos na mistura das correntes tratadas.</li>
+              <li><strong>Algoritmos genéticos</strong> para otimização com várias variáveis, objetivos e restrições.</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O resultado na saída comum vem do balanço de massa das quatro correntes tratadas:</p>
+            <p><strong>Q<sub>saída</sub> = Q<sub>1</sub> + Q<sub>2</sub> + Q<sub>3</sub> + Q<sub>4</sub></strong></p>
+            <p><strong>C<sub>saída</sub> = (Q<sub>1</sub>·C<sub>1</sub> + Q<sub>2</sub>·C<sub>2</sub> + Q<sub>3</sub>·C<sub>3</sub> + Q<sub>4</sub>·C<sub>4</sub>) / Q<sub>saída</sub></strong></p>
+            <p>em que Q<sub>i</sub> e C<sub>i</sub> são a vazão e a concentração de sólidos na saída de cada linha, calculadas pelos modelos ajustados às séries históricas a partir das condições de entrada.</p>
+            <p>A função objetivo do algoritmo genético combina os dois critérios: <strong>premia a vazão total tratada e penaliza a concentração de sólidos na mistura</strong>, com restrições para manter cada linha dentro da sua faixa operacional. A cada geração, as melhores soluções são selecionadas, cruzadas e sofrem pequenas mutações, até a busca convergir para os pontos ótimos de operação.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Pontos ótimos de vazão e concentração de entrada para cada uma das quatro linhas</strong>, definidos pelo resultado da mistura final e não por cada linha isolada.</li>
+              <li>Uma <strong>distribuição de carga entre as linhas</strong> que aumenta a vazão tratada na saída e reduz a concentração de sólidos, atacando a causa do overflow.</li>
+              <li>Clareza sobre <strong>quais linhas mais pesam nos sólidos da mistura</strong> e onde há margem para receber mais efluente.</li>
+              <li>Uma ferramenta que pode ser <strong>rodada de novo</strong> quando mudarem os efluentes recebidos ou as condições da planta.</li>
+            </ul>
+            <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/janela-operacional.jpg" alt="Gráfico ilustrativo com a faixa histórica de vazão e de sólidos de entrada de cada linha e o ponto ótimo indicado pelo algoritmo"><figcaption>Faixa histórica de operação e ponto ótimo de cada linha (valores ilustrativos).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>O ganho vem da <strong>operação</strong>, não de obra: a central passa a tratar mais com a infraestrutura que já tem, ajustando como a carga é distribuída entre as linhas. Isso adia ou reduz a necessidade de ampliar a planta e diminui o risco de descartes fora do padrão por excesso de sólidos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA foi responsável por todo o estudo:</p>
+            <ul>
+              <li>levantamento, limpeza e organização das séries históricas das quatro linhas;</li>
+              <li>análise dos dados por linha e por parâmetro de interesse;</li>
+              <li>modelagem da resposta de cada linha e do balanço de massa da mistura;</li>
+              <li>formulação do problema de otimização e aplicação dos algoritmos genéticos;</li>
+              <li>interpretação dos resultados e recomendações de operação para a equipe da central.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Base de dados histórica tratada e consolidada das quatro linhas.</li>
+              <li>Modelos de resposta de cada linha e modelo da mistura na saída comum.</li>
+              <li>Rotina de otimização por algoritmos genéticos.</li>
+              <li>Pontos ótimos e faixas recomendadas de vazão e concentração de entrada por linha.</li>
+              <li>Relatório técnico com diagnóstico, resultados e recomendações de operação.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/esquema-central.jpg" alt="Esquema da central com quatro linhas e saída comum"><figcaption>Quatro linhas e saída comum.</figcaption></figure>
+          <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/ciclo-ag.jpg" alt="Ciclo do algoritmo genético"><figcaption>Ciclo do algoritmo genético.</figcaption></figure>
+          <figure><img src="../img/cases/otimizacao-linhas-central-efluentes/janela-operacional.jpg" alt="Faixa de operação e ponto ótimo por linha"><figcaption>Ponto ótimo por linha (ilustrativo).</figcaption></figure>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261126c"></script>
+<script src="cases.js?v=20261126c"></script>
+<script src="../assets/mega.js?v=20261126c"></script>
+<script src="../assets/portfolio.js?v=20261126c"></script>
+</body>
+</html>

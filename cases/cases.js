@@ -579,61 +579,42 @@ window.GETA_CASES =
     "tags": ["Dashboard", "KPIs", "Integração de dados", "Chorume", "Previsões", "Assistente de IA"]
   },
   {
-    "slug": "automacao-monitoramento",
+    "slug": "dashboard-saude-publica-odores",
     "eixos": ["dig"],
-    "capa": "img/area-engenharia-inovacao.jpg",
+    "capa": "img/sol-gases.jpg",
     "cliente": "",
     "ano": "",
     "status": "rascunho",
     "titulo": {
-      "pt": "Automação de sistemas de informação e monitoramento operacional",
-      "en": "Information system automation and operational monitoring",
-      "es": "Automatización de sistemas de información y monitoreo operacional"
+      "pt": "Dashboard de saúde pública com dados reais de fontes odoríferas",
+      "en": "Public health dashboard with real data from odour sources",
+      "es": "Dashboard de salud pública con datos reales de fuentes odoríferas"
     },
     "resumo": {
-      "pt": "Automação da coleta, integração e tratamento de dados operacionais para apoiar a tomada de decisão.",
-      "en": "Automation of operational data collection, integration and processing to support decision-making.",
-      "es": "Automatización de la recolección, integración y tratamiento de datos operacionales para apoyar la toma de decisiones."
+      "pt": "Painel com dados reais de fontes odoríferas para apoiar decisões de saúde pública.",
+      "en": "Dashboard with real data from odour sources to support public health decisions.",
+      "es": "Panel con datos reales de fuentes odoríferas para apoyar decisiones de salud pública."
     },
-    "tags": ["Automação", "Integração de dados", "Monitoramento operacional", "Sistemas de informação"]
+    "tags": ["Dashboard", "Saúde pública", "Odores", "Dados reais"]
   },
   {
-    "slug": "modelagem-simulacao-processos",
+    "slug": "otimizacao-linhas-central-efluentes",
     "eixos": ["mod"],
-    "capa": "img/cases/capa-modelagem-simulacao-processos.jpg",
+    "capa": "img/cases/capa-otimizacao-linhas-central-efluentes.jpg",
     "cliente": "",
     "ano": "",
-    "status": "rascunho",
+    "status": "publicado",
     "titulo": {
-      "pt": "Modelagem e simulação de processos",
-      "en": "Process modeling and simulation",
-      "es": "Modelado y simulación de procesos"
+      "pt": "Mais capacidade sem obras: otimização com algoritmos genéticos em uma central de efluentes industriais",
+      "en": "More capacity without new construction: genetic algorithm optimization of an industrial effluent treatment center",
+      "es": "Más capacidad sin obras: optimización con algoritmos genéticos en una central de efluentes industriales"
     },
     "resumo": {
-      "pt": "Modelos de processo para prever desempenho, dimensionar equipamentos e avaliar cenários operacionais.",
-      "en": "Process models to predict performance, size equipment and evaluate operating scenarios.",
-      "es": "Modelos de proceso para predecir el desempeño, dimensionar equipos y evaluar escenarios operacionales."
+      "pt": "Para uma empresa ambiental de São Paulo que trata efluentes da indústria química em quatro linhas, analisamos a série histórica de cada linha e usamos algoritmos genéticos para encontrar a vazão e a concentração de sólidos de entrada ideais de cada uma, maximizando a vazão de saída e reduzindo os sólidos da mistura final para tirar a planta do overflow.",
+      "en": "For an environmental company in São Paulo that treats chemical industry effluents in four lines, we analysed each line's historical series and used genetic algorithms to find the ideal inlet flow and solids concentration for each one, maximising outlet flow and reducing solids in the final blend to take the plant out of overflow.",
+      "es": "Para una empresa ambiental de São Paulo que trata efluentes de la industria química en cuatro líneas, analizamos la serie histórica de cada línea y usamos algoritmos genéticos para encontrar el caudal y la concentración de sólidos de entrada ideales de cada una, maximizando el caudal de salida y reduciendo los sólidos de la mezcla final para sacar la planta del overflow."
     },
-    "tags": ["Modelagem de processos", "Simulação", "Análise de cenários"]
-  },
-  {
-    "slug": "balancos-massa-energia",
-    "eixos": ["mod"],
-    "capa": "img/cases/capa-balancos-massa-energia.jpg",
-    "cliente": "",
-    "ano": "",
-    "status": "rascunho",
-    "titulo": {
-      "pt": "Balanços de massa e energia",
-      "en": "Mass and energy balances",
-      "es": "Balances de masa y energía"
-    },
-    "resumo": {
-      "pt": "Balanços de massa e energia para dimensionamento, diagnóstico e otimização de processos.",
-      "en": "Mass and energy balances for process sizing, diagnosis and optimization.",
-      "es": "Balances de masa y energía para el dimensionamiento, diagnóstico y optimización de procesos."
-    },
-    "tags": ["Balanço de massa", "Balanço de energia", "Dimensionamento"]
+    "tags": ["Algoritmos genéticos", "Otimização de processos", "Séries históricas", "Balanço de massa", "Efluentes industriais", "Análise de dados"]
   },
   {
     "slug": "dem-calibracao-minerio-ferro",
@@ -653,44 +634,6 @@ window.GETA_CASES =
       "es": "Para una de las principales mineras de hierro de Brasil, calibramos los parámetros de contacto del mineral con el Método de Elementos Discretos (DEM), reproduciendo el ángulo de reposo en un ensayo virtual (21,08° ± 0,65°). Con el modelo calibrado, chutes, tolvas y transferencias pueden probarse en el computador antes de construirlos o modificarlos, sin depender de ensayos industriales costosos y lentos."
     },
     "tags": ["DEM", "Mineração de ferro", "Ângulo de repouso", "Calibração", "Yade", "Python"]
-  },
-  {
-    "slug": "reducao-ordem-dmd",
-    "eixos": ["mod"],
-    "capa": "img/cases/capa-reducao-ordem-dmd.jpg",
-    "cliente": "",
-    "ano": "",
-    "status": "rascunho",
-    "titulo": {
-      "pt": "Redução de ordem de modelos com DMD",
-      "en": "Reduced-order modeling with DMD",
-      "es": "Reducción de orden de modelos con DMD"
-    },
-    "resumo": {
-      "pt": "Decomposição em modos dinâmicos (DMD) para obter modelos reduzidos e rápidos a partir de simulações ou dados.",
-      "en": "Dynamic mode decomposition (DMD) to build fast reduced-order models from simulations or data.",
-      "es": "Descomposición en modos dinámicos (DMD) para obtener modelos reducidos y rápidos a partir de simulaciones o datos."
-    },
-    "tags": ["DMD", "Modelos de ordem reduzida", "Análise modal", "Dados de simulação"]
-  },
-  {
-    "slug": "ia-sciml-engenharia",
-    "eixos": ["dig"],
-    "capa": "img/cases/capa-ia-sciml-engenharia.jpg",
-    "cliente": "",
-    "ano": "",
-    "status": "rascunho",
-    "titulo": {
-      "pt": "IA e Scientific Machine Learning em engenharia",
-      "en": "AI and Scientific Machine Learning in engineering",
-      "es": "IA y Scientific Machine Learning en ingeniería"
-    },
-    "resumo": {
-      "pt": "Aplicações de IA e aprendizado de máquina científico para combinar física e dados em problemas de engenharia.",
-      "en": "AI and scientific machine learning applications combining physics and data in engineering problems.",
-      "es": "Aplicaciones de IA y aprendizaje automático científico para combinar física y datos en problemas de ingeniería."
-    },
-    "tags": ["IA", "Scientific Machine Learning", "PINNs", "Modelos híbridos"]
   }
 ]
 ;
