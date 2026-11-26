@@ -11,6 +11,26 @@
    ===================================================================== */
 (function () {
   'use strict';
+
+  // Página velha no cache do navegador (o GitHub Pages deixa guardar por até 10 min)?
+  // Compara a versão desta página (?v= deste script) com version.txt, pedido sempre
+  // sem cache. Se já houver uma versão nova publicada, recarrega a página uma vez.
+  (function () {
+    const me = document.currentScript;
+    const mine = me && (me.src.match(/[?&]v=(\w+)/) || [])[1];
+    if (!mine || !window.fetch || location.protocol === 'file:') return;
+    fetch(new URL('../version.txt', me.src), { cache: 'no-store' })
+      .then(r => (r.ok ? r.text() : ''))
+      .then(t => {
+        const live = t.trim();
+        if (!/^\w+$/.test(live) || live === mine) return;
+        const key = 'geta-reload-' + live;   // evita recarregar mais de uma vez
+        try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (e) { return; }
+        location.reload();
+      })
+      .catch(() => {});
+  })();
+
   const AXES = ['amb', 'proc', 'res', 'dig', 'mod'];
   // Tecnologias GETA (ordem do menu = chaves tp.tab1 … tp.tab4 em i18n.js)
   const TECHS = ['chorume', 'inertizacao', 'cdr', 'pos'];
