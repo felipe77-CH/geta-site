@@ -5,6 +5,11 @@
 .has-mega.open>.mega-toggle{color:var(--green)!important}
 .mega{position:absolute;top:calc(100% - 10px);left:0;min-width:270px;background:#fff;border-radius:16px;box-shadow:0 18px 40px #0b175e26;padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;z-index:60}
 .has-mega.open .mega{opacity:1;visibility:visible;transform:none}
+/* No computador também abre ao passar o mouse, como o menu "A GETA" */
+@media (hover:hover) and (min-width:1101px){
+  .has-mega:hover .mega{opacity:1;visibility:visible;transform:none}
+  .has-mega:hover .mega-toggle::after{transform:rotate(-135deg);margin-bottom:-1px}
+}
 .mega-in{display:grid;gap:2px}
 /* Mesmo estilo dos outros submenus: sem cores, todos os itens do mesmo tamanho */
 .mega-cat{display:block;padding:10px 14px;font-size:14px;line-height:1.4;color:var(--ink);border-radius:10px;white-space:nowrap;transition:.15s}
