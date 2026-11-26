@@ -448,21 +448,21 @@ window.GETA_CASES =
   {
     "slug": "inertizacao-residuos-sabesp",
     "eixos": ["res"],
-    "capa": "img/sol-lodos.jpg",
+    "capa": "img/cases/capa-inertizacao-residuos-sabesp.jpg",
     "cliente": "SABESP",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2026",
+    "status": "publicado",
     "titulo": {
-      "pt": "Tecnologias de inertização de resíduos – SABESP",
-      "en": "Waste inertization technologies – SABESP",
-      "es": "Tecnologías de inertización de residuos – SABESP"
+      "pt": "Inertização química do lodo da ETE Barueri (SABESP): menos volume, desaguamento mais rápido e resíduo não lixiviável",
+      "en": "Chemical inertization of sludge at the Barueri WWTP (SABESP): less volume, faster dewatering and non-leachable waste",
+      "es": "Inertización química del lodo de la PTAR Barueri (SABESP): menos volumen, deshidratación más rápida y residuo no lixiviable"
     },
     "resumo": {
-      "pt": "Desenvolvimento de rotas de inertização baseadas em encapsulamento químico de metais para lodos e resíduos.",
-      "en": "Development of inertization routes based on chemical encapsulation of metals for sludge and waste.",
-      "es": "Desarrollo de rutas de inertización basadas en encapsulamiento químico de metales para lodos y residuos."
+      "pt": "Tecnologia própria da GETA, derivada da rota de tratamento de chorume, que usa um mix proprietário de polímeros para encapsular os metais do lodo de esgoto, liberar a água intersticial e gerar um sólido não lixiviável (ABNT NBR 10004). Testada com lodo da ETE Barueri, com piloto de 20 m³/h proposto para a escala real.",
+      "en": "GETA's proprietary technology, derived from its leachate treatment route, that uses a proprietary polymer mix to encapsulate the metals in sewage sludge, release interstitial water and produce a non-leachable solid (ABNT NBR 10004). Tested with sludge from the Barueri WWTP, with a 20 m³/h pilot proposed for full scale.",
+      "es": "Tecnología propia de la GETA, derivada de su ruta de tratamiento de lixiviados, que usa un mix propietario de polímeros para encapsular los metales del lodo cloacal, liberar el agua intersticial y generar un sólido no lixiviable (ABNT NBR 10004). Probada con lodo de la PTAR Barueri, con un piloto de 20 m³/h propuesto para la escala real."
     },
-    "tags": ["Inertização", "Encapsulamento químico", "Lodos", "Resíduos"]
+    "tags": ["Inertização química", "Lodo de ETE", "Encapsulamento de metais", "Desaguamento", "ABNT NBR 10004", "Biossólidos"]
   },
   {
     "slug": "capacidade-ete-efluentes-nao-domesticos",
