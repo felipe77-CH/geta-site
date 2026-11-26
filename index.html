@@ -8,7 +8,7 @@
 <link rel="icon" href="img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/mega.css?v=20261126d">
+<link rel="stylesheet" href="assets/mega.css?v=20261126f">
 <style>
   /* ====== Paleta extraída do logo GETA ====== */
   :root{
@@ -205,6 +205,8 @@
   .mon-col>h3,.excl h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7ee08f;margin-bottom:4px}
   .tile{display:flex;align-items:center;gap:18px;padding:22px;border-radius:18px;background:#fff;color:var(--ink);border:2px solid transparent;box-shadow:0 12px 30px #0000004d;transition:.25s}
   .tile:hover{transform:translateX(4px);border-color:var(--green)}
+  a.tile{text-decoration:none}
+  .tile .go{margin-left:auto;font:700 20px var(--display);color:var(--green);flex-shrink:0}
   .tile .ic{width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .tile .ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8}
   .tile h4{font-size:17px;margin-bottom:4px;color:var(--navy)}
@@ -312,7 +314,8 @@
         <div class="dropdown"><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a><a href="#parceiro" data-i18n="nav.how">Como trabalhamos</a><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
       <li class="has-mega"><a href="#areas" class="mega-toggle" aria-expanded="false" data-i18n="nav.areas">Áreas de atuação</a>
         <div class="mega" data-mega></div></li>
-      <li><a href="#tecnologia" data-i18n="nav.tech">Tecnologia</a></li>
+      <li class="has-mega"><a href="tecnologia.html" class="mega-toggle" aria-expanded="false" data-i18n="nav.tech">Tecnologia</a>
+        <div class="mega" data-mega="tech"></div></li>
       <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
     </ul>
     <div class="utility">
@@ -419,10 +422,10 @@
       </div>
       <div class="excl reveal">
         <h3 data-i18n="excl.title">Tecnologias exclusivas GETA</h3>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><div><h4 data-i18n="t1.title">Tratamento de Chorume</h4><p data-i18n="t1.text">Processos físico-químicos avançados sem dependência de sistemas biológicos.</p></div></div>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 7v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M9 11h6M9 15h6"/></svg></div><div><h4 data-i18n="t2.title">Desaguamento e Inertização de Lodos</h4><p data-i18n="t2.text">Rota tecnológica baseada em reações de encapsulamento químico de metais.</p></div></div>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3L14 9V3"/></svg></div><div><h4 data-i18n="t3.title">Pré-digestão de Vinhaça</h4><p data-i18n="t3.text">Aumento de biodegradabilidade para maior geração de biometano.</p></div></div>
-        <div class="tile"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></div><div><h4 data-i18n="t4.title">CDR de Alta Performance</h4><p data-i18n="t4.text">Elevado poder calorífico e baixa umidade em combustível derivado de resíduos.</p></div></div>
+        <a class="tile" href="tecnologia-chorume.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><div><h4 data-i18n="t1.title">Tratamento de Chorume</h4><p data-i18n="t1.text">Processos físico-químicos avançados sem dependência de sistemas biológicos.</p></div><span class="go">→</span></a>
+        <a class="tile" href="tecnologia-inertizacao.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 7v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M9 11h6M9 15h6"/></svg></div><div><h4 data-i18n="t2.title">Desaguamento e Inertização de Lodos</h4><p data-i18n="t2.text">Rota tecnológica baseada em reações de encapsulamento químico de metais.</p></div><span class="go">→</span></a>
+        <a class="tile" href="tecnologia-cdr.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></div><div><h4 data-i18n="t4.title">CDR de Alta Performance</h4><p data-i18n="t4.text">Elevado poder calorífico e baixa umidade em combustível derivado de resíduos.</p></div><span class="go">→</span></a>
+        <a class="tile" href="tecnologia-pos.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3L14 9V3"/></svg></div><div><h4 data-i18n="t3.title">Processo de Oxidação Seletiva (POS)</h4><p data-i18n="t3.text">Radicais carbonato gerados a partir de CO₂ atacam só os compostos inibidores, para gerar mais biometano.</p></div><span class="go">→</span></a>
       </div>
     </div>
   </div>
@@ -486,7 +489,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div><img class="flogo" src="img/logo-geta-white.png" alt="GETA"><p data-i18n="ft.desc">Grupo de Especialistas em Tecnologias Ambientais.<br>Inovação a Serviço da Sustentabilidade.</p></div>
-      <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a></li><li><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
+      <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a></li><li><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="tecnologia.html" data-i18n="nav.tech">Tecnologia</a></li><li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
       <div><h4 data-i18n="nav.areas">Áreas de atuação</h4><ul><li><a href="#areas" data-i18n="area.1">Engenharia Ambiental</a></li><li><a href="#areas" data-i18n="area.2">Tratamento de Efluentes</a></li><li><a href="#areas" data-i18n="area.3">Análises Remotas</a></li><li><a href="#areas" data-i18n="area.4">Plantas de Saneamento</a></li><li><a href="#areas" data-i18n="area.5">Engenharia e Inovação</a></li></ul></div>
       <div><h4 data-i18n="nav.contact">Contato</h4><ul><li><a href="#contato" data-i18n="cta.specialist">Fale com um especialista</a></li><li><a href="#" data-i18n="ft.privacy">Política de privacidade</a></li><li><a href="#" data-i18n="ft.cookies">Declaração de cookies</a></li></ul></div>
     </div>
@@ -496,9 +499,9 @@
 
 <div class="cookie" id="cookie"><span data-i18n="cookie.text">Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa Política de Privacidade.</span><button data-i18n="cookie.ok" onclick="cookie.remove()">Aceitar</button><button class="alt" data-i18n="cookie.no" onclick="cookie.remove()">Recusar</button></div>
 
-<script src="i18n.js?v=20261126d"></script>
-<script src="cases/cases.js?v=20261126d"></script>
-<script src="assets/mega.js?v=20261126d"></script>
+<script src="i18n.js?v=20261126f"></script>
+<script src="cases/cases.js?v=20261126f"></script>
+<script src="assets/mega.js?v=20261126f"></script>
 <script>
   // Header
   const header=document.getElementById('header');

@@ -27,8 +27,9 @@
 
   /* ---------- Header e rodapé (iguais aos da home) ---------- */
   function chrome() {
-    const r = ROOT + 'index.html', qs = ROOT + 'quem-somos.html';
-    const cur = k => ((k === 'about') === (PAGE === 'about')) ? ' cur' : '';
+    const r = ROOT + 'index.html', qs = ROOT + 'quem-somos.html', tec = ROOT + 'tecnologia.html';
+    const here = PAGE === 'about' ? 'about' : PAGE === 'tech' ? 'tech' : 'areas';
+    const cur = k => (k === here ? ' cur' : '');
     B.insertAdjacentHTML('afterbegin', `
 <header class="header" id="header"><div class="wrap bar">
   <a class="brand" href="${r}" aria-label="GETA"><img class="logo-white" src="${ROOT}img/logo-geta-white.png" alt="GETA"><img class="logo-color" src="${ROOT}img/logo-geta.png" alt="GETA"><span class="brand-text" data-i18n="brand.text">Grupo de Especialistas em Tecnologias Ambientais</span></a>
@@ -36,7 +37,7 @@
     <li><a href="${qs}" class="${cur('about')}" data-i18n="nav.about">A GETA</a>
       <div class="dropdown"><a href="${qs}" data-i18n="nav.who">Quem somos</a><a href="${r}#parceiro" data-i18n="nav.how">Como trabalhamos</a><a href="${r}#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
     <li class="has-mega"><a href="${r}#areas" class="mega-toggle${cur('areas')}" aria-expanded="false" data-i18n="nav.areas">Áreas de atuação</a><div class="mega" data-mega></div></li>
-    <li><a href="${r}#tecnologia" data-i18n="nav.tech">Tecnologia</a></li>
+    <li class="has-mega"><a href="${tec}" class="mega-toggle${cur('tech')}" aria-expanded="false" data-i18n="nav.tech">Tecnologia</a><div class="mega" data-mega="tech"></div></li>
     <li><a href="${r}#contato" data-i18n="nav.contact">Contato</a></li>
   </ul>
   <div class="utility">
@@ -49,7 +50,7 @@
 <footer class="footer"><div class="wrap">
   <div class="foot-grid">
     <div><img class="flogo" src="${ROOT}img/logo-geta-white.png" alt="GETA"><p data-i18n="ft.desc">Grupo de Especialistas em Tecnologias Ambientais.<br>Inovação a Serviço da Sustentabilidade.</p></div>
-    <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="${qs}" data-i18n="nav.who">Quem somos</a></li><li><a href="${r}#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="${r}#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
+    <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="${qs}" data-i18n="nav.who">Quem somos</a></li><li><a href="${r}#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="${tec}" data-i18n="nav.tech">Tecnologia</a></li><li><a href="${r}#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
     <div><h4 data-i18n="nav.areas">Áreas de atuação</h4><ul><li><a href="${r}#areas" data-i18n="area.1">Engenharia Ambiental</a></li><li><a href="${r}#areas" data-i18n="area.2">Tratamento de Efluentes</a></li><li><a href="${r}#areas" data-i18n="area.3">Análises Remotas</a></li><li><a href="${r}#areas" data-i18n="area.4">Plantas de Saneamento</a></li><li><a href="${r}#areas" data-i18n="area.5">Engenharia e Inovação</a></li></ul></div>
     <div><h4 data-i18n="nav.contact">Contato</h4><ul><li><a href="${r}#contato" data-i18n="cta.specialist">Fale com um especialista</a></li><li><a href="#" data-i18n="ft.privacy">Política de privacidade</a></li><li><a href="#" data-i18n="ft.cookies">Declaração de cookies</a></li></ul></div>
   </div>

@@ -1,0 +1,117 @@
+/* =====================================================================
+   GETA – Páginas de tecnologia (tecnologia.html e tecnologia-<id>.html)
+   ===================================================================== */
+.tp-hero h1 mark{background:none;color:var(--green)}
+.tp-hero .crumb a{color:inherit}
+.tp-hero .lead{max-width:760px}
+.tp-hero .tp-badges span{background:#ffffff1f;color:#fff;border:1px solid #ffffff38}
+.tp-hero .tp-badges span.blue{background:#ffffff12}
+
+/* ====== Réplica do slide "Diferencial tecnológico" da home ====== */
+.tech{padding:96px 0;background:linear-gradient(160deg,#06103f 0%,var(--navy) 55%,#13237f 100%);color:#fff;position:relative;overflow:hidden}
+.tech::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(#1d4fd840,#0b175e00 70%);top:-250px;right:-200px;pointer-events:none}
+.tech .head h2{color:#fff}.tech .head p{color:#e6ecff;font-size:17px}
+.tech .head .eyebrow{color:#7ee08f!important}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;align-items:stretch}
+.monitor{border-radius:var(--radius);overflow:hidden;background:#fff;color:var(--ink);box-shadow:0 24px 50px #0006;display:flex;flex-direction:column}
+.monitor .ph{flex:1;min-height:220px;background:url(../img/hero-laboratorio.jpg) center/cover}
+.monitor .body{padding:28px}
+.monitor h3{font-size:22px;margin-bottom:10px;color:var(--navy)}
+.monitor p{color:#3d4468;font-size:15px}
+.monitor ul{list-style:none;margin-top:16px;display:grid;gap:10px}
+.monitor li{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500;color:var(--navy)}
+.monitor li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px #1fae3a2e;flex-shrink:0}
+.excl{display:grid;gap:14px;grid-template-rows:auto repeat(4,1fr)}
+.mon-col{display:grid;gap:14px;grid-template-rows:auto 1fr}
+.mon-col>h3,.excl h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7ee08f;margin-bottom:4px}
+.tile{display:flex;align-items:center;gap:18px;padding:22px;border-radius:18px;background:#fff;color:var(--ink);border:2px solid transparent;box-shadow:0 12px 30px #0000004d;transition:.25s;text-decoration:none}
+.tile:hover{transform:translateX(4px);border-color:var(--green)}
+.tile .ic{width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tile .ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8}
+.tile h4{font-size:17px;margin-bottom:4px;color:var(--navy)}
+.tile p{font-size:14px;color:#3d4468}
+.tile .go{margin-left:auto;font:700 20px var(--display);color:var(--green);flex-shrink:0}
+
+/* ====== Portada: cartões das 4 tecnologias ====== */
+.tc{padding:96px 0;background:var(--bg-soft)}
+.tc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.tc-card{display:flex;flex-direction:column;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 24px #0b175e12;transition:transform .25s,box-shadow .25s;text-decoration:none;color:inherit}
+.tc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px #0b175e22}
+.tc-card .thumb{aspect-ratio:16/8;background:center/cover var(--navy);position:relative}
+.tc-card .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,#06103f99)}
+.tc-card .num{position:absolute;left:22px;bottom:16px;z-index:1;font:800 13px var(--display);letter-spacing:.14em;color:#fff}
+.tc-card .b{padding:24px 26px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tc-card h3{font-size:22px;color:var(--navy)}
+.tc-card p{color:var(--muted);font-size:15px}
+.tc-card .tp-badges{margin-top:2px}
+.tc-card .more{margin-top:auto;padding-top:6px;font:700 14px var(--display);color:var(--green)}
+
+/* ====== Página de cada tecnologia ====== */
+.tp{padding:72px 0 80px;background:var(--bg-soft)}
+.tp-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tp-badges span{font:700 12px var(--display);letter-spacing:.04em;padding:8px 14px;border-radius:999px;background:var(--green-soft);color:#14792a}
+.tp-badges span.blue{background:#e8eefc;color:var(--blue)}
+
+.tp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.tp-kpis .kpi{background:#fff;border-radius:18px;padding:22px 20px;border-left:4px solid var(--green);box-shadow:0 6px 24px #0b175e0d}
+.tp-kpis .kpi b{display:block;font:800 28px var(--display);color:var(--navy);line-height:1.1}
+.tp-kpis .kpi span{font-size:13.5px;color:var(--muted)}
+
+.tp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.tp-block{background:#fff;border-radius:var(--radius);padding:32px 34px;box-shadow:0 6px 24px #0b175e0d}
+.tp-block.full{grid-column:1/-1}
+.tp-block h3{font-size:20px;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.tp-block h3::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--green);flex-shrink:0}
+.tp-block p{color:#2c3157;font-size:15.5px}
+.tp-block p+p,.tp-block p+ul,.tp-block ul+p,.tp-block .steps+p{margin-top:12px}
+.tp-block ul{padding-left:20px;display:grid;gap:8px;color:#2c3157;font-size:15.5px}
+.tp-block figure{margin-top:18px}
+.tp-block figure img{width:100%;border-radius:14px;display:block;border:1px solid var(--line)}
+.tp-block figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.steps.two{grid-template-columns:repeat(2,1fr)}
+.step{background:var(--bg-soft);border-radius:18px;padding:22px}
+.step b{display:block;font:800 13px var(--display);letter-spacing:.08em;color:var(--blue);margin-bottom:6px;text-transform:uppercase}
+.step h4{font-size:16.5px;color:var(--navy);margin-bottom:8px}
+.step p{font-size:14.5px}
+.step figure{margin-top:14px}
+.tp-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tp-gal figure{margin:0}
+.tp-gal img{aspect-ratio:4/3;object-fit:cover}
+.tp-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.tp-other{margin-top:56px}
+.tp-other h2{font-size:clamp(22px,2.4vw,30px);color:var(--navy);margin-bottom:18px}
+.tp-other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tp-other .tile{box-shadow:0 6px 24px #0b175e12}
+
+.tp-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--grad);color:#fff;border-radius:var(--radius);padding:30px 34px;margin-top:40px}
+.tp-cta h3{font-size:21px}
+.tp-cta p{color:#dbe3ff;font-size:15px}
+
+/* Partes ainda vazias: somem do site; aparecem marcadas com ?editar=1 */
+.tbd,.tp-block.vazia,.tp-kpis.vazia,.tp-badges.vazia{display:none!important}
+body.editar .tbd{display:block!important;border:1.5px dashed #e0a020;background:#fff8e6;color:#8a5a00;padding:10px 12px;border-radius:10px;font-size:14px}
+body.editar .tp-block.vazia{display:block!important;outline:2px dashed #e0a020}
+body.editar .tp-kpis.vazia{display:grid!important}
+body.editar .tp-badges.vazia{display:flex!important}
+body.editar .tp-badges span.tbd{display:inline-block!important;padding:8px 14px}
+.edit-note{display:none}
+body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-index:80;max-width:420px;background:#fff3cd;color:#6b4b00;padding:12px 16px;border-radius:12px;font-size:14px;box-shadow:0 8px 24px #0003}
+
+@media (max-width:1100px){
+  .tp-kpis{grid-template-columns:1fr 1fr}
+  .tp-cases{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .tech-grid{grid-template-columns:1fr}.monitor .ph{flex:none;aspect-ratio:16/9}.excl{grid-template-rows:auto}
+  .tp-grid,.steps,.steps.two,.tp-gal,.tc-grid,.tp-other-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .tech,.tc{padding:72px 0}
+  .tp{padding-top:48px}
+  .tp-block{padding:26px 22px}
+  .tp-cases{grid-template-columns:1fr}
+  .tp-kpis .kpi b{font-size:23px}
+  .tc-card .b{padding:20px}
+}

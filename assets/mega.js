@@ -7,6 +7,8 @@
 (function () {
   'use strict';
   const AXES = ['amb', 'proc', 'res', 'dig', 'mod'];
+  // Tecnologias GETA (ordem do menu = chaves tp.tab1 … tp.tab4 em i18n.js)
+  const TECHS = ['chorume', 'inertizacao', 'cdr', 'pos'];
 
   function init(root) {
     root = root || '';
@@ -17,6 +19,13 @@
 
       function render() {
         const t = k => I18N.t(k);
+        if (box.dataset.mega === 'tech') {
+          // Menu "Tecnologia": cada tecnologia abre a sua própria página
+          box.innerHTML = `<div class="mega-in">${TECHS.map((id, i) =>
+            `<a class="mega-cat" href="${root}tecnologia-${id}.html">${t('tp.tab' + (i + 1))}</a>`).join('')}
+            <a class="mega-cat mega-all" href="${root}tecnologia.html">${t('tp.all')}</a></div>`;
+          return;
+        }
         box.innerHTML = `<div class="mega-in">${AXES.map(a =>
           `<a class="mega-cat" href="${root}area.html?eixo=${a}">${t('ax.' + a)}</a>`).join('')}</div>`;
       }
