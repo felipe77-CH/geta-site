@@ -33,8 +33,8 @@
 <header class="header" id="header"><div class="wrap bar">
   <a class="brand" href="${r}" aria-label="GETA"><img class="logo-white" src="${ROOT}img/logo-geta-white.png" alt="GETA"><img class="logo-color" src="${ROOT}img/logo-geta.png" alt="GETA"><span class="brand-text" data-i18n="brand.text">Grupo de Especialistas em Tecnologias Ambientais</span></a>
   <ul class="nav">
-    <li><a href="${r}#sobre" class="${cur('about')}" data-i18n="nav.about">A GETA</a>
-      <div class="dropdown"><a href="${qs}" data-i18n="nav.who">Quem somos</a><a href="${r}#sobre" data-i18n="nav.how">Como trabalhamos</a><a href="${r}#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
+    <li><a href="${qs}" class="${cur('about')}" data-i18n="nav.about">A GETA</a>
+      <div class="dropdown"><a href="${qs}" data-i18n="nav.who">Quem somos</a><a href="${r}#parceiro" data-i18n="nav.how">Como trabalhamos</a><a href="${r}#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></div></li>
     <li class="has-mega"><a href="${r}#areas" class="mega-toggle${cur('areas')}" aria-expanded="false" data-i18n="nav.areas">Áreas de atuação</a><div class="mega" data-mega></div></li>
     <li><a href="${r}#tecnologia" data-i18n="nav.tech">Tecnologia</a></li>
     <li><a href="${r}#contato" data-i18n="nav.contact">Contato</a></li>
