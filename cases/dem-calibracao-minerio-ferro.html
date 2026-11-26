@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calibração de modelos DEM para minério de ferro: ângulo de repouso simulado com Yade e Python | GETA</title>
+<meta name="description" content="Simulação pelo Método dos Elementos Discretos (DEM) para calibrar os parâmetros de contato do minério de ferro de uma grande mineradora brasileira, a partir do ângulo de repouso, como base para projetar chutes, tolvas e transferências.">
+<link rel="icon" href="../img/geta-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261126">
+<link rel="stylesheet" href="../assets/mega.css?v=20261126">
+</head>
+<!-- =====================================================================
+  CASE: Calibração de modelos DEM para minério de ferro: ângulo de repouso simulado com Yade e Python
+  ---------------------------------------------------------------------
+  COMO PREENCHER
+  1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
+     tecnologia ficam em cases/cases.js (procure "dem-calibracao-minerio-ferro").
+  2. Nesta página, troque cada <p class="tbd">…</p> pelo texto real.
+     Pode usar <p>, <ul>, <ol>, <table> e <figure><img …></figure>.
+  3. Traduções (opcional): ao lado de <div data-l="pt">…</div>, crie
+     <div data-l="en">…</div> e/ou <div data-l="es">…</div>.
+     Sem tradução, o texto em português aparece nos três idiomas.
+  4. Imagens do case: salve em img/cases/dem-calibracao-minerio-ferro/ e use
+     <img src="../img/cases/dem-calibracao-minerio-ferro/arquivo.jpg" alt="descrição">
+  5. Quando estiver pronto, mude "status" para "publicado" em cases.js.
+     Seções, destaques e campos que continuarem vazios deixam de aparecer.
+  ===================================================================== -->
+<body data-page="case" data-case="dem-calibracao-minerio-ferro" data-root="../">
+
+<div id="cs-hero"></div>
+
+<main class="cs wrap">
+
+  <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
+  <div class="cs-kpis">
+    <div class="kpi"><b>~15.000</b><span>partículas no ensaio virtual</span></div>
+    <div class="kpi"><b>21,08° ± 0,65°</b><span>de ângulo de repouso estático simulado</span></div>
+    <div class="kpi"><b>8 setores</b><span>de perfil radial analisados na pilha</span></div>
+    <div class="kpi"><b>3 parâmetros</b><span>de atrito calibrados (partícula, parede e rolamento)</span></div>
+  </div>
+
+  <div class="cs-layout">
+    <aside class="cs-side">
+      <nav class="cs-toc" id="cs-toc" aria-label="Sumário"></nav>
+      <!-- FICHA TÉCNICA: troque "—" pelo valor. Cliente e ano vêm de cases.js. -->
+      <div class="cs-facts">
+        <h4 data-i18n="cs.facts">Ficha técnica</h4>
+        <dl>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Brasil</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>2026</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Mineração de ferro</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Ensaio virtual com ~15.000 partículas</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Modelagem e simulação numérica (DEM)</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <article class="cs-main">
+
+      <!-- 01 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="problema">
+        <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Chutes, tolvas, silos e pontos de transferência de minério de ferro sofrem com entupimentos, desgaste e derramamentos. Para projetar e otimizar esses equipamentos por simulação, o modelo precisa reproduzir o comportamento real do material, e isso depende dos <strong>parâmetros de contato entre partículas</strong>, que não podem ser medidos diretamente.</p>
+            <p>O objetivo foi <strong>calibrar um modelo pelo Método dos Elementos Discretos (DEM)</strong> para o minério de uma grande mineradora de ferro no Brasil, usando o <strong>ângulo de repouso</strong> como ensaio de referência.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="contexto">
+        <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Cliente: <strong>uma das principais mineradoras de minério de ferro do Brasil</strong>.</li>
+              <li>O DEM simula cada partícula individualmente e calcula as forças de contato entre elas, o que permite estudar escoamento, acúmulo e obstruções de materiais granulares.</li>
+              <li>O <strong>ângulo de repouso</strong> (inclinação que a pilha atinge em equilíbrio) é um dos ensaios mais usados para caracterizar o material e calibrar os parâmetros do modelo.</li>
+            </ul>
+            <figure><video src="../img/cases/dem-calibracao-minerio-ferro/simulacao-aor.mp4" poster="../img/cases/dem-calibracao-minerio-ferro/vista-3d-corte-2d.jpg" controls muted loop playsinline preload="metadata" style="width:100%;border-radius:14px;background:#fff"></video><figcaption>Simulação do ensaio de ângulo de repouso: enchimento, içamento do cilindro e formação da pilha (cor = velocidade).</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="diagnostico">
+        <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Os parâmetros de atrito (partícula-partícula, partícula-parede e de rolamento) controlam o ângulo de repouso, o escoamento e a formação de arcos em tolvas e chutes.</li>
+              <li>Sem calibração, a simulação pode prever um escoamento muito diferente do real e levar a decisões de projeto erradas.</li>
+              <li>Ensaios em escala industrial são caros e demorados; a simulação calibrada permite testar muitas condições a baixo custo.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="metodologia">
+        <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ol>
+              <li><strong>Ensaio virtual de ângulo de repouso</strong> com cilindro içado: o cilindro é preenchido com cerca de 15.000 partículas, que se acomodam; o cilindro é içado e a pilha se forma até o repouso.</li>
+              <li><strong>Pós-processamento</strong> do perfil radial da pilha em 8 setores, com cálculo do ângulo em cada setor, média e desvio padrão.</li>
+              <li><strong>Comparação</strong> com o ângulo medido no ensaio físico do minério.</li>
+              <li><strong>Ajuste iterativo</strong> dos parâmetros de contato até o resultado simulado reproduzir o medido.</li>
+              <li><strong>Uso do modelo calibrado</strong> nas simulações de equipamentos de manuseio.</li>
+            </ol>
+            <figure><img src="../img/cases/dem-calibracao-minerio-ferro/fluxo-calibracao.jpg" alt="Fluxograma da calibração DEM: ensaio físico, parâmetros de contato, simulação, pós-processamento, comparação e ajuste"><figcaption>Fluxo de calibração do modelo DEM.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="solucao">
+        <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A simulação foi implementada em <strong>Yade</strong>, software livre de DEM controlado por <strong>Python</strong>, o que permitiu automatizar os ensaios, variar os parâmetros em lote e extrair os resultados sem intervenção manual.</p>
+            <figure><img src="../img/cases/dem-calibracao-minerio-ferro/sequencia-ensaio.jpg" alt="Quatro etapas do ensaio virtual: enchimento do cilindro, acomodação, içamento e pilha em repouso"><figcaption>Etapas do ensaio virtual de ângulo de repouso.</figcaption></figure>
+            <figure><img src="../img/cases/dem-calibracao-minerio-ferro/vista-3d-corte-2d.jpg" alt="Vista 3D da pilha de partículas coloridas pela velocidade e corte frontal 2D mostrando o perfil da pilha"><figcaption>Vista 3D da pilha e corte frontal 2D usado no perfil radial.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ── As etiquetas abaixo vêm de "tags" em cases.js ── -->
+      <section class="cs-sec" id="tecnologias">
+        <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Método dos Elementos Discretos (DEM)</strong>.</li>
+              <li><strong>Yade</strong> (código aberto) com scripts em <strong>Python</strong>.</li>
+              <li><strong>ParaView</strong> para visualização 3D e cortes.</li>
+              <li>Pós-processamento em Python: perfil radial por setores e estatística do ângulo.</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="cs-tags" data-from="tags"></ul>
+      </section>
+
+      <!-- 07 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="modelagem">
+        <h2 data-i18n="cs.s7">Modelagem, simulação e ferramentas computacionais</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>Com atrito partícula-partícula de 0,500, partícula-parede de 0,400 e de rolamento de 0,050, o ensaio virtual resultou em um <strong>ângulo de repouso estático de 21,08° ± 0,65°</strong>, calculado nos 8 setores da pilha.</p>
+            <figure><img src="../img/cases/dem-calibracao-minerio-ferro/angulo-repouso.jpg" alt="Esquema do ângulo de repouso de uma pilha e quadro com o resultado de 21,08 graus e os parâmetros de atrito"><figcaption>Ângulo de repouso estático e parâmetros de contato da simulação.</figcaption></figure>
+            <p>O baixo desvio entre setores mostra uma pilha simétrica e um resultado estável, adequado para comparar com o ensaio físico e ajustar os parâmetros.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="resultados">
+        <h2 data-i18n="cs.s8">Resultados obtidos</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li><strong>Ensaio virtual automatizado</strong> de ângulo de repouso, reproduzível e rápido.</li>
+              <li><strong>Ângulo de repouso de 21,08° ± 0,65°</strong> para o conjunto de parâmetros avaliado.</li>
+              <li>Relação direta entre os <strong>parâmetros de contato</strong> na escala da partícula e o <strong>comportamento global</strong> do material.</li>
+              <li>Base calibrada para simular e otimizar <strong>chutes, tolvas, silos e transferências</strong>, reduzindo entupimentos, desgaste e derramamentos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ── Opcional: se não se aplicar, deixe o placeholder (some ao publicar) ou apague a seção ──
+           Exemplo de tabela:
+           <table>
+             <tr><th>Alternativa</th><th>CAPEX (R$)</th><th>OPEX (R$/mês)</th><th>Custo (R$/m³)</th></tr>
+             <tr><td>Alternativa A</td><td>—</td><td>—</td><td>—</td></tr>
+           </table> -->
+      <section class="cs-sec" id="capex-opex">
+        <h2 data-i18n="cs.s9">CAPEX/OPEX e análise técnico-econômica</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p class="tbd">Quando aplicável: estimativas de CAPEX e OPEX, comparação entre alternativas, custo por m³ ou por tonelada, payback.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ─────────────────────────────────────────────── -->
+      <section class="cs-sec" id="escopo">
+        <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <p>A GETA foi responsável por:</p>
+            <ul>
+              <li>montagem do ensaio virtual em Yade e Python;</li>
+              <li>definição da faixa de parâmetros de contato;</li>
+              <li>pós-processamento e cálculo do ângulo de repouso;</li>
+              <li>calibração do modelo com base no ensaio físico;</li>
+              <li>recomendações para as simulações de equipamentos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 ── Sugestão: use uma lista <ul><li>…</li></ul> ── -->
+      <section class="cs-sec" id="entregaveis">
+        <h2 data-i18n="cs.s11">Principais entregáveis</h2>
+        <div class="cs-body">
+          <div data-l="pt">
+            <ul>
+              <li>Scripts do ensaio virtual de ângulo de repouso.</li>
+              <li>Rotina de pós-processamento do perfil radial.</li>
+              <li>Parâmetros de contato calibrados para o minério.</li>
+              <li>Relatório técnico com resultados e visualizações.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA: troque cada placeholder por
+           <figure><img src="../img/cases/dem-calibracao-minerio-ferro/foto-1.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure> -->
+      <section class="cs-gallery">
+        <h2 data-i18n="cs.gallery">Galeria</h2>
+        <div class="gal">
+          <figure><img src="../img/cases/dem-calibracao-minerio-ferro/vista-3d-corte-2d.jpg" alt="Vista 3D e corte 2D da pilha"><figcaption>Pilha simulada (3D e corte 2D).</figcaption></figure>
+          <figure><img src="../img/cases/dem-calibracao-minerio-ferro/sequencia-ensaio.jpg" alt="Etapas do ensaio virtual"><figcaption>Etapas do ensaio virtual.</figcaption></figure>
+          <figure><img src="../img/cases/dem-calibracao-minerio-ferro/fluxo-calibracao.jpg" alt="Fluxo de calibração"><figcaption>Fluxo de calibração.</figcaption></figure>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<section class="cs-more" id="cs-more"></section>
+
+<section class="pf-cta">
+  <div class="wrap">
+    <h2 data-i18n="pf.cta.t">Tem um desafio parecido?</h2>
+    <p data-i18n="pf.cta.p">Conte para a nossa equipe e avaliamos a melhor rota técnica para o seu caso.</p>
+    <a class="btn" href="../index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  </div>
+</section>
+
+<script src="../i18n.js?v=20261126"></script>
+<script src="cases.js?v=20261126"></script>
+<script src="../assets/mega.js?v=20261126"></script>
+<script src="../assets/portfolio.js?v=20261126"></script>
+</body>
+</html>

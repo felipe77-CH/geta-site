@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboards e sistemas de KPI para plantas industriais | GETA</title>
-<meta name="description" content="Painéis e indicadores de desempenho para acompanhar a operação de plantas industriais em tempo real.">
+<title>Dashboard de monitoramento e integração de dados operacionais de uma estação de tratamento de chorume | GETA</title>
+<meta name="description" content="Plataforma web que reúne análises de laboratório, medições, limites operacionais e dados climáticos em um banco relacional, com painel de KPIs por etapa, alertas, previsões e assistente de IA para a operação de uma ETE de chorume.">
 <link rel="icon" href="../img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/portfolio.css?v=20261125c">
-<link rel="stylesheet" href="../assets/mega.css?v=20261125c">
+<link rel="stylesheet" href="../assets/portfolio.css?v=20261126">
+<link rel="stylesheet" href="../assets/mega.css?v=20261126">
 </head>
 <!-- =====================================================================
-  CASE: Dashboards e sistemas de KPI para plantas industriais
+  CASE: Dashboard de monitoramento e integração de dados operacionais de uma estação de tratamento de chorume
   ---------------------------------------------------------------------
   COMO PREENCHER
   1. Título, resumo, eixos, capa, cliente, ano, status e etiquetas de
@@ -35,10 +35,10 @@
 
   <!-- DESTAQUES: até 4 números-chave. Troque "—" pelo valor, ajuste o texto e apague a classe "tbd". -->
   <div class="cs-kpis">
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 1 (ex.: vazão, capacidade)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 2 (ex.: eficiência, remoção)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 3 (ex.: economia, redução de custo)</span></div>
-    <div class="kpi tbd"><b>—</b><span>Indicador-chave 4 (ex.: prazo, duração)</span></div>
+    <div class="kpi"><b>7 etapas</b><span>da linha de tratamento monitoradas em um só painel</span></div>
+    <div class="kpi"><b>3 estados</b><span>normal, atenção e crítico, com alertas automáticos</span></div>
+    <div class="kpi"><b>3 modelos</b><span>de previsão (ARIMA, suavização exponencial e regressão)</span></div>
+    <div class="kpi"><b>IA</b><span>assistente com valores sempre consultados no banco de dados</span></div>
   </div>
 
   <div class="cs-layout">
@@ -48,11 +48,11 @@
       <div class="cs-facts">
         <h4 data-i18n="cs.facts">Ficha técnica</h4>
         <dl>
-          <div><dt data-i18n="cs.f.loc">Local</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.period">Período</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>—</dd></div>
-          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>—</dd></div>
+          <div><dt data-i18n="cs.f.loc">Local</dt><dd>Brasil</dd></div>
+          <div><dt data-i18n="cs.f.period">Período</dt><dd>2026</dd></div>
+          <div><dt data-i18n="cs.f.sector">Setor</dt><dd>Aterro sanitário (tratamento de chorume)</dd></div>
+          <div><dt data-i18n="cs.f.scale">Escala / capacidade</dt><dd>Linha de tratamento com 7 etapas</dd></div>
+          <div><dt data-i18n="cs.f.type">Tipo de trabalho</dt><dd>Desenvolvimento de software e integração de dados</dd></div>
         </dl>
       </div>
     </aside>
@@ -64,7 +64,8 @@
         <h2 data-i18n="cs.s1">Problema / desafio do cliente</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Qual era o problema do cliente? Descreva a situação inicial, o que precisava ser resolvido e por que era crítico (exigência legal, custo, risco ambiental, desempenho).</p>
+            <p>Em uma estação de tratamento de chorume, os dados de operação ficam espalhados: análises de laboratório em planilhas, leituras de campo em cadernos, medições automáticas em outro sistema e dados de chuva em sites externos. Com isso, a equipe demora a perceber desvios, não enxerga a eficiência de cada etapa e tem dificuldade para comprovar a conformidade.</p>
+            <p>O objetivo foi criar uma <strong>plataforma única</strong> que integre todos os dados operacionais e mostre, em tempo real, o estado de cada etapa do tratamento.</p>
           </div>
         </div>
       </section>
@@ -74,7 +75,12 @@
         <h2 data-i18n="cs.s2">Contexto e características do processo</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Setor e localização, tipo de processo ou efluente, vazões e cargas, condições de operação, restrições do projeto e condicionantes legais.</p>
+            <ul>
+              <li>Estação de tratamento de chorume de aterro sanitário com <strong>linha em série</strong>: pré-tratamento, reator anaeróbio (UASB), tratamento aeróbio com nitrificação, flotação (DAF), oxidação química e filtro de carvão ativado (GAC).</li>
+              <li>Dezenas de variáveis por ponto de monitoramento: vazão, DQO, N-amoniacal, nitrito, nitrato, sólidos, pH, oxigênio dissolvido, condutividade e temperatura.</li>
+              <li>Operação em turnos, com operadores e supervisores registrando medições.</li>
+            </ul>
+            <figure><img src="../img/cases/dashboards-kpi/linha-monitorada.jpg" alt="Linha de tratamento com sete etapas e semáforo de estado em cada uma"><figcaption>Linha de tratamento monitorada, com o estado de cada etapa.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -84,7 +90,12 @@
         <h2 data-i18n="cs.s3">Diagnóstico e dados analisados</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Quais dados foram levantados e analisados (campanhas de amostragem, histórico operacional, ensaios de laboratório, visitas técnicas)? Quais foram os principais achados?</p>
+            <ul>
+              <li>Dados <strong>dispersos</strong> em planilhas e sistemas sem integração.</li>
+              <li>Sem <strong>limites operacionais</strong> centralizados, cada desvio dependia da experiência de quem olhava o número.</li>
+              <li>Sem visão de <strong>balanço de massa</strong> e de eficiência por etapa.</li>
+              <li>Sem <strong>previsão</strong>: os problemas eram percebidos só depois de acontecer.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -94,7 +105,16 @@
         <h2 data-i18n="cs.s4">Metodologia utilizada</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Etapas do trabalho, ensaios realizados, critérios de seleção de alternativas, normas e referências técnicas utilizadas.</p>
+            <ol>
+              <li><strong>Modelagem do banco de dados relacional</strong>: unidades de tratamento, pontos de monitoramento, medições, limites operacionais e analistas.</li>
+              <li><strong>Padronização</strong> de nomes, unidades e variáveis em uma única fonte de referência.</li>
+              <li><strong>Regras de estado</strong> (normal, atenção, crítico) por variável e por ponto, com limites operacionais, contratuais e legais.</li>
+              <li><strong>Rotinas de análise</strong>: estatística, balanço de massa e de nitrogênio, detecção de anomalias e validação de coerência física entre etapas.</li>
+              <li><strong>Modelos de previsão</strong> (ARIMA, suavização exponencial e regressão).</li>
+              <li><strong>Simulação</strong> do desempenho das etapas com modelos cinéticos simplificados.</li>
+              <li><strong>Painel web</strong> com páginas por etapa, exportação de dados e assistente de IA.</li>
+            </ol>
+            <figure><img src="../img/cases/dashboards-kpi/arquitetura.jpg" alt="Arquitetura: fontes de dados, banco relacional, análises e saídas em painel, assistente de IA e relatórios"><figcaption>Arquitetura da plataforma.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -104,7 +124,14 @@
         <h2 data-i18n="cs.s5">Solução de engenharia desenvolvida</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Rota tecnológica adotada, configuração do sistema, dimensionamento e principais decisões de projeto. Um fluxograma ajuda muito aqui.</p>
+            <p>A plataforma tem um <strong>painel principal</strong> com os KPIs da planta e o estado de cada etapa, e <strong>páginas específicas</strong> para o reator anaeróbio, o tratamento aeróbio, a flotação, a oxidação e o filtro de carvão.</p>
+            <figure><img src="../img/cases/dashboards-kpi/painel-ilustrativo.jpg" alt="Painel ilustrativo com KPIs, DQO ao longo da linha e série de N-amoniacal com alertas e previsão"><figcaption>Painel de monitoramento (ilustrativo, com dados sintéticos).</figcaption></figure>
+            <ul>
+              <li><strong>Alertas automáticos</strong> quando uma variável passa do limite de atenção ou crítico.</li>
+              <li><strong>Previsões</strong> das próximas horas e dias para antecipar desvios.</li>
+              <li><strong>Assistente de IA</strong> que responde perguntas sobre a operação, com valores críticos sempre consultados no banco de dados (modo determinístico) e linguagem natural opcional.</li>
+              <li><strong>Exportação</strong> de dados para relatórios.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -114,7 +141,14 @@
         <h2 data-i18n="cs.s6">Tecnologias e processos envolvidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Descreva as tecnologias, operações unitárias e equipamentos envolvidos e o papel de cada um. As etiquetas abaixo são editadas em cases.js.</p>
+            <ul>
+              <li><strong>Python</strong> e <strong>Streamlit</strong> para a aplicação web.</li>
+              <li><strong>SQLite</strong> com esquema normalizado e migrações.</li>
+              <li><strong>pandas, NumPy, SciPy, scikit-learn e statsmodels</strong> para análise e previsão.</li>
+              <li><strong>Plotly</strong> para gráficos interativos.</li>
+              <li>Integração com <strong>APIs de dados climáticos</strong>.</li>
+              <li><strong>Testes automatizados</strong> para cinética, balanço de massa, limites e previsões.</li>
+            </ul>
           </div>
         </div>
         <ul class="cs-tags" data-from="tags"></ul>
@@ -135,7 +169,14 @@
         <h2 data-i18n="cs.s8">Resultados obtidos</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Indicadores antes/depois, eficiências de remoção, ganhos de desempenho, atendimento a limites legais. Gráficos e tabelas são bem-vindos.</p>
+            <ul>
+              <li><strong>Uma única fonte de verdade</strong> para todos os dados operacionais da estação.</li>
+              <li><strong>Estado de cada etapa</strong> visível em tempo real, com semáforo e alertas.</li>
+              <li><strong>Eficiência por etapa</strong> e balanços de massa calculados automaticamente.</li>
+              <li><strong>Previsões</strong> que permitem agir antes de o efluente sair do padrão.</li>
+              <li>Menos tempo montando planilhas e mais tempo analisando e corrigindo a operação.</li>
+            </ul>
+            <figure><img src="../img/cases/ete-lixiviado-1000/tanques-processo.jpg" alt="Tanques de processo de uma estação de tratamento de chorume"><figcaption>Estação de tratamento de chorume (foto ilustrativa da operação).</figcaption></figure>
           </div>
         </div>
       </section>
@@ -160,7 +201,14 @@
         <h2 data-i18n="cs.s10">Escopo e responsabilidades da GETA</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Papel da GETA no projeto (diagnóstico, projeto, supervisão, P&amp;D, operação assistida…), limites do escopo e interface com o cliente e parceiros.</p>
+            <p>A GETA foi responsável por:</p>
+            <ul>
+              <li>levantamento dos dados e dos pontos de monitoramento;</li>
+              <li>modelagem do banco de dados e padronização das variáveis;</li>
+              <li>regras de estado, análises e modelos de previsão;</li>
+              <li>desenvolvimento do painel e do assistente de IA;</li>
+              <li>testes e documentação.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -170,7 +218,13 @@
         <h2 data-i18n="cs.s11">Principais entregáveis</h2>
         <div class="cs-body">
           <div data-l="pt">
-            <p class="tbd">Relatórios técnicos, memoriais de cálculo, projeto básico/executivo, modelos, dashboards, protótipos, patentes, treinamentos.</p>
+            <ul>
+              <li>Plataforma web de monitoramento com páginas por etapa.</li>
+              <li>Banco de dados relacional e rotinas de importação.</li>
+              <li>Regras de alerta, balanços de massa e previsões.</li>
+              <li>Assistente de IA para consultas operacionais.</li>
+              <li>Exportação de dados e documentação técnica.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -180,9 +234,9 @@
       <section class="cs-gallery">
         <h2 data-i18n="cs.gallery">Galeria</h2>
         <div class="gal">
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 1</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 2</div></figure>
-          <figure><div class="tbd">Foto, fluxograma ou gráfico 3</div></figure>
+          <figure><img src="../img/cases/dashboards-kpi/painel-ilustrativo.jpg" alt="Painel ilustrativo"><figcaption>Painel de monitoramento (ilustrativo).</figcaption></figure>
+          <figure><img src="../img/cases/dashboards-kpi/arquitetura.jpg" alt="Arquitetura da plataforma"><figcaption>Arquitetura da plataforma.</figcaption></figure>
+          <figure><img src="../img/cases/ete-lixiviado-1000/daf.jpg" alt="Unidade de flotação de uma ETE de chorume"><figcaption>Unidade de flotação (foto ilustrativa).</figcaption></figure>
         </div>
       </section>
 
@@ -200,9 +254,9 @@
   </div>
 </section>
 
-<script src="../i18n.js?v=20261125c"></script>
-<script src="cases.js?v=20261125c"></script>
-<script src="../assets/mega.js?v=20261125c"></script>
-<script src="../assets/portfolio.js?v=20261125c"></script>
+<script src="../i18n.js?v=20261126"></script>
+<script src="cases.js?v=20261126"></script>
+<script src="../assets/mega.js?v=20261126"></script>
+<script src="../assets/portfolio.js?v=20261126"></script>
 </body>
 </html>

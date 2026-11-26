@@ -562,21 +562,21 @@ window.GETA_CASES =
   {
     "slug": "dashboards-kpi",
     "eixos": ["dig"],
-    "capa": "img/sol-monitoramento.jpg",
+    "capa": "img/cases/capa-dashboards-kpi.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2026",
+    "status": "publicado",
     "titulo": {
-      "pt": "Dashboards e sistemas de KPI para plantas industriais",
-      "en": "Dashboards and KPI systems for industrial plants",
-      "es": "Dashboards y sistemas de KPI para plantas industriales"
+      "pt": "Dashboard de monitoramento e integração de dados operacionais de uma estação de tratamento de chorume",
+      "en": "Monitoring dashboard and operational data integration for a leachate treatment plant",
+      "es": "Dashboard de monitoreo e integración de datos operacionales de una planta de tratamiento de lixiviado"
     },
     "resumo": {
-      "pt": "Painéis e indicadores de desempenho para acompanhar a operação de plantas industriais em tempo real.",
-      "en": "Dashboards and performance indicators to track industrial plant operation in real time.",
-      "es": "Paneles e indicadores de desempeño para seguir la operación de plantas industriales en tiempo real."
+      "pt": "Plataforma web que reúne análises de laboratório, medições, limites operacionais e dados climáticos em um banco relacional, com painel de KPIs por etapa, alertas, previsões e assistente de IA para a operação de uma ETE de chorume.",
+      "en": "Web platform that brings together lab analyses, measurements, operating limits and weather data in a relational database, with a KPI dashboard per stage, alerts, forecasts and an AI assistant for operating a leachate treatment plant.",
+      "es": "Plataforma web que reúne análisis de laboratorio, mediciones, límites operacionales y datos climáticos en una base relacional, con panel de KPIs por etapa, alertas, previsiones y asistente de IA para la operación de una planta de tratamiento de lixiviado."
     },
-    "tags": ["Dashboards", "KPIs", "Visualização de dados", "Monitoramento"]
+    "tags": ["Dashboard", "KPIs", "Integração de dados", "Chorume", "Previsões", "Assistente de IA"]
   },
   {
     "slug": "automacao-monitoramento",
@@ -636,23 +636,23 @@ window.GETA_CASES =
     "tags": ["Balanço de massa", "Balanço de energia", "Dimensionamento"]
   },
   {
-    "slug": "cfd-simulacao",
+    "slug": "dem-calibracao-minerio-ferro",
     "eixos": ["mod"],
-    "capa": "img/cases/capa-cfd-simulacao.jpg",
+    "capa": "img/cases/capa-dem-calibracao-minerio-ferro.jpg",
     "cliente": "",
-    "ano": "",
-    "status": "rascunho",
+    "ano": "2026",
+    "status": "publicado",
     "titulo": {
-      "pt": "CFD e simulação computacional",
-      "en": "CFD and computational simulation",
-      "es": "CFD y simulación computacional"
+      "pt": "Calibração de modelos DEM para minério de ferro: ângulo de repouso simulado com Yade e Python",
+      "en": "DEM model calibration for iron ore: simulated angle of repose with Yade and Python",
+      "es": "Calibración de modelos DEM para mineral de hierro: ángulo de reposo simulado con Yade y Python"
     },
     "resumo": {
-      "pt": "Simulação fluidodinâmica computacional de escoamento, mistura e transferência de massa e calor em equipamentos e unidades.",
-      "en": "Computational fluid dynamics of flow, mixing and heat and mass transfer in equipment and units.",
-      "es": "Simulación fluidodinámica computacional de flujo, mezcla y transferencia de masa y calor en equipos y unidades."
+      "pt": "Simulação pelo Método dos Elementos Discretos (DEM) para calibrar os parâmetros de contato do minério de ferro de uma grande mineradora brasileira, a partir do ângulo de repouso, como base para projetar chutes, tolvas e transferências.",
+      "en": "Discrete Element Method (DEM) simulation to calibrate the contact parameters of iron ore for a major Brazilian mining company, based on the angle of repose, as a basis for designing chutes, hoppers and transfer points.",
+      "es": "Simulación por el Método de Elementos Discretos (DEM) para calibrar los parámetros de contacto del mineral de hierro de una gran minera brasileña, a partir del ángulo de reposo, como base para diseñar chutes, tolvas y transferencias."
     },
-    "tags": ["CFD", "Escoamento", "Mistura", "Simulação computacional"]
+    "tags": ["DEM", "Mineração de ferro", "Ângulo de repouso", "Calibração", "Yade", "Python"]
   },
   {
     "slug": "reducao-ordem-dmd",
