@@ -48,9 +48,9 @@ O script cria apenas as páginas que ainda não existem, a partir de `cases/_mod
 
 ## Versão dos arquivos (cache)
 
-Os arquivos CSS/JS são chamados com `?v=AAAAMMDDx` (ex.: `assets/mega.js?v=20261126m`) para o navegador
+Os arquivos CSS/JS são chamados com `?v=AAAAMMDDx` (ex.: `assets/mega.js?v=20261126n`) para o navegador
 baixar sempre a versão nova. Ao alterar CSS ou JS, troque o número em todas as páginas
-(busca e troca de `?v=20261126m` pelo novo valor).
+(busca e troca de `?v=20261126n` pelo novo valor).
 
 ## Rodar localmente
 

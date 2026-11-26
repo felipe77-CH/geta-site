@@ -80,6 +80,31 @@
 .tp-gal img{aspect-ratio:4/3;object-fit:cover}
 .tp-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
+/* ====== Bloco "O chorume no Brasil": mapas que passam (esq.) + texto (dir.) ====== */
+.tp-mapas{background:#fff;border-radius:var(--radius);padding:32px 34px;box-shadow:0 6px 24px #0b175e0d;margin-bottom:22px}
+.tp-mapas-head{margin-bottom:20px}
+.tp-mapas-head h2{font-size:clamp(22px,2.4vw,30px);color:var(--navy);margin-top:8px}
+.tp-mapas-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.tp-mapas-fig{position:relative;border-radius:16px;overflow:hidden;background:#dfe7ea;aspect-ratio:1180/763}
+.tp-mapas-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s ease}
+.tp-mapas-fig img.on{opacity:1}
+.tp-mapas-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
+.tp-mapas-nav>button{width:36px;height:36px;border-radius:50%;border:1.5px solid #d9e1f2;background:#fff;color:var(--navy);font:700 20px/1 var(--display);cursor:pointer;transition:.2s}
+.tp-mapas-nav>button:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.tp-dots{display:flex;gap:8px}
+.tp-dots button{width:10px;height:10px;border-radius:999px;border:0;background:#cdd6ea;cursor:pointer;padding:0;transition:.25s}
+.tp-dots button.on{width:28px;background:var(--green)}
+.tp-mapas-txt{display:grid}
+.tp-mapas-txt article{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .5s,transform .5s,visibility .5s}
+.tp-mapas-txt article.on{opacity:1;visibility:visible;transform:none}
+.tp-mapas-tag{font:700 12px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.tp-mapas-txt h3{font-size:clamp(20px,2vw,24px);color:var(--navy);margin:8px 0 12px}
+.tp-mapas-txt p{color:#2c3157;font-size:15.5px}
+.tp-mapas-geta{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--green-soft);border-left:4px solid var(--green)}
+.tp-mapas-geta b{display:block;font:700 13px var(--display);letter-spacing:.06em;text-transform:uppercase;color:#14792a;margin-bottom:6px}
+.tp-mapas-geta p{font-size:15px}
+.tp-mapas-src{margin-top:18px;font-size:12.5px;color:var(--muted)}
+
 .tp-other{margin-top:56px}
 .tp-other h2{font-size:clamp(22px,2.4vw,30px);color:var(--navy);margin-bottom:18px}
 .tp-other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -105,12 +130,13 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
 }
 @media (max-width:860px){
   .tech-grid{grid-template-columns:1fr}.monitor .ph{flex:none;aspect-ratio:16/9}.excl{grid-template-rows:auto}
-  .tp-grid,.steps,.steps.two,.tp-gal,.tc-grid,.tp-other-grid{grid-template-columns:1fr}
+  .tp-grid,.steps,.steps.two,.tp-gal,.tc-grid,.tp-other-grid,.tp-mapas-grid{grid-template-columns:1fr}
+  .tp-mapas-grid{gap:20px}
 }
 @media (max-width:720px){
   .tech,.tc{padding:72px 0}
   .tp{padding-top:48px}
-  .tp-block{padding:26px 22px}
+  .tp-block,.tp-mapas{padding:26px 22px}
   .tp-cases{grid-template-columns:1fr}
   .tp-kpis .kpi b{font-size:23px}
   .tc-card .b{padding:20px}

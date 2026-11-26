@@ -23,6 +23,28 @@
   $$('.tp-kpis').forEach(k => k.classList.toggle('vazia', $$('.kpi', k).every(x => x.classList.contains('tbd'))));
   $$('.tp-badges').forEach(k => k.classList.toggle('vazia', [...k.children].every(x => x.classList.contains('tbd'))));
 
+  // Carrossel de mapas (bloco "O chorume no Brasil"): a imagem e o texto passam juntos
+  $$('[data-slides]').forEach(box => {
+    const imgs = $$('.tp-mapas-fig img', box), txts = $$('.tp-mapas-txt article', box), dots = $$('.tp-dots button', box);
+    if (imgs.length < 2) return;
+    const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0, timer = null;
+    const go = n => {
+      i = (n + imgs.length) % imgs.length;
+      [imgs, txts, dots].forEach(list => list.forEach((el, k) => el.classList.toggle('on', k === i)));
+      dots.forEach((d, k) => d.setAttribute('aria-current', k === i ? 'true' : 'false'));
+    };
+    const play = () => { clearInterval(timer); if (!calmo) timer = setInterval(() => go(i + 1), 8000); };
+    const stop = () => clearInterval(timer);
+    box.querySelector('.tp-prev').addEventListener('click', () => { go(i - 1); play(); });
+    box.querySelector('.tp-next').addEventListener('click', () => { go(i + 1); play(); });
+    dots.forEach((d, k) => d.addEventListener('click', () => { go(k); play(); }));
+    box.addEventListener('mouseenter', stop);
+    box.addEventListener('mouseleave', play);
+    box.addEventListener('focusin', stop);
+    go(0); play();
+  });
+
   const CASES = window.GETA_CASES || [];
   function cases() {
     const L = I18N.lang, pick = o => (!o ? '' : (o[L] || o.pt || ''));
