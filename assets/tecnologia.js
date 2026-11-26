@@ -25,13 +25,13 @@
 
   // Carrossel de mapas (bloco "O chorume no Brasil"): a imagem e o texto passam juntos
   $$('[data-slides]').forEach(box => {
-    const imgs = $$('.tp-mapas-fig img', box), txts = $$('.tp-mapas-txt article', box), dots = $$('.tp-dots button', box);
+    const imgs = $$('.tp-mapas-fig img', box), txts = $$('.tp-mapas-txt article', box), dots = $$('.tp-dots button', box), legs = $$('.tp-mapas-leg .leg', box);
     if (imgs.length < 2) return;
     const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
     let i = 0, timer = null;
     const go = n => {
       i = (n + imgs.length) % imgs.length;
-      [imgs, txts, dots].forEach(list => list.forEach((el, k) => el.classList.toggle('on', k === i)));
+      [imgs, txts, dots, legs].forEach(list => list.forEach((el, k) => el.classList.toggle('on', k === i)));
       dots.forEach((d, k) => d.setAttribute('aria-current', k === i ? 'true' : 'false'));
     };
     const play = () => { clearInterval(timer); if (!calmo) timer = setInterval(() => go(i + 1), 8000); };
