@@ -643,14 +643,14 @@ window.GETA_CASES =
     "ano": "2026",
     "status": "publicado",
     "titulo": {
-      "pt": "Calibração de modelos DEM para minério de ferro: ângulo de repouso simulado com Yade e Python",
-      "en": "DEM model calibration for iron ore: simulated angle of repose with Yade and Python",
-      "es": "Calibración de modelos DEM para mineral de hierro: ángulo de reposo simulado con Yade y Python"
+      "pt": "Calibração DEM para uma mineradora de ferro: base confiável para projetar chutes e tolvas com menos entupimentos, desgaste e derramamentos",
+      "en": "DEM calibration for an iron ore mining company: a reliable basis for designing chutes and hoppers with less clogging, wear and spillage",
+      "es": "Calibración DEM para una minera de hierro: base confiable para diseñar chutes y tolvas con menos atascamientos, desgaste y derrames"
     },
     "resumo": {
-      "pt": "Simulação pelo Método dos Elementos Discretos (DEM) para calibrar os parâmetros de contato do minério de ferro de uma grande mineradora brasileira, a partir do ângulo de repouso, como base para projetar chutes, tolvas e transferências.",
-      "en": "Discrete Element Method (DEM) simulation to calibrate the contact parameters of iron ore for a major Brazilian mining company, based on the angle of repose, as a basis for designing chutes, hoppers and transfer points.",
-      "es": "Simulación por el Método de Elementos Discretos (DEM) para calibrar los parámetros de contacto del mineral de hierro de una gran minera brasileña, a partir del ángulo de reposo, como base para diseñar chutes, tolvas y transferencias."
+      "pt": "Para uma das principais mineradoras de ferro do Brasil, calibramos os parâmetros de contato do minério pelo Método dos Elementos Discretos (DEM), reproduzindo o ângulo de repouso em ensaio virtual (21,08° ± 0,65°). Com o modelo calibrado, chutes, tolvas e transferências podem ser testados no computador antes de construir ou modificar, sem depender de ensaios industriais caros e demorados.",
+      "en": "For one of Brazil's leading iron ore mining companies, we calibrated the ore's contact parameters with the Discrete Element Method (DEM), reproducing the angle of repose in a virtual test (21.08° ± 0.65°). With the calibrated model, chutes, hoppers and transfer points can be tested on the computer before being built or modified, without relying on costly and time-consuming industrial trials.",
+      "es": "Para una de las principales mineras de hierro de Brasil, calibramos los parámetros de contacto del mineral con el Método de Elementos Discretos (DEM), reproduciendo el ángulo de reposo en un ensayo virtual (21,08° ± 0,65°). Con el modelo calibrado, chutes, tolvas y transferencias pueden probarse en el computador antes de construirlos o modificarlos, sin depender de ensayos industriales costosos y lentos."
     },
     "tags": ["DEM", "Mineração de ferro", "Ângulo de repouso", "Calibração", "Yade", "Python"]
   },
