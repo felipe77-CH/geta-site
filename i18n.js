@@ -664,7 +664,12 @@
     document.querySelectorAll('.lang [data-lang]').forEach(b => b.addEventListener('click', () => apply(b.dataset.lang)));
     let lang = new URL(location.href).searchParams.get('lang');
     if (!lang) { try { lang = localStorage.getItem('geta-lang'); } catch (e) { lang = null; } }
+    // Sem animação na primeira marcação: o botão do idioma escolhido aparece
+    // ativo de imediato, sem o "PT" piscar antes de trocar para EN/ES.
+    const btns = document.querySelectorAll('.lang [data-lang]');
+    btns.forEach(b => { b.style.transition = 'none'; });
     apply(lang || 'pt');
+    requestAnimationFrame(() => requestAnimationFrame(() => btns.forEach(b => { b.style.transition = ''; })));
   }
 
   // Lista de chaves sem tradução (útil para conferir): I18N.missing()
