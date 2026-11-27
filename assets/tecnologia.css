@@ -131,6 +131,12 @@
 .tp-imp-list li{position:relative;padding-left:22px;font:600 14.5px/1.4 var(--display);color:var(--navy)}
 .tp-imp-list li::before{content:"";position:absolute;left:2px;top:.45em;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px #1fae3a2e}
 
+/* Bloco "Rotas GETA": fluxogramas inteiros sobre fundo branco */
+.tp-rotas .tp-mapas-fig{background:#fff;border:1px solid var(--line)}
+.tp-rotas .tp-mapas-fig img{object-fit:contain}
+.tp-list-t{display:block;margin-top:14px;font:800 12.5px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.tp-rotas .tp-imp-list{margin-top:8px}
+
 .tp-other{margin-top:56px}
 .tp-other h2{font-size:clamp(22px,2.4vw,30px);color:var(--navy);margin-bottom:18px}
 .tp-other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}

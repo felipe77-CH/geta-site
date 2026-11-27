@@ -8,9 +8,9 @@
 <link rel="icon" href="img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/portfolio.css?v=20261127b">
-<link rel="stylesheet" href="assets/mega.css?v=20261127b">
-<link rel="stylesheet" href="assets/tecnologia.css?v=20261127b">
+<link rel="stylesheet" href="assets/portfolio.css?v=20261127c">
+<link rel="stylesheet" href="assets/mega.css?v=20261127c">
+<link rel="stylesheet" href="assets/tecnologia.css?v=20261127c">
 </head>
 <!-- =====================================================================
   TECNOLOGIA 01: Tratamento de Chorume  (tecnologia-chorume.html)
@@ -170,26 +170,69 @@
       <p class="tp-mapas-src">Imagens ilustrativas.</p>
     </section>
 
-    <div class="tp-grid">
-      <section class="tp-block">
-        <h3>O problema que resolve</h3>
-        <p>O chorume é um dos efluentes mais difíceis de tratar: carga orgânica recalcitrante, nitrogênio amoniacal elevado, sólidos, sulfatos e metais, com composição que muda de aterro para aterro e ao longo da vida de cada aterro.</p>
-        <p>Soluções únicas costumam falhar, e as plantas com osmose reversa ainda geram <strong>concentrados sem destino adequado</strong>.</p>
-      </section>
-      <section class="tp-block">
-        <h3>Como escolhemos a rota</h3>
-        <p>O <strong>nitrogênio amoniacal</strong> é o parâmetro que mais define a rota: abaixo de cerca de 2.500 mg/L ele pode ser removido no próprio tratamento; acima disso, vale mais recuperá-lo como produto.</p>
-        <figure><img src="img/cases/tecnologia-lixiviado-patente/selecao-rotas.jpg" alt="Seleção da rota tecnológica pelo perfil do chorume"><figcaption>O perfil do efluente define a rota tecnológica.</figcaption></figure>
-      </section>
-
-      <section class="tp-block full">
-        <h3>Como funciona: as três rotas</h3>
-        <div class="steps">
-          <div class="step"><b>Rota 01</b><h4>N-amoniacal abaixo de 2.500 mg/L</h4><p>Flotação por ar dissolvido (DAF), oxidação e filtração granular. O clarificado (85% do volume, turbidez &lt; 10 NTU) é filtrado até N-amoniacal &lt; 20 mg/L, atendendo à CONAMA 430/2011.</p><figure><img src="img/cases/tecnologia-lixiviado-patente/rota-01.jpg" alt="Esquema da Rota 01"></figure></div>
-          <div class="step"><b>Rota 02</b><h4>N-amoniacal acima de 2.500 mg/L</h4><p>DAF, acidificação e osmose. O permeado (85% do volume) segue para descarte ou reúso, e o concentrado vira fosfato/sulfato de amônio, um <strong>insumo agrícola</strong> com cerca de 1% de N-P-S.</p><figure><img src="img/cases/tecnologia-lixiviado-patente/rota-02.jpg" alt="Esquema da Rota 02"></figure></div>
-          <div class="step"><b>Rota 03</b><h4>Concentrados de osmose reversa</h4><p>O concentrado passa por DAF e linha de lodo com polímero, gerando 60% de clarificado e 40% de <strong>lodo inerte</strong> que retém sólidos, matéria orgânica, sulfatos e metais.</p><figure><img src="img/cases/tecnologia-lixiviado-patente/rota-03.jpg" alt="Esquema da Rota 03"></figure></div>
+    <!-- ROTAS GETA: mesmo formato dos mapas, 4 slides com os fluxogramas (img/tecnologias/chorume/rota-*.jpg).
+         Os fluxogramas são gerados em 4:3 e levam o logo da GETA. -->
+    <section class="tp-mapas tp-impactos tp-rotas" data-slides aria-roledescription="carrossel" aria-label="Rotas GETA">
+      <div class="tp-mapas-head">
+        <span class="eyebrow">Rotas GETA</span>
+        <h2>Três rotas para tratar o chorume</h2>
+      </div>
+      <div class="tp-mapas-grid">
+        <div>
+          <div class="tp-mapas-fig">
+          <img src="img/tecnologias/chorume/rotas-selecao.jpg" alt="Diagrama: a caracterização do chorume define uma de três rotas, cada uma com seu processo, sua saída tratada e seu lodo inerte" class="on">
+          <img src="img/tecnologias/chorume/rota-01-fluxo.jpg" alt="Fluxograma da Rota 01: chorume bruto, flotação DAF, clarificado, filtração granular com oxidante e filtrado; o lodo da DAF vira lodo inerte" loading="lazy">
+          <img src="img/tecnologias/chorume/rota-02-fluxo.jpg" alt="Fluxograma da Rota 02: chorume bruto, DAF, clarificado e osmose acidificada; o permeado é descartado ou reusado e o concentrado vira insumo agrícola" loading="lazy">
+          <img src="img/tecnologias/chorume/rota-03-fluxo.jpg" alt="Fluxograma da Rota 03: o concentrado da osmose reversa passa por DAF; sai clarificado e o lodo vai para a desidratação de lodo, com insumo, gerando lodo inerte" loading="lazy">
+          </div>
+          <div class="tp-mapas-nav">
+            <button type="button" class="tp-prev" aria-label="Anterior">‹</button>
+            <div class="tp-dots"><button type="button" aria-label="1: Seleção da rota" class="on"></button><button type="button" aria-label="2: Rota 01"></button><button type="button" aria-label="3: Rota 02"></button><button type="button" aria-label="4: Rota 03"></button></div>
+            <button type="button" class="tp-next" aria-label="Próximo">›</button>
+          </div>
         </div>
-      </section>
+        <div class="tp-mapas-side">
+          <div class="tp-mapas-txt" aria-live="polite">
+          <article class="on">
+            <span class="tp-mapas-tag">1 de 4 · Seleção da rota</span>
+            <h3>Três rotas, uma para cada chorume</h3>
+            <p>Não existe um chorume igual a outro: a composição muda com a idade do aterro, com a chuva e com os resíduos recebidos. Por isso a GETA não aplica uma solução única. Caracterizamos o chorume e escolhemos entre três rotas.</p>
+            <b class="tp-list-t">O que define a rota</b>
+            <ul class="tp-imp-list"><li>Idade do aterro: o chorume jovem tem mais carga orgânica; o maduro, mais amônia e compostos recalcitrantes</li><li>Variabilidade ao longo do ano e entre as células do aterro</li><li>Nitrogênio amoniacal, o parâmetro que mais pesa na escolha</li><li>Osmose reversa instalada e concentrados sem destino</li></ul>
+            <div class="tp-mapas-geta"><b>Como decidimos</b><p>Com caracterização e ensaio de tratabilidade usando o chorume do próprio cliente, antes do projeto.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">2 de 4 · Rota 01</span>
+            <h3>Remoção do nitrogênio no próprio tratamento</h3>
+            <p>Para chorumes com N-amoniacal abaixo de cerca de 2.500 mg/L. Flotação por ar dissolvido (DAF), oxidação e filtração granular levam o chorume até o padrão de descarte, sem depender de sistemas biológicos. Uma rota direta, compacta e previsível.</p>
+            <b class="tp-list-t">Vantagens</b>
+            <ul class="tp-imp-list"><li>Filtrado com N-amoniacal < 20 mg/L (CONAMA 430/2011)</li><li>85% do volume recuperado como água clarificada</li><li>Sem etapa biológica: partida rápida e operação estável</li><li>Lodo inerte e hidrofóbico, que não lixivia</li></ul>
+            <div class="tp-mapas-geta"><b>Ideal para</b><p>Aterros com chorume de baixa a média concentração de amônia que precisam atender ao padrão de descarte.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">3 de 4 · Rota 02</span>
+            <h3>Nitrogênio que vira insumo agrícola</h3>
+            <p>Para chorumes com N-amoniacal acima de cerca de 2.500 mg/L, em que remover a amônia custa caro. Depois da DAF, a osmose com acidificação fixa o nitrogênio como sal de amônio. O resultado é água para reúso e um fertilizante, separados e prontos para uso.</p>
+            <b class="tp-list-t">Vantagens</b>
+            <ul class="tp-imp-list"><li>85% do volume como permeado, para descarte ou reúso</li><li>Nitrogênio recuperado como fosfato/sulfato de amônio (~1% N-P-S)</li><li>Insumo agrícola validado com a UFRRJ</li><li>O principal contaminante passa a ser um produto</li></ul>
+            <div class="tp-mapas-geta"><b>Ideal para</b><p>Aterros com alta carga de amônia que querem valorizar o chorume, e não apenas tratá-lo.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">4 de 4 · Rota 03</span>
+            <h3>Destino para os concentrados de osmose</h3>
+            <p>As plantas com osmose reversa geram concentrados com sólidos, DQO, amônia, sulfatos e metais muito elevados, sem destino adequado. A Rota 03 trata esse concentrado com DAF e desidratação de lodo. Assim, a osmose deixa de gerar um novo problema.</p>
+            <b class="tp-list-t">Vantagens</b>
+            <ul class="tp-imp-list"><li>60% do concentrado volta como clarificado</li><li>40% vira lodo inerte, que retém sólidos, sulfatos e metais</li><li>Resolve um passivo que hoje não tem destino adequado</li><li>Aproveita a osmose reversa já instalada</li></ul>
+            <div class="tp-mapas-geta"><b>Ideal para</b><p>Aterros que já operam osmose reversa e precisam dar um destino seguro aos concentrados.</p></div>
+          </article>
+          </div>
+        </div>
+      </div>
+      <p class="tp-mapas-src">Tecnologia protegida pelo pedido de patente BR 10 2026 020875 2 (INPI).</p>
+    </section>
+
+    <div class="tp-grid">
+
 
       <section class="tp-block">
         <h3>Onde se aplica</h3>
@@ -271,10 +314,10 @@
   </div>
 </section>
 
-<script src="i18n.js?v=20261127b"></script>
-<script src="cases/cases.js?v=20261127b"></script>
-<script src="assets/mega.js?v=20261127b"></script>
-<script src="assets/portfolio.js?v=20261127b"></script>
-<script src="assets/tecnologia.js?v=20261127b"></script>
+<script src="i18n.js?v=20261127c"></script>
+<script src="cases/cases.js?v=20261127c"></script>
+<script src="assets/mega.js?v=20261127c"></script>
+<script src="assets/portfolio.js?v=20261127c"></script>
+<script src="assets/tecnologia.js?v=20261127c"></script>
 </body>
 </html>
