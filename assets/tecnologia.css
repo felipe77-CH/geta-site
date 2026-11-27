@@ -272,15 +272,16 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
 
 /* Cases relacionados: faixa em movimento */
 .tp-strip{margin-bottom:8px}
-.tp-strip h3{font-size:20px;color:var(--navy);margin-bottom:14px}
-.tp-marquee{overflow:hidden;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.mq-track{display:flex;width:max-content;animation:mq calc(var(--mq-n,8) * 4.5s) linear infinite}
+.tp-strip h3{font-size:clamp(22px,2.2vw,28px);color:var(--navy);margin-bottom:18px}
+.tp-marquee{overflow:hidden;padding:10px 0 18px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.mq-track{display:flex;width:max-content;animation:mq calc(var(--mq-n,8) * 6s) linear infinite}
 .tp-marquee:hover .mq-track,.tp-marquee:focus-within .mq-track{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
-.mq-card{flex:0 0 250px;display:flex;align-items:center;gap:12px;margin-right:14px;background:#fff;border:1px solid #e1e8f6;border-radius:14px;padding:8px 12px 8px 8px;text-decoration:none;box-shadow:0 4px 14px #0b175e0d;transition:transform .25s,box-shadow .25s,border-color .25s}
-.mq-card:hover{transform:translateY(-3px);border-color:#b9c8ea;box-shadow:0 10px 24px #0b175e1f}
-.mq-card img{width:66px;height:50px;object-fit:cover;border-radius:9px;flex-shrink:0;background:#e9eef9}
-.mq-card span{font:600 13px/1.3 var(--display);color:var(--navy);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mq-card{flex:0 0 320px;display:flex;flex-direction:column;margin-right:20px;background:#fff;border:1px solid #e1e8f6;border-radius:18px;overflow:hidden;text-decoration:none;box-shadow:0 8px 24px #0b175e12;transition:transform .3s,box-shadow .3s,border-color .3s}
+.mq-card:hover{transform:translateY(-5px);border-color:#b9c8ea;box-shadow:0 18px 36px #0b175e24}
+.mq-card img{width:100%;height:180px;object-fit:cover;display:block;background:#e9eef9;transition:transform .6s}
+.mq-card:hover img{transform:scale(1.05)}
+.mq-card span{padding:14px 18px 18px;font:700 15.5px/1.4 var(--display);color:var(--navy);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(15.5px * 1.4 * 2 + 32px)}
 
 /* Linha do tempo */
 .cx-tl{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
@@ -314,16 +315,26 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
 .cx-lb .cx-lb-x{position:absolute;top:20px;right:20px}
 
 /* Chamada final */
-.cx-cta{background:var(--grad);padding:40px 0}
-.cx-cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.cx-cta h3{font-size:clamp(22px,2.4vw,30px);color:#fff}
-.cx-cta p{color:#dbe3ff;max-width:620px;margin-top:6px}
+.cx-cta{background:#fff;color:var(--ink);padding:64px 0}
+.cx-invite{display:grid;grid-template-columns:1fr 1.15fr;align-items:stretch;max-width:1060px;margin:0 auto;background:linear-gradient(135deg,#f7f9fe,#eef4ff);border:1px solid #e1e8f6;border-radius:30px;overflow:hidden;box-shadow:0 30px 70px -30px #0b175e40}
+.cx-invite-img{position:relative;margin:0;min-height:340px;overflow:hidden}
+.cx-invite-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.cx-invite:hover .cx-invite-img img{transform:scale(1.04)}
+.cx-invite-img .cx-live{position:absolute;left:18px;top:18px;margin:0;background:#06103fcc;backdrop-filter:blur(6px)}
+.cx-invite-txt{padding:40px 44px;display:flex;flex-direction:column;align-items:flex-start}
+.cx-invite-txt .eyebrow{color:var(--green)}
+.cx-invite-txt h3{font-size:clamp(26px,2.8vw,36px);line-height:1.15;color:var(--navy);margin:8px 0 12px}
+.cx-invite-txt p{color:#2c3157;font-size:16.5px;line-height:1.65}
+.cx-invite-txt .cx-checks{margin:18px 0 26px;gap:10px}
+.cx-invite-txt .cx-checks li{color:var(--navy);font-size:15px}
 
 @media (max-width:1100px){
   .cx-stats{grid-template-columns:repeat(2,minmax(0,1fr));max-width:620px}
   .cx-tl{grid-template-columns:1fr 1fr;row-gap:34px}
   .cx-tl::before,.cx-tl::after{display:none}
   .cx-gal{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
+  .cx-invite{grid-template-columns:1fr}
+  .cx-invite-img{min-height:240px}
 }
 @media (max-width:860px){
   .cx-vs{grid-template-columns:1fr 1fr;padding:28px 22px;gap:20px 16px;max-width:620px;align-items:center}
@@ -348,6 +359,11 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
   .cx-stat{padding:16px 14px;min-width:0}
   .cx-stat b{font-size:26px}
   .cx-tl{grid-template-columns:1fr}
+  .cx-cta{padding:44px 0}
+  .cx-invite{border-radius:22px}
+  .cx-invite-txt{padding:26px 22px 28px}
+  .mq-card{flex-basis:260px;margin-right:14px}
+  .mq-card img{height:150px}
   .cx-gal{grid-auto-rows:150px}
   .cx-gal button.big{grid-row:span 1}
   .cx-lb{padding:60px 10px}

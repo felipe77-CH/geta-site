@@ -250,9 +250,13 @@
     [`Lodo desidratado e estável`, `Dewatered, stable sludge`, `Lodo deshidratado y estable`],
     [`Chegada do chorume à lagoa`, `Leachate arriving at the pond`, `Llegada del lixiviado a la laguna`],
     [`Quer ver de perto?`, `Want to see it up close?`, `¿Quiere verla de cerca?`],
-    [`Organizamos visitas técnicas à planta de Fazenda Rio Grande para quem quer conhecer a tecnologia funcionando.`,
-     `We organise technical visits to the Fazenda Rio Grande plant for anyone who wants to see the technology in action.`,
-     `Organizamos visitas técnicas a la planta de Fazenda Rio Grande para quien quiera conocer la tecnología funcionando.`],
+    [`Visita técnica`, `Technical visit`, `Visita técnica`],
+    [`Será um prazer receber você na planta de Fazenda Rio Grande. Mostramos a tecnologia funcionando, explicamos cada etapa com calma e conversamos sobre o chorume do seu aterro.`,
+     `It will be a pleasure to welcome you to the Fazenda Rio Grande plant. We show you the technology at work, walk you calmly through each stage and talk about your landfill's leachate.`,
+     `Será un placer recibirle en la planta de Fazenda Rio Grande. Le mostramos la tecnología funcionando, explicamos cada etapa con calma y conversamos sobre el lixiviado de su relleno.`],
+    [`Visita guiada pela equipe técnica da GETA`, `Guided tour by GETA's technical team`, `Visita guiada por el equipo técnico de GETA`],
+    [`Conversa sobre o seu caso, sem compromisso`, `A no-obligation conversation about your case`, `Conversación sobre su caso, sin compromiso`],
+    [`Data combinada de acordo com a sua agenda`, `A date that fits your schedule`, `Fecha acordada según su agenda`],
     [`Cases relacionados`, `Related cases`, `Casos relacionados`],
   ];
 
