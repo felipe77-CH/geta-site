@@ -45,6 +45,83 @@
     go(0); play();
   });
 
+  // ===== Case de sucesso (Fazenda Rio Grande) =====
+  $$('.cx').forEach(cx => {
+    const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fmt = n => n.toLocaleString('pt-BR');
+
+    // Números que contam ao aparecer na tela
+    const cio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      const el = e.target, fim = +el.dataset.count;
+      if (calmo) { el.textContent = fmt(fim); return; }
+      const t0 = performance.now(), dur = 1800;
+      const passo = t => {
+        const p = Math.min(1, (t - t0) / dur);
+        el.textContent = fmt(Math.round(fim * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) requestAnimationFrame(passo);
+      };
+      el.textContent = '0'; requestAnimationFrame(passo);
+    }), { threshold: 0.5 });
+    $$('[data-count]', cx).forEach(el => cio.observe(el));
+
+    // Etapas: avançam sozinhas (com barra de progresso) quando estão na tela
+    const jor = cx.querySelector('.cx-journey');
+    if (jor) {
+      const bar = jor.querySelector('.cx-steps'), btns = $$('.cx-steps button', jor),
+        fotos = $$('.cx-photo img', jor), arts = $$('.cx-panel article', jor);
+      const DUR = 6500; let i = 0, timer = null, visivel = false;
+      bar.style.setProperty('--cx-dur', DUR + 'ms');
+      if (calmo) bar.classList.add('parado');
+      const go = n => {
+        i = (n + btns.length) % btns.length;
+        btns.forEach((b, k) => { b.classList.remove('on'); b.classList.toggle('feito', k < i); b.setAttribute('aria-selected', k === i); });
+        void btns[i].offsetWidth; btns[i].classList.add('on');          // reinicia a barra
+        fotos.forEach((f, k) => f.classList.toggle('on', k === i));
+        void fotos[i].offsetWidth;
+        arts.forEach((a, k) => a.classList.toggle('on', k === i));
+        if (bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: btns[i].offsetLeft - 16, behavior: 'smooth' });
+      };
+      const play = () => { clearInterval(timer); if (!calmo && visivel) timer = setInterval(() => go(i + 1), DUR); };
+      btns.forEach((b, k) => b.addEventListener('click', () => { go(k); play(); }));
+      jor.addEventListener('mouseenter', () => { clearInterval(timer); bar.classList.add('parado'); });
+      jor.addEventListener('mouseleave', () => { if (!calmo) bar.classList.remove('parado'); go(i); play(); });
+      new IntersectionObserver(es => es.forEach(e => {
+        visivel = e.isIntersecting;
+        if (visivel) { go(i); play(); } else clearInterval(timer);
+      }), { threshold: 0.35 }).observe(jor);
+    }
+
+    // Vídeos: tocam quando aparecem e pausam fora da tela
+    const vio = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting && !calmo) v.play().catch(() => {}); else v.pause();
+    }), { threshold: 0.3 });
+    $$('video', cx).forEach(v => { vio.observe(v); if (calmo) v.controls = true; });
+
+    // Galeria: foto ampliada com setas e teclado
+    const lb = cx.querySelector('.cx-lb'), itens = $$('.cx-gal button', cx);
+    if (lb && itens.length) {
+      const img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
+      let j = 0;
+      const mostra = n => { j = (n + itens.length) % itens.length; img.src = itens[j].dataset.full; img.alt = itens[j].dataset.cap; cap.textContent = itens[j].dataset.cap; };
+      const abre = n => { mostra(n); lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('.cx-lb-x').focus(); };
+      const fecha = () => { lb.hidden = true; document.body.style.overflow = ''; itens[j].focus(); };
+      itens.forEach((b, k) => b.addEventListener('click', () => abre(k)));
+      lb.querySelector('.cx-lb-x').addEventListener('click', fecha);
+      lb.querySelector('.cx-lb-prev').addEventListener('click', () => mostra(j - 1));
+      lb.querySelector('.cx-lb-next').addEventListener('click', () => mostra(j + 1));
+      lb.addEventListener('click', e => { if (e.target === lb) fecha(); });
+      document.addEventListener('keydown', e => {
+        if (lb.hidden) return;
+        if (e.key === 'Escape') fecha();
+        if (e.key === 'ArrowLeft') mostra(j - 1);
+        if (e.key === 'ArrowRight') mostra(j + 1);
+      });
+    }
+  });
+
   const CASES = window.GETA_CASES || [];
   function cases() {
     const L = I18N.lang, pick = o => (!o ? '' : (o[L] || o.pt || ''));
