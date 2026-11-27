@@ -191,4 +191,10 @@
   });
   I18N.extend({ en, es });
   if (falta.length && /[?&]editar/.test(location.search)) console.warn('Sem tradução (tecnologia-inertizacao):', falta);
+
+  // Diagramas com texto na imagem: versões -en.jpg e -es.jpg
+  const diag = [...document.querySelectorAll('.tp-rotas .tp-mapas-fig img')].map(img => [img, img.getAttribute('src')]);
+  I18N.onChange(lang => {
+    diag.forEach(([img, src]) => { img.src = lang === 'pt' ? src : src.replace(/\.jpg/, '-' + lang + '.jpg'); });
+  });
 })();
