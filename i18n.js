@@ -231,12 +231,8 @@
       'form.privacy': 'We use your data only to reply to this message.',
       'ft.desc': 'Group of Specialists in Environmental Technologies.<br>Innovation at the Service of Sustainability.',
       'ft.privacy': 'Privacy policy',
-      'ft.cookies': 'Cookie statement',
       'ft.copy': '© 2026 GETA – Group of Specialists in Environmental Technologies.',
       'ft.photos': 'Photos: Pexels',
-      'cookie.text': 'We use cookies to improve your experience. By continuing, you agree to our Privacy Policy.',
-      'cookie.ok': 'Accept',
-      'cookie.no': 'Decline',
       // Portfolio
 
       'ax.amb': 'Environmental Engineering',
@@ -505,12 +501,8 @@
       'form.privacy': 'Usamos sus datos solo para responder a este mensaje.',
       'ft.desc': 'Grupo de Especialistas en Tecnologías Ambientales.<br>Innovación al Servicio de la Sostenibilidad.',
       'ft.privacy': 'Política de privacidad',
-      'ft.cookies': 'Declaración de cookies',
       'ft.copy': '© 2026 GETA – Grupo de Especialistas en Tecnologías Ambientales.',
       'ft.photos': 'Fotos: Pexels',
-      'cookie.text': 'Usamos cookies para mejorar su experiencia. Al continuar, acepta nuestra Política de Privacidad.',
-      'cookie.ok': 'Aceptar',
-      'cookie.no': 'Rechazar',
       // Portafolio
 
       'ax.amb': 'Ingeniería Ambiental',
