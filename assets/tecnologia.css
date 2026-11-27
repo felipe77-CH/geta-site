@@ -270,6 +270,24 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
 .cx-vs.reveal .cx-mid{transform:scale(.85);opacity:0;transition:transform .9s ease .55s,opacity .9s ease .55s}
 .cx-vs.reveal.in .cx-in,.cx-vs.reveal.in .cx-out,.cx-vs.reveal.in .cx-mid{transform:none;opacity:1}
 
+/* Vídeo explicativo da rota (tecnologia-inertizacao.html) */
+.tp-video-head{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px;align-items:end;margin-bottom:22px}
+.tp-video-head .tp-mapas-head{margin-bottom:0}
+.tp-video-head>p{color:#2c3157;font-size:15.5px;line-height:1.6}
+.tp-video-box{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#2b2018;box-shadow:0 24px 60px -24px #0b175e66}
+.tp-video-box video{width:100%;height:100%;display:block;object-fit:cover}
+.tp-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:0;cursor:pointer;color:#fff;background:linear-gradient(0deg,#06103f99,#06103f26 60%);transition:background .3s}
+.tp-play:hover{background:linear-gradient(0deg,#06103fb3,#06103f40 60%)}
+.tp-play i{position:relative;width:84px;height:84px;border-radius:50%;background:var(--green);box-shadow:0 0 0 10px #1fae3a40,0 18px 40px -10px #000a;transition:transform .3s}
+.tp-play i::after{content:"";position:absolute;left:34px;top:26px;border-left:24px solid #fff;border-top:16px solid transparent;border-bottom:16px solid transparent}
+.tp-play:hover i{transform:scale(1.08)}
+.tp-play span{font:800 16px var(--display);letter-spacing:.04em}
+.tp-play small{font:700 12px var(--display);letter-spacing:.1em;background:#ffffff26;border:1px solid #ffffff40;padding:4px 10px;border-radius:999px}
+.tp-play:focus-visible{outline:3px solid var(--green);outline-offset:-3px}
+.tp-video-box.playing .tp-play{display:none}
+@media (max-width:860px){.tp-video-head{grid-template-columns:1fr}}
+@media (max-width:720px){.tp-play i{width:64px;height:64px;box-shadow:0 0 0 7px #1fae3a40}.tp-play i::after{left:26px;top:20px;border-left-width:18px;border-top-width:12px;border-bottom-width:12px}.tp-play span{font-size:14px}}
+
 /* Ensaio com vídeo + texto (tecnologia-inertizacao.html) */
 .cx-proof{position:relative;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;max-width:980px;margin:0 auto;padding:34px 44px;border-radius:32px;
   background:radial-gradient(circle at 1px 1px,#0b175e14 1px,transparent 0) 0 0/22px 22px,linear-gradient(180deg,#f7f9fe,#eef3fc);border:1px solid #e1e8f6;box-shadow:0 40px 90px -30px #0b175e40}

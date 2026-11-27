@@ -63,6 +63,14 @@
      `Volver inerte el lodo es lo que abre destinos más baratos y seguros.`],
     [`Imagens ilustrativas.`, `Illustrative images.`, `Imágenes ilustrativas.`],
 
+    // ---- Vídeo explicativo
+    [`Nossa rota tecnológica`, `Our technology route`, `Nuestra ruta tecnológica`],
+    [`A inertização de lodos em 1 minuto`, `Sludge inertization in 1 minute`, `La inertización de lodos en 1 minuto`],
+    [`Do desafio do lodo de ETE ao sólido não lixiviável: veja como os polímeros GETA atuam no floco, as etapas do processo e os testes com lodo real.`,
+     `From the challenge of WWTP sludge to a non-leachable solid: see how GETA polymers act on the floc, the process steps and the tests with real sludge. (Video in Portuguese.)`,
+     `Del desafío del lodo de PTAR al sólido no lixiviable: vea cómo actúan los polímeros GETA en el flóculo, las etapas del proceso y las pruebas con lodo real. (Video en portugués.)`],
+    [`Assistir ao vídeo`, `Watch the video`, `Ver el video`],
+
     // ---- Solução GETA
     [`Solução GETA`, `GETA solution`, `Solución GETA`],
     [`Desaguar e inertizar na mesma etapa`, `Dewatering and inertization in a single step`, `Deshidratar e inertizar en la misma etapa`],
@@ -168,7 +176,7 @@
   // Onde procurar os textos (sem tocar no que já tem data-i18n)
   const SEL = ['.tp-hero .eyebrow', '.tp-hero .lead', '.tp-badges>span', '.tp-mapas-head .eyebrow', '.tp-mapas-head h2',
     '.tp-mapas-tag', '.tp-mapas-txt h3', '.tp-mapas-txt article>p', '.tp-mapas-geta>b', '.tp-mapas-geta>p', '.tp-list-t',
-    '.tp-imp-list li', '.tp-mapas-src', '.cx .eyebrow', '.cx h3', '.cx h4', '.cx .btn', '.cx-head p', '.cx-tag',
+    '.tp-imp-list li', '.tp-mapas-src', '.tp-video-head>p', '.tp-play span','.cx .eyebrow', '.cx h3', '.cx h4', '.cx .btn', '.cx-head p', '.cx-tag',
     '.cx-checks li', '.cx-proof-txt p', '.cx-proof-fig figcaption', '.cx-pot-c p', '.cx-cta p', '.tp-strip h3'].join(',');
   const norm = s => s.replace(/\s+/g, ' ').trim();
   const map = new Map(T.map(r => [norm(r[0]), r]));

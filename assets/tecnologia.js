@@ -45,6 +45,14 @@
     go(0); play();
   });
 
+  // Vídeo explicativo: o botão grande dá o play e libera os controles do vídeo
+  $$('.tp-video-box').forEach(box => {
+    const v = box.querySelector('video'), b = box.querySelector('.tp-play');
+    if (!v || !b) return;
+    b.addEventListener('click', () => { box.classList.add('playing'); v.controls = true; v.play().catch(() => {}); v.focus(); });
+    v.addEventListener('ended', () => { box.classList.remove('playing'); v.controls = false; v.load(); });
+  });
+
   // ===== Case de sucesso (Fazenda Rio Grande) =====
   $$('.cx').forEach(cx => {
     const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
