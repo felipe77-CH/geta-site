@@ -8,9 +8,9 @@
 <link rel="icon" href="img/geta-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/portfolio.css?v=20261126t">
-<link rel="stylesheet" href="assets/mega.css?v=20261126t">
-<link rel="stylesheet" href="assets/tecnologia.css?v=20261126t">
+<link rel="stylesheet" href="assets/portfolio.css?v=20261127b">
+<link rel="stylesheet" href="assets/mega.css?v=20261127b">
+<link rel="stylesheet" href="assets/tecnologia.css?v=20261127b">
 </head>
 <!-- =====================================================================
   TECNOLOGIA 01: Tratamento de Chorume  (tecnologia-chorume.html)
@@ -88,21 +88,86 @@
           </div>
             <div class="tp-mapas-leg">
               <div class="leg on">
-                <h4>Porte (toneladas/dia)</h4>
-                <ul><li><i style="background:#9bcfc0"></i><span>Pequeno porte (até 20)</span><b>2.093</b></li><li><i style="background:#1f94a8"></i><span>Médio porte (20 a 200)</span><b>690</b></li><li><i style="background:#164b7e"></i><span>Grande porte (acima de 200)</span><b>182</b></li><li><i style="background:#c9cbcd"></i><span>Sem dado de volume</span><b>222</b></li></ul>
+                <h4><span>Porte do aterro</span><em>nº de unidades</em></h4>
+                <ul><li><i style="background:#9bcfc0"></i><span>Pequeno porte (até 20 t/dia)</span><b>2.093</b></li><li><i style="background:#1f94a8"></i><span>Médio porte (20 a 200 t/dia)</span><b>690</b></li><li><i style="background:#164b7e"></i><span>Grande porte (acima de 200 t/dia)</span><b>182</b></li><li><i style="background:#c9cbcd"></i><span>Sem dado de volume</span><b>222</b></li></ul>
               </div>
               <div class="leg">
-                <h4>Situação do lixiviado</h4>
+                <h4><span>Situação do lixiviado</span><em>nº de unidades</em></h4>
                 <ul><li><i style="background:#cd386a"></i><span>Sem tratamento declarado</span><b>459</b></li><li><i style="background:#79bc21"></i><span>Tratamento sem tecnologia identificada</span><b>464</b></li><li><i style="background:#e88f04"></i><span>Externo / terceirizado</span><b>5</b></li><li><i style="background:#bf9705"></i><span>Convencional (lagoas)</span><b>2</b></li><li><i style="background:#1f81d6"></i><span>Avançado (membranas)</span><b>3</b></li><li><i style="background:#9aa3a7"></i><span>Desconhecido</span><b>2.254</b></li></ul>
               </div>
               <div class="leg">
-                <h4>Tipo de unidade</h4>
+                <h4><span>Tipo de unidade</span><em>nº de unidades</em></h4>
                 <ul><li><i style="background:#169f73"></i><span>Aterro sanitário</span><b>684</b></li><li><i style="background:#ed9f15"></i><span>Aterro controlado</span><b>290</b></li><li><i style="background:#ba2157"></i><span>Lixão</span><b>1.556</b></li><li><i style="background:#889192"></i><span>Aterro de inertes</span><b>657</b></li></ul>
               </div>
             </div>
         </div>
       </div>
       <p class="tp-mapas-src">Fonte: base de aterros do Brasil da GETA, a partir do SINISA 2023 (Ministério das Cidades). O volume de chorume é estimado a partir das toneladas recebidas, não medido. O tamanho de cada ponto é proporcional às toneladas por dia.</p>
+    </section>
+
+    <!-- IMPACTOS DO CHORUME: mesmo formato dos mapas (imagem à esquerda, texto à direita), 5 slides.
+         Para trocar uma imagem: substitua o arquivo em img/tecnologias/chorume/ (formato 4:3). -->
+    <section class="tp-mapas tp-impactos" data-slides aria-roledescription="carrossel" aria-label="Impactos do chorume">
+      <div class="tp-mapas-head">
+        <span class="eyebrow">Impactos do chorume</span>
+        <h2>Por que tratar o chorume é urgente</h2>
+      </div>
+      <div class="tp-mapas-grid">
+        <div>
+          <div class="tp-mapas-fig">
+          <img src="img/tecnologias/chorume/impacto-geracao.jpg" alt="Tubo descarregando chorume escuro em um tanque de concreto, com a manta impermeável de um aterro ao fundo" class="on">
+          <img src="img/tecnologias/chorume/impacto-agua.jpg" alt="Canais de chorume escuro escorrendo ao pé de um lixão a céu aberto" loading="lazy">
+          <img src="img/tecnologias/chorume/impacto-toxicidade.jpg" alt="Grande quantidade de peixes mortos boiando em um rio" loading="lazy">
+          <img src="img/tecnologias/chorume/impacto-carga-organica.jpg" alt="Efluente escuro e espumoso saindo de um tubo" loading="lazy">
+          <img src="img/tecnologias/chorume/impacto-solo.jpg" alt="Técnico com roupa de proteção coletando amostra de solo contaminado às margens de um curso d'água" loading="lazy">
+          </div>
+          <div class="tp-mapas-nav">
+            <button type="button" class="tp-prev" aria-label="Anterior">‹</button>
+            <div class="tp-dots"><button type="button" aria-label="1: Como o chorume se forma" class="on"></button><button type="button" aria-label="2: Recursos hídricos"></button><button type="button" aria-label="3: Toxicidade"></button><button type="button" aria-label="4: Carga orgânica"></button><button type="button" aria-label="5: Solo"></button></div>
+            <button type="button" class="tp-next" aria-label="Próximo">›</button>
+          </div>
+        </div>
+        <div class="tp-mapas-side">
+          <div class="tp-mapas-txt" aria-live="polite">
+          <article class="on">
+            <span class="tp-mapas-tag">1 de 5 · Como o chorume se forma</span>
+            <h3>Um líquido que nasce dentro do lixo</h3>
+            <p>O chorume, ou lixiviado, é o líquido escuro que se forma em aterros e lixões quando a água da chuva atravessa a massa de resíduos e se soma à umidade da matéria orgânica em decomposição. No caminho, ele dissolve e arrasta matéria orgânica, amônia, sais e metais.</p>
+            <ul class="tp-imp-list"><li>Chuva que infiltra na massa de resíduos</li><li>Umidade e decomposição da fração orgânica</li><li>Gerado durante a operação e por décadas após o encerramento</li><li>Precisa ser drenado, coletado e tratado antes do descarte</li></ul>
+            <div class="tp-mapas-geta"><b>Por que tratar</b><p>Sem coleta e tratamento, o chorume escapa para o solo e a água. Por isso cada aterro precisa de uma rota de tratamento adequada ao seu chorume.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">2 de 5 · Recursos hídricos</span>
+            <h3>Contaminação dos recursos hídricos</h3>
+            <p>Quando escapa, o chorume infiltra até os lençóis freáticos ou escorre para rios e lagos, comprometendo a água usada para abastecimento, irrigação e pesca. Uma vez contaminado, um aquífero pode levar décadas para se recuperar, e a água deixa de servir a quem depende dela.</p>
+            <ul class="tp-imp-list"><li>Infiltração e contaminação das águas subterrâneas</li><li>Contaminação de rios, lagos e corpos d'água</li><li>Alteração da qualidade físico-química da água</li><li>Degradação de ecossistemas aquáticos e perda de biodiversidade</li></ul>
+            <div class="tp-mapas-geta"><b>Como a GETA responde</b><p>Tratamos o chorume até os padrões de descarte (CONAMA 430/2011) ou de reúso, para que ele não chegue aos corpos d'água.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">3 de 5 · Toxicidade</span>
+            <h3>Toxicidade e contaminação química</h3>
+            <p>O chorume concentra substâncias tóxicas em níveis muito acima dos de um esgoto comum. Em contato com a água, elas afetam diretamente peixes, plantas e os microrganismos que sustentam o ecossistema. Mesmo diluído, pode causar mortandade de peixes.</p>
+            <ul class="tp-imp-list"><li>Altas concentrações de amônio (NH₄⁺) e amônia livre (NH₃)</li><li>Metais pesados e elementos potencialmente tóxicos</li><li>Alta salinidade e condutividade elétrica</li><li>Toxicidade para organismos aquáticos e microrganismos</li></ul>
+            <div class="tp-mapas-geta"><b>Como a GETA responde</b><p>Removemos o nitrogênio amoniacal ou o recuperamos como insumo agrícola, e imobilizamos os metais em um lodo inerte.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">4 de 5 · Carga orgânica</span>
+            <h3>Alta carga orgânica e compostos recalcitrantes</h3>
+            <p>A cor escura do chorume vem de uma matéria orgânica complexa, que consome o oxigênio da água e resiste à degradação natural. É isso que faz os tratamentos convencionais falharem com frequência.</p>
+            <ul class="tp-imp-list"><li>DQO e DBO muito elevadas</li><li>Substâncias húmicas e matéria orgânica complexa</li><li>Compostos recalcitrantes, de difícil biodegradação</li><li>Persistência dos poluentes e limites dos tratamentos convencionais</li></ul>
+            <div class="tp-mapas-geta"><b>Como a GETA responde</b><p>Usamos rotas físico-químicas próprias, que não dependem de sistemas biológicos e tratam a fração recalcitrante.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">5 de 5 · Solo</span>
+            <h3>Degradação e contaminação do solo</h3>
+            <p>No solo, o chorume se infiltra e se acumula, alterando o terreno por anos. Os contaminantes chegam à vegetação e à fauna e podem voltar à água a cada chuva. Recuperar uma área contaminada é lento, caro e exige anos de monitoramento.</p>
+            <ul class="tp-imp-list"><li>Infiltração e acúmulo de contaminantes no solo</li><li>Alteração das propriedades físico-químicas do terreno</li><li>Acúmulo de metais e substâncias potencialmente tóxicas</li><li>Efeitos na vegetação, na microbiota e na biodiversidade terrestre</li></ul>
+            <div class="tp-mapas-geta"><b>Como a GETA responde</b><p>Geramos um lodo inerte e hidrofóbico, que não lixivia, e tratamos os concentrados de osmose em vez de descartá-los.</p></div>
+          </article>
+          </div>
+        </div>
+      </div>
+      <p class="tp-mapas-src">Imagens ilustrativas.</p>
     </section>
 
     <div class="tp-grid">
@@ -206,10 +271,10 @@
   </div>
 </section>
 
-<script src="i18n.js?v=20261126t"></script>
-<script src="cases/cases.js?v=20261126t"></script>
-<script src="assets/mega.js?v=20261126t"></script>
-<script src="assets/portfolio.js?v=20261126t"></script>
-<script src="assets/tecnologia.js?v=20261126t"></script>
+<script src="i18n.js?v=20261127b"></script>
+<script src="cases/cases.js?v=20261127b"></script>
+<script src="assets/mega.js?v=20261127b"></script>
+<script src="assets/portfolio.js?v=20261127b"></script>
+<script src="assets/tecnologia.js?v=20261127b"></script>
 </body>
 </html>
