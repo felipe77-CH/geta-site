@@ -67,8 +67,8 @@
     [`Nossa rota tecnológica`, `Our technology route`, `Nuestra ruta tecnológica`],
     [`A inertização de lodos em 1 minuto`, `Sludge inertization in 1 minute`, `La inertización de lodos en 1 minuto`],
     [`Do desafio do lodo de ETE ao sólido não lixiviável: veja como os polímeros GETA atuam no floco, as etapas do processo e os testes com lodo real.`,
-     `From the challenge of WWTP sludge to a non-leachable solid: see how GETA polymers act on the floc, the process steps and the tests with real sludge. (Video in Portuguese.)`,
-     `Del desafío del lodo de PTAR al sólido no lixiviable: vea cómo actúan los polímeros GETA en el flóculo, las etapas del proceso y las pruebas con lodo real. (Video en portugués.)`],
+     `From the challenge of WWTP sludge to a non-leachable solid: see how GETA polymers act on the floc, the process steps and the tests with real sludge.`,
+     `Del desafío del lodo de PTAR al sólido no lixiviable: vea cómo actúan los polímeros GETA en el flóculo, las etapas del proceso y las pruebas con lodo real.`],
     [`Assistir ao vídeo`, `Watch the video`, `Ver el video`],
 
     // ---- Solução GETA
