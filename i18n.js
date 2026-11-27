@@ -154,7 +154,7 @@
       't2.title': 'Chemical Sludge Inertization',
       't2.text': 'Technology route based on chemical encapsulation reactions of metals.',
       't3.title': 'Selective Oxidation Process (SOP)',
-      't3.text': 'A gaseous oxidizing agent developed by GETA attacks only the inhibiting compounds, to produce more biomethane.',
+      't3.text': 'Cold plasma that generates radical species to treat industrial effluents, such as vinasse and lignocellulosic effluents.',
       't4.title': 'High-Performance RDF',
       't4.text': 'High calorific value and low moisture in refuse-derived fuel.',
       // Página de tecnologias (tecnologia.html)
@@ -420,7 +420,7 @@
       't2.title': 'Inertización Química de Lodos',
       't2.text': 'Ruta tecnológica basada en reacciones de encapsulamiento químico de metales.',
       't3.title': 'Proceso de Oxidación Selectiva (POS)',
-      't3.text': 'Un agente oxidativo gaseoso desarrollado por GETA ataca solo los compuestos inhibidores, para generar más biometano.',
+      't3.text': 'Plasma frío que genera especies radicales para tratar efluentes industriales, como vinaza y efluentes lignocelulósicos.',
       't4.title': 'CDR de Alto Rendimiento',
       't4.text': 'Elevado poder calorífico y baja humedad en combustible derivado de residuos.',
       // Página de tecnologías (tecnologia.html)

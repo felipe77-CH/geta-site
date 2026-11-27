@@ -14,7 +14,7 @@
   const T = [
     // ---- Topo
     [`Tecnologia 04`, `Technology 04`, `Tecnología 04`],
-    [`<strong>Mais biometano a partir da mesma vinhaça.</strong> Desenvolvemos um <strong>agente oxidativo gasoso</strong>, gerado em um reator de plasma, que quebra só os compostos que travam a biodigestão e <strong>preserva a matéria orgânica que vira metano</strong>.`, `<strong>More biomethane from the same vinasse.</strong> We developed a <strong>gaseous oxidizing agent</strong>, generated in a plasma reactor, that breaks down only the compounds that block anaerobic digestion and <strong>keeps the organic matter that becomes methane</strong>.`, `<strong>Más biometano a partir de la misma vinaza.</strong> Desarrollamos un <strong>agente oxidativo gaseoso</strong>, generado en un reactor de plasma, que rompe solo los compuestos que traban la biodigestión y <strong>preserva la materia orgánica que se vuelve metano</strong>.`],
+    [`<strong>Plasma frio para tratar efluentes industriais.</strong> Desenvolvemos uma tecnologia de <strong>plasma frio</strong> que gera espécies radicais capazes de quebrar só os compostos difíceis de degradar. Ela trata <strong>efluentes lignocelulósicos e vinhaça</strong>, e hoje está em <strong>implantação em escala industrial</strong> para a vinhaça.`, `<strong>Cold plasma to treat industrial effluents.</strong> We developed a <strong>cold plasma</strong> technology that generates radical species able to break down only the hard-to-degrade compounds. It treats <strong>lignocellulosic effluents and vinasse</strong>, and is now being <strong>implemented at industrial scale</strong> for vinasse.`, `<strong>Plasma frío para tratar efluentes industriales.</strong> Desarrollamos una tecnología de <strong>plasma frío</strong> que genera especies radicales capaces de romper solo los compuestos difíciles de degradar. Trata <strong>efluentes lignocelulósicos y vinaza</strong>, y hoy está en <strong>implantación a escala industrial</strong> para la vinaza.`],
     [`Patente de invenção depositada · 10 reivindicações`, `Invention patent filed · 10 claims`, `Patente de invención presentada · 10 reivindicaciones`],
     [`Agente oxidativo gasoso desenvolvido pela GETA`, `Gaseous oxidizing agent developed by GETA`, `Agente oxidativo gaseoso desarrollado por GETA`],
     [`Pré-tratamento antes do biodigestor`, `Pre-treatment before the digester`, `Pretratamiento antes del biodigestor`],
@@ -62,10 +62,10 @@
     [`Oxidar só o que atrapalha, com um agente oxidativo gasoso próprio`, `Oxidize only what gets in the way, with our own gaseous oxidizing agent`, `Oxidar solo lo que estorba, con un agente oxidativo gaseoso propio`],
     [`1 de 4 · Como funciona`, `1 of 4 · How it works`, `1 de 4 · Cómo funciona`],
     [`Uma oxidação que escolhe o alvo`, `An oxidation that picks its target`, `Una oxidación que elige el objetivo`],
-    [`Desenvolvemos um agente oxidativo gasoso, gerado em um reator de plasma. Em contato com a vinhaça, ele forma radicais que atacam os compostos escuros que travam a digestão e deixam de lado a matéria orgânica simples.`, `We developed a gaseous oxidizing agent, generated in a plasma reactor. In contact with the vinasse, it forms radicals that attack the dark compounds that block digestion and leave the simple organic matter alone.`, `Desarrollamos un agente oxidativo gaseoso, generado en un reactor de plasma. En contacto con la vinaza, forma radicales que atacan los compuestos oscuros que traban la digestión y dejan de lado la materia orgánica simple.`],
+    [`Nossa tecnologia de plasma frio gera um agente oxidativo gasoso e espécies radicais. Em contato com a vinhaça, eles atacam os compostos escuros que travam a digestão e deixam de lado a matéria orgânica simples.`, `Our cold plasma technology generates a gaseous oxidizing agent and radical species. In contact with the vinasse, they attack the dark compounds that block digestion and leave the simple organic matter alone.`, `Nuestra tecnología de plasma frío genera un agente oxidativo gaseoso y especies radicales. En contacto con la vinaza, atacan los compuestos oscuros que traban la digestión y dejan de lado la materia orgánica simple.`],
     [`O que acontece`, `What happens`, `Qué ocurre`],
-    [`O agente oxidativo é gerado no plasma`, `The oxidizing agent is generated in the plasma`, `El agente oxidativo se genera en el plasma`],
-    [`Formam-se radicais seletivos`, `Selective radicals form`, `Se forman radicales selectivos`],
+    [`O plasma frio gera as espécies radicais`, `The cold plasma generates the radical species`, `El plasma frío genera las especies radicales`],
+    [`Elas reagem de forma seletiva`, `They react selectively`, `Reaccionan de forma selectiva`],
     [`As melanoidinas e as fibras são quebradas`, `Melanoidins and fibres are broken down`, `Las melanoidinas y las fibras se rompen`],
     [`A matéria orgânica fica preservada`, `The organic matter is preserved`, `La materia orgánica queda preservada`],
     [`Em resumo`, `In short`, `En resumen`],
@@ -114,6 +114,26 @@
     [`Ataque seletivo aos compostos aromáticos`, `Selective attack on aromatic compounds`, `Ataque selectivo a los compuestos aromáticos`],
     [`Mesmo princípio aplicado à vinhaça`, `Same principle applied to vinasse`, `Mismo principio aplicado a la vinaza`],
 
+    // ---- Trajetória
+    [`Plasma frio · espécies radicais`, `Cold plasma · radical species`, `Plasma frío · especies radicales`],
+    [`Sistema industrial em implantação (vinhaça)`, `Industrial system being implemented (vinasse)`, `Sistema industrial en implantación (vinaza)`],
+    [`<i></i>Em implantação industrial`, `<i></i>Industrial implementation underway`, `<i></i>En implantación industrial`],
+    [`Nossa trajetória`, `Our track record`, `Nuestra trayectoria`],
+    [`Do laboratório à escala industrial`, `From the lab to industrial scale`, `Del laboratorio a la escala industrial`],
+    [`Desenvolvemos uma tecnologia de plasma frio que gera espécies radicais para tratar diferentes efluentes industriais. Depois dos ensaios, a vinhaça é a primeira aplicação a chegar à escala industrial.`, `We developed a cold plasma technology that generates radical species to treat different industrial effluents. After the tests, vinasse is the first application to reach industrial scale.`, `Desarrollamos una tecnología de plasma frío que genera especies radicales para tratar distintos efluentes industriales. Después de los ensayos, la vinaza es la primera aplicación en llegar a la escala industrial.`],
+    [`Desenvolvimento`, `Development`, `Desarrollo`],
+    [`Plasma frio`, `Cold plasma`, `Plasma frío`],
+    [`Tecnologia própria que gera espécies radicais e um agente oxidativo gasoso.`, `In-house technology that generates radical species and a gaseous oxidizing agent.`, `Tecnología propia que genera especies radicales y un agente oxidativo gaseoso.`],
+    [`Proteção`, `Protection`, `Protección`],
+    [`Patente depositada`, `Patent filed`, `Patente presentada`],
+    [`Patente de invenção com 10 reivindicações.`, `Invention patent with 10 claims.`, `Patente de invención con 10 reivindicaciones.`],
+    [`Ensaios`, `Tests`, `Ensayos`],
+    [`Diferentes efluentes`, `Different effluents`, `Distintos efluentes`],
+    [`Ensaios com efluentes lignocelulósicos e com vinhaça.`, `Tests with lignocellulosic effluents and with vinasse.`, `Ensayos con efluentes lignocelulósicos y con vinaza.`],
+    [`Hoje`, `Today`, `Hoy`],
+    [`Escala industrial`, `Industrial scale`, `Escala industrial`],
+    [`Sistema industrial para tratamento de vinhaça em fase de implantação.`, `Industrial vinasse treatment system in the implementation phase.`, `Sistema industrial para tratamiento de vinaza en fase de implantación.`],
+
     // ---- Ganhos esperados
     [`Ganhos esperados`, `Expected gains`, `Ganancias esperadas`],
     [`Mais energia da mesma vinhaça`, `More energy from the same vinasse`, `Más energía de la misma vinaza`],
@@ -128,13 +148,11 @@
     [`A oxidação acontece só onde é necessária.`, `Oxidation happens only where it is needed.`, `La oxidación ocurre solo donde es necesaria.`],
 
     // ---- Traga a sua vinhaça
-    [`Traga a sua vinhaça`, `Bring us your vinasse`, `Tráiganos su vinaza`],
+    [`Traga o seu efluente`, `Bring us your effluent`, `Tráiganos su efluente`],
     [`Nós definimos a rota de ação`, `We define the course of action`, `Nosotros definimos la ruta de acción`],
-    [`Cada vinhaça é diferente. Envie uma amostra: avaliamos em laboratório o potencial de metano antes e depois do POS e propomos a configuração certa para a sua usina.`,
-     `Every vinasse is different. Send us a sample: we assess its methane potential in the laboratory before and after the SOP and propose the right setup for your plant.`,
-     `Cada vinaza es diferente. Envíenos una muestra: evaluamos en laboratorio el potencial de metano antes y después del POS y proponemos la configuración adecuada para su planta.`],
+    [`Vinhaça, efluente lignocelulósico ou outro efluente industrial difícil de tratar: envie uma amostra. Avaliamos em laboratório o efeito do POS e propomos a configuração certa para a sua planta.`, `Vinasse, lignocellulosic effluent or another hard-to-treat industrial effluent: send us a sample. We assess the effect of the SOP in the laboratory and propose the right setup for your plant.`, `Vinaza, efluente lignocelulósico u otro efluente industrial difícil de tratar: envíenos una muestra. Evaluamos en laboratorio el efecto del POS y proponemos la configuración adecuada para su planta.`],
     [`Análise da amostra e ensaio de bancada`, `Sample analysis and bench test`, `Análisis de la muestra y ensayo de laboratorio`],
-    [`Potencial de metano antes e depois`, `Methane potential before and after`, `Potencial de metano antes y después`],
+    [`Resultados antes e depois do tratamento`, `Results before and after treatment`, `Resultados antes y después del tratamiento`],
     [`Piloto antes da escala real`, `Pilot before full scale`, `Piloto antes de la escala real`],
     [`Fale com um especialista`, `Talk to a specialist`, `Hable con un especialista`],
     [`Cases relacionados`, `Related cases`, `Casos relacionados`],
@@ -144,7 +162,7 @@
   const SEL = ['.tp-hero .eyebrow', '.tp-hero .lead', '.tp-badges>span', '.tp-mapas-head .eyebrow', '.tp-mapas-head h2',
     '.tp-mapas-tag', '.tp-mapas-txt h3', '.tp-mapas-txt article>p', '.tp-mapas-geta>b', '.tp-mapas-geta>p', '.tp-list-t',
     '.tp-imp-list li', '.tp-mapas-src', '.cx .eyebrow', '.cx h3', '.cx h4', '.cx .btn', '.cx-head p', '.cx-tag',
-    '.cx-checks li', '.cx-proof-txt p', '.cx-pot-c p', '.cx-cta p', '.tp-strip h3'].join(',');
+    '.cx-checks li', '.cx-proof-txt p', '.cx-live', '.cx-tl b', '.cx-tl h4', '.cx-tl p', '.cx-pot-c p', '.cx-cta p', '.tp-strip h3'].join(',');
   const norm = s => s.replace(/\s+/g, ' ').trim();
   const map = new Map(T.map(r => [norm(r[0]), r]));
   const en = {}, es = {}, falta = [];

@@ -222,6 +222,16 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
 .cx-light .cx-head h3{color:var(--navy)}
 .cx-head p{margin-top:10px;font-size:16.5px;color:var(--muted)}
 .cx-dark .cx-head p{color:#c9d3f5}
+.cx-dark .cx-head .cx-live{display:flex;width:max-content}
+/* linha do tempo sobre fundo escuro (ex.: trajetória da POS) */
+.cx-dark .cx-tl::before{background:#ffffff26}
+.cx-dark .cx-tl::after{background:linear-gradient(90deg,#3bb0f0,#3ddc5f)}
+.cx-dark .cx-tl li::before{background:#0b175e;border-color:#3bb0f0}
+.cx-dark .cx-tl li:last-child::before{background:#3ddc5f;border-color:#3ddc5f}
+.cx-dark .cx-tl b{color:#8fd0ff}
+.cx-dark .cx-tl li:last-child b{color:#7ee08f}
+.cx-dark .cx-tl h4{color:#fff}
+.cx-dark .cx-tl p{color:#c9d3f5}
 
 
 /* Vídeos */
