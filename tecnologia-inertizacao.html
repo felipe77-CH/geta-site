@@ -10,23 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/portfolio.css?v=20261127l">
 <link rel="stylesheet" href="assets/mega.css?v=20261127l">
-<link rel="stylesheet" href="assets/tecnologia.css?v=20261127l">
+<link rel="stylesheet" href="assets/tecnologia.css?v=20261127n">
 </head>
 <!-- =====================================================================
   TECNOLOGIA 02: Desaguamento e Inertização de Lodos  (tecnologia-inertizacao.html)
   ---------------------------------------------------------------------
-  COMO PREENCHER
-  1. Troque cada <p class="tbd">…</p> pelo texto real (pode usar <p>, <ul>,
-     <figure><img …><figcaption>…</figcaption></figure>). Destaques: troque
-     o "—" pelo valor e apague a classe "tbd" do <div class="kpi">.
-  2. Partes com "tbd" NÃO aparecem no site. Para ver o que falta, abra
-     tecnologia-inertizacao.html?editar=1
-  3. Imagens: salve em img/tecnologias/inertizacao/ e use
-     <figure><img src="img/tecnologias/inertizacao/arquivo.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure>
-  4. "Cases relacionados": liste os slugs em data-cases="slug1,slug2"
-     (só aparecem os cases publicados em cases/cases.js).
-  5. Os textos do corpo estão em português (aparecem nos três idiomas).
-     Título, abas e seções fixas têm tradução em i18n.js.
+  Mesma estrutura da página de chorume, em versão mais curta:
+  1. Carrossel "O problema do lodo" (foto à esquerda, texto à direita).
+  2. Carrossel "Solução GETA" (diagramas sobre fundo branco).
+  3. Vídeo do ensaio (o lodo inertizado não lixivia) e potencial do lodo.
+  4. Chamada final "Traga o seu lodo".
+  Imagens: img/cases/inertizacao-residuos-sabesp/ e img/tecnologias/.
+  Idiomas: título e seções fixas em i18n.js; os textos do corpo são
+  traduzidos em assets/i18n-inertizacao.js: ao mudar um texto em
+  português, mude lá também.
   ===================================================================== -->
 <body data-page="tech" data-root="" data-title-key="meta.tc.inertizacao" data-desc-key="t2.text">
 
@@ -38,122 +35,200 @@
     <nav class="crumb" aria-label="breadcrumb"><a href="index.html">GETA</a><span>/</span><a href="tecnologia.html" data-i18n="nav.tech">Tecnologia</a><span>/</span><span data-i18n="tp.tab2">Desaguamento e Inertização de Lodos</span></nav>
     <span class="eyebrow">Tecnologia 02</span>
     <h1 data-i18n="t2.title">Desaguamento e Inertização de Lodos</h1>
-    <p class="lead">Um <strong>mix proprietário de polímeros</strong>, aplicado na etapa de desaguamento, encapsula os metais do lodo em uma matriz hidrofóbica e expulsa a água presa nos flocos. O resultado é <strong>menos volume, desaguamento mais rápido e um sólido que não lixivia</strong>, pronto para uma destinação mais barata e segura.</p>
+    <p class="lead"><strong>Do lodo a um sólido seguro.</strong> Um <strong>mix proprietário de polímeros</strong>, aplicado na etapa de desaguamento, encapsula os metais do lodo e expulsa a água presa nos flocos. O resultado é <strong>menos volume, desaguamento mais rápido e um sólido que não lixivia</strong>, pronto para uma destinação mais barata e segura.</p>
     <div class="tp-badges"><span>Sólido não lixiviável · ABNT NBR 10004</span><span class="blue">Spin-off da tecnologia de chorume GETA</span><span class="blue">Testada com lodo da ETE Barueri (SABESP)</span></div>
   </div>
 </section>
 
 <section class="tp">
   <div class="wrap">
-    <div class="tp-kpis">
-      <div class="kpi"><b>≥ 50%</b><span>de redução no teor de umidade do lodo, esperada no piloto</span></div>
-      <div class="kpi"><b>NBR 10004</b><span>sólido inertizado e não lixiviável</span></div>
-      <div class="kpi"><b>~3 mL/L</b><span>de dosagem média do mix de polímeros</span></div>
-      <div class="kpi"><b>20 m³/h</b><span>de capacidade do piloto, escalável para mais ou menos</span></div>
-    </div>
-
-    <div class="tp-grid">
-      <section class="tp-block">
-        <h3>O problema que resolve</h3>
-        <p>O lodo das estações de tratamento de esgoto sai com <strong>muita água</strong>, composição variável e pode conter <strong>metais pesados</strong> (cádmio, chumbo, mercúrio, cromo, cobre, zinco) e outros contaminantes, como fármacos, PFAS e microplásticos, que se concentram na fase sólida.</p>
-        <p>Na prática, isso significa transportar grandes volumes de material úmido até o aterro, a um custo alto, e ocupar rapidamente a sua capacidade. Usos mais sustentáveis, como recuperação de áreas degradadas ou biossólidos, só são possíveis se o lodo for estável e <strong>não liberar metais</strong>.</p>
-      </section>
-      <section class="tp-block">
-        <h3>Como funciona</h3>
-        <p>Os polímeros de encapsulamento atuam em três frentes ao mesmo tempo:</p>
-        <ul>
-          <li><strong>Neutralizam as cargas</strong> superficiais e agregam as partículas.</li>
-          <li><strong>Encapsulam os metais</strong> em uma matriz polimérica hidrofóbica, uma barreira físico-química que reduz a sua solubilidade e mobilidade.</li>
-          <li><strong>Expulsam a água intersticial</strong> dos poros e da estrutura coloidal, formando flocos mais densos, coesos e estáveis.</li>
-        </ul>
-        <figure><img src="img/cases/inertizacao-residuos-sabesp/mecanismo-inertizacao.jpg" alt="Polímeros de encapsulamento envolvem metais e matéria orgânica e expulsam a água do floco"><figcaption>Interação dos polímeros com metais e matéria orgânica (1) e expulsão da água (2).</figcaption></figure>
-      </section>
-
-      <section class="tp-block full">
-        <h3>Etapas do processo</h3>
-        <div class="steps">
-          <div class="step"><b>01</b><h4>Acondicionamento</h4><p>Dosagem controlada do mix de polímeros no lodo, com agitação: neutralização de cargas e início do encapsulamento.</p></div>
-          <div class="step"><b>02</b><h4>Adensamento</h4><p>A matriz hidrofóbica libera a água intersticial e forma flocos densos e coesos.</p></div>
-          <div class="step"><b>03</b><h4>Desaguamento</h4><p>Separação sólido–líquido em filtro de discos ou prensa, em menos tempo.</p></div>
-          <div class="step"><b>04</b><h4>Desidratação</h4><p>Sólido com mais teor de sólidos e menos volume para manejar e transportar.</p></div>
-          <div class="step"><b>05</b><h4>Disposição ou valorização</h4><p>Sólido não lixiviável (ABNT NBR 10004), para aterro com menor impacto ou uso benéfico.</p></div>
+    <!-- O PROBLEMA DO LODO: 3 slides (foto 4:3 à esquerda, texto à direita). -->
+    <section class="tp-mapas tp-impactos" data-slides aria-roledescription="carrossel" aria-label="O problema do lodo">
+      <div class="tp-mapas-head">
+        <span class="eyebrow">O problema do lodo</span>
+        <h2>Um resíduo pesado, úmido e difícil de destinar</h2>
+      </div>
+      <div class="tp-mapas-grid">
+        <div>
+          <div class="tp-mapas-fig">
+          <img src="img/tecnologias/chorume/case/cacambas-lodo.jpg?v=20261127l" alt="Caçambas recebendo lodo úmido de uma rosca transportadora em uma estação de tratamento" class="on">
+          <img src="img/tecnologias/chorume/impacto-solo.jpg" alt="Técnico com roupa de proteção coletando amostra de solo contaminado às margens de um curso d'água" loading="lazy">
+          <img src="img/tecnologias/chorume/impacto-geracao.jpg" alt="Tanque de concreto com a manta impermeável de um aterro ao fundo" loading="lazy">
+          </div>
+          <div class="tp-mapas-nav">
+            <button type="button" class="tp-prev" aria-label="Anterior">‹</button>
+            <div class="tp-dots"><button type="button" aria-label="1: Volume" class="on"></button><button type="button" aria-label="2: Contaminantes"></button><button type="button" aria-label="3: Destinação"></button></div>
+            <button type="button" class="tp-next" aria-label="Próximo">›</button>
+          </div>
         </div>
-        <figure><img src="img/cases/inertizacao-residuos-sabesp/processo-inertizacao.jpg" alt="Fluxo do tratamento de lodo com inertização química, do acondicionamento à disposição"><figcaption>Tratamento de lodo com inertização química.</figcaption></figure>
-      </section>
+        <div class="tp-mapas-side">
+          <div class="tp-mapas-txt" aria-live="polite">
+          <article class="on">
+            <span class="tp-mapas-tag">1 de 3 · Volume</span>
+            <h3>Um resíduo feito, em grande parte, de água</h3>
+            <p>O lodo das estações de tratamento sai com muita água presa entre as partículas. Mesmo depois do desaguamento convencional, a maior parte do que vai para o caminhão ainda é água. Na prática, paga-se para transportar e aterrar água.</p>
+            <ul class="tp-imp-list"><li>Grandes volumes para manejar e transportar</li><li>Frete e aterro cobrados por tonelada</li><li>Desaguamento lento, com muito polímero e energia</li><li>Ocupa rápido a capacidade dos aterros</li></ul>
+            <div class="tp-mapas-geta"><b>Por que importa</b><p>Cada ponto de umidade a menos significa menos caminhões na estrada e menos custo por tonelada.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">2 de 3 · Contaminantes</span>
+            <h3>Metais e poluentes que se concentram no lodo</h3>
+            <p>Tudo o que o tratamento retira da água acaba no lodo. Metais pesados e outros contaminantes se acumulam na fase sólida e, com a chuva, podem ser lixiviados de volta para o solo e para a água subterrânea.</p>
+            <ul class="tp-imp-list"><li>Cádmio, chumbo, mercúrio, cromo, cobre e zinco</li><li>Fármacos, PFAS e microplásticos</li><li>Risco de lixiviação no aterro e no solo</li><li>Composição que varia de um dia para o outro</li></ul>
+            <div class="tp-mapas-geta"><b>Por que importa</b><p>Um lodo que libera metais exige mais controle e limita as opções de destinação.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">3 de 3 · Destinação</span>
+            <h3>Poucas saídas, e todas caras</h3>
+            <p>Hoje, o destino mais comum do lodo é o aterro. Usos mais sustentáveis, como biossólido para a agricultura ou recuperação de áreas degradadas, só são possíveis se o lodo for estável e não liberar metais. Sem isso, as portas se fecham e o custo só cresce.</p>
+            <ul class="tp-imp-list"><li>Aterro como destino quase único</li><li>Uso agrícola sujeito à CONAMA 498/2020</li><li>Lodo instável gera odor e passivo ambiental</li><li>Custo de destinação que só aumenta</li></ul>
+            <div class="tp-mapas-geta"><b>Por que importa</b><p>Tornar o lodo inerte é o que abre destinações mais baratas e seguras.</p></div>
+          </article>
+          </div>
+        </div>
+      </div>
+      <p class="tp-mapas-src">Imagens ilustrativas.</p>
+    </section>
 
-      <section class="tp-block">
-        <h3>Onde se aplica</h3>
-        <ul>
-          <li>Lodo de <strong>estações de tratamento de esgoto</strong> sanitário.</li>
-          <li>Lodos com metais e contaminantes recalcitrantes que precisam ser imobilizados antes da destinação.</li>
-          <li>Plantas que querem reduzir o custo de transporte e a ocupação de aterro.</li>
-          <li>Projetos de valorização: <strong>biossólido</strong> para uso agrícola ou florestal (CONAMA 498/2020), recuperação de áreas degradadas, <strong>cobertura diária de aterros</strong> e aproveitamento energético.</li>
-        </ul>
-      </section>
-      <section class="tp-block">
-        <h3>Diferenciais</h3>
-        <ul>
-          <li>Faz <strong>duas coisas em uma etapa</strong>: melhora o desaguamento e inertiza os metais, já no desaguamento.</li>
-          <li>Reduz a <strong>mobilidade e a lixiviação</strong> dos metais, e não apenas o volume.</li>
-          <li>Derivada de uma tecnologia <strong>já aplicada em escala industrial</strong> no tratamento de chorume.</li>
-          <li>Abre destinações que o lodo bruto não permite, como biossólidos e recuperação de áreas.</li>
-          <li><strong>Escalável</strong>: o piloto de 20 m³/h pode ser redimensionado para vazões menores ou maiores.</li>
-        </ul>
-      </section>
+    <!-- SOLUÇÃO GETA: 4 slides com diagramas sobre fundo branco. -->
+    <section class="tp-mapas tp-impactos tp-rotas" data-slides aria-roledescription="carrossel" aria-label="Solução GETA">
+      <div class="tp-mapas-head">
+        <span class="eyebrow">Solução GETA</span>
+        <h2>Desaguar e inertizar na mesma etapa</h2>
+      </div>
+      <div class="tp-mapas-grid">
+        <div>
+          <div class="tp-mapas-fig">
+          <img src="img/cases/inertizacao-residuos-sabesp/mecanismo-inertizacao.jpg" alt="Polímeros de encapsulamento envolvem metais e matéria orgânica e expulsam a água do floco" class="on">
+          <img src="img/cases/inertizacao-residuos-sabesp/processo-inertizacao.jpg" alt="Fluxo do tratamento de lodo com inertização química, do acondicionamento à disposição" loading="lazy">
+          <img src="img/cases/capa-inertizacao-residuos-sabesp.jpg" alt="Ilustração de um floco de lodo envolvido por polímeros, com a água sendo expulsa" loading="lazy">
+          <img src="img/cases/inertizacao-residuos-sabesp/piloto-inertizacao.jpg" alt="Esquema do piloto com dosificador automático de polímero e filtro de discos" loading="lazy">
+          </div>
+          <div class="tp-mapas-nav">
+            <button type="button" class="tp-prev" aria-label="Anterior">‹</button>
+            <div class="tp-dots"><button type="button" aria-label="1: Como funciona" class="on"></button><button type="button" aria-label="2: O processo"></button><button type="button" aria-label="3: Vantagens"></button><button type="button" aria-label="4: O piloto"></button></div>
+            <button type="button" class="tp-next" aria-label="Próximo">›</button>
+          </div>
+        </div>
+        <div class="tp-mapas-side">
+          <div class="tp-mapas-txt" aria-live="polite">
+          <article class="on">
+            <span class="tp-mapas-tag">1 de 4 · Como funciona</span>
+            <h3>Polímeros que prendem os metais e soltam a água</h3>
+            <p>Um mix proprietário de polímeros é dosado no lodo antes do desaguamento. Ele envolve os metais em uma matriz que repele a água e, ao mesmo tempo, libera a água que estava presa nos flocos.</p>
+            <b class="tp-list-t">O que acontece</b>
+            <ul class="tp-imp-list"><li>Neutraliza as cargas e agrega as partículas</li><li>Encapsula os metais e reduz a sua mobilidade</li><li>Expulsa a água presa nos poros dos flocos</li><li>Forma flocos densos, coesos e estáveis</li></ul>
+            <div class="tp-mapas-geta"><b>Em resumo</b><p>Uma única etapa melhora o desaguamento e torna o lodo inerte.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">2 de 4 · O processo</span>
+            <h3>Do lodo úmido ao sólido seguro</h3>
+            <p>A tecnologia entra na linha de lodo que a estação já tem. O lodo é condicionado com o mix, adensa, passa pelo desaguamento e sai como um sólido com menos água e sem liberar poluentes.</p>
+            <b class="tp-list-t">Etapas</b>
+            <ul class="tp-imp-list"><li>Acondicionamento com dosagem controlada do mix</li><li>Adensamento e liberação da água dos flocos</li><li>Desaguamento em filtro de discos ou prensa</li><li>Sólido pronto para disposição ou valorização</li></ul>
+            <div class="tp-mapas-geta"><b>Integração</b><p>Aproveita os equipamentos de desaguamento que a estação já usa.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">3 de 4 · Vantagens</span>
+            <h3>Menos volume, menos custo, mais segurança</h3>
+            <p>O ganho não está só no volume: o metal fica preso no sólido. Por isso o lodo tratado pode seguir para destinações que o lodo bruto não permite.</p>
+            <b class="tp-list-t">Vantagens</b>
+            <ul class="tp-imp-list"><li>Redução de pelo menos 50% na umidade, esperada no piloto</li><li>Sólido não lixiviável (ABNT NBR 10004)</li><li>Dosagem média de cerca de 3 mL/L</li><li>Derivada de uma tecnologia já em escala industrial</li></ul>
+            <div class="tp-mapas-geta"><b>Resultado</b><p>Menos caminhões, menos aterro e um resíduo que não contamina.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">4 de 4 · O piloto</span>
+            <h3>Pronto para testar em campo</h3>
+            <p>Um sistema de desidratação de lodos de até 20 m³/h, em operação contínua, valida a tecnologia nas condições reais de cada estação antes da escala definitiva.</p>
+            <b class="tp-list-t">Componentes</b>
+            <ul class="tp-imp-list"><li>Bombas helicoidais para lodos viscosos</li><li>Preparo e dosagem automática do polímero</li><li>Prensa desidratadora ou filtro de discos</li><li>Painel de controle automatizado</li></ul>
+            <div class="tp-mapas-geta"><b>Escala</b><p>O piloto pode ser redimensionado para vazões menores ou maiores.</p></div>
+          </article>
+          </div>
+        </div>
+      </div>
+      <p class="tp-mapas-src">Tecnologia derivada da rota de chorume da GETA, com pedido de patente BR 10 2026 020875 2 (INPI).</p>
+    </section>
 
-      <section class="tp-block">
-        <h3>Resultados comprovados</h3>
-        <p>Em ensaio com <strong>lodo da ETE Barueri (SABESP)</strong>, o lodo inertizado se separou da água, com os sólidos sedimentados e a água clara, enquanto o lodo bruto permaneceu disperso e turvo.</p>
-        <figure><img src="img/cases/inertizacao-residuos-sabesp/ensaio-barueri.jpg" alt="Lodo bruto e lodo inertizado em água, lado a lado"><figcaption>Lodo bruto + água (esquerda) e lodo inertizado + água (direita).</figcaption></figure>
-        <p>Colocado em água limpa, o lodo inertizado <strong>permanece íntegro</strong>, sem turvar a água nem liberar os poluentes:</p>
-        <figure><video src="img/cases/inertizacao-residuos-sabesp/ensaio-lodo-agua.mp4" poster="img/cases/inertizacao-residuos-sabesp/ensaio-lodo-agua.jpg" controls muted loop playsinline preload="metadata" style="width:100%;max-width:320px;display:block;margin:0 auto;border-radius:14px;background:#000"></video><figcaption>Ensaio em laboratório com o lodo inertizado.</figcaption></figure>
-        <p class="tbd">Resultados de laboratório: ensaios de lixiviação e solubilização (NBR 10005/10006), teor de sólidos e redução de volume medidos.</p>
-      </section>
-      <section class="tp-block">
-        <h3>O piloto</h3>
-        <p>Sistema de desidratação de lodos de até <strong>20 m³/h</strong>, em operação contínua, para validar a tecnologia em condições reais:</p>
-        <ul>
-          <li>bombas helicoidais para lodos de alta viscosidade;</li>
-          <li>preparo e dosagem automática de polímero (cerca de 3 mL/L);</li>
-          <li>prensa desidratadora / filtro de discos;</li>
-          <li>agente oxidante opcional e painel de controle automatizado.</li>
-        </ul>
-        <figure><img src="img/cases/inertizacao-residuos-sabesp/piloto-inertizacao.jpg" alt="Esquema do piloto com dosificador automático de polímero e filtro de discos"><figcaption>Piloto de inertização da GETA.</figcaption></figure>
-      </section>
+  </div>
+</section>
 
-      <section class="tp-block full">
-        <h3>Propriedade intelectual</h3>
-        <p>A formulação é um <strong>mix proprietário de polímeros</strong> desenvolvido pela GETA. A tecnologia deriva da rota de tratamento de chorume da GETA, que tem <strong>pedido de patente BR 10 2026 020875 2</strong> no INPI.</p>
-        <p class="tbd">Situação da proteção específica da rota de lodo (patente própria, segredo industrial).</p>
-      </section>
-      <section class="tp-block">
-        <h3>Indicadores econômicos</h3>
-        <p class="tbd">Opcional: benefícios econômicos sem divulgar valores (esta parte não aparece no site).</p>
-      </section>
+<!-- ENSAIO + POTENCIAL + CHAMADA. Vídeos e animações em assets/tecnologia.js (bloco "Case de sucesso"). -->
+<section class="cx" aria-label="O lodo inertizado na prática">
 
-      <section class="tp-block full">
-        <h3>Cases relacionados</h3>
-        <div class="tp-cases" data-cases="inertizacao-residuos-sabesp,tecnologia-lixiviado-patente,planta-efluentes-complexos-lodos"></div>
-      </section>
-    </div>
-
-    <div class="tp-other">
-      <h2 data-i18n="tp.other">Outras tecnologias GETA</h2>
-      <div class="tp-other-grid">
-        <a class="tile" href="tecnologia-chorume.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><div><h4 data-i18n="t1.title">Tratamento de Chorume</h4><p data-i18n="t1.text">Processos físico-químicos avançados sem dependência de sistemas biológicos.</p></div><span class="go">→</span></a>
-        <a class="tile" href="tecnologia-cdr.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></div><div><h4 data-i18n="t4.title">CDR de Alta Performance</h4><p data-i18n="t4.text">Elevado poder calorífico e baixa umidade em combustível derivado de resíduos.</p></div><span class="go">→</span></a>
-        <a class="tile" href="tecnologia-pos.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3L14 9V3"/></svg></div><div><h4 data-i18n="t3.title">Processo de Oxidação Seletiva (POS)</h4><p data-i18n="t3.text">Radicais carbonato gerados a partir de CO₂ atacam só os compostos inibidores, para gerar mais biometano.</p></div><span class="go">→</span></a>
+  <div class="cx-band cx-white">
+    <div class="wrap">
+      <div class="cx-head cx-center reveal">
+        <span class="eyebrow">Na prática</span>
+        <h3>O lodo inertizado <span class="cx-hl3">não lixivia</span></h3>
+        <p>Ensaio em laboratório com lodo da ETE Barueri (SABESP). Colocado em água limpa, o lodo inertizado permanece íntegro, sem turvar a água nem liberar os poluentes.</p>
+      </div>
+      <div class="cx-proof reveal">
+        <figure class="cx-clip cx-out">
+          <span class="cx-tag"><i></i>Lodo inertizado em água</span>
+          <div class="cx-scr"><video src="img/cases/inertizacao-residuos-sabesp/ensaio-lodo-agua.mp4" poster="img/cases/inertizacao-residuos-sabesp/ensaio-lodo-agua.jpg" muted loop playsinline preload="metadata" aria-label="Lodo inertizado em um béquer com água limpa, sem turvar a água"></video></div>
+        </figure>
+        <div class="cx-proof-txt">
+          <figure class="cx-proof-fig"><img src="img/cases/inertizacao-residuos-sabesp/ensaio-barueri.jpg" alt="Dois béqueres: lodo bruto com água, escuro e turvo, e lodo inerte com água, com os sólidos no fundo e a água clara" loading="lazy"><figcaption>Lodo bruto + água (esquerda) e lodo inertizado + água (direita).</figcaption></figure>
+          <h4>A diferença aparece em minutos</h4>
+          <p>O lodo bruto se dispersa e deixa a água escura. O lodo inertizado se separa: os sólidos ficam no fundo e a água permanece clara.</p>
+          <ul class="cx-checks">
+            <li>Sólido íntegro em contato com a água</li>
+            <li>Metais presos na matriz de polímeros</li>
+            <li>Sólido não lixiviável (ABNT NBR 10004)</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="tp-cta">
-      <div><h3 data-i18n="tp.cta.t">Quer aplicar uma dessas tecnologias?</h3><p data-i18n="tp.cta.p">Avaliamos o seu efluente ou resíduo e indicamos a rota mais adequada, com ensaio de tratabilidade.</p></div>
-      <a class="btn" href="index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  <div class="cx-band cx-light">
+    <div class="wrap">
+      <div class="cx-head reveal">
+        <span class="eyebrow">Potencial</span>
+        <h3>De passivo a recurso</h3>
+        <p>Inerte e com menos água, o lodo deixa de ser apenas um custo de aterro e passa a ter novas destinações.</p>
+      </div>
+      <div class="cx-pot reveal">
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></i><h4>Aterro mais barato e seguro</h4><p>Menos volume para transportar e um resíduo que não contamina, inclusive como cobertura diária das células.</p></div>
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21V11M12 11c0-4 3-7 8-7 0 5-3 8-8 7zM12 14c0-3-2-6-7-6 0 4 2 7 7 6z"/></svg></i><h4>Biossólido agrícola e florestal</h4><p>Uso no solo dentro da CONAMA 498/2020, quando o lodo atende aos critérios de qualidade.</p></div>
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 20l6-9 4 5 3-4 7 8zM16 6a2 2 0 1 0 0-.01"/></svg></i><h4>Recuperação de áreas degradadas</h4><p>Material estável para recompor solos de áreas mineradas ou degradadas.</p></div>
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></i><h4>Aproveitamento energético</h4><p>Com menos umidade, o lodo ganha poder calorífico para coprocessamento ou CDR.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cx-cta">
+    <div class="wrap">
+      <div class="cx-invite reveal">
+        <figure class="cx-invite-img"><img src="img/tecnologias/chorume/case/lodo-inerte.jpg?v=20261127l" alt="Lodo desaguado e estável em uma caçamba" loading="lazy"></figure>
+        <div class="cx-invite-txt">
+          <span class="eyebrow">Traga o seu lodo</span>
+          <h3>Nós definimos a rota de ação</h3>
+          <p>Cada lodo é diferente. Envie uma amostra: testamos em laboratório, medimos o ganho no desaguamento e a lixiviação e propomos a rota e a dosagem certas para a sua estação.</p>
+          <ul class="cx-checks">
+            <li>Análise da amostra e ensaio de bancada</li>
+            <li>Rota e dosagem definidas para o seu lodo</li>
+            <li>Piloto em campo antes da escala real</li>
+          </ul>
+          <a class="btn" href="index.html#contato">Fale com um especialista</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tp tp-cont">
+  <div class="wrap">
+    <div class="tp-strip">
+      <h3>Cases relacionados</h3>
+      <div class="tp-marquee" data-cases="inertizacao-residuos-sabesp,tecnologia-lixiviado-patente,planta-efluentes-complexos-lodos,areas-contaminadas-metais,ete-lixiviado-1000"></div>
     </div>
   </div>
 </section>
 
 <script src="i18n.js?v=20261127m"></script>
+<script src="assets/i18n-inertizacao.js?v=20261127n"></script>
 <script src="cases/cases.js?v=20261127l"></script>
 <script src="assets/mega.js?v=20261127l"></script>
 <script src="assets/portfolio.js?v=20261127l"></script>
