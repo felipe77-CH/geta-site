@@ -678,5 +678,9 @@
   // Páginas que montam conteúdo por JS se inscrevem aqui: I18N.onChange(lang => …)
   function onChange(fn) { listeners.push(fn); }
 
-  window.I18N = { init, apply, t, missing, onChange, get lang() { return current; } };
+  // Páginas com muitos textos próprios somam as traduções aqui (antes do init):
+  // I18N.extend({ en: {chave: '…'}, es: {chave: '…'} })
+  function extend(o) { for (const l of Object.keys(o)) dict[l] = Object.assign(dict[l] || {}, o[l]); }
+
+  window.I18N = { init, apply, t, missing, onChange, extend, get lang() { return current; } };
 })();

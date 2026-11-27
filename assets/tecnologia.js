@@ -48,19 +48,21 @@
   // ===== Case de sucesso (Fazenda Rio Grande) =====
   $$('.cx').forEach(cx => {
     const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const fmt = n => n.toLocaleString('pt-BR');
+    const fmt = n => n.toLocaleString(window.I18N && I18N.lang === 'en' ? 'en-US' : 'pt-BR');
+    // ao trocar de idioma, os números já contados mudam o separador (1.000 / 1,000)
+    if (window.I18N) I18N.onChange(() => $$('[data-count]', cx).forEach(el => { if (el.dataset.ok) el.textContent = fmt(+el.dataset.count); }));
 
     // Números que contam ao aparecer na tela
     const cio = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting) return;
       cio.unobserve(e.target);
       const el = e.target, fim = +el.dataset.count;
-      if (calmo) { el.textContent = fmt(fim); return; }
+      if (calmo) { el.textContent = fmt(fim); el.dataset.ok = '1'; return; }
       const t0 = performance.now(), dur = 1800;
       const passo = t => {
         const p = Math.min(1, (t - t0) / dur);
         el.textContent = fmt(Math.round(fim * (1 - Math.pow(1 - p, 3))));
-        if (p < 1) requestAnimationFrame(passo);
+        if (p < 1) requestAnimationFrame(passo); else el.dataset.ok = '1';
       };
       el.textContent = '0'; requestAnimationFrame(passo);
     }), { threshold: 0.5 });

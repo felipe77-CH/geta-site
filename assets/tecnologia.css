@@ -227,7 +227,7 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
 /* Vídeos */
 .cx-white{background:#fff;color:var(--ink)}
 .cx-center{text-align:center;margin-left:auto;margin-right:auto}
-.cx-head.cx-center{max-width:920px}
+.cx-head.cx-center{max-width:1040px}
 .cx-white .cx-head h3{color:var(--navy)}
 .cx-hl2{color:#8a5a1f}
 .cx-hl3{background:linear-gradient(90deg,#1fae3a,#1f8fd1);-webkit-background-clip:text;background-clip:text;color:transparent}
