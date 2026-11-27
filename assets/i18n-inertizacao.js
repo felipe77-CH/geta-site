@@ -129,7 +129,6 @@
      `Laboratory test with sludge from the Barueri WWTP (SABESP). Placed in clean water, the inertized sludge stays intact, without clouding the water or releasing pollutants.`,
      `Ensayo de laboratorio con lodo de la PTAR Barueri (SABESP). Colocado en agua limpia, el lodo inertizado permanece íntegro, sin enturbiar el agua ni liberar los contaminantes.`],
     [`<i></i>Lodo inertizado em água`, `<i></i>Inertized sludge in water`, `<i></i>Lodo inertizado en agua`],
-    [`Lodo bruto + água (esquerda) e lodo inertizado + água (direita).`, `Raw sludge + water (left) and inertized sludge + water (right).`, `Lodo crudo + agua (izquierda) y lodo inertizado + agua (derecha).`],
     [`A diferença aparece em minutos`, `The difference shows within minutes`, `La diferencia aparece en minutos`],
     [`O lodo bruto se dispersa e deixa a água escura. O lodo inertizado se separa: os sólidos ficam no fundo e a água permanece clara.`,
      `Raw sludge disperses and turns the water dark. Inertized sludge separates: the solids settle at the bottom and the water stays clear.`,
