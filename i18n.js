@@ -154,7 +154,7 @@
       't2.title': 'Chemical Sludge Inertization',
       't2.text': 'Technology route based on chemical encapsulation reactions of metals.',
       't3.title': 'Selective Oxidation Process (SOP)',
-      't3.text': 'Carbonate radicals generated from CO₂ attack only the inhibiting compounds, to produce more biomethane.',
+      't3.text': 'A gaseous oxidizing agent developed by GETA attacks only the inhibiting compounds, to produce more biomethane.',
       't4.title': 'High-Performance RDF',
       't4.text': 'High calorific value and low moisture in refuse-derived fuel.',
       // Página de tecnologias (tecnologia.html)
@@ -420,7 +420,7 @@
       't2.title': 'Inertización Química de Lodos',
       't2.text': 'Ruta tecnológica basada en reacciones de encapsulamiento químico de metales.',
       't3.title': 'Proceso de Oxidación Selectiva (POS)',
-      't3.text': 'Radicales carbonato generados a partir de CO₂ atacan solo los compuestos inhibidores, para generar más biometano.',
+      't3.text': 'Un agente oxidativo gaseoso desarrollado por GETA ataca solo los compuestos inhibidores, para generar más biometano.',
       't4.title': 'CDR de Alto Rendimiento',
       't4.text': 'Elevado poder calorífico y baja humedad en combustible derivado de residuos.',
       // Página de tecnologías (tecnologia.html)

@@ -39,7 +39,16 @@ TR = {
  "Vinhaça pronta para\no biodigestor": ("Vinasse ready for\nthe digester", "Vinaza lista para\nel biodigestor"),
  # 2
  "O processo em 4 etapas": ("The process in 4 steps", "El proceso en 4 etapas"),
- "Capturar": ("Capture", "Capturar"),
+ "+ agente oxidativo\ngasoso GETA": ("+ GETA gaseous\noxidizing agent", "+ agente oxidativo\ngaseoso GETA"),
+ "Gerar": ("Generate", "Generar"),
+ "Injetar": ("Inject", "Inyectar"),
+ "o agente oxidativo\nno reator de plasma": ("the oxidizing agent\nin the plasma reactor", "el agente oxidativo\nen el reactor de plasma"),
+ "o gás na vinhaça": ("the gas into the vinasse", "el gas en la vinaza"),
+ "AGENTE": ("AGENT", "AGENTE"),
+ "CONSUMO": ("CONSUMPTION", "CONSUMO"),
+ "Reagentes\nlíquidos": ("Liquid\nreagents", "Reactivos\nlíquidos"),
+ "Agente gasoso\nGETA": ("GETA gaseous\nagent", "Agente gaseoso\nGETA"),
+ "agente gasoso próprio": ("in-house gaseous agent", "agente gaseoso propio"),
  "Ativar": ("Activate", "Activar"),
  "Oxidar": ("Oxidize", "Oxidar"),
  "Biodigerir": ("Digest", "Biodigerir"),
@@ -124,7 +133,7 @@ fig, ax = canvas("Como funciona")
 box(ax, 4.1, 6.55, 3.8, 1.1, "Vinhaça", "conc", fs=19)
 box(ax, 4.1, 4.85, 3.8, 1.1, "Oxidação seletiva", "proc", fs=18)
 arrow(ax, 6.0, 6.51, 6.0, 5.99)
-box(ax, 0.6, 4.88, 2.8, 1.04, "+ CO₂ ativado\nno plasma", "add", fs=14)
+box(ax, 0.45, 4.88, 2.95, 1.04, "+ agente oxidativo\ngasoso GETA", "add", fs=14)
 arrow(ax, 3.44, 5.4, 4.06, 5.4)
 arrow(ax, 6.0, 4.81, 3.2, 4.0); arrow(ax, 6.0, 4.81, 8.8, 4.0)
 box(ax, 0.8, 2.75, 4.8, 1.2, "Quebra os compostos\nque travam a digestão", "prod", fs=16)
@@ -135,7 +144,7 @@ save(fig, "pos-mecanismo.jpg")
 
 # ── 2 · Processo em 4 etapas ─────────────────────────────────────────────
 fig, ax = canvas("O processo em 4 etapas")
-steps = [("Capturar", "o CO₂ separado\nno biogás"), ("Ativar", "o CO₂ em um\nreator de plasma"),
+steps = [("Gerar", "o agente oxidativo\nno reator de plasma"), ("Injetar", "o gás na vinhaça"),
          ("Oxidar", "só os compostos\nque inibem"), ("Biodigerir", "a vinhaça rende\nmais biometano")]
 rend = fig.canvas.get_renderer()
 def largura(s, fs):
@@ -161,9 +170,9 @@ C1, C2, CW = 3.25, 7.75, 3.9
 box(ax, C1, 6.6, CW, 0.95, "Convencional", "bad", fs=17)
 box(ax, C2, 6.6, CW, 0.95, "Seletiva GETA", "out", fs=17)
 rows = [("ALVO", "Ataca tudo", "Só os inibidores"),
-        ("REAGENTE", "Alto consumo", "Menos reagente"),
+        ("CONSUMO", "Alto consumo", "Menos reagente"),
         ("SUBSTRATO", "Perde o que\nviraria metano", "Preserva o que\nvira metano "),
-        ("CO₂", "Descartado", "Reaproveitado")]
+        ("AGENTE", "Reagentes\nlíquidos", "Agente gasoso\nGETA")]
 y = 5.3
 for lab, a, b in rows:
     ax.add_patch(FancyBboxPatch((LX, y), LW, 1.1, boxstyle="round,pad=0,rounding_size=0.16", fc="#f6f7fc", ec="#dde3f3", lw=2))
@@ -182,17 +191,15 @@ xs = [0.3 + i * (w + gap) for i in range(len(seq))]
 for i, ((t, k), x) in enumerate(zip(seq, xs)):
     box(ax, x, y, w, hh, t, k, fs=15.5)
     if i: arrow(ax, xs[i - 1] + w + 0.04, y + hh / 2, x - 0.04, y + hh / 2)
-# reciclo de CO₂: do upgrading de volta ao reator POS
-ux, px = xs[3] + w / 2, xs[1] + w / 2
-yb = 3.35
-ax.plot([ux, ux, px], [y - 0.04, yb, yb], color=GREEN, lw=2.6, ls="--")
-arrow(ax, px, yb, px, y - 0.04, color=GREEN)
-ax.text((ux + px) / 2, yb - 0.32, _("CO₂ volta ao processo"), ha="center", va="center", fontsize=15, color=DKG, fontweight="bold")
+# entrada do agente oxidativo gasoso no reator POS
+px = xs[1] + w / 2
+box(ax, px - 1.55, 6.5, 3.1, 1.0, "+ agente oxidativo\ngasoso GETA", "add", fs=13)
+arrow(ax, px, 6.46, px, y + hh + 0.04)
 # digestato
 dx = xs[2] + w / 2
-box(ax, xs[2] + 0.2, 6.55, w - 0.4, 0.8, "Digestato", "mid", fs=13.5)
-arrow(ax, dx, y + hh + 0.04, dx, 6.51)
-for i, t in enumerate(["antes do biodigestor", "usa o CO₂ da própria usina", "mais biometano"]):
+box(ax, xs[2] + 0.2, 2.75, w - 0.4, 0.8, "Digestato", "mid", fs=13.5)
+arrow(ax, dx, y - 0.04, dx, 3.59)
+for i, t in enumerate(["antes do biodigestor", "agente gasoso próprio", "mais biometano"]):
     pill(ax, 2.2 + i * 3.8, 0.8, t)
 save(fig, "pos-usina.jpg")
 
