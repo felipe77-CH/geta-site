@@ -102,6 +102,15 @@
       const list = box.dataset.cases.split(',')
         .map(s => CASES.find(c => c.slug === s.trim()))
         .filter(c => c && c.status === 'publicado');
+      if (box.classList.contains('tp-marquee')) {
+        // Faixa que corre na horizontal: a lista é repetida para o movimento não ter emenda
+        const card = c => `<a class="mq-card" href="${ROOT}cases/${c.slug}.html"><img src="${ROOT + c.capa}" alt="" loading="lazy"><span>${pick(c.titulo)}</span></a>`;
+        let row = list.map(card).join('');
+        while (list.length && row.split('mq-card').length - 1 < 8) row += list.map(card).join('');
+        box.innerHTML = list.length ? `<div class="mq-track" style="--mq-n:${row.split('mq-card').length - 1}">${row}${row.replace(/<a /g, '<a tabindex="-1" aria-hidden="true" ')}</div>` : '';
+        const strip = box.closest('.tp-strip'); if (strip) strip.hidden = !list.length;
+        return;
+      }
       box.innerHTML = list.map(c => `<a class="pcard" href="${ROOT}cases/${c.slug}.html"><div class="thumb" style="background-image:url('${ROOT + c.capa}')"></div><div class="b"><h3>${pick(c.titulo)}</h3><p>${pick(c.resumo)}</p><span class="more">${I18N.t('pf.read')}</span></div></a>`).join('');
       const blk = box.closest('.tp-block'); if (blk) blk.classList.toggle('vazia', !list.length);
     });
