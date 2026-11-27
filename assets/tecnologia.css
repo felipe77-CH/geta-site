@@ -5,7 +5,7 @@
 .tp-hero .crumb a{color:inherit}
 .tp-hero .lead{max-width:760px}
 .tp-hero .tp-badges span{background:#ffffff1f;color:#fff;border:1px solid #ffffff38}
-.tp-hero .tp-badges span.blue{background:#ffffff12}
+.tp-hero .tp-badges span.blue{background:#ffffff12;color:#fff}
 
 /* ====== Réplica do slide "Diferencial tecnológico" da home ====== */
 .tech{padding:96px 0;background:linear-gradient(160deg,#06103f 0%,var(--navy) 55%,#13237f 100%);color:#fff;position:relative;overflow:hidden}

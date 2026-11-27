@@ -14,9 +14,9 @@
   const T = [
     // ---- Topo
     [`Tecnologia 01`, `Technology 01`, `Tecnología 01`],
-    [`Transformamos o chorume dos aterros em <strong>água tratada, adubo para a agricultura e um resíduo sólido seguro</strong>. Uma tecnologia própria da GETA, que não depende de processos biológicos e é ajustada ao chorume de cada aterro.`,
-     `We turn landfill leachate into <strong>treated water, fertilizer for agriculture and a safe solid residue</strong>. A proprietary GETA technology that does not rely on biological processes and is tailored to each landfill's leachate.`,
-     `Transformamos el lixiviado de los rellenos sanitarios en <strong>agua tratada, abono para la agricultura y un residuo sólido seguro</strong>. Una tecnología propia de GETA, que no depende de procesos biológicos y se ajusta al lixiviado de cada relleno.`],
+    [`<strong>Do chorume a novos recursos.</strong> Transformamos um dos principais passivos ambientais dos aterros em <strong>água tratada, nutrientes para a agricultura e resíduos sólidos seguros</strong>. A GETA desenvolve <strong>tecnologias próprias, personalizadas para cada tipo de chorume</strong>, com soluções eficientes e adaptadas às necessidades de cada aterro.`,
+     `<strong>From leachate to new resources.</strong> We turn one of the main environmental liabilities of landfills into <strong>treated water, nutrients for agriculture and safe solid residues</strong>. GETA develops <strong>proprietary technologies, customized for each type of leachate</strong>, with efficient solutions adapted to the needs of each landfill.`,
+     `<strong>Del lixiviado a nuevos recursos.</strong> Transformamos uno de los principales pasivos ambientales de los rellenos sanitarios en <strong>agua tratada, nutrientes para la agricultura y residuos sólidos seguros</strong>. GETA desarrolla <strong>tecnologías propias, personalizadas para cada tipo de lixiviado</strong>, con soluciones eficientes y adaptadas a las necesidades de cada relleno.`],
     [`Pedido de patente BR 10 2026 020875 2 (INPI)`, `Patent application BR 10 2026 020875 2 (INPI)`, `Solicitud de patente BR 10 2026 020875 2 (INPI)`],
     [`Escala industrial: 1.000 m³/dia`, `Industrial scale: 1,000 m³/day`, `Escala industrial: 1.000 m³/día`],
     [`Validação agrícola com a UFRRJ`, `Agricultural validation with UFRRJ`, `Validación agrícola con la UFRRJ`],
