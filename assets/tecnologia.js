@@ -97,6 +97,59 @@
     }
   });
 
+  // Faixa de cases: anda sozinha, para com o mouse em cima, tem setas e pode ser arrastada
+  function faixa(box, lang) {
+    const ARIA = { pt: ['Case anterior', 'Próximo case'], en: ['Previous case', 'Next case'], es: ['Caso anterior', 'Caso siguiente'] }[lang] || ['‹', '›'];
+    let S = box._mq;
+    if (!S) {
+      S = box._mq = { x: 0, alvo: null, pausa: false, drag: null, last: 0 };
+      const wrap = document.createElement('div'); wrap.className = 'mq-wrap';
+      box.parentNode.insertBefore(wrap, box); wrap.appendChild(box);
+      S.prev = Object.assign(document.createElement('button'), { type: 'button', className: 'mq-btn mq-prev', textContent: '‹' });
+      S.next = Object.assign(document.createElement('button'), { type: 'button', className: 'mq-btn mq-next', textContent: '›' });
+      wrap.append(S.prev, S.next);
+      const passo = () => { const c = box.querySelector('.mq-card'); return c ? c.offsetWidth + parseFloat(getComputedStyle(c).marginRight) : 360; };
+      const vai = dir => { S.alvo = (S.alvo !== null ? S.alvo : S.x) - dir * passo(); };
+      S.prev.addEventListener('click', () => vai(-1));
+      S.next.addEventListener('click', () => vai(1));
+      wrap.addEventListener('mouseenter', () => { S.pausa = true; });
+      wrap.addEventListener('mouseleave', () => { S.pausa = false; });
+      box.addEventListener('focusin', () => { S.pausa = true; });
+      box.addEventListener('focusout', () => { S.pausa = false; });
+      // arrastar com o dedo ou o mouse
+      box.addEventListener('pointerdown', e => { S.drag = { x0: e.clientX, base: S.x, moveu: false, id: e.pointerId }; S.alvo = null; });
+      box.addEventListener('pointermove', e => {
+        if (!S.drag) return;
+        const dx = e.clientX - S.drag.x0;
+        if (!S.drag.moveu && Math.abs(dx) > 6) { S.drag.moveu = true; box.classList.add('arrasta'); box.setPointerCapture(S.drag.id); }
+        if (S.drag.moveu) S.x = S.drag.base + dx;
+      });
+      const solta = () => { if (S.drag && S.drag.moveu) setTimeout(() => box.classList.remove('arrasta'), 0); S.drag = null; };
+      box.addEventListener('pointerup', solta);
+      box.addEventListener('pointercancel', solta);
+      const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const VEL = 38; // px por segundo
+      const tick = t => {
+        const dt = Math.min(64, t - (S.last || t)); S.last = t;
+        const track = box.querySelector('.mq-track');
+        if (track) {
+          if (S.alvo !== null) { const d = S.alvo - S.x; S.x += d * Math.min(1, dt / 110); if (Math.abs(d) < 0.5) { S.x = S.alvo; S.alvo = null; } }
+          else if (!S.pausa && !S.drag && !calmo) S.x -= VEL * dt / 1000;
+          const meio = track.scrollWidth / 2;
+          if (meio) {
+            while (S.x <= -meio) { S.x += meio; if (S.alvo !== null) S.alvo += meio; if (S.drag) S.drag.base += meio; }
+            while (S.x > 0) { S.x -= meio; if (S.alvo !== null) S.alvo -= meio; if (S.drag) S.drag.base -= meio; }
+          }
+          track.style.transform = `translateX(${S.x}px)`;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+    S.prev.setAttribute('aria-label', ARIA[0]);
+    S.next.setAttribute('aria-label', ARIA[1]);
+  }
+
   const CASES = window.GETA_CASES || [];
   function cases() {
     const L = I18N.lang, pick = o => (!o ? '' : (o[L] || o.pt || ''));
@@ -109,8 +162,9 @@
         const card = c => `<a class="mq-card" href="${ROOT}cases/${c.slug}.html"><img src="${ROOT + c.capa}" alt="" loading="lazy"><span>${pick(c.titulo)}</span></a>`;
         let row = list.map(card).join('');
         while (list.length && row.split('mq-card').length - 1 < 8) row += list.map(card).join('');
-        box.innerHTML = list.length ? `<div class="mq-track" style="--mq-n:${row.split('mq-card').length - 1}">${row}${row.replace(/<a /g, '<a tabindex="-1" aria-hidden="true" ')}</div>` : '';
+        box.innerHTML = list.length ? `<div class="mq-track">${row}${row.replace(/<a /g, '<a tabindex="-1" aria-hidden="true" ')}</div>` : '';
         const strip = box.closest('.tp-strip'); if (strip) strip.hidden = !list.length;
+        if (list.length) faixa(box, L);
         return;
       }
       box.innerHTML = list.map(c => `<a class="pcard" href="${ROOT}cases/${c.slug}.html"><div class="thumb" style="background-image:url('${ROOT + c.capa}')"></div><div class="b"><h3>${pick(c.titulo)}</h3><p>${pick(c.resumo)}</p><span class="more">${I18N.t('pf.read')}</span></div></a>`).join('');
