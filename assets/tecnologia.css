@@ -293,6 +293,9 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
   background:radial-gradient(circle at 1px 1px,#0b175e14 1px,transparent 0) 0 0/22px 22px,linear-gradient(180deg,#f7f9fe,#eef3fc);border:1px solid #e1e8f6;box-shadow:0 40px 90px -30px #0b175e40}
 .cx-proof::before{content:"";position:absolute;inset:9px;border-radius:24px;border:1px dashed #c9d5ee;pointer-events:none}
 .cx-proof-txt{position:relative;z-index:1}
+/* vídeo horizontal (ex.: ensaio da POS) */
+.cx-scr.wide{width:min(440px,100%);aspect-ratio:834/594}
+.cx-proof:has(.cx-scr.wide){max-width:1040px}
 .cx-proof-fig{margin:0 0 18px;max-width:340px}
 .cx-proof-fig img{width:100%;display:block;border-radius:16px;box-shadow:0 18px 40px -18px #0b175e66}
 .cx-proof-fig figcaption{margin-top:8px;font-size:13px;color:var(--muted)}
@@ -321,11 +324,13 @@ body.editar .edit-note{display:block;position:fixed;left:16px;bottom:16px;z-inde
 @media (max-width:860px){
   .cx-proof{grid-template-columns:1fr;justify-items:center;gap:28px;padding:28px 22px;max-width:620px}
   .cx-proof-fig{margin-left:auto;margin-right:auto}
+  .cx-proof .cx-clip:has(.cx-scr.wide){width:100%}
 }
 @media (max-width:720px){
   .cx-proof{border-radius:26px}
   .cx-proof::before{inset:6px;border-radius:22px}
   .cx-proof .cx-scr{width:220px}
+  .cx-proof .cx-scr.wide{width:100%;padding:5px}
   .cx-pot{grid-template-columns:1fr}
 }
 

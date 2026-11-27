@@ -10,23 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/portfolio.css?v=20261127l">
 <link rel="stylesheet" href="assets/mega.css?v=20261127l">
-<link rel="stylesheet" href="assets/tecnologia.css?v=20261127l">
+<link rel="stylesheet" href="assets/tecnologia.css?v=20261127q">
 </head>
 <!-- =====================================================================
   TECNOLOGIA 04: Processo de Oxidação Seletiva (POS)  (tecnologia-pos.html)
   ---------------------------------------------------------------------
-  COMO PREENCHER
-  1. Troque cada <p class="tbd">…</p> pelo texto real (pode usar <p>, <ul>,
-     <figure><img …><figcaption>…</figcaption></figure>). Destaques: troque
-     o "—" pelo valor e apague a classe "tbd" do <div class="kpi">.
-  2. Partes com "tbd" NÃO aparecem no site. Para ver o que falta, abra
-     tecnologia-pos.html?editar=1
-  3. Imagens: salve em img/tecnologias/pos/ e use
-     <figure><img src="img/tecnologias/pos/arquivo.jpg" alt="descrição"><figcaption>Legenda</figcaption></figure>
-  4. "Cases relacionados": liste os slugs em data-cases="slug1,slug2"
-     (só aparecem os cases publicados em cases/cases.js).
-  5. Os textos do corpo estão em português (aparecem nos três idiomas).
-     Título, abas e seções fixas têm tradução em i18n.js.
+  Mesma estrutura das páginas de chorume e de lodos:
+  1. Carrossel "O problema da vinhaça" (foto à esquerda, texto à direita).
+  2. Carrossel "Solução GETA" (diagramas gerados por tools/diagramas_pos.py).
+  3. Vídeo do ensaio (a vinhaça perde a cor escura) e ganhos esperados.
+  4. Chamada final "Traga a sua vinhaça".
+  Imagens: img/tecnologias/pos/ e img/cases/vinhaca-radical-carbonato-biometano/.
+  Idiomas: título e seções fixas em i18n.js; os textos do corpo são
+  traduzidos em assets/i18n-pos.js: ao mudar um texto em português,
+  mude lá também.
   ===================================================================== -->
 <body data-page="tech" data-root="" data-title-key="meta.tc.pos" data-desc-key="t3.text">
 
@@ -38,137 +35,202 @@
     <nav class="crumb" aria-label="breadcrumb"><a href="index.html">GETA</a><span>/</span><a href="tecnologia.html" data-i18n="nav.tech">Tecnologia</a><span>/</span><span data-i18n="tp.tab4">Processo de Oxidação Seletiva (POS)</span></nav>
     <span class="eyebrow">Tecnologia 04</span>
     <h1 data-i18n="t3.title">Processo de Oxidação Seletiva (POS)</h1>
-    <p class="lead">Oxidação por <strong>radicais carbonato gerados a partir de CO₂</strong> em reatores de plasma. Diferente da oxidação convencional, o POS ataca só os compostos que inibem a biodigestão e <strong>preserva a matéria orgânica que vira metano</strong>. A primeira aplicação é o pré-tratamento da vinhaça para produzir mais biometano.</p>
-    <div class="tp-badges"><span>Patente de invenção depositada · 10 reivindicações</span><span class="blue">CO₂ como insumo do processo</span></div>
+    <p class="lead"><strong>Mais biometano a partir da mesma vinhaça.</strong> O POS usa o <strong>CO₂ da própria usina</strong>, ativado em um reator de plasma, para quebrar só os compostos que travam a biodigestão e <strong>preservar a matéria orgânica que vira metano</strong>.</p>
+    <div class="tp-badges"><span>Patente de invenção depositada · 10 reivindicações</span><span class="blue">CO₂ como insumo do processo</span><span class="blue">Pré-tratamento antes do biodigestor</span></div>
   </div>
 </section>
 
 <section class="tp">
   <div class="wrap">
-    <div class="tp-kpis">
-      <div class="kpi"><b>Patente</b><span>depositada: 10 reivindicações (método, sistema e uso)</span></div>
-      <div class="kpi"><b>CO₂</b><span>reaproveitado como insumo reativo do processo</span></div>
-      <div class="kpi"><b>Seletiva</b><span>oxidação focada nos inibidores, sem desperdiçar substrato</span></div>
-      <div class="kpi"><b>+ CH₄</b><span>maior produção de metano e/ou menor tempo de retenção</span></div>
-    </div>
-
-    <div class="tp-grid">
-      <section class="tp-block">
-        <h3>O problema que resolve</h3>
-        <p>A vinhaça do etanol tem alta carga orgânica e é usada para produzir biogás e biometano, mas a biodigestão rende menos do que poderia. O calor da destilação forma <strong>melanoidinas</strong>, polímeros recalcitrantes que inibem os microrganismos, e estruturas lignocelulósicas difíceis de hidrolisar agravam o problema.</p>
-        <p>Os pré-tratamentos existentes (ozônio, persulfato, peróxido) oxidam sem seletividade: consomem muito reagente e destroem também o substrato que viraria metano.</p>
-      </section>
-      <section class="tp-block">
-        <h3>Como funciona</h3>
-        <p>Uma mistura de oxigênio atômico e CO₂ passa por uma <strong>descarga por barreira dielétrica (DBD)</strong>, gerando espécies reativas de carbono. Em contato com a vinhaça, elas formam <strong>radicais carbonato (CO₃•⁻)</strong>.</p>
-        <p>Esses radicais são eletrófilos seletivos: têm alta afinidade por anéis aromáticos e heterocíclicos, como os das melanoidinas e da lignina, e pouco efeito sobre a matéria orgânica simples.</p>
-      </section>
-
-      <section class="tp-block full">
-        <h3>O mecanismo</h3>
-        <figure><img src="img/cases/vinhaca-radical-carbonato-biometano/mecanismo-radical-carbonato.jpg" alt="Mecanismo de geração do radical carbonato e reações seletivas na vinhaça"><figcaption>Geração do radical carbonato e reações seletivas na vinhaça.</figcaption></figure>
-      </section>
-
-      <section class="tp-block full">
-        <h3>Integração à usina</h3>
-        <p>O POS é instalado antes do biodigestor e usa como insumo o CO₂ separado no upgrading do biogás para biometano, que antes era descartado.</p>
-        <figure><img src="img/cases/vinhaca-radical-carbonato-biometano/conceito-usina.jpg" alt="Conceito do POS integrado à usina"><figcaption>O CO₂ do biogás volta ao processo como insumo reativo.</figcaption></figure>
-      </section>
-
-      <section class="tp-block">
-        <h3>Oxidação convencional × seletiva</h3>
-        <ul>
-          <li>Despolimeriza estruturas lignocelulósicas, tornando-as mais fáceis de hidrolisar.</li>
-          <li>Degrada melanoidinas e produtos das reações de Maillard, reduzindo a inibição.</li>
-          <li>Preserva a matéria orgânica que será convertida em metano.</li>
-        </ul>
-        <figure><img src="img/cases/vinhaca-radical-carbonato-biometano/seletividade-conceitual.jpg" alt="Oxidação convencional versus seletiva"><figcaption>Representação conceitual, sem escala.</figcaption></figure>
-      </section>
-      <section class="tp-block">
-        <h3>O sistema</h3>
-        <p>Dois ou mais reatores de plasma DBD em série, com alimentação de oxigênio atômico e CO₂, posicionados <strong>antes do biodigestor</strong>. A operação é controlada por potencial de oxirredução (ORP), pH, concentração de espécies reativas, vazão gasosa, potência do plasma e relação O/CO₂.</p>
-        <figure><img src="img/cases/vinhaca-radical-carbonato-biometano/sistema-dbd-controle.jpg" alt="Sistema de reatores DBD em série com controle operacional"><figcaption>Reatores DBD em série com controle operacional.</figcaption></figure>
-      </section>
-
-      <section class="tp-block">
-        <h3>Onde se aplica</h3>
-        <ul>
-          <li>Usinas sucroenergéticas com biodigestão de vinhaça e produção de biogás ou biometano.</li>
-          <li>Substratos com melanoidinas ou lignocelulose que limitam a digestão anaeróbia.</li>
-        </ul>
-        <p class="tbd">Outras aplicações do POS em estudo (outros efluentes ou substratos com compostos aromáticos recalcitrantes).</p>
-      </section>
-      <section class="tp-block">
-        <h3>Diferenciais</h3>
-        <ul>
-          <li>Oxidação seletiva: menos reagente e sem destruir o substrato útil.</li>
-          <li>Usa o CO₂ separado no upgrading do biogás, que hoje é descartado.</li>
-          <li>Economia circular e redução de emissões de gases de efeito estufa.</li>
-          <li>Mais biometano a partir do mesmo resíduo.</li>
-        </ul>
-      </section>
-
-      <section class="tp-block">
-        <h3>Resultados e próximos passos</h3>
-        <ul>
-          <li>Ganhos esperados: maior biodegradabilidade da vinhaça, maior produção específica de metano e/ou menor tempo de retenção no biodigestor.</li>
-          <li>Base técnica para ensaios de potencial bioquímico de metano (PBM) e escalonamento.</li>
-          <li>Validação planejada em escala de bancada e piloto.</li>
-        </ul>
-        <p class="tbd">Resultados de ensaios de PBM e do piloto, quando disponíveis.</p>
-      </section>
-      <section class="tp-block">
-        <h3>Propriedade intelectual</h3>
-        <p><strong>Patente de invenção depositada</strong>, com 10 reivindicações que cobrem:</p>
-        <ul>
-          <li>o método de ativação por DBD, geração de espécies reativas de carbono e oxidação seletiva;</li>
-          <li>a aplicação à vinhaça, a modificação de melanoidinas e a degradação de lignocelulose;</li>
-          <li>o sistema com reatores DBD em série, alimentação gasosa e controle operacional;</li>
-          <li>o uso para intensificar a digestão anaeróbia e aumentar a produção de metano.</li>
-        </ul>
-        <p class="tbd">Número do pedido, data de depósito e situação.</p>
-      </section>
-
-      <section class="tp-block full">
-        <h3>Indicadores econômicos</h3>
-        <p class="tbd">Ganho de biometano por m³ de vinhaça, receita adicional estimada, consumo de energia do plasma, CAPEX e prazo de retorno.</p>
-      </section>
-
-      <section class="tp-block full">
-        <h3>Imagens</h3>
-        <div class="tp-gal">
-          <figure><img src="img/cases/vinhaca-radical-carbonato-biometano/gargalo-melanoidinas.jpg" alt="O gargalo da biodigestão da vinhaça"><figcaption>O gargalo da biodigestão da vinhaça.</figcaption></figure>
-          <figure><img src="img/cases/vinhaca-radical-carbonato-biometano/canavial.jpg" alt="Canavial"><figcaption>Cana-de-açúcar (imagem ilustrativa).</figcaption></figure>
-          <figure><img src="img/cases/vinhaca-radical-carbonato-biometano/gasometro.jpg" alt="Armazenamento de gás"><figcaption>Armazenamento de biogás (imagem ilustrativa).</figcaption></figure>
+    <!-- O PROBLEMA DA VINHAÇA: 3 slides (foto 4:3 à esquerda, texto à direita). -->
+    <section class="tp-mapas tp-impactos" data-slides aria-roledescription="carrossel" aria-label="O problema da vinhaça">
+      <div class="tp-mapas-head">
+        <span class="eyebrow">O problema da vinhaça</span>
+        <h2>Muita energia que a biodigestão não consegue aproveitar</h2>
+      </div>
+      <div class="tp-mapas-grid">
+        <div>
+          <div class="tp-mapas-fig">
+          <img src="img/cases/vinhaca-radical-carbonato-biometano/canavial.jpg" alt="Canavial com montanhas ao fundo" class="on">
+          <img src="img/cases/vinhaca-radical-carbonato-biometano/usina-industrial.jpg" alt="Usina sucroenergética com chaminés e tanques" loading="lazy">
+          <img src="img/cases/vinhaca-radical-carbonato-biometano/gasometro.jpg" alt="Gasômetro para armazenamento de biogás" loading="lazy">
+          </div>
+          <div class="tp-mapas-nav">
+            <button type="button" class="tp-prev" aria-label="Anterior">‹</button>
+            <div class="tp-dots"><button type="button" aria-label="1: Volume" class="on"></button><button type="button" aria-label="2: Inibidores"></button><button type="button" aria-label="3: Tratamentos atuais"></button></div>
+            <button type="button" class="tp-next" aria-label="Próximo">›</button>
+          </div>
         </div>
-      </section>
+        <div class="tp-mapas-side">
+          <div class="tp-mapas-txt" aria-live="polite">
+          <article class="on">
+            <span class="tp-mapas-tag">1 de 3 · Volume</span>
+            <h3>Um resíduo gerado em grande escala</h3>
+            <p>Para cada litro de etanol, a destilação gera vários litros de vinhaça, um líquido escuro e rico em matéria orgânica. Ela pode virar biogás e biometano em biodigestores, mas o aproveitamento costuma ficar abaixo do possível.</p>
+            <ul class="tp-imp-list"><li>Grandes volumes em toda safra</li><li>Alta carga orgânica</li><li>Matéria-prima para biogás e biometano</li><li>Potencial energético desperdiçado</li></ul>
+            <div class="tp-mapas-geta"><b>Por que importa</b><p>Cada metro cúbico de vinhaça que não vira metano é energia que a usina deixa de gerar.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">2 de 3 · Inibidores</span>
+            <h3>Compostos escuros que travam a biodigestão</h3>
+            <p>O calor da destilação forma as melanoidinas, que dão a cor escura à vinhaça. Elas e as fibras da cana são difíceis de degradar e atrapalham os microrganismos que produzem o metano.</p>
+            <ul class="tp-imp-list"><li>Melanoidinas formadas no calor da destilação</li><li>Fibras difíceis de quebrar</li><li>Microrganismos inibidos</li><li>Menos metano por metro cúbico</li></ul>
+            <div class="tp-mapas-geta"><b>Por que importa</b><p>Remover esse freio é o que libera o potencial da vinhaça.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">3 de 3 · Tratamentos atuais</span>
+            <h3>Oxidar tudo custa caro e desperdiça</h3>
+            <p>Os pré-tratamentos comuns, como ozônio, persulfato e peróxido, oxidam sem escolher: consomem muito reagente e destroem também a matéria orgânica que viraria metano.</p>
+            <ul class="tp-imp-list"><li>Alto consumo de reagentes</li><li>Destroem parte do substrato</li><li>Custo operacional elevado</li><li>Ganho de metano limitado</li></ul>
+            <div class="tp-mapas-geta"><b>Por que importa</b><p>É preciso oxidar só o que atrapalha.</p></div>
+          </article>
+          </div>
+        </div>
+      </div>
+      <p class="tp-mapas-src">Imagens ilustrativas.</p>
+    </section>
 
-      <section class="tp-block full">
-        <h3>Cases relacionados</h3>
-        <div class="tp-cases" data-cases="vinhaca-radical-carbonato-biometano,efluente-lignocelulosico-poa"></div>
-      </section>
-    </div>
+    <!-- SOLUÇÃO GETA: 4 slides com diagramas (tools/diagramas_pos.py) sobre fundo branco. -->
+    <section class="tp-mapas tp-impactos tp-rotas" data-slides aria-roledescription="carrossel" aria-label="Solução GETA">
+      <div class="tp-mapas-head">
+        <span class="eyebrow">Solução GETA</span>
+        <h2>Oxidar só o que atrapalha, com o CO₂ da própria usina</h2>
+      </div>
+      <div class="tp-mapas-grid">
+        <div>
+          <div class="tp-mapas-fig">
+          <img src="img/tecnologias/pos/pos-mecanismo.jpg?v=20261127p" alt="Diagrama: a vinhaça passa pela oxidação seletiva com CO₂ ativado no plasma, que quebra os compostos que travam a digestão e preserva o que vira metano" class="on">
+          <img src="img/tecnologias/pos/pos-processo.jpg?v=20261127p" alt="Diagrama do processo em 4 etapas: capturar, ativar, oxidar e biodigerir" loading="lazy">
+          <img src="img/tecnologias/pos/pos-comparacao.jpg?v=20261127p" alt="Comparação entre a oxidação convencional e a seletiva: alvo, reagente, substrato e CO₂" loading="lazy">
+          <img src="img/tecnologias/pos/pos-usina.jpg?v=20261127p" alt="Diagrama de blocos: vinhaça, reator POS, biodigestor, upgrading do biogás e biometano, com o CO₂ voltando ao reator" loading="lazy">
+          </div>
+          <div class="tp-mapas-nav">
+            <button type="button" class="tp-prev" aria-label="Anterior">‹</button>
+            <div class="tp-dots"><button type="button" aria-label="1: Como funciona" class="on"></button><button type="button" aria-label="2: O processo"></button><button type="button" aria-label="3: Convencional × seletiva"></button><button type="button" aria-label="4: Integração à usina"></button></div>
+            <button type="button" class="tp-next" aria-label="Próximo">›</button>
+          </div>
+        </div>
+        <div class="tp-mapas-side">
+          <div class="tp-mapas-txt" aria-live="polite">
+          <article class="on">
+            <span class="tp-mapas-tag">1 de 4 · Como funciona</span>
+            <h3>Uma oxidação que escolhe o alvo</h3>
+            <p>O CO₂ é ativado em um reator de plasma e, em contato com a vinhaça, forma radicais carbonato. Eles atacam os compostos escuros que travam a digestão e deixam de lado a matéria orgânica simples.</p>
+            <b class="tp-list-t">O que acontece</b>
+            <ul class="tp-imp-list"><li>O CO₂ é ativado no plasma</li><li>Formam-se radicais carbonato</li><li>As melanoidinas e as fibras são quebradas</li><li>A matéria orgânica fica preservada</li></ul>
+            <div class="tp-mapas-geta"><b>Em resumo</b><p>A vinhaça chega ao biodigestor sem o freio dos inibidores.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">2 de 4 · O processo</span>
+            <h3>Quatro etapas simples</h3>
+            <p>O POS entra antes do biodigestor e usa um insumo que a usina já tem: o CO₂ do biogás.</p>
+            <b class="tp-list-t">Etapas</b>
+            <ul class="tp-imp-list"><li>Capturar: o CO₂ separado no biogás</li><li>Ativar: o CO₂ em um reator de plasma</li><li>Oxidar: só os compostos que inibem</li><li>Biodigerir: a vinhaça rende mais biometano</li></ul>
+            <div class="tp-mapas-geta"><b>Resultado</b><p>Mais metano a partir da mesma vinhaça.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">3 de 4 · Convencional × seletiva</span>
+            <h3>Menos reagente, mais metano</h3>
+            <p>Na oxidação convencional, o reagente é gasto em tudo, inclusive no que viraria metano. A oxidação seletiva concentra o efeito nos inibidores.</p>
+            <b class="tp-list-t">Vantagens</b>
+            <ul class="tp-imp-list"><li>Ataque focado nos compostos que inibem</li><li>Menor consumo de reagente</li><li>Matéria orgânica preservada para o metano</li><li>CO₂ reaproveitado, em vez de descartado</li></ul>
+            <div class="tp-mapas-geta"><b>Resultado</b><p>Mais biometano e menos emissões.</p></div>
+          </article>
+          <article>
+            <span class="tp-mapas-tag">4 de 4 · Integração à usina</span>
+            <h3>Um circuito fechado de CO₂</h3>
+            <p>O reator POS fica antes do biodigestor. O CO₂ separado no upgrading do biogás, que antes era descartado, volta ao processo como insumo.</p>
+            <b class="tp-list-t">Como se integra</b>
+            <ul class="tp-imp-list"><li>A vinhaça passa pelo reator POS</li><li>Segue para o biodigestor</li><li>O biogás é purificado em biometano</li><li>O CO₂ separado volta ao reator</li></ul>
+            <div class="tp-mapas-geta"><b>Economia circular</b><p>O próprio CO₂ da usina vira insumo do tratamento.</p></div>
+          </article>
+          </div>
+        </div>
+      </div>
+      <p class="tp-mapas-src">Tecnologia protegida por patente de invenção depositada (10 reivindicações).</p>
+    </section>
 
-    <div class="tp-other">
-      <h2 data-i18n="tp.other">Outras tecnologias GETA</h2>
-      <div class="tp-other-grid">
-        <a class="tile" href="tecnologia-chorume.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><div><h4 data-i18n="t1.title">Tratamento de Chorume</h4><p data-i18n="t1.text">Processos físico-químicos avançados sem dependência de sistemas biológicos.</p></div><span class="go">→</span></a>
-        <a class="tile" href="tecnologia-inertizacao.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 7v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M9 11h6M9 15h6"/></svg></div><div><h4 data-i18n="t2.title">Inertização Química de Lodos</h4><p data-i18n="t2.text">Rota tecnológica baseada em reações de encapsulamento químico de metais.</p></div><span class="go">→</span></a>
-        <a class="tile" href="tecnologia-cdr.html"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></div><div><h4 data-i18n="t4.title">CDR de Alta Performance</h4><p data-i18n="t4.text">Elevado poder calorífico e baixa umidade em combustível derivado de resíduos.</p></div><span class="go">→</span></a>
+  </div>
+</section>
+
+<!-- ENSAIO + GANHOS + CHAMADA. Vídeos e animações em assets/tecnologia.js (bloco "Case de sucesso"). -->
+<section class="cx" aria-label="O POS na prática">
+
+  <div class="cx-band cx-white">
+    <div class="wrap">
+      <div class="cx-head cx-center reveal">
+        <span class="eyebrow">Na prática</span>
+        <h3>A vinhaça <span class="cx-hl3">perde a cor escura</span></h3>
+        <p>Ensaio de oxidação seletiva: à esquerda, a vinhaça em tratamento clareia; à direita, a mesma vinhaça sem tratamento continua escura.</p>
+      </div>
+      <div class="cx-proof reveal">
+        <figure class="cx-clip cx-out">
+          <span class="cx-tag"><i></i>Vinhaça em tratamento</span>
+          <div class="cx-scr wide"><video src="img/tecnologias/pos/oxidacao-vinhaca.mp4?v=20261127p" poster="img/tecnologias/pos/oxidacao-vinhaca.jpg?v=20261127p" muted loop playsinline preload="metadata" aria-label="Duas amostras de vinhaça lado a lado: a da esquerda, em tratamento, clareia; a da direita continua escura"></video></div>
+        </figure>
+        <div class="cx-proof-txt">
+          <h4>A cor escura vem das melanoidinas</h4>
+          <p>São os compostos que travam a biodigestão. Quando a cor some, é sinal de que eles foram quebrados, e a vinhaça chega ao biodigestor sem esse freio.</p>
+          <ul class="cx-checks">
+            <li>Ataque seletivo às melanoidinas</li>
+            <li>Matéria orgânica preservada</li>
+            <li>CO₂ como insumo do processo</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="tp-cta">
-      <div><h3 data-i18n="tp.cta.t">Quer aplicar uma dessas tecnologias?</h3><p data-i18n="tp.cta.p">Avaliamos o seu efluente ou resíduo e indicamos a rota mais adequada, com ensaio de tratabilidade.</p></div>
-      <a class="btn" href="index.html#contato" data-i18n="cta.specialist">Fale com um especialista</a>
+  <div class="cx-band cx-light">
+    <div class="wrap">
+      <div class="cx-head reveal">
+        <span class="eyebrow">Ganhos esperados</span>
+        <h3>Mais energia da mesma vinhaça</h3>
+        <p>O POS ataca a causa do baixo rendimento da biodigestão. Estes são os ganhos esperados para a usina.</p>
+      </div>
+      <div class="cx-pot reveal">
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></i><h4>Mais biometano</h4><p>Maior produção de metano a partir do mesmo volume de vinhaça.</p></div>
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/></svg></i><h4>Biodigestor mais eficiente</h4><p>Menor tempo de retenção para a mesma produção.</p></div>
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4"/></svg></i><h4>CO₂ reaproveitado</h4><p>O CO₂ do upgrading volta ao processo, em vez de ir para a atmosfera.</p></div>
+        <div class="cx-pot-c"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 11.5v1"/></svg></i><h4>Menos reagente</h4><p>A oxidação acontece só onde é necessária.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cx-cta">
+    <div class="wrap">
+      <div class="cx-invite reveal">
+        <figure class="cx-invite-img"><img src="img/cases/vinhaca-radical-carbonato-biometano/usina-industrial.jpg" alt="Usina sucroenergética" loading="lazy"></figure>
+        <div class="cx-invite-txt">
+          <span class="eyebrow">Traga a sua vinhaça</span>
+          <h3>Nós definimos a rota de ação</h3>
+          <p>Cada vinhaça é diferente. Envie uma amostra: avaliamos em laboratório o potencial de metano antes e depois do POS e propomos a configuração certa para a sua usina.</p>
+          <ul class="cx-checks">
+            <li>Análise da amostra e ensaio de bancada</li>
+            <li>Potencial de metano antes e depois</li>
+            <li>Piloto antes da escala real</li>
+          </ul>
+          <a class="btn" href="index.html#contato">Fale com um especialista</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tp tp-cont">
+  <div class="wrap">
+    <div class="tp-strip">
+      <h3>Cases relacionados</h3>
+      <div class="tp-marquee" data-cases="vinhaca-radical-carbonato-biometano,efluente-lignocelulosico-poa,tratamento-fenol-ozonio,quebra-acida-efluente-oleoso"></div>
     </div>
   </div>
 </section>
 
 <script src="i18n.js?v=20261127t"></script>
+<script src="assets/i18n-pos.js?v=20261127p"></script>
 <script src="cases/cases.js?v=20261127l"></script>
 <script src="assets/mega.js?v=20261127l"></script>
 <script src="assets/portfolio.js?v=20261127l"></script>
-<script src="assets/tecnologia.js?v=20261127l"></script>
+<script src="assets/tecnologia.js?v=20261127o"></script>
 </body>
 </html>
