@@ -306,11 +306,11 @@ window.GETA_CASES =
       "es": "Pretratamiento de la vinaza vía radical carbonato para aumentar la producción de biometano (patente de invención)"
     },
     "resumo": {
-      "pt": "Tecnologia própria que usa o CO₂ como insumo reativo para gerar radicais carbonato e oxidar seletivamente as melanoidinas e estruturas lignocelulósicas da vinhaça, aumentando sua biodegradabilidade e a produção de metano na biodigestão.",
-      "en": "In-house technology that uses CO₂ as a reactive input to generate carbonate radicals and selectively oxidize the melanoidins and lignocellulosic structures in vinasse, increasing its biodegradability and methane production in anaerobic digestion.",
-      "es": "Tecnología propia que usa el CO₂ como insumo reactivo para generar radicales carbonato y oxidar selectivamente las melanoidinas y estructuras lignocelulósicas de la vinaza, aumentando su biodegradabilidad y la producción de metano en la biodigestión."
+      "pt": "Tecnologia própria, baseada em um agente oxidativo gasoso desenvolvido pela GETA, que gera radicais carbonato para oxidar seletivamente as melanoidinas e estruturas lignocelulósicas da vinhaça, aumentando sua biodegradabilidade e a produção de metano na biodigestão.",
+      "en": "In-house technology, based on a gaseous oxidizing agent developed by GETA, that generates carbonate radicals to selectively oxidize the melanoidins and lignocellulosic structures in vinasse, increasing its biodegradability and methane production in anaerobic digestion.",
+      "es": "Tecnología propia, basada en un agente oxidativo gaseoso desarrollado por GETA, que genera radicales carbonato para oxidar selectivamente las melanoidinas y estructuras lignocelulósicas de la vinaza, aumentando su biodegradabilidad y la producción de metano en la biodigestión."
     },
-    "tags": ["Patente", "Vinhaça", "Biometano", "Biodigestão", "Oxidação seletiva", "CO₂"]
+    "tags": ["Patente", "Vinhaça", "Biometano", "Biodigestão", "Oxidação seletiva", "Plasma"]
   },
   {
     "slug": "biofertilizante-map-dap-chorume",
