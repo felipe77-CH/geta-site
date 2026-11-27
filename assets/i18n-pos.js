@@ -111,17 +111,13 @@
 
     // ---- Na prática (vídeo)
     [`Na prática`, `In practice`, `En la práctica`],
-    [`A vinhaça <span class="cx-hl3">perde a cor escura</span>`, `The vinasse <span class="cx-hl3">loses its dark colour</span>`, `La vinaza <span class="cx-hl3">pierde el color oscuro</span>`],
-    [`Ensaio de oxidação seletiva: à esquerda, a vinhaça em tratamento clareia; à direita, a mesma vinhaça sem tratamento continua escura.`,
-     `Selective oxidation test: on the left, the vinasse under treatment turns lighter; on the right, the same untreated vinasse stays dark.`,
-     `Ensayo de oxidación selectiva: a la izquierda, la vinaza en tratamiento se aclara; a la derecha, la misma vinaza sin tratamiento sigue oscura.`],
-    [`<i></i>Vinhaça em tratamento`, `<i></i>Vinasse under treatment`, `<i></i>Vinaza en tratamiento`],
-    [`A cor escura vem das melanoidinas`, `The dark colour comes from melanoidins`, `El color oscuro viene de las melanoidinas`],
-    [`São os compostos que travam a biodigestão. Quando a cor some, é sinal de que eles foram quebrados, e a vinhaça chega ao biodigestor sem esse freio.`,
-     `They are the compounds that block digestion. When the colour fades, it means they have been broken down, and the vinasse reaches the digester without that brake.`,
-     `Son los compuestos que traban la biodigestión. Cuando el color desaparece, es señal de que se rompieron, y la vinaza llega al biodigestor sin ese freno.`],
-    [`Ataque seletivo às melanoidinas`, `Selective attack on melanoidins`, `Ataque selectivo a las melanoidinas`],
-    [`Matéria orgânica preservada`, `Organic matter preserved`, `Materia orgánica preservada`],
+    [`O efluente <span class="cx-hl3">perde a cor escura</span>`, `The effluent <span class="cx-hl3">loses its dark colour</span>`, `El efluente <span class="cx-hl3">pierde el color oscuro</span>`],
+    [`Ensaio de oxidação seletiva com efluente lignocelulósico: à esquerda, o efluente em tratamento clareia; à direita, o mesmo efluente sem tratamento continua escuro.`, `Selective oxidation test with lignocellulosic effluent: on the left, the effluent under treatment turns lighter; on the right, the same untreated effluent stays dark.`, `Ensayo de oxidación selectiva con efluente lignocelulósico: a la izquierda, el efluente en tratamiento se aclara; a la derecha, el mismo efluente sin tratamiento sigue oscuro.`],
+    [`<i></i>Efluente em tratamento`, `<i></i>Effluent under treatment`, `<i></i>Efluente en tratamiento`],
+    [`A cor escura vem de compostos difíceis de degradar`, `The dark colour comes from hard-to-degrade compounds`, `El color oscuro viene de compuestos difíciles de degradar`],
+    [`Em efluentes lignocelulósicos, a cor vem de estruturas aromáticas da lignina, o mesmo tipo de composto que trava a biodigestão da vinhaça. Quando a cor some, é sinal de que elas foram quebradas.`, `In lignocellulosic effluents, the colour comes from aromatic structures in lignin, the same kind of compound that blocks vinasse digestion. When the colour fades, it means they have been broken down.`, `En efluentes lignocelulósicos, el color viene de estructuras aromáticas de la lignina, el mismo tipo de compuesto que traba la biodigestión de la vinaza. Cuando el color desaparece, es señal de que se rompieron.`],
+    [`Ataque seletivo aos compostos aromáticos`, `Selective attack on aromatic compounds`, `Ataque selectivo a los compuestos aromáticos`],
+    [`Mesmo princípio aplicado à vinhaça`, `Same principle applied to vinasse`, `Mismo principio aplicado a la vinaza`],
 
     // ---- Ganhos esperados
     [`Ganhos esperados`, `Expected gains`, `Ganancias esperadas`],
