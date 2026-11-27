@@ -487,7 +487,7 @@
          que guarda o contato no banco D1 e avisa por e-mail. Código e instruções em
          tools/contato-worker/. O endereço do serviço fica em data-endpoint; sem ele,
          o formulário avisa que o envio ainda não está disponível. -->
-    <form class="reveal" id="contactForm" data-endpoint="" novalidate>
+    <form class="reveal" id="contactForm" data-endpoint="https://geta-contato.felipe-toledo-bad.workers.dev/api/contato" novalidate>
       <h3 data-i18n="form.title">Envie sua mensagem</h3>
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="row"><input name="nome" autocomplete="name" data-i18n-ph="ph.name" placeholder="Nome" required><input name="empresa" autocomplete="organization" data-i18n-ph="ph.company" placeholder="Empresa / Órgão"></div>

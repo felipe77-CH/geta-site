@@ -16,7 +16,7 @@ CONTACT_FROM = "site@getaengenharia.com.br"
 [[d1_databases]]
 binding = "DB"
 database_name = "geta-contatos"
-database_id = "PREENCHER_APOS_CRIAR"
+database_id = "5e7c715a-3287-4c43-bb73-17edd492d66a"
 
 # Aviso por e-mail: ativar quando getaengenharia.com.br estiver ativo no Cloudflare,
 # com Email Routing ligado e o e-mail de destino verificado (Email Routing → Destination addresses).
