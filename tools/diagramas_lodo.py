@@ -69,6 +69,26 @@ TR = {
  "Desaguamento rápido": ("Fast dewatering", "Deshidratación rápida"),
  "Só pode ir ao aterro": ("Can only go to landfill", "Solo puede ir al relleno"),
  "Abre novos usos": ("Opens up new uses", "Abre nuevos usos"),
+ # novos termos
+ "Lodo úmido": ("Wet sludge", "Lodo húmedo"),
+ "Desidratação\nfísica": ("Physical\ndewatering", "Deshidratación\nfísica"),
+ "Desidratação\nquímica": ("Chemical\ndewatering", "Deshidratación\nquímica"),
+ "Lodo seco para\ndisposição": ("Dry sludge\nfor disposal", "Lodo seco para\ndisposición"),
+ "+ insumos GETA": ("+ GETA inputs", "+ insumos GETA"),
+ "o lodo recebe os\ninsumos químicos": ("the sludge receives\nthe chemical inputs", "el lodo recibe los\ninsumos químicos"),
+ "Antes e depois do tratamento GETA": ("Before and after GETA treatment", "Antes y después del tratamiento GETA"),
+ "Lodo sem tratamento": ("Untreated sludge", "Lodo sin tratamiento"),
+ "Lodo tratado GETA": ("GETA-treated sludge", "Lodo tratado GETA"),
+ "UMIDADE": ("MOISTURE", "HUMEDAD"),
+ "METAIS": ("METALS", "METALES"),
+ "CLASSIFICAÇÃO": ("CLASSIFICATION", "CLASIFICACIÓN"),
+ "Lodo mais seco": ("Drier sludge", "Lodo más seco"),
+ "Lixivia com facilidade": ("Leaches easily", "Lixivia con facilidad"),
+ "Encapsulamento químico": ("Chemical encapsulation", "Encapsulamiento químico"),
+ "Lodo perigoso": ("Hazardous sludge", "Lodo peligroso"),
+ "Lodo inerte": ("Inert sludge", "Lodo inerte"),
+ "Desidratador\nmecânico": ("Mechanical\ndewaterer", "Deshidratador\nmecánico"),
+ "+ insumo GETA\n(dosagem automática)": ("+ GETA input\n(automatic dosing)", "+ insumo GETA\n(dosificación automática)"),
  # 4
  "O piloto": ("The pilot", "El piloto"),
  "Lodo entra": ("Sludge in", "Entra el lodo"),
@@ -125,15 +145,16 @@ def save(fig, name):
 
 # ── 1 · Como funciona ────────────────────────────────────────────────────
 fig, ax = canvas("Como funciona")
-# Fluxo: lodo → mistura (+ polímeros) → lodo seco
-RY, RH, RW = 5.1, 1.4, 3.2
-box(ax, 0.4, RY, RW, RH, "Lodo úmido\ncom metais", "conc", fs=18)
-box(ax, 4.4, RY, RW, RH, "Mistura", "proc", fs=19)
-box(ax, 8.4, RY, RW, RH, "Lodo mais seco\ne seguro", "out", fs=18)
-arrow(ax, 3.64, RY + RH / 2, 4.36, RY + RH / 2)
-arrow(ax, 7.64, RY + RH / 2, 8.36, RY + RH / 2)
-box(ax, 4.65, 7.0, 2.7, 0.75, "+ polímeros GETA", "add", fs=14)
-arrow(ax, 6.0, 6.96, 6.0, RY + RH + 0.04)
+# Fluxo: lodo úmido → desidratação física → desidratação química (+ insumos GETA) → lodo seco
+RY, RH, RW, RG = 5.1, 1.4, 2.55, 0.35
+fx = [0.375 + i * (RW + RG) for i in range(4)]
+for i, (t, k) in enumerate([("Lodo úmido", "conc"), ("Desidratação\nfísica", "proc"),
+                            ("Desidratação\nquímica", "proc"), ("Lodo seco para\ndisposição", "out")]):
+    box(ax, fx[i], RY, RW, RH, t, k, fs=16)
+    if i: arrow(ax, fx[i - 1] + RW + 0.04, RY + RH / 2, fx[i] - 0.04, RY + RH / 2)
+qx = fx[2] + RW / 2
+box(ax, qx - 1.4, 7.0, 2.8, 0.75, "+ insumos GETA", "add", fs=14)
+arrow(ax, qx, 6.96, qx, RY + RH + 0.04)
 # Ilustração: o floco antes e depois
 rng = np.random.default_rng(7)
 def floco(cx, cy, solto):
@@ -175,7 +196,7 @@ save(fig, "lodo-mecanismo.jpg")
 
 # ── 2 · Processo em 4 etapas ─────────────────────────────────────────────
 fig, ax = canvas("O processo em 4 etapas")
-steps = [("Misturar", "o lodo recebe\nos polímeros"), ("Adensar", "os flocos ficam\nmais firmes"),
+steps = [("Misturar", "o lodo recebe os\ninsumos químicos"), ("Adensar", "os flocos ficam\nmais firmes"),
          ("Desaguar", "a água sai\nmais rápido"), ("Destinar", "um sólido seguro\ne com menos volume")]
 # Mede o texto mais largo para centralizar o conjunto (caixa + descrição) na imagem
 rend = fig.canvas.get_renderer()
@@ -185,7 +206,7 @@ def largura(s, fs):
 BW, GAP = 3.6, 0.6
 tw = max(largura(_(d), 17) for _t, d in steps)
 x0 = (12 - (BW + GAP + tw)) / 2 + 0.2   # +0.2 compensa o círculo do número à esquerda
-ys = [6.45, 4.9, 3.35, 1.8]
+ys = [6.2, 4.6, 3.0, 1.4]
 for i, ((t, d), y) in enumerate(zip(steps, ys)):
     last = i == len(steps) - 1
     box(ax, x0, y, BW, 1.15, t, "out" if last else "proc", fs=20)
@@ -193,40 +214,43 @@ for i, ((t, d), y) in enumerate(zip(steps, ys)):
     ax.text(x0 + BW + GAP, y + 0.575, _(d), ha="left", va="center", fontsize=17, color=NAVY, linespacing=1.35)
     if not last:
         arrow(ax, x0 + BW / 2, y - 0.04, x0 + BW / 2, ys[i + 1] + 1.19)
-note(ax, 0.75, "Usa os equipamentos que a estação já tem")
 save(fig, "lodo-processo.jpg")
 
 # ── 3 · Antes e depois ───────────────────────────────────────────────────
-fig, ax = canvas("Antes e depois")
-C1, C2, CW = 0.6, 6.6, 4.8
-box(ax, C1, 6.65, CW, 0.95, "Lodo comum", "bad", fs=19)
-box(ax, C2, 6.65, CW, 0.95, "Lodo GETA", "out", fs=19)
-rows = [("Muita água", "Bem mais seco"), ("Pode soltar metais", "Não solta poluentes"),
-        ("Desaguamento lento", "Desaguamento rápido"), ("Só pode ir ao aterro", "Abre novos usos")]
-y = 5.3
-for a, b in rows:
-    box(ax, C1, y, CW, 1.0, a, "conc", fs=17)
-    box(ax, C2, y, CW, 1.0, b, "prod", fs=17)
-    arrow(ax, C1 + CW + 0.08, y + 0.5, C2 - 0.08, y + 0.5)
-    y -= 1.35
+fig, ax = canvas("Antes e depois do tratamento GETA")
+LX, LW = 0.35, 2.55
+C1, C2, CW = 3.25, 7.75, 3.9
+box(ax, C1, 6.6, CW, 0.95, "Lodo sem tratamento", "bad", fs=17)
+box(ax, C2, 6.6, CW, 0.95, "Lodo tratado GETA", "out", fs=17)
+rows = [("UMIDADE", "Lodo úmido", "Lodo mais seco"),
+        ("METAIS", "Lixivia com facilidade", "Encapsulamento químico"),
+        ("CLASSIFICAÇÃO", "Lodo perigoso", "Lodo inerte")]
+y = 4.95
+for lab, a, b in rows:
+    ax.add_patch(FancyBboxPatch((LX, y), LW, 1.25, boxstyle="round,pad=0,rounding_size=0.16", fc="#f6f7fc", ec="#dde3f3", lw=2))
+    ax.text(LX + LW / 2, y + 0.625, _(lab), ha="center", va="center", fontsize=14, color=NAVY, fontweight="bold")
+    box(ax, C1, y, CW, 1.25, a, "conc", fs=17)
+    box(ax, C2, y, CW, 1.25, b, "prod", fs=17)
+    arrow(ax, C1 + CW + 0.08, y + 0.625, C2 - 0.08, y + 0.625)
+    y -= 1.6
 save(fig, "lodo-comparacao.jpg")
 
 # ── 4 · Piloto ───────────────────────────────────────────────────────────
 fig, ax = canvas("O piloto")
-# Diagrama de blocos: entrada → processos → saída, com o polímero entrando na mistura
-seq = [("Lodo de ETE", "conc"), ("Bomba", "proc"), ("Mistura", "proc"), ("Prensa", "proc"), ("Lodo seco\ne seguro", "out")]
-w, gap, y, hh = 2.0, 0.35, 4.3, 1.3
-xs = [0.3 + i * (w + gap) for i in range(len(seq))]
+# Diagrama de blocos (PFD): entrada → desidratador mecânico → desidratação química (+ insumo GETA) → saída
+seq = [("Lodo de ETE", "conc"), ("Desidratador\nmecânico", "proc"), ("Desidratação\nquímica", "proc"), ("Lodo seco para\ndisposição", "out")]
+w, gap, y, hh = 2.6, 0.37, 4.3, 1.35
+xs = [0.245 + i * (w + gap) for i in range(len(seq))]
 for i, ((t, k), x) in enumerate(zip(seq, xs)):
     box(ax, x, y, w, hh, t, k, fs=16)
     if i: arrow(ax, xs[i - 1] + w + 0.04, y + hh / 2, x - 0.04, y + hh / 2)
-# entrada do polímero (tracejado) na mistura
+# entrada do insumo GETA (tracejado) na desidratação química
 mx = xs[2] + w / 2
-box(ax, mx - 1.6, 6.35, 3.2, 1.0, "+ polímero\n(dosagem automática)", "add", fs=13)
+box(ax, mx - 1.6, 6.35, 3.2, 1.0, "+ insumo GETA\n(dosagem automática)", "add", fs=13)
 arrow(ax, mx, 6.31, mx, y + hh + 0.04)
-# saída de água da prensa
-px = xs[3] + w / 2
-box(ax, xs[3] - 0.25, 1.95, w + 0.5, 1.15, "A água volta\npara a estação", "mid", fs=14)
+# saída de água do desidratador mecânico
+px = xs[1] + w / 2
+box(ax, xs[1] - 0.1, 1.95, w + 0.2, 1.15, "A água volta\npara a estação", "mid", fs=14)
 arrow(ax, px, y - 0.04, px, 3.14)
 for i, t in enumerate(["até 20 m³/h", "automático", "testado no local"]):
     cx = 2.2 + i * 3.8
