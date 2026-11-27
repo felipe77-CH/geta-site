@@ -66,33 +66,6 @@
     }), { threshold: 0.5 });
     $$('[data-count]', cx).forEach(el => cio.observe(el));
 
-    // Etapas: avançam sozinhas (com barra de progresso) quando estão na tela
-    const jor = cx.querySelector('.cx-journey');
-    if (jor) {
-      const bar = jor.querySelector('.cx-steps'), btns = $$('.cx-steps button', jor),
-        fotos = $$('.cx-photo img', jor), arts = $$('.cx-panel article', jor);
-      const DUR = 6500; let i = 0, timer = null, visivel = false;
-      bar.style.setProperty('--cx-dur', DUR + 'ms');
-      if (calmo) bar.classList.add('parado');
-      const go = n => {
-        i = (n + btns.length) % btns.length;
-        btns.forEach((b, k) => { b.classList.remove('on'); b.classList.toggle('feito', k < i); b.setAttribute('aria-selected', k === i); });
-        void btns[i].offsetWidth; btns[i].classList.add('on');          // reinicia a barra
-        fotos.forEach((f, k) => f.classList.toggle('on', k === i));
-        void fotos[i].offsetWidth;
-        arts.forEach((a, k) => a.classList.toggle('on', k === i));
-        if (bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: btns[i].offsetLeft - 16, behavior: 'smooth' });
-      };
-      const play = () => { clearInterval(timer); if (!calmo && visivel) timer = setInterval(() => go(i + 1), DUR); };
-      btns.forEach((b, k) => b.addEventListener('click', () => { go(k); play(); }));
-      jor.addEventListener('mouseenter', () => { clearInterval(timer); bar.classList.add('parado'); });
-      jor.addEventListener('mouseleave', () => { if (!calmo) bar.classList.remove('parado'); go(i); play(); });
-      new IntersectionObserver(es => es.forEach(e => {
-        visivel = e.isIntersecting;
-        if (visivel) { go(i); play(); } else clearInterval(timer);
-      }), { threshold: 0.35 }).observe(jor);
-    }
-
     // Vídeos: tocam quando aparecem e pausam fora da tela
     const vio = new IntersectionObserver(es => es.forEach(e => {
       const v = e.target;
