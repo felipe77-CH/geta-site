@@ -8,7 +8,7 @@ workers_dev = true
 [vars]
 # Sites que podem enviar o formulário (separados por vírgula)
 ALLOWED_ORIGINS = "https://getaengenharia.com.br,https://www.getaengenharia.com.br,https://geta-site.pages.dev,https://felipe77-ch.github.io,http://localhost:5500"
-# Remetente do aviso (precisa ser do domínio com Email Routing ativo).
+# Remetente dos e-mails (domínio verificado no Resend e, para o aviso, com Email Routing ativo).
 # Quem RECEBE o aviso não fica aqui (este repositório é público):
 #   npx wrangler secret put CONTACT_TO
 CONTACT_FROM = "site@getaengenharia.com.br"
@@ -22,5 +22,10 @@ database_id = "5e7c715a-3287-4c43-bb73-17edd492d66a"
 # com Email Routing ligado e o e-mail de destino verificado (Email Routing → Destination addresses).
 # [[send_email]]
 # name = "EMAIL"
+
+# Confirmação à pessoa (e aviso, se não houver Email Routing) pelo Resend:
+#   npx wrangler secret put RESEND_API_KEY
+# Remetente da confirmação (opcional, e-mail institucional; respostas vão para ele):
+#   npx wrangler secret put CONFIRM_FROM
 
 # Anti-spam Turnstile (opcional): npx wrangler secret put TURNSTILE_SECRET

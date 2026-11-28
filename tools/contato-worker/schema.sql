@@ -12,7 +12,9 @@ CREATE TABLE IF NOT EXISTS contatos (
   idioma        TEXT,
   pagina        TEXT,
   pais          TEXT,
-  email_enviado INTEGER NOT NULL DEFAULT 0,
+  email_enviado INTEGER NOT NULL DEFAULT 0,                    -- aviso à equipe enviado
+  confirmacao_enviada INTEGER NOT NULL DEFAULT 0,              -- confirmação à pessoa enviada
   status        TEXT    NOT NULL DEFAULT 'novo'                -- novo / respondido / arquivado
 );
 CREATE INDEX IF NOT EXISTS idx_contatos_criado ON contatos (criado_em);
+CREATE INDEX IF NOT EXISTS idx_contatos_email ON contatos (email);
