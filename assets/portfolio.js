@@ -99,7 +99,7 @@
 
   function renderCase() {
     const c = CASES[cur], lang = I18N.lang;
-    document.title = pick(c.titulo).replace(/<[^>]+>/g, '') + ' | GETA';
+    document.title = pick(c.titulo).replace(/<[^>]+>/g, '') + ' | GETA Engenharia';
     const md = $('meta[name="description"]'); if (md) md.setAttribute('content', pick(c.resumo));
     const ax0 = c.eixos[0];
     $('#cs-hero').innerHTML = `
@@ -154,7 +154,7 @@ ${isDraft(c) ? `<div class="cs-banner"><div class="wrap"><span>${t('cs.banner')}
     if (!A[ax]) ax = 'amb';
     const a = A[ax], L = I18N.lang;
     const name = t('ax.' + ax);
-    document.title = name.replace(/&amp;/g, '&') + ' | GETA';
+    document.title = name.replace(/&amp;/g, '&') + ' | GETA Engenharia';
     const md = $('meta[name="description"]'); if (md) md.setAttribute('content', pick(a.lead));
     // Cases da área: primeiro os que têm esta área como eixo principal
     const list = CASES.filter(c => c.eixos.includes(ax)).sort((x, y) => (x.eixos[0] === ax ? 0 : 1) - (y.eixos[0] === ax ? 0 : 1));

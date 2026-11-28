@@ -1,0 +1,6 @@
+# GETA Engenharia – instruções para buscadores
+User-agent: *
+Allow: /
+Disallow: /tools/
+
+Sitemap: https://getaengenharia.com.br/sitemap.xml
