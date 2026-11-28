@@ -3,6 +3,7 @@ endereço e imagem que aparecem ao compartilhar o link (WhatsApp, LinkedIn, Goog
 Usa o <title>, a <meta name="description">, o canônico e a imagem de capa da página.
 Rode de novo depois de criar páginas ou cases:  python tools/gerar_og.py"""
 import glob, html, json, pathlib, re
+from PIL import Image
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://getaengenharia.com.br/"
@@ -30,7 +31,13 @@ for f in sorted(glob.glob(str(RAIZ / "*.html")) + glob.glob(str(RAIZ / "cases" /
     else:
         m = re.search(r"background-image:url\('?([^')]+?)'?\)", h)
         img = m.group(1) if m else "img/hero-estacao-tratamento.jpg"
-    img = BASE + img.split("?")[0].lstrip("./").replace("../", "")
+    rel = img.split("?")[0].replace("../", "").lstrip("./")
+    img = BASE + rel
+    try:
+        with Image.open(RAIZ / rel) as im:
+            largura, altura = im.size
+    except Exception:
+        largura = altura = 0
     e = lambda s: html.escape(s, quote=True)
     bloco = "\n".join([
         INI,
@@ -40,6 +47,11 @@ for f in sorted(glob.glob(str(RAIZ / "*.html")) + glob.glob(str(RAIZ / "cases" /
         f'<meta property="og:description" content="{e(desc)}">' if desc else "",
         f'<meta property="og:url" content="{e(url)}">',
         f'<meta property="og:image" content="{e(img)}">',
+        f'<meta property="og:image:secure_url" content="{e(img)}">',
+        '<meta property="og:image:type" content="image/jpeg">' if rel.lower().endswith((".jpg", ".jpeg")) else "",
+        f'<meta property="og:image:width" content="{largura}">' if largura else "",
+        f'<meta property="og:image:height" content="{altura}">' if altura else "",
+        f'<meta property="og:image:alt" content="{e(titulo)}">',
         '<meta property="og:locale" content="pt_BR">',
         '<meta name="twitter:card" content="summary_large_image">',
         FIM]).replace("\n\n", "\n")
