@@ -1,0 +1,12 @@
+# Cabeçalhos de segurança do site (lidos pelo Cloudflare Pages; o GitHub Pages ignora este arquivo).
+# Para testar localmente com estes cabeçalhos: python tools/servidor_local.py  (http://localhost:5501)
+# Se adicionar um serviço externo (ex.: scripts, fontes, vídeos de outro domínio), inclua-o na
+# Content-Security-Policy abaixo; senão o navegador bloqueia.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://geta-contato.felipe-toledo-bad.workers.dev; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests

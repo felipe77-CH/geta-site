@@ -281,6 +281,10 @@
   .contact form .form-status.err{color:#b4232c}
   .contact form input.invalid,.contact form textarea.invalid{border-color:#d33b3b;background:#fff6f6}
   .contact form button[disabled]{opacity:.7;cursor:wait}
+  .contact form .form-accept{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--muted);cursor:pointer}
+  .contact form .form-accept input{width:18px;height:18px;min-width:18px;margin:1px 0 0;padding:0;accent-color:var(--blue);cursor:pointer}
+  .contact form .form-accept a{color:var(--blue);text-decoration:underline}
+  .contact form .form-accept.invalid{color:#b4232c}
   .contact form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 
   /* ====== Footer ====== */
@@ -509,7 +513,7 @@
       <div class="row"><input type="email" name="email" autocomplete="email" data-i18n-ph="ph.email" placeholder="E-mail" required><input type="tel" name="telefone" autocomplete="tel" data-i18n-ph="ph.phone" placeholder="Telefone"></div>
       <select name="area"><option value="" data-i18n="form.area">Área de interesse</option><option value="Tecnologias GETA" data-i18n="form.tech">Tecnologias GETA (chorume, lodos, POS, CDR)</option><option value="Engenharia Ambiental" data-i18n="ax.amb">Engenharia Ambiental</option><option value="Engenharia de Processos" data-i18n="ax.proc">Engenharia de Processos</option><option value="Tratamento de Resíduos e Efluentes" data-i18n="ax.res">Tratamento de Resíduos e Efluentes</option><option value="Engenharia Digital e IA" data-i18n="ax.dig">Engenharia Digital e IA</option><option value="Modelagem e Otimização" data-i18n="ax.mod">Modelagem e Otimização</option><option value="Estudos Técnico-Econômicos e P&amp;D" data-i18n="ax.rd">Estudos Técnico-Econômicos e P&amp;D</option><option value="Outro" data-i18n="form.other">Outro assunto</option></select>
       <textarea name="mensagem" data-i18n-ph="ph.msg" placeholder="Descreva seu desafio" required></textarea>
-      <p class="form-note" data-i18n="form.privacy">Usamos seus dados apenas para responder a esta mensagem. Veja a <a href="privacidade.html">Política de privacidade</a>.</p>
+      <label class="form-accept"><input type="checkbox" name="aceite" value="sim" required><span data-i18n="form.accept">Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">Política de privacidade</a> e os <a href="termos.html" target="_blank" rel="noopener">Termos de uso</a>. Usamos seus dados apenas para responder a esta mensagem.</span></label>
       <button class="btn" style="justify-self:start" data-i18n="form.send">Enviar mensagem</button>
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>
@@ -524,14 +528,14 @@
       <div><h4 data-i18n="nav.about">A GETA</h4><ul><li><a href="quem-somos.html" data-i18n="nav.who">Quem somos</a></li><li><a href="#parceiro" data-i18n="nav.how">Como trabalhamos</a></li><li><a href="#tecnologia" data-i18n="nav.diff">Diferencial tecnológico</a></li><li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li></ul></div>
       <div><h4 data-i18n="nav.tech">Tecnologia</h4><ul><li><a href="tecnologia-chorume.html" data-i18n="tp.tab1">Tratamento de Chorume</a></li><li><a href="tecnologia-inertizacao.html" data-i18n="tp.tab2">Inertização de Lodos</a></li><li><a href="tecnologia-cdr.html" data-i18n="tp.tab3">CDR de Alta Performance</a></li><li><a href="tecnologia-pos.html" data-i18n="tp.tab4">Oxidação Seletiva (POS)</a></li><li><a href="tecnologia.html" data-i18n="tp.all">Ver todas as tecnologias →</a></li></ul></div>
       <div><h4 data-i18n="nav.areas">Áreas de atuação</h4><ul><li><a href="area.html?eixo=amb" data-i18n="ax.amb">Engenharia Ambiental</a></li><li><a href="area.html?eixo=proc" data-i18n="ax.proc">Engenharia de Processos</a></li><li><a href="area.html?eixo=res" data-i18n="ax.res">Tratamento de Resíduos e Efluentes</a></li><li><a href="area.html?eixo=dig" data-i18n="ax.dig">Engenharia Digital e IA</a></li><li><a href="area.html?eixo=mod" data-i18n="ax.mod">Modelagem e Otimização</a></li></ul></div>
-      <div><h4 data-i18n="nav.contact">Contato</h4><ul><li><a href="#contato" data-i18n="cta.specialist">Fale com um especialista</a></li><li><a href="privacidade.html" data-i18n="ft.privacy">Política de privacidade</a></li></ul></div>
+      <div><h4 data-i18n="nav.contact">Contato</h4><ul><li><a href="#contato" data-i18n="cta.specialist">Fale com um especialista</a></li><li><a href="privacidade.html" data-i18n="ft.privacy">Política de privacidade</a></li><li><a href="termos.html" data-i18n="ft.terms">Termos de uso</a></li></ul></div>
     </div>
     <div class="legal"><span data-i18n="ft.copy">© 2026 GETA – Grupo de Especialistas em Tecnologias Ambientais.</span><span data-i18n="ft.photos">Fotos: Pexels</span></div>
   </div>
 </footer>
 
 
-<script src="i18n.js?v=20261128b"></script>
+<script src="i18n.js?v=20261128c"></script>
 <script src="cases/cases.js?v=20261127u"></script>
 <script src="assets/mega.js?v=20261127l"></script>
 <script>
@@ -595,13 +599,15 @@
     const btn=f.querySelector('button'), st=f.querySelector('.form-status');
     const msg=(key,cls)=>{st.textContent=I18N.t(key);st.className='form-status'+(cls?' '+cls:'');st.dataset.key=key};
     I18N.onChange(()=>{if(st.dataset.key)st.textContent=I18N.t(st.dataset.key)});
-    f.addEventListener('input',e=>e.target.classList.remove('invalid'));
+    f.addEventListener('input',e=>{e.target.classList.remove('invalid');if(e.target.type==='checkbox')e.target.closest('label').classList.remove('invalid')});
     f.addEventListener('submit',async e=>{
       e.preventDefault();
       // campos obrigatórios e e-mail válido
-      const bad=[...f.querySelectorAll('[required]')].filter(el=>!el.value.trim()||(el.type==='email'&&!el.checkValidity()));
+      const bad=[...f.querySelectorAll('[required]')].filter(el=>el.type!=='checkbox'&&(!el.value.trim()||(el.type==='email'&&!el.checkValidity())));
       bad.forEach(el=>el.classList.add('invalid'));
       if(bad.length){bad[0].focus();return msg('form.fill','err')}
+      // aceite da Política de privacidade e dos Termos de uso (obrigatório; o serviço registra quando e como)
+      if(!f.aceite.checked){f.aceite.closest('label').classList.add('invalid');f.aceite.focus();return msg('form.needaccept','err')}
       if(f.botcheck.checked)return;              // robô: ignora em silêncio
       const url=f.dataset.endpoint;
       if(!url){console.warn('Formulário de contato sem endereço do serviço (data-endpoint).');return msg('form.off','err')}
@@ -613,6 +619,7 @@
       try{
         const r=await fetch(url,{method:'POST',body:d,headers:{Accept:'application/json'}});
         const j=await r.json();
+        if(r.status===429)return msg('form.limit','err');
         if(!r.ok||!j.ok)throw new Error(j.erro||r.status);
         f.reset();msg('form.ok','ok');
       }catch(err){console.warn('Falha no envio do formulário:',err);msg('form.err','err')}

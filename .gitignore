@@ -4,3 +4,9 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+# Segredos locais (nunca publicar)
+.env
+.env.*
+.dev.vars
+*.pem
+*.key

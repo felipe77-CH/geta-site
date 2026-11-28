@@ -11,7 +11,7 @@ hoje = datetime.date.today().isoformat()
 # páginas fixas (endereço sem ".html", igual ao canônico) e prioridade
 paginas = [("", "1.0"), ("quem-somos", "0.8"), ("tecnologia", "0.9"),
            ("tecnologia-chorume", "0.9"), ("tecnologia-inertizacao", "0.9"),
-           ("tecnologia-pos", "0.9"), ("tecnologia-cdr", "0.8"), ("privacidade", "0.3")]
+           ("tecnologia-pos", "0.9"), ("tecnologia-cdr", "0.8"), ("privacidade", "0.3"), ("termos", "0.3")]
 paginas = [(p, pr) for p, pr in paginas if (RAIZ / ((p or "index") + ".html")).exists()]
 
 # áreas de atuação (area.html?eixo=...)

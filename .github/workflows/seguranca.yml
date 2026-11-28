@@ -1,0 +1,23 @@
+# Verificação automática de segurança a cada push e pull request:
+# procura chaves, senhas e tokens publicados por engano em todo o histórico do git (gitleaks).
+name: Segurança
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 9 * * 1"   # toda segunda-feira
+
+permissions:
+  contents: read
+
+jobs:
+  segredos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -11,27 +11,67 @@
    ===================================================================== */
 
 const LIMITES = { nome: 120, empresa: 160, email: 200, telefone: 40, area: 120, mensagem: 5000, idioma: 5, pagina: 300 };
-const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const EMAIL_OK = /^[^\s@<>()\[\],;:"\\]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+const TELEFONE_OK = /^[0-9+()\-.\s]*$/;
+const PAGINA_OK = /^\/[A-Za-z0-9\-._~\/]*$/;
+const IDIOMAS = ['pt', 'en', 'es'];
+// Valores aceitos no campo "Área de interesse" (os mesmos do <select> do index.html)
+const AREAS = ['Tecnologias GETA', 'Engenharia Ambiental', 'Engenharia de Processos', 'Tratamento de Resíduos e Efluentes',
+  'Engenharia Digital e IA', 'Modelagem e Otimização', 'Estudos Técnico-Econômicos e P&D', 'Outro'];
+const MAX_CORPO = 20000;                 // bytes por envio
+const MAX_POR_EMAIL_DIA = 3;             // envios do mesmo e-mail em 24 h
+const MAX_TOTAL_DIA = 200;               // envios de todo o site em 24 h (protege a cota de e-mails)
+const RETENCAO = '-2 years';             // política de privacidade, seção 5
+// Versão da Política de privacidade e dos Termos de uso aceitos no formulário.
+// Mudou o texto de um deles? Atualize esta data junto com a data na página.
+const VERSAO_DOCUMENTOS = '2026-11-28';
+
+// Cabeçalhos de segurança de todas as respostas
+const SEGURANCA = {
+  'X-Content-Type-Options': 'nosniff',
+  'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'",
+  'Referrer-Policy': 'no-referrer',
+  'Cache-Control': 'no-store',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+};
+
+const semControle = s => s.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u2028\u2029]/g, '');
+const umaLinhaSo = s => semControle(s.replace(/[\r\n\t]+/g, ' ')).trim();
 
 export default {
   async fetch(request, env, ctx) {
     const origem = request.headers.get('Origin') || '';
     const permitidas = (env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
     const cors = permitidas.includes(origem)
-      ? { 'Access-Control-Allow-Origin': origem, 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type, Accept', 'Vary': 'Origin' }
+      ? { 'Access-Control-Allow-Origin': origem, 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'Vary': 'Origin' }
       : {};
-    const resposta = (status, corpo) => new Response(JSON.stringify(corpo), { status, headers: { 'Content-Type': 'application/json; charset=utf-8', ...cors } });
+    // Respostas curtas: só { ok } e um código de erro, nunca dados guardados nem detalhes internos
+    const resposta = (status, corpo) => new Response(JSON.stringify(corpo), { status, headers: { 'Content-Type': 'application/json; charset=utf-8', ...SEGURANCA, ...cors } });
 
-    if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
+    if (new URL(request.url).pathname !== '/api/contato') return resposta(404, { ok: false, erro: 'rota' });
+    if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: { ...SEGURANCA, ...cors } });
     if (request.method !== 'POST') return resposta(405, { ok: false, erro: 'metodo' });
     if (!permitidas.includes(origem)) return resposta(403, { ok: false, erro: 'origem' });
 
-    // Lê o formulário (FormData ou JSON)
+    // Limite de envios por IP (binding LIMITE em wrangler.toml; o IP não é guardado)
+    const ip = request.headers.get('CF-Connecting-IP') || '';
+    if (env.LIMITE) {
+      const { success } = await env.LIMITE.limit({ key: ip || 'sem-ip' });
+      if (!success) return resposta(429, { ok: false, erro: 'limite' });
+    }
+
+    // Lê o formulário (FormData ou JSON), com tamanho máximo
     let dados = {};
     try {
       const tipo = request.headers.get('Content-Type') || '';
-      if (tipo.includes('application/json')) dados = await request.json();
-      else dados = Object.fromEntries(await request.formData());
+      if (Number(request.headers.get('Content-Length') || 0) > MAX_CORPO) return resposta(413, { ok: false, erro: 'tamanho' });
+      const bruto = await request.arrayBuffer();
+      if (bruto.byteLength > MAX_CORPO) return resposta(413, { ok: false, erro: 'tamanho' });
+      if (tipo.includes('application/json')) dados = JSON.parse(new TextDecoder().decode(bruto));
+      else if (tipo.includes('multipart/form-data') || tipo.includes('application/x-www-form-urlencoded'))
+        dados = Object.fromEntries(await new Response(bruto, { headers: { 'Content-Type': tipo } }).formData());
+      else return resposta(415, { ok: false, erro: 'formato' });
+      if (!dados || typeof dados !== 'object' || Array.isArray(dados)) throw new Error('formato');
     } catch { return resposta(400, { ok: false, erro: 'formato' }); }
 
     // Anti-spam 1: campo invisível preenchido = robô (responde "ok" sem guardar)
@@ -40,26 +80,49 @@ export default {
     // Anti-spam 2: Cloudflare Turnstile (só se a chave secreta estiver configurada)
     if (env.TURNSTILE_SECRET) {
       const token = String(dados['cf-turnstile-response'] || '');
-      const ip = request.headers.get('CF-Connecting-IP') || '';
       const v = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST', body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: token, remoteip: ip })
       }).then(r => r.json()).catch(() => ({ success: false }));
       if (!v.success) return resposta(400, { ok: false, erro: 'antispam' });
     }
 
-    // Limpa e valida os campos
+    // Limpa e valida os campos. Só os campos conhecidos são lidos: qualquer outro campo
+    // enviado (status, id, criado_em…) é ignorado e não chega ao banco.
     const c = {};
-    for (const [campo, max] of Object.entries(LIMITES)) c[campo] = String(dados[campo] || '').trim().slice(0, max);
+    for (const [campo, max] of Object.entries(LIMITES)) {
+      const v = typeof dados[campo] === 'string' ? dados[campo] : '';
+      c[campo] = (campo === 'mensagem' ? semControle(v).trim() : umaLinhaSo(v)).slice(0, max);
+    }
+    c.email = c.email.toLowerCase();
     if (!c.nome || !c.mensagem || !EMAIL_OK.test(c.email)) return resposta(400, { ok: false, erro: 'campos' });
-    const pais = (request.cf && request.cf.country) || '';
+    if (!TELEFONE_OK.test(c.telefone)) return resposta(400, { ok: false, erro: 'campos' });
+    if (c.area && !AREAS.includes(c.area)) c.area = 'Outro';
+    if (!IDIOMAS.includes(c.idioma)) c.idioma = 'pt';
+    if (!PAGINA_OK.test(c.pagina)) c.pagina = '';
+    // Aceite da Política de privacidade e dos Termos de uso (caixa obrigatória no formulário)
+    if (dados.aceite !== 'sim' && dados.aceite !== true) return resposta(400, { ok: false, erro: 'aceite' });
+    const pais = /^[A-Z]{2}$/.test((request.cf && request.cf.country) || '') ? request.cf.country : '';
 
-    // Guarda no banco
+    // Limites por e-mail e do site inteiro (contra abuso e para não estourar a cota de e-mails)
+    try {
+      const q = await env.DB.prepare(
+        `SELECT (SELECT COUNT(*) FROM contatos WHERE email = ? AND criado_em > datetime('now', '-1 day')) AS por_email,
+                (SELECT COUNT(*) FROM contatos WHERE criado_em > datetime('now', '-1 day')) AS total`
+      ).bind(c.email).first();
+      if (q && (q.por_email >= MAX_POR_EMAIL_DIA || q.total >= MAX_TOTAL_DIA)) return resposta(429, { ok: false, erro: 'limite' });
+    } catch (e) {
+      console.error('Erro ao conferir limites:', e);
+    }
+
+    // Guarda no banco (consulta parametrizada: os valores nunca entram no texto do SQL)
     let id;
     try {
       const r = await env.DB.prepare(
-        `INSERT INTO contatos (nome, empresa, email, telefone, area, mensagem, idioma, pagina, pais)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
-      ).bind(c.nome, c.empresa, c.email, c.telefone, c.area, c.mensagem, c.idioma, c.pagina, pais).run();
+        `INSERT INTO contatos (nome, empresa, email, telefone, area, mensagem, idioma, pagina, pais,
+                               aceite_em, aceite_versao, aceite_meio)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), ?, ?)`
+      ).bind(c.nome, c.empresa, c.email, c.telefone, c.area, c.mensagem, c.idioma, c.pagina, pais,
+             VERSAO_DOCUMENTOS, `caixa de seleção do formulário de contato (${c.idioma}) em ${c.pagina || '/'}`).run();
       id = r.meta && r.meta.last_row_id;
     } catch (e) {
       console.error('Erro ao guardar o contato:', e);
@@ -70,6 +133,12 @@ export default {
     const emails = enviarEmails(env, c, id, pais);
     if (ctx && ctx.waitUntil) ctx.waitUntil(emails); else await emails;
     return resposta(200, { ok: true });
+  },
+
+  // Tarefa diária (wrangler.toml → [triggers]): apaga contatos com mais de 2 anos (política, seção 5)
+  async scheduled(evento, env, ctx) {
+    const r = await env.DB.prepare(`DELETE FROM contatos WHERE criado_em < datetime('now', ?)`).bind(RETENCAO).run();
+    console.log('Contatos apagados por prazo de retenção:', (r.meta && r.meta.changes) || 0);
   }
 };
 

@@ -14,6 +14,29 @@ no idioma em que ela escreveu (PT, EN ou ES). Os comandos abaixo rodam dentro de
    Contra abuso: no máximo uma confirmação por endereço a cada 24 h, e o texto não repete a mensagem
    recebida. O "Responder" da confirmação vai para `CONTACT_TO`.
 
+## Segurança e LGPD
+- **Aceite obrigatório**: o formulário tem a caixa "Li e aceito a Política de privacidade e os Termos de uso".
+  O serviço recusa envios sem ela e grava `aceite_em` (data e hora UTC), `aceite_versao`
+  (constante `VERSAO_DOCUMENTOS` em `src/index.js`) e `aceite_meio` (caixa, idioma e página).
+  Ao mudar a política ou os termos, atualize a data nas páginas **e** em `VERSAO_DOCUMENTOS`.
+- **Limites de envio**: 5 por minuto por IP (binding `LIMITE`; o IP não é guardado), 3 por e-mail
+  em 24 h e 200 no site inteiro em 24 h. Acima disso a resposta é `429`.
+- **Validação**: só os campos conhecidos são lidos (outros, como `status` ou `id`, são ignorados),
+  com tamanho máximo, sem caracteres de controle; telefone, idioma, área e página são conferidos.
+  Envio máximo de 20 KB. Todas as consultas SQL são parametrizadas.
+- **Respostas mínimas**: só `{ ok }` e um código de erro, com cabeçalhos de segurança.
+- **Retenção**: uma tarefa diária (`[triggers]` em `wrangler.toml`) apaga contatos com mais de 2 anos.
+- **Segredos**: chaves ficam só em `wrangler secret` (nunca no repositório). O D1 já guarda os dados
+  criptografados em repouso. Proteja a conta Cloudflare com autenticação em dois fatores.
+
+## Atualizar um banco já existente
+```
+npx wrangler d1 execute geta-contatos --remote --file=migracao-002-confirmacao.sql
+npx wrangler d1 execute geta-contatos --remote --file=migracao-003-aceite.sql
+```
+Ordem de publicação: **primeiro o site** (que já envia o campo `aceite`), **depois** o serviço
+(`npx wrangler deploy`). Ao contrário, o formulário antigo seria recusado por falta do aceite.
+
 ## Primeira instalação
 ```
 npx wrangler login
@@ -57,7 +80,7 @@ objeto `CONFIRMACAO` em `src/index.js`. Ver erros: `npx wrangler tail`.
 
 ## Consultar os contatos
 ```
-npx wrangler d1 execute geta-contatos --remote --command "SELECT id, criado_em, nome, empresa, email, area, status, email_enviado, confirmacao_enviada FROM contatos ORDER BY id DESC LIMIT 50"
+npx wrangler d1 execute geta-contatos --remote --command "SELECT id, criado_em, nome, empresa, email, area, status, email_enviado, confirmacao_enviada, aceite_em, aceite_versao FROM contatos ORDER BY id DESC LIMIT 50"
 ```
 Ou no painel: Cloudflare → Storage & databases → D1 → geta-contatos → Console.
 Exportar tudo: `npx wrangler d1 export geta-contatos --remote --output=contatos.sql`.

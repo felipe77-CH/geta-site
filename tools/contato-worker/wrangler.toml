@@ -28,4 +28,14 @@ database_id = "5e7c715a-3287-4c43-bb73-17edd492d66a"
 # Remetente da confirmação (opcional, e-mail institucional; respostas vão para ele):
 #   npx wrangler secret put CONFIRM_FROM
 
+# Limite de envios por IP: 5 por minuto (o IP só é usado para contar, não é guardado)
+[[ratelimits]]
+name = "LIMITE"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }
+
+# Tarefa diária (06:00 UTC): apaga contatos com mais de 2 anos (prazo da política de privacidade)
+[triggers]
+crons = ["0 6 * * *"]
+
 # Anti-spam Turnstile (opcional): npx wrangler secret put TURNSTILE_SECRET

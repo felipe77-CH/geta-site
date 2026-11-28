@@ -14,7 +14,11 @@ CREATE TABLE IF NOT EXISTS contatos (
   pais          TEXT,
   email_enviado INTEGER NOT NULL DEFAULT 0,                    -- aviso à equipe enviado
   confirmacao_enviada INTEGER NOT NULL DEFAULT 0,              -- confirmação à pessoa enviada
-  status        TEXT    NOT NULL DEFAULT 'novo'                -- novo / respondido / arquivado
+  status        TEXT    NOT NULL DEFAULT 'novo',               -- novo / respondido / arquivado
+  -- Registro do aceite da Política de privacidade e dos Termos de uso (LGPD, art. 8º, § 2º)
+  aceite_em     TEXT,                                          -- data e hora do aceite (UTC)
+  aceite_versao TEXT,                                          -- versão dos documentos aceitos
+  aceite_meio   TEXT                                           -- como aceitou (caixa do formulário, idioma, página)
 );
 CREATE INDEX IF NOT EXISTS idx_contatos_criado ON contatos (criado_em);
 CREATE INDEX IF NOT EXISTS idx_contatos_email ON contatos (email);
